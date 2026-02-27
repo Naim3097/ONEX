@@ -18,7 +18,7 @@ export const business = {
   landline: '03-5191 8330',
   landlineTel: 'tel:+60351918330',
   whatsapp: '+60 11-3105 1677',
-  whatsappLink: 'https://wa.link/0hmj0n',
+  whatsappLink: 'https://wa.me/+601131051677',
   whatsappInquiry:
     'https://wa.me/+601131051677?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20gearbox%20services.',
   address:
