@@ -6,6 +6,7 @@ interface RevealTextProps {
   text: string
   className?: string
   delay?: number
+  immediate?: boolean
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span'
 }
 
@@ -13,6 +14,7 @@ export default function RevealText({
   text,
   className,
   delay = 0,
+  immediate = false,
   as: Tag = 'h2',
 }: RevealTextProps) {
   const shouldReduceMotion = useReducedMotion()
@@ -33,12 +35,10 @@ export default function RevealText({
               rotateX: 80,
               opacity: 0,
             }}
-            whileInView={{
-              y: 0,
-              rotateX: 0,
-              opacity: 1,
-            }}
-            viewport={{ once: true, margin: '-10%' }}
+            {...(immediate
+              ? { animate: { y: 0, rotateX: 0, opacity: 1 } }
+              : { whileInView: { y: 0, rotateX: 0, opacity: 1 }, viewport: { once: true, margin: '0px' } }
+            )}
             transition={{
               duration: 0.5,
               delay: delay + i * 0.067,

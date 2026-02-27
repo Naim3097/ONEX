@@ -25,7 +25,7 @@ export default function AboutHero({ locale }: AboutHeroProps) {
       {/* Content */}
       <div className="relative z-10 max-w-wide mx-auto px-5 md:px-10 w-full">
         <div className="max-w-3xl">
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.2} immediate>
             <Text variant="overline" className="text-brand-red mb-5">
               {hero.overline}
             </Text>
@@ -36,9 +36,10 @@ export default function AboutHero({ locale }: AboutHeroProps) {
             as="h1"
             className="text-h1 text-white mb-6 md:mb-8"
             delay={0.4}
+            immediate
           />
 
-          <FadeIn delay={0.7}>
+          <FadeIn delay={0.7} immediate>
             <p className="text-body-lg text-neutral-300 max-w-xl leading-relaxed">
               {hero.body}
             </p>

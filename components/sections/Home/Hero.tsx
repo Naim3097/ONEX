@@ -75,7 +75,7 @@ export default function Hero({ locale }: HeroProps) {
       {/* Content */}
       <div className="relative z-10 max-w-wide mx-auto px-5 md:px-10 w-full">
         <div className="max-w-4xl">
-          <FadeIn delay={0.2} duration={0.5}>
+          <FadeIn delay={0.2} duration={0.5} immediate>
             <Text variant="overline" className="text-brand-red mb-6 md:mb-8 tracking-[0.2em] font-bold">
               {hero.overline}
             </Text>
@@ -86,15 +86,16 @@ export default function Hero({ locale }: HeroProps) {
             as="h1"
             className="text-display text-white mb-8 md:mb-10 font-bold tracking-tight"
             delay={0.4}
+            immediate
           />
 
-          <FadeIn delay={0.8} duration={0.6}>
+          <FadeIn delay={0.8} duration={0.6} immediate>
             <p className="text-body-lg md:text-xl text-neutral-200 max-w-2xl mb-12 md:mb-16 leading-relaxed font-light">
               {hero.subheadline}
             </p>
           </FadeIn>
 
-          <FadeIn delay={1.0} duration={0.5}>
+          <FadeIn delay={1.0} duration={0.5} immediate>
             <div className="flex flex-col sm:flex-row gap-5">
               <Link href={business.whatsappLink} target="_blank" rel="noopener noreferrer" className="cta-primary text-center">
                 {hero.ctaPrimary}

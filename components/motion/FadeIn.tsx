@@ -11,6 +11,7 @@ interface FadeInProps {
   direction?: 'up' | 'down' | 'left' | 'right' | 'none'
   distance?: number
   once?: boolean
+  immediate?: boolean
   as?: 'div' | 'section' | 'article' | 'li' | 'span'
 }
 
@@ -22,6 +23,7 @@ export default function FadeIn({
   direction = 'up',
   distance = 40,
   once = true,
+  immediate = false,
   as = 'div',
 }: FadeInProps) {
   const shouldReduceMotion = useReducedMotion()
@@ -61,12 +63,25 @@ export default function FadeIn({
 
   const Component = motion[as]
 
+  if (immediate) {
+    return (
+      <Component
+        className={className}
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+      >
+        {children}
+      </Component>
+    )
+  }
+
   return (
     <Component
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, margin: '-10%' }}
+      viewport={{ once, margin: '0px' }}
       variants={variants}
     >
       {children}
