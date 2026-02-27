@@ -12,7 +12,7 @@ export default function CapabilitiesHero({ locale }: CapabilitiesHeroProps) {
   const hero = content.capabilities.hero
 
   return (
-    <section className="relative min-h-[70vh] flex items-end pb-16 md:pb-24 overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-end pb-16 md:pb-24 pt-28 md:pt-32 overflow-hidden">
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-neutral-950 bg-cover bg-center"

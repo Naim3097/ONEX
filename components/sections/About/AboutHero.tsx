@@ -12,7 +12,7 @@ export default function AboutHero({ locale }: AboutHeroProps) {
   const hero = content.about.hero
 
   return (
-    <section className="relative min-h-[70vh] flex items-end pb-16 md:pb-24 overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-end pb-16 md:pb-24 pt-28 md:pt-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div
