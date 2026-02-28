@@ -28,7 +28,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const text = encodeURIComponent(
-      `Name: ${formData.name}\nPhone: ${formData.phone}\nCar: ${formData.carModel}\nIssue: ${formData.problem}\n\n${formData.message}`
+      `ONEX - Name: ${formData.name}\nPhone: ${formData.phone}\nCar: ${formData.carModel}\nIssue: ${formData.problem}\n\n${formData.message}`
     )
     window.open(
       `https://wa.me/+601131051677?text=${text}`,

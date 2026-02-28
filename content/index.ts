@@ -18,9 +18,9 @@ export const business = {
   landline: '03-5191 8330',
   landlineTel: 'tel:+60351918330',
   whatsapp: '+60 11-3105 1677',
-  whatsappLink: 'https://wa.me/+601131051677',
+  whatsappLink: 'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%27d%20like%20to%20make%20an%20enquiry.',
   whatsappInquiry:
-    'https://wa.me/+601131051677?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20gearbox%20services.',
+    'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%20would%20like%20to%20enquire%20about%20gearbox%20services.',
   address:
     'GF LOT 184107 (LOT LAMA 3579), Jalan Haji Taib, Batu 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia',
   addressShort: '40460 Shah Alam, Selangor',
