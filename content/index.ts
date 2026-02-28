@@ -577,10 +577,9 @@ const en: SiteContent = {
   },
 }
 
-// ─── Malay Content (Scaffolded) ───
+// ─── Malay Content (Full Translation) ───
 
 const ms: SiteContent = {
-  ...en,
   nav: {
     home: 'Utama',
     about: 'Tentang Kami',
@@ -592,27 +591,356 @@ const ms: SiteContent = {
     cta: 'Hubungi Kami',
   },
   home: {
-    ...en.home,
     hero: {
       overline: 'Pakar Gearbox — Shah Alam',
       headline: 'Diagnosis tepat.\nPembaikan pasti.',
       subheadline:
-        'Pakar pembaikan gearbox CVT dan automatik dengan pendekatan diagnosis-first. Setiap pembaikan bermula dengan memahami masalah.',
-      ctaPrimary: 'Diagnosis Percuma',
-      ctaSecondary: 'Lihat Khidmat Kami',
+        'Pakar pembaikan gearbox CVT dan automatik dengan pendekatan mengutamakan diagnosis. Setiap pembaikan bermula dengan memahami punca sebenar masalah.',
+      ctaPrimary: 'Tempah Diagnosis Percuma',
+      ctaSecondary: 'Lihat Perkhidmatan',
+    },
+    philosophy: {
+      overline: 'Pendekatan Kami',
+      headline: 'Diagnosis di atas segalanya.',
+      body: [
+        'Kebanyakan bengkel mengganti bahagian dan berharap keadaan menjadi lebih baik. Kami bermula secara berbeza — dengan diagnosis yang teliti dan sistematik untuk mengenal pasti punca sebenar masalah sebelum apa-apa kerja dilakukan.',
+        'Disiplin mengutamakan diagnosis ini bermakna masalah transmisi anda diselesaikan, bukan ditampal. Ia bermakna lawatan ulangan yang lebih sedikit, pertukaran bahagian yang tidak perlu lebih sedikit, dan pembaikan yang dibina atas kepastian.',
+      ],
+      caption: 'Penilaian diagnostik profesional percuma pada setiap kenderaan.',
+    },
+    services: {
+      overline: 'Perkhidmatan',
+      headline: 'Apa yang kami lakukan.',
+      items: [
+        {
+          title: 'Diagnosis Profesional',
+          description:
+            'Diagnostik berasaskan pengimbas yang komprehensif, penilaian ujian memandu, analisis cecair, dan pengesanan kebocoran. Laporan diagnostik penuh sebelum sebarang kerja bermula.',
+          detail: 'Percuma · 30 hingga 45 minit',
+        },
+        {
+          title: 'Baik Pulih Gearbox',
+          description:
+            'Pembongkaran, pemeriksaan, dan pembinaan semula transmisi automatik dan CVT yang lengkap. Bahagian asli dan OEM, kalibrasi mengikut spesifikasi kilang, dan ujian jalan yang teliti.',
+          detail: '3 hingga 5 hari bekerja, waranti disertakan',
+        },
+        {
+          title: 'Servis Transmisi',
+          description:
+            'Penyelenggaraan berjadual termasuk penggantian cecair ATF/CVT, penukaran penapis, pemeriksaan komponen, penetapan semula adaptasi ECU, dan ujian jalan selepas servis.',
+          detail: '4 hingga 8 jam, waranti disertakan',
+        },
+      ],
+    },
+    process: {
+      overline: 'Cara Kami Bekerja',
+      headline: 'Empat peringkat ketepatan.',
+      steps: [
+        {
+          number: '01',
+          title: 'Pemeriksaan',
+          description:
+            'Diagnostik menyeluruh menggunakan pengimbas profesional dan penilaian pakar untuk mengenal pasti punca sebenar.',
+        },
+        {
+          number: '02',
+          title: 'Pembongkaran',
+          description:
+            'Pembongkaran yang sistematik dengan setiap komponen diperiksa dan dikatalog secara individu.',
+        },
+        {
+          number: '03',
+          title: 'Pemulihan',
+          description:
+            'Pembersihan ultrasonik, penggantian bahagian tepat dengan komponen asli/OEM, dan pemasangan semula yang berhati-hati.',
+        },
+        {
+          number: '04',
+          title: 'Kalibrasi',
+          description:
+            'Penentukuran semula spesifikasi kilang dan ujian jalan yang komprehensif untuk mengesahkan prestasi dalam keadaan sebenar.',
+        },
+      ],
+    },
+    stats: {
+      items: [
+        { value: '15', numericValue: 15, suffix: '+', label: 'Tahun Pengkhususan' },
+        { value: '5000', numericValue: 5000, suffix: '+', label: 'Transmisi Dibaiki' },
+        { value: '4.8', numericValue: 4.8, suffix: '/5', label: 'Penilaian Google' },
+        { value: '12', numericValue: 12, suffix: ' bln', label: 'Waranti Kerja' },
+      ],
+    },
+    gallery: {
+      overline: 'Kerja Terkini',
+      headline: 'Dari lantai bengkel.',
+      cta: 'Lihat Semua Kerja',
+    },
+    cta: {
+      headline: 'Masalah transmisi?',
+      body: 'Mulakan dengan diagnosis profesional percuma. Tiada obligasi, tiada tekaan — hanya pemahaman yang jelas tentang apa yang diperlukan gearbox anda.',
+      ctaPrimary: 'WhatsApp Kami',
+      ctaSecondary: 'Hubungi Sekarang',
+    },
+  },
+  about: {
+    hero: {
+      overline: 'Tentang One X Transmission',
+      headline: 'Dibina atas disiplin diagnostik.',
+      body: 'Bengkel transmisi yang percaya bahawa kepastian datang sebelum pembaikan. Setiap keputusan yang kami buat berasaskan diagnosis yang teliti dan jujur.',
+    },
+    story: {
+      headline: 'Bengkel yang mengutamakan diagnosis.',
+      paragraphs: [
+        'One X Transmission diasaskan atas satu keyakinan yang mudah: kebanyakan masalah gearbox berterusan kerana punca sebenar tidak pernah dikenal pasti dengan betul.',
+        'Beroperasi dari Shah Alam, Selangor, kami telah membina reputasi kami atas diagnosis yang sistematik. Sebelum sebarang komponen diganti, sebelum sebarang cecair ditukar, kami meluangkan masa untuk memahami dengan tepat apa yang berlaku di dalam transmisi.',
+        'Pendekatan ini telah mendapat kepercayaan ribuan pemilik kenderaan yang menghargai ketelusan dan ketepatan berbanding pembaikan yang cepat dan tidak pasti.',
+        'Kami bekerja secara eksklusif dengan bahagian asli dan OEM, dan setiap pembaikan membawa waranti yang komprehensif — kerana apabila diagnosis betul, pembaikan akan bertahan.',
+      ],
+    },
+    whyUs: {
+      headline: 'Mengapa pemilik kenderaan memilih kami.',
+      reasons: [
+        {
+          title: 'Diagnosis Profesional Percuma',
+          description: 'Setiap kenderaan menerima penilaian diagnostik percuma yang teliti sebelum kami mengesyorkan sebarang tindakan.',
+        },
+        {
+          title: 'Bahagian Asli dan OEM',
+          description: 'Kami menggunakan komponen asli atau spesifikasi OEM secara eksklusif. Tiada kompromi dengan bahagian pasaran bebas untuk komponen yang paling penting.',
+        },
+        {
+          title: 'Waranti Komprehensif',
+          description: 'Setiap pembaikan dilindungi dengan waranti sehingga 12 bulan — mencerminkan keyakinan kami terhadap kualiti kerja yang dilakukan.',
+        },
+        {
+          title: 'Proses Telus',
+          description: 'Sebut harga yang jelas sebelum kerja bermula. Tiada kos tersembunyi, tiada tambahan mengejut. Anda tahu dengan tepat apa yang anda bayar.',
+        },
+      ],
+    },
+  },
+  capabilities: {
+    hero: {
+      overline: 'Perkhidmatan',
+      headline: 'Penjagaan transmisi,\ndari awal hingga akhir.',
+      body: 'Dari penilaian awal hingga ujian jalan akhir, kemampuan kami meliputi setiap aspek pembaikan dan penyelenggaraan transmisi CVT dan automatik.',
+    },
+    diagnosis: {
+      title: 'Diagnosis Profesional',
+      description:
+        'Asas setiap pembaikan. Proses diagnostik kami menggunakan alat pengimbas gred profesional, penilaian langsung, dan ujian memandu untuk membina gambaran lengkap keadaan transmisi anda.',
+      price: 'Percuma',
+      duration: '30–45 minit',
+      included: [
+        'Diagnostik berasaskan pengimbas profesional',
+        'Penilaian ujian memandu',
+        'Pemeriksaan paras dan kualiti cecair',
+        'Pengesanan dan pemeriksaan kebocoran',
+        'Laporan diagnostik bertulis yang lengkap',
+      ],
+    },
+    overhaul: {
+      title: 'Baik Pulih Gearbox',
+      description:
+        'Pembinaan semula transmisi yang lengkap. Gearbox dibongkar sepenuhnya, setiap komponen diperiksa, bahagian yang haus diganti dengan spesifikasi asli/OEM, dan unit dipasang semula serta dikalibrasi mengikut piawaian kilang.',
+      price: 'Dari RM 2,500',
+      duration: '3–5 hari bekerja',
+      warranty: '6 bulan / 10,000 km',
+      included: [
+        'Pembongkaran penuh dan pemeriksaan peringkat komponen',
+        'Penggantian semua komponen yang haus',
+        'Tukar ganti dan penggantian ATF yang lengkap',
+        'Set gasket dan penutup baru',
+        'Kalibrasi spesifikasi kilang dan ujian jalan',
+      ],
+    },
+    service: {
+      title: 'Servis Transmisi',
+      description:
+        'Penyelenggaraan pencegahan yang memanjangkan jangka hayat transmisi anda. Kami mengganti cecair, memeriksa komponen, menetapkan semula adaptasi ECU, dan melakukan ujian jalan untuk mengesahkan operasi yang betul.',
+      price: 'Dari RM 150',
+      duration: '4–8 jam',
+      warranty: '3 bulan / 5,000 km',
+      included: [
+        'Penggantian cecair ATF atau CVT',
+        'Penggantian penapis gearbox',
+        'Pemeriksaan keadaan komponen',
+        'Penetapan semula adaptasi ECU',
+        'Ujian jalan selepas servis',
+      ],
+    },
+    other: {
+      title: 'Perkhidmatan Tambahan',
+      description:
+        'Selain kerja transmisi, kami menyediakan perkhidmatan penyelenggaraan sokongan untuk memastikan kenderaan anda berjalan dengan tepat.',
+      items: [
+        'Penggantian plug pencucuh',
+        'Penggantian pad brek',
+        'Penggantian tali masa',
+        'Servis penyejuk',
+        'Servis cecair brek',
+      ],
+    },
+  },
+  process: {
+    hero: {
+      overline: 'Proses Kami',
+      headline: 'Setiap pembaikan mengikut disiplin yang sama.',
+      body: 'Proses empat peringkat yang sistematik untuk memastikan tiada yang diabaikan dan setiap pembaikan dibina atas asas pemahaman yang teliti.',
+    },
+    steps: [
+      {
+        number: '01',
+        title: 'Pemeriksaan',
+        description: 'Diagnosis menyeluruh menggunakan alat pengimbas profesional dan kepakaran pakar.',
+        detail:
+          'Kami bermula dengan imbasan diagnostik komprehensif, penilaian ujian memandu, analisis cecair, dan pemeriksaan visual. Matlamatnya mudah: kenal pasti punca sebenar, bukan tekaan gejala.',
+      },
+      {
+        number: '02',
+        title: 'Pembongkaran',
+        description: 'Pembongkaran yang sistematik dengan pemeriksaan komponen individu.',
+        detail:
+          'Transmisi dikeluarkan dengan berhati-hati dan dibongkar secara sistematik. Setiap komponen diperiksa, diukur, dan dikatalog untuk membina gambaran lengkap tentang apa yang memerlukan perhatian.',
+      },
+      {
+        number: '03',
+        title: 'Pemulihan',
+        description: 'Pembersihan tepat, penggantian bahagian, dan pemasangan semula yang berhati-hati.',
+        detail:
+          'Komponen dibersihkan menggunakan peralatan ultrasonik dan bahan kimia khusus. Bahagian yang haus atau rosak diganti dengan komponen spesifikasi asli atau OEM, kemudian dipasang semula mengikut toleransi kilang.',
+      },
+      {
+        number: '04',
+        title: 'Kalibrasi',
+        description: 'Penentukuran semula spesifikasi kilang dan ujian jalan di dunia nyata.',
+        detail:
+          'Transmisi yang telah dibaiki dikalibrasi semula mengikut spesifikasi pengeluar, kemudian menjalani ujian jalan yang menyeluruh dalam pelbagai keadaan untuk mengesahkan prestasi yang lancar dan boleh dipercayai.',
+      },
+    ],
+  },
+  faq: {
+    hero: {
+      overline: 'Soalan Lazim',
+      headline: 'Soalan biasa, jawapan jelas.',
+      body: 'Maklumat yang mudah tentang perkhidmatan transmisi, harga, dan proses kami.',
+    },
+    items: [
+      {
+        question: 'Adakah diagnosis benar-benar percuma?',
+        answer:
+          'Ya. Setiap kenderaan menerima penilaian diagnostik profesional percuma. Tiada obligasi untuk meneruskan kerja yang disyorkan selepas menerima laporan diagnosis anda.',
+      },
+      {
+        question: 'Berapa lama masa yang diperlukan untuk baik pulih?',
+        answer:
+          'Baik pulih gearbox yang biasa mengambil masa 3 hingga 5 hari bekerja, bergantung pada model kenderaan dan luas kerja yang diperlukan. Kami akan memberikan anggaran masa selepas diagnosis.',
+      },
+      {
+        question: 'Apakah waranti yang anda tawarkan?',
+        answer:
+          'Semua kerja baik pulih membawa waranti sehingga 6 bulan atau 10,000 km (yang mana lebih awal). Kerja servis dilindungi selama 3 bulan atau 5,000 km. Terma waranti khusus disahkan pada masa sebut harga.',
+      },
+      {
+        question: 'Adakah anda menggunakan bahagian asli?',
+        answer:
+          'Kami menggunakan bahagian asli pengeluar dan komponen spesifikasi OEM secara eksklusif. Kami tidak berkompromi dengan kualiti komponen.',
+      },
+      {
+        question: 'Bolehkah saya menuntut insurans untuk pembaikan gearbox?',
+        answer:
+          'Ini bergantung pada polisi insurans anda dan sifat masalah tersebut. Kami boleh menyediakan dokumentasi yang diperlukan untuk anda mengemukakan tuntutan kepada pembekal insurans anda.',
+      },
+      {
+        question: 'Adakah anda menawarkan pelan pembayaran?',
+        answer:
+          'Sila hubungi kami untuk membincangkan pengaturan pembayaran. Kami berusaha untuk memberikan kemudahan sambil mengekalkan ketelusan dalam semua perkara kewangan.',
+      },
+      {
+        question: 'Jenama kereta apa yang anda servis?',
+        answer:
+          'Kami menservis transmisi CVT dan automatik merentas semua jenama utama yang biasa ditemui di Malaysia — termasuk Perodua, Proton, Honda, Toyota, Nissan, Mazda, Ford, dan banyak lagi.',
+      },
+      {
+        question: 'Berapakah kos pembaikan gearbox di Malaysia?',
+        answer:
+          'Servis transmisi bermula dari RM 150. Baik pulih gearbox penuh (AT atau CVT) bermula dari RM 2,500 bergantung pada model kenderaan dan tahap kerosakan. Kami menyediakan sebut harga bertulis terperinci selepas penilaian diagnostik percuma — tiada kos tersembunyi, tiada tambahan mengejut.',
+      },
+      {
+        question: 'Model kereta apa yang anda pakar?',
+        answer:
+          'Kami kerap menservis Perodua (Myvi, Axia, Bezza, Aruz), Proton (Saga, X50, X70, Iriz), Honda (City, Civic, Jazz, CR-V), Toyota (Vios, Alphard, Camry, RAV4), Nissan (X-Trail, Almera, Serena), dan banyak lagi. Transmisi CVT dan automatik merentas jenama Jepun, Korea, dan Eropah.',
+      },
+      {
+        question: 'Bagaimana saya tahu kalau gearbox saya memerlukan pembaikan?',
+        answer:
+          'Tanda amaran biasa termasuk: terhentak atau teragak semasa menukar gear, gear melincir, kereta tidak bergerak walaupun enjin berjalan, bau terbakar dari bawah bonet, bunyi luar biasa dalam drive atau reverse, atau lampu check engine menyala. Jika anda melihat mana-mana tanda ini, bawa kenderaan anda untuk diagnosis percuma sebelum masalah bertambah teruk.',
+      },
+      {
+        question: 'Adakah anda melayani pelanggan di luar Shah Alam?',
+        answer:
+          'Ya. Walaupun bengkel kami terletak di Shah Alam, kami kerap melayani pelanggan dari seluruh Lembah Klang — termasuk Subang Jaya, Petaling Jaya, Klang, Puchong, Cyberjaya, dan Kuala Lumpur. Ramai pelanggan menghubungi kami melalui WhatsApp terlebih dahulu untuk perundingan sebelum melawat.',
+      },
+    ],
+  },
+  contact: {
+    hero: {
+      overline: 'Hubungi Kami',
+      headline: 'Sedia apabila anda bersedia.',
+      body: 'Hubungi kami untuk penilaian diagnostik percuma atau untuk membincangkan sebarang kebimbangan transmisi. Kami memberi respons dengan segera.',
+    },
+    form: {
+      title: 'Hantar pertanyaan',
+      fields: {
+        name: 'Nama Penuh',
+        phone: 'Nombor Telefon',
+        carModel: 'Model Kereta',
+        problem: 'Isu Utama',
+        message: 'Maklumat Tambahan (pilihan)',
+      },
+      submit: 'Hantar melalui WhatsApp',
+    },
+    info: {
+      hoursTitle: 'Waktu Operasi',
+      emergencyTitle: 'Kecemasan 24/7',
+      emergencyBody: 'Untuk bantuan kecemasan atau tunda, hubungi kami bila-bila masa.',
     },
   },
   footer: {
-    ...en.footer,
     tagline: 'Pakar pembaikan dan servis gearbox CVT dan automatik di Shah Alam.',
     copyright: `\u00A9 ${new Date().getFullYear()} One X Transmission. Semua hak terpelihara.`,
+    columns: [
+      {
+        title: 'Halaman',
+        links: [
+          { label: 'Utama', href: '/' },
+          { label: 'Tentang Kami', href: '/about' },
+          { label: 'Khidmat', href: '/capabilities' },
+          { label: 'Proses', href: '/process' },
+        ],
+      },
+      {
+        title: 'Perkhidmatan',
+        links: [
+          { label: 'Diagnosis Gearbox', href: '/capabilities' },
+          { label: 'Baik Pulih CVT & AT', href: '/capabilities' },
+          { label: 'Servis Transmisi', href: '/capabilities' },
+        ],
+      },
+      {
+        title: 'Sokongan',
+        links: [
+          { label: 'Soalan Lazim', href: '/faq' },
+          { label: 'Hubungi', href: '/contact' },
+        ],
+      },
+    ],
   },
 }
 
-// ─── Chinese Content (Scaffolded) ───
+// ─── Chinese Content (Full Translation) ───
 
 const zh: SiteContent = {
-  ...en,
   nav: {
     home: '首页',
     about: '关于我们',
@@ -624,20 +952,345 @@ const zh: SiteContent = {
     cta: '联系我们',
   },
   home: {
-    ...en.home,
     hero: {
       overline: '变速箱专家 — 莎阿南',
       headline: '精准诊断。\n可靠维修。',
       subheadline:
         '专业CVT和自动变速箱维修，以诊断为先的方法。每次维修始于全面了解问题根源。',
-      ctaPrimary: '免费诊断预约',
+      ctaPrimary: '预约免费诊断',
       ctaSecondary: '查看服务项目',
+    },
+    philosophy: {
+      overline: '我们的理念',
+      headline: '诊断高于一切。',
+      body: [
+        '大多数维修店更换零件后只是寄望问题能自行解决。我们从不同角度出发，通过彻底、系统的诊断识别真正病因，再动工维修。',
+        '诊断优先的原则意味着您的变速箱问题得到彻底解决，而非暂时修补。更少的返厂次数，更少不必要的零件更换，每次维修都建立在确定性之上。',
+      ],
+      caption: '每台车辆均提供免费专业诊断评估。',
+    },
+    services: {
+      overline: '服务项目',
+      headline: '我们的专业服务。',
+      items: [
+        {
+          title: '专业诊断',
+          description:
+            '全面的扫描仪诊断、路试评估、液体分析及渗漏检测。维修前提供完整诊断报告。',
+          detail: '免费 · 30至45分钟',
+        },
+        {
+          title: '变速箱大修',
+          description:
+            '自动波箱和CVT的完整拆卸、检查和重建。使用原厂及OEM配件，按厂家规格校准，并进行全面路试。',
+          detail: '3至5个工作日，含保修',
+        },
+        {
+          title: '变速箱保养',
+          description:
+            '定期保养服务，包括ATF/CVT液更换、滤芯更换、零件检查、ECU自适应重置及保养后路试。',
+          detail: '4至8小时，含保修',
+        },
+      ],
+    },
+    process: {
+      overline: '工作方式',
+      headline: '四个精准步骤。',
+      steps: [
+        {
+          number: '01',
+          title: '检测',
+          description: '使用专业扫描仪工具进行全面诊断及专家评估，精准识别根本原因。',
+        },
+        {
+          number: '02',
+          title: '拆卸',
+          description: '系统性拆卸，每个零件逐一检查并记录。',
+        },
+        {
+          number: '03',
+          title: '修复',
+          description: '超声波清洗，精准更换原厂/OEM零件，细致重新组装。',
+        },
+        {
+          number: '04',
+          title: '校准',
+          description: '按厂家规格重新校准，并在真实条件下进行全面路试验证。',
+        },
+      ],
+    },
+    stats: {
+      items: [
+        { value: '15', numericValue: 15, suffix: '+', label: '年专业经验' },
+        { value: '5000', numericValue: 5000, suffix: '+', label: '变速箱维修台数' },
+        { value: '4.8', numericValue: 4.8, suffix: '/5', label: 'Google评分' },
+        { value: '12', numericValue: 12, suffix: ' 个月', label: '维修保修期' },
+      ],
+    },
+    gallery: {
+      overline: '近期作品',
+      headline: '来自维修车间。',
+      cta: '查看全部作品',
+    },
+    cta: {
+      headline: '变速箱出问题了？',
+      body: '从免费专业诊断开始。无需承诺，无需猜测——只需清楚了解您的变速箱需要什么。',
+      ctaPrimary: 'WhatsApp 联系我们',
+      ctaSecondary: '立即致电',
+    },
+  },
+  about: {
+    hero: {
+      overline: '关于 One X Transmission',
+      headline: '建立在诊断纪律之上。',
+      body: '一家坚信确定性先于维修的变速箱维修店。我们每一个决定都建立在彻底、诚实的诊断基础上。',
+    },
+    story: {
+      headline: '诊断优先的维修店。',
+      paragraphs: [
+        'One X Transmission 的创立源于一个简单的信念：大多数变速箱问题之所以持续存在，是因为真正的根本原因从未被正确识别。',
+        '我们位于雪兰莪州莎阿南，多年来凭借系统性诊断建立了良好口碑。在更换任何零件、更换任何液体之前，我们都会花时间准确了解变速箱内部发生了什么。',
+        '这一方式赢得了数千名车主的信赖，他们看重的是透明和精准，而非快速但不确定的维修。',
+        '我们专门使用原厂及OEM规格零件，每次维修都附带全面保修——因为诊断正确，维修才能持久。',
+      ],
+    },
+    whyUs: {
+      headline: '为什么车主选择我们。',
+      reasons: [
+        {
+          title: '免费专业诊断',
+          description: '每台车辆在我们提出任何建议之前，都会获得免费、全面的诊断评估。',
+        },
+        {
+          title: '原厂及OEM零件',
+          description: '我们专门使用原厂或OEM规格零件。在最关键的零件上，我们绝不妥协。',
+        },
+        {
+          title: '全面保修',
+          description: '每次维修均提供长达12个月的保修——体现了我们对工作质量的信心。',
+        },
+        {
+          title: '透明流程',
+          description: '动工前提供清晰报价。没有隐藏费用，没有意外加收。您清楚知道自己在为什么付费。',
+        },
+      ],
+    },
+  },
+  capabilities: {
+    hero: {
+      overline: '服务项目',
+      headline: '全面的变速箱\n维修与保养。',
+      body: '从初始评估到最终路试，我们的服务涵盖CVT和自动变速箱维修与保养的每个环节。',
+    },
+    diagnosis: {
+      title: '专业诊断',
+      description:
+        '每次维修的基础。我们的诊断流程使用专业级扫描工具、实地评估及路试，全面掌握您变速箱的状况。',
+      price: '免费',
+      duration: '30–45分钟',
+      included: [
+        '专业扫描仪诊断',
+        '路试评估',
+        '液体液位及质量检查',
+        '渗漏检测及检查',
+        '完整书面诊断报告',
+      ],
+    },
+    overhaul: {
+      title: '变速箱大修',
+      description:
+        '完整的变速箱重建。完全拆卸，逐一检查每个零件，按原厂/OEM规格更换磨损部件，重新组装并校准至厂家标准。',
+      price: '起价 RM 2,500',
+      duration: '3–5个工作日',
+      warranty: '6个月 / 10,000公里',
+      included: [
+        '完整拆卸及零件级检查',
+        '更换所有磨损零件',
+        '完整ATF冲洗及更换',
+        '全新垫圈套件及密封件',
+        '厂家规格校准及路试',
+      ],
+    },
+    service: {
+      title: '变速箱保养',
+      description:
+        '延长变速箱使用寿命的预防性保养。我们更换液体、检查零件、重置ECU自适应，并进行路试确认正常运作。',
+      price: '起价 RM 150',
+      duration: '4–8小时',
+      warranty: '3个月 / 5,000公里',
+      included: [
+        '更换ATF或CVT液体',
+        '更换变速箱滤芯',
+        '零件状态检查',
+        'ECU自适应重置',
+        '保养后路试',
+      ],
+    },
+    other: {
+      title: '其他服务',
+      description: '除变速箱维修外，我们还提供辅助保养服务，确保您的车辆精准运行。',
+      items: [
+        '更换火花塞',
+        '更换刹车片',
+        '更换正时皮带',
+        '冷却液保养',
+        '刹车液保养',
+      ],
+    },
+  },
+  process: {
+    hero: {
+      overline: '工作流程',
+      headline: '每次维修遵循相同的纪律。',
+      body: '系统性的四步骤流程，确保没有任何遗漏，每次维修都建立在全面理解的基础上。',
+    },
+    steps: [
+      {
+        number: '01',
+        title: '检测',
+        description: '使用专业扫描工具及专家经验进行全面诊断。',
+        detail:
+          '我们从全面诊断扫描、路试评估、液体分析和目视检查开始。目标很简单：识别真正的根本原因，而非猜测症状。',
+      },
+      {
+        number: '02',
+        title: '拆卸',
+        description: '系统性拆卸，逐一检查各零件。',
+        detail:
+          '变速箱被仔细取出并系统性拆卸。每个零件都经过检查、测量和记录，全面掌握需要处理的问题。',
+      },
+      {
+        number: '03',
+        title: '修复',
+        description: '精准清洗、零件更换及细致重新组装。',
+        detail:
+          '零件使用超声波设备和专用化学品清洗。磨损或损坏的部件以原厂或OEM规格零件替换，然后按厂家公差重新组装。',
+      },
+      {
+        number: '04',
+        title: '校准',
+        description: '按厂家规格重新校准及实际路试。',
+        detail:
+          '重建后的变速箱按制造商规格重新校准，然后在各种条件下进行全面路试，验证平稳可靠的性能。',
+      },
+    ],
+  },
+  faq: {
+    hero: {
+      overline: '常见问题',
+      headline: '常见问题，清晰解答。',
+      body: '关于我们变速箱服务、价格及流程的直接信息。',
+    },
+    items: [
+      {
+        question: '诊断真的免费吗？',
+        answer:
+          '是的。每台车辆都享有免费专业诊断评估。收到诊断报告后，您无需承担任何后续维修的义务。',
+      },
+      {
+        question: '大修需要多长时间？',
+        answer:
+          '一般变速箱大修需要3至5个工作日，具体取决于车型及工作量。我们会在诊断后提供时间估算。',
+      },
+      {
+        question: '你们提供什么保修？',
+        answer:
+          '所有大修工作均附带最长6个月或10,000公里的保修（以先到者为准）。保养工作保修3个月或5,000公里。具体保修条款在报价时确认。',
+      },
+      {
+        question: '你们使用原厂零件吗？',
+        answer:
+          '我们专门使用原厂零件及OEM规格零件，在零件质量上绝不妥协。',
+      },
+      {
+        question: '我可以申请保险赔偿变速箱维修费用吗？',
+        answer:
+          '这取决于您的保险条款及问题性质。我们可以提供所需文件，以便您向保险公司提交索赔。',
+      },
+      {
+        question: '你们提供分期付款吗？',
+        answer:
+          '请联系我们讨论付款安排。我们致力于提供便利，同时在所有财务事项上保持透明。',
+      },
+      {
+        question: '你们维修哪些汽车品牌？',
+        answer:
+          '我们维修马来西亚所有主要品牌的CVT和自动变速箱——包括Perodua、Proton、Honda、Toyota、Nissan、Mazda、Ford等。',
+      },
+      {
+        question: '马来西亚变速箱维修费用是多少？',
+        answer:
+          '变速箱保养起价RM 150。完整变速箱大修（AT或CVT）起价RM 2,500，具体取决于车型及损坏程度。免费诊断评估后提供详细书面报价——没有隐藏费用，没有意外加收。',
+      },
+      {
+        question: '你们专注哪些车型？',
+        answer:
+          '我们经常维修Perodua（Myvi、Axia、Bezza、Aruz）、Proton（Saga、X50、X70、Iriz）、Honda（City、Civic、Jazz、CR-V）、Toyota（Vios、Alphard、Camry、RAV4）、Nissan（X-Trail、Almera、Serena）等。涵盖日系、韩系及欧系品牌的CVT和自动变速箱。',
+      },
+      {
+        question: '如何判断我的变速箱需要维修？',
+        answer:
+          '常见警示迹象包括：换挡时抖动或迟疑、滑档、发动机正常但车辆不动、引擎盖下有烧焦味、接合或退档时有异响、或发动机故障灯亮起。如发现上述任何迹象，请尽快来店免费诊断，以免问题恶化。',
+      },
+      {
+        question: '你们为莎阿南以外的客户提供服务吗？',
+        answer:
+          '是的。我们的维修店位于莎阿南，但经常为整个巴生谷的客户提供服务——包括梳邦再也、八打灵再也、巴生、蒲种、赛博再也及吉隆坡。许多客户会先通过WhatsApp与我们联系咨询，再来店拜访。',
+      },
+    ],
+  },
+  contact: {
+    hero: {
+      overline: '联系我们',
+      headline: '随时恭候。',
+      body: '联系我们获取免费诊断评估，或讨论任何变速箱问题。我们会及时回复。',
+    },
+    form: {
+      title: '发送查询',
+      fields: {
+        name: '全名',
+        phone: '电话号码',
+        carModel: '车型',
+        problem: '主要问题',
+        message: '其他详情（可选）',
+      },
+      submit: '通过WhatsApp发送',
+    },
+    info: {
+      hoursTitle: '营业时间',
+      emergencyTitle: '24/7紧急服务',
+      emergencyBody: '如需紧急或拖车协助，请随时致电我们。',
     },
   },
   footer: {
-    ...en.footer,
     tagline: '莎阿南专业CVT和自动变速箱维修与保养服务。',
     copyright: `\u00A9 ${new Date().getFullYear()} One X Transmission. 版权所有。`,
+    columns: [
+      {
+        title: '页面',
+        links: [
+          { label: '首页', href: '/' },
+          { label: '关于我们', href: '/about' },
+          { label: '服务项目', href: '/capabilities' },
+          { label: '工作流程', href: '/process' },
+        ],
+      },
+      {
+        title: '服务',
+        links: [
+          { label: '变速箱诊断', href: '/capabilities' },
+          { label: 'CVT & AT大修', href: '/capabilities' },
+          { label: '变速箱保养', href: '/capabilities' },
+        ],
+      },
+      {
+        title: '支持',
+        links: [
+          { label: '常见问题', href: '/faq' },
+          { label: '联系我们', href: '/contact' },
+        ],
+      },
+    ],
   },
 }
 
