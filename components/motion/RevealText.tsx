@@ -19,8 +19,8 @@ export default function RevealText({
   as: Tag = 'h2',
 }: RevealTextProps) {
   const shouldReduceMotion = useReducedMotion()
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref as React.RefObject<Element>, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLHeadingElement>(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
   const words = text.split(/\s+/)
 
   if (shouldReduceMotion) {
