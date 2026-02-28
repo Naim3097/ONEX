@@ -21,6 +21,8 @@ export const business = {
   whatsappLink: 'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%27d%20like%20to%20make%20an%20enquiry.',
   whatsappInquiry:
     'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%20would%20like%20to%20enquire%20about%20gearbox%20services.',
+  whatsappDoorToDoor:
+    'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%20would%20like%20to%20book%20a%20door-to-door%20inspection.',
   address:
     'GF LOT 184107 (LOT LAMA 3579), Jalan Haji Taib, Batu 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia',
   addressShort: '40460 Shah Alam, Selangor',
@@ -157,6 +159,18 @@ interface SiteContent {
       description: string
       items: string[]
     }
+    doorToDoor: {
+      title: string
+      description: string
+      coverage: string
+      available: string
+      steps: {
+        number: string
+        title: string
+        description: string
+      }[]
+      cta: string
+    }
   }
   process: {
     hero: {
@@ -267,6 +281,12 @@ const en: SiteContent = {
           description:
             'Scheduled maintenance including ATF/CVT fluid replacement, filter change, component inspection, ECU adaptation reset, and post-service road test.',
           detail: '4 to 8 hours, warranty included',
+        },
+        {
+          title: 'Door-to-Door Service',
+          description:
+            'We come to your location for a professional on-site diagnosis. If repairs are needed, we collect your vehicle, carry out the work, and return it to your door.',
+          detail: 'Klang Valley · By appointment',
         },
       ],
     },
@@ -407,6 +427,36 @@ const en: SiteContent = {
         'Post-service road test',
       ],
     },
+    doorToDoor: {
+      title: 'Door-to-Door Inspection & Delivery',
+      description:
+        'We bring the diagnosis to you. Book an appointment and our technician visits your home or office to perform a complete professional assessment. If you decide to proceed with repairs, we collect your car, carry out the work at our workshop, and return it to your door.',
+      coverage: 'Klang Valley',
+      available: 'By appointment · WhatsApp to book',
+      steps: [
+        {
+          number: '01',
+          title: 'Book via WhatsApp',
+          description: 'Message us to schedule a convenient time. We confirm the appointment and send our technician to your location.',
+        },
+        {
+          number: '02',
+          title: 'We inspect at your location',
+          description: 'Our technician performs a full professional diagnostic assessment on-site — the same rigorous process as a workshop visit. Free of charge, no obligation.',
+        },
+        {
+          number: '03',
+          title: 'We collect your vehicle',
+          description: 'If you decide to proceed with our recommended repairs, we arrange all transport. No towing fees, no extra charges — we handle the logistics.',
+        },
+        {
+          number: '04',
+          title: 'We return your car',
+          description: 'Once repairs are complete and quality-checked, we deliver your vehicle back to your door, ready to drive.',
+        },
+      ],
+      cta: 'Book Door-to-Door',
+    },
     other: {
       title: 'Additional Services',
       description:
@@ -515,6 +565,16 @@ const en: SiteContent = {
           'Common warning signs include: jerking or hesitation when changing gears, slipping gears, the car not moving despite the engine running, a burning smell from under the bonnet, unusual noises in drive or reverse, or the check engine light appearing. If you notice any of these, bring your vehicle in for a free diagnosis before the issue worsens.',
       },
       {
+        question: 'Do you offer door-to-door inspection?',
+        answer:
+          'Yes. Our door-to-door service covers the full Klang Valley area. A technician visits your home or office to carry out a complete professional diagnostic assessment on-site — free of charge. If you decide to proceed with repairs, we collect your vehicle, complete all work at our workshop, and deliver it back to your door. WhatsApp us to book an appointment.',
+      },
+      {
+        question: 'Are there extra charges for door-to-door pick-up and delivery?',
+        answer:
+          'No. If you proceed with a repair after our on-site diagnosis, we collect and return your vehicle at no additional cost. Pick-up and delivery is included as part of the repair — our way of making professional gearbox care as convenient as possible.',
+      },
+      {
         question: 'Do you serve customers outside Shah Alam?',
         answer:
           'Yes. While our workshop is located in Shah Alam, we regularly serve customers from across the Klang Valley — including Subang Jaya, Petaling Jaya, Klang, Puchong, Cyberjaya, and Kuala Lumpur. Many customers reach out via WhatsApp first for a consultation before visiting.',
@@ -564,6 +624,7 @@ const en: SiteContent = {
           { label: 'Gearbox Diagnosis', href: '/capabilities' },
           { label: 'CVT & AT Overhaul', href: '/capabilities' },
           { label: 'Transmission Servicing', href: '/capabilities' },
+          { label: 'Door-to-Door Service', href: '/capabilities' },
         ],
       },
       {
@@ -629,6 +690,12 @@ const ms: SiteContent = {
           description:
             'Penyelenggaraan berjadual termasuk penggantian cecair ATF/CVT, penukaran penapis, pemeriksaan komponen, penetapan semula adaptasi ECU, dan ujian jalan selepas servis.',
           detail: '4 hingga 8 jam, waranti disertakan',
+        },
+        {
+          title: 'Servis Pintu ke Pintu',
+          description:
+            'Kami datang ke lokasi anda untuk diagnosis profesional di tempat. Jika pembaikan diperlukan, kami mengambil kenderaan anda, menjalankan kerja, dan menghantarnya kembali ke pintu anda.',
+          detail: 'Lembah Klang · Mengikut temujanji',
         },
       ],
     },
@@ -769,6 +836,36 @@ const ms: SiteContent = {
         'Ujian jalan selepas servis',
       ],
     },
+    doorToDoor: {
+      title: 'Servis Pintu ke Pintu',
+      description:
+        'Kami bawa diagnosis ke tempat anda. Buat temujanji dan juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian profesional kenderaan anda yang lengkap. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kereta anda, menjalankan kerja di bengkel kami, dan menghantarnya semula ke pintu anda.',
+      coverage: 'Lembah Klang',
+      available: 'Mengikut temujanji · WhatsApp untuk menempah',
+      steps: [
+        {
+          number: '01',
+          title: 'Tempah melalui WhatsApp',
+          description: 'Hubungi kami untuk menjadualkan masa yang sesuai. Kami mengesahkan temujanji dan menghantar juruteknik ke lokasi anda.',
+        },
+        {
+          number: '02',
+          title: 'Kami memeriksa di lokasi anda',
+          description: 'Juruteknik kami menjalankan penilaian diagnostik profesional penuh di tempat — proses yang sama seperti lawatan bengkel. Percuma, tiada obligasi.',
+        },
+        {
+          number: '03',
+          title: 'Kami mengambil kenderaan anda',
+          description: 'Jika anda memutuskan untuk meneruskan pembaikan yang disyorkan, kami mengatur semua pengangkutan. Tiada bayaran tunda, tiada cas tambahan.',
+        },
+        {
+          number: '04',
+          title: 'Kami memulangkan kereta anda',
+          description: 'Setelah pembaikan selesai dan telah diperiksa kualitinya, kami menghantar kenderaan anda kembali ke pintu anda, sedia untuk dipandu.',
+        },
+      ],
+      cta: 'Tempah Servis Pintu ke Pintu',
+    },
     other: {
       title: 'Perkhidmatan Tambahan',
       description:
@@ -877,6 +974,16 @@ const ms: SiteContent = {
           'Tanda amaran biasa termasuk: terhentak atau teragak semasa menukar gear, gear melincir, kereta tidak bergerak walaupun enjin berjalan, bau terbakar dari bawah bonet, bunyi luar biasa dalam drive atau reverse, atau lampu check engine menyala. Jika anda melihat mana-mana tanda ini, bawa kenderaan anda untuk diagnosis percuma sebelum masalah bertambah teruk.',
       },
       {
+        question: 'Adakah anda menawarkan pemeriksaan pintu ke pintu?',
+        answer:
+          'Ya. Perkhidmatan pintu ke pintu kami meliputi seluruh kawasan Lembah Klang. Juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian diagnostik profesional di tempat — percuma. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kenderaan, menyelesaikan kerja di bengkel, dan menghantarnya kembali ke pintu anda. WhatsApp kami untuk menempah temujanji.',
+      },
+      {
+        question: 'Adakah terdapat caj tambahan untuk pengambilan dan penghantaran pintu ke pintu?',
+        answer:
+          'Tidak. Jika anda meneruskan pembaikan selepas diagnosis di tempat kami, kami mengambil dan memulangkan kenderaan anda tanpa kos tambahan. Perkhidmatan pengambilan dan penghantaran disertakan sebagai sebahagian daripada pembaikan — cara kami menjadikan penjagaan gearbox profesional semudah yang mungkin.',
+      },
+      {
         question: 'Adakah anda melayani pelanggan di luar Shah Alam?',
         answer:
           'Ya. Walaupun bengkel kami terletak di Shah Alam, kami kerap melayani pelanggan dari seluruh Lembah Klang — termasuk Subang Jaya, Petaling Jaya, Klang, Puchong, Cyberjaya, dan Kuala Lumpur. Ramai pelanggan menghubungi kami melalui WhatsApp terlebih dahulu untuk perundingan sebelum melawat.',
@@ -925,6 +1032,7 @@ const ms: SiteContent = {
           { label: 'Diagnosis Gearbox', href: '/capabilities' },
           { label: 'Baik Pulih CVT & AT', href: '/capabilities' },
           { label: 'Servis Transmisi', href: '/capabilities' },
+          { label: 'Servis Pintu ke Pintu', href: '/capabilities' },
         ],
       },
       {
@@ -990,6 +1098,12 @@ const zh: SiteContent = {
           description:
             '定期保养服务，包括ATF/CVT液更换、滤芯更换、零件检查、ECU自适应重置及保养后路试。',
           detail: '4至8小时，含保修',
+        },
+        {
+          title: '上门检测服务',
+          description:
+            '我们上门为您进行专业现场诊断。如需维修，我们收取车辆、完成所有维修工作，并将车辆送回您家门口。',
+          detail: '巴生谷 · 须预约',
         },
       ],
     },
@@ -1126,6 +1240,36 @@ const zh: SiteContent = {
         '保养后路试',
       ],
     },
+    doorToDoor: {
+      title: '上门检测与收送服务',
+      description:
+        '我们将诊断送上门。预约后，我们的技术员将前往您的住所或办公室，为您的车辆进行完整的专业评估。如您决定进行维修，我们负责收车、在维修店完成所有维修工作，并将车辆送回您家门口。',
+      coverage: '巴生谷',
+      available: '须预约 · WhatsApp预约',
+      steps: [
+        {
+          number: '01',
+          title: '通过WhatsApp预约',
+          description: '发信息给我们安排方便的时间。我们确认预约后，派技术员前往您的所在地。',
+        },
+        {
+          number: '02',
+          title: '我们上门检测',
+          description: '我们的技术员在现场进行完整的专业诊断评估——与到店服务相同的严谨流程。免费，无需承诺。',
+        },
+        {
+          number: '03',
+          title: '我们收取您的车辆',
+          description: '如您决定按建议进行维修，我们安排所有运输事宜。无拖车费，无额外收费——物流由我们处理。',
+        },
+        {
+          number: '04',
+          title: '我们将车辆送回',
+          description: '维修完成并通过质量检查后，我们将您的车辆送回家门口，随时可以上路。',
+        },
+      ],
+      cta: '预约上门服务',
+    },
     other: {
       title: '其他服务',
       description: '除变速箱维修外，我们还提供辅助保养服务，确保您的车辆精准运行。',
@@ -1233,6 +1377,16 @@ const zh: SiteContent = {
           '常见警示迹象包括：换挡时抖动或迟疑、滑档、发动机正常但车辆不动、引擎盖下有烧焦味、接合或退档时有异响、或发动机故障灯亮起。如发现上述任何迹象，请尽快来店免费诊断，以免问题恶化。',
       },
       {
+        question: '你们提供上门检测服务吗？',
+        answer:
+          '是的。我们的上门服务覆盖整个巴生谷地区。技术员将前往您的住所或办公室，在现场进行完整的专业诊断评估——免费。如果您决定进行维修，我们收取车辆、在维修店完成所有工作，并将车辆送回您家门口。请通过WhatsApp预约。',
+      },
+      {
+        question: '上门收送车辆是否有额外费用？',
+        answer:
+          '没有。如在现场诊断后确认进行维修，我们的收送车服务不收取额外费用。收送服务已包含在维修套餐内——这是我们让专业变速箱维修尽可能方便的方式。',
+      },
+      {
         question: '你们为莎阿南以外的客户提供服务吗？',
         answer:
           '是的。我们的维修店位于莎阿南，但经常为整个巴生谷的客户提供服务——包括梳邦再也、八打灵再也、巴生、蒲种、赛博再也及吉隆坡。许多客户会先通过WhatsApp与我们联系咨询，再来店拜访。',
@@ -1281,6 +1435,7 @@ const zh: SiteContent = {
           { label: '变速箱诊断', href: '/capabilities' },
           { label: 'CVT & AT大修', href: '/capabilities' },
           { label: '变速箱保养', href: '/capabilities' },
+          { label: '上门检测服务', href: '/capabilities' },
         ],
       },
       {

@@ -5,6 +5,7 @@ import CapabilitiesHero from '@/components/sections/Capabilities/CapabilitiesHer
 import DiagnosisSection from '@/components/sections/Capabilities/DiagnosisSection'
 import OverhaulSection from '@/components/sections/Capabilities/OverhaulSection'
 import ServiceSection from '@/components/sections/Capabilities/ServiceSection'
+import DoorToDoorSection from '@/components/sections/Capabilities/DoorToDoorSection'
 import ContactCTA from '@/components/sections/Home/ContactCTA'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -40,6 +41,7 @@ export default async function CapabilitiesPage({ params }: { params: Promise<{ l
       <DiagnosisSection locale={locale} />
       <OverhaulSection locale={locale} />
       <ServiceSection locale={locale} />
+      <DoorToDoorSection locale={locale} />
       <ContactCTA locale={locale} />
     </>
   )

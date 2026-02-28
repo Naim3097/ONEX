@@ -28,7 +28,7 @@ export default function ServicesOverview({ locale }: ServicesOverviewProps) {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-white/10">
           {services.items.map((item, i) => (
             <FadeIn key={item.title} delay={0.1 * i} className="bg-neutral-950 p-8 md:p-10 lg:p-12">
               <div className="flex flex-col h-full">
