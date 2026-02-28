@@ -40,6 +40,7 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/capabilities`, label: content.nav.capabilities },
     { href: `/${locale}/process`, label: content.nav.process },
     { href: `/${locale}/faq`, label: content.nav.faq },
+    { href: `/${locale}/blog`, label: content.nav.blog },
     { href: `/${locale}/contact`, label: content.nav.contact },
   ]
 

@@ -53,6 +53,7 @@ interface SiteContent {
     process: string
     faq: string
     contact: string
+    blog: string
     cta: string
   }
   home: {
@@ -224,6 +225,7 @@ const en: SiteContent = {
     process: 'Process',
     faq: 'FAQ',
     contact: 'Contact',
+    blog: 'Blog',
     cta: 'Get in Touch',
   },
   home: {
@@ -497,6 +499,26 @@ const en: SiteContent = {
         answer:
           'We service CVT and automatic transmissions across all major brands commonly found in Malaysia — including Perodua, Proton, Honda, Toyota, Nissan, Mazda, Ford, and more.',
       },
+      {
+        question: 'What is the cost of gearbox repair in Malaysia?',
+        answer:
+          'Transmission servicing starts from RM 150. A full gearbox overhaul (AT or CVT) starts from RM 2,500 depending on the vehicle model and extent of damage. We provide a detailed written quote after a free diagnostic assessment — no hidden costs, no surprise additions.',
+      },
+      {
+        question: 'Which car models do you specialise in?',
+        answer:
+          'We regularly service Perodua (Myvi, Axia, Bezza, Aruz), Proton (Saga, X50, X70, Iriz), Honda (City, Civic, Jazz, CR-V), Toyota (Vios, Alphard, Camry, RAV4), Nissan (X-Trail, Almera, Serena), and many more. Both CVT and automatic transmissions across Japanese, Korean, and European brands.',
+      },
+      {
+        question: 'How do I know if my gearbox needs repair?',
+        answer:
+          'Common warning signs include: jerking or hesitation when changing gears, slipping gears, the car not moving despite the engine running, a burning smell from under the bonnet, unusual noises in drive or reverse, or the check engine light appearing. If you notice any of these, bring your vehicle in for a free diagnosis before the issue worsens.',
+      },
+      {
+        question: 'Do you serve customers outside Shah Alam?',
+        answer:
+          'Yes. While our workshop is located in Shah Alam, we regularly serve customers from across the Klang Valley — including Subang Jaya, Petaling Jaya, Klang, Puchong, Cyberjaya, and Kuala Lumpur. Many customers reach out via WhatsApp first for a consultation before visiting.',
+      },
     ],
   },
   contact: {
@@ -566,6 +588,7 @@ const ms: SiteContent = {
     process: 'Proses',
     faq: 'Soalan Lazim',
     contact: 'Hubungi',
+    blog: 'Blog',
     cta: 'Hubungi Kami',
   },
   home: {
@@ -597,6 +620,7 @@ const zh: SiteContent = {
     process: '工作流程',
     faq: '常见问题',
     contact: '联系我们',
+    blog: 'Blog',
     cta: '联系我们',
   },
   home: {
@@ -628,14 +652,14 @@ export function getContent(locale: Locale): SiteContent {
 // ─── Gallery Data (not locale-dependent) ───
 
 export const galleryImages = [
-  { src: '/images/Gallery/Toyota%20GT86.jpeg',          alt: 'Toyota GT86 — Gearbox Overhaul',           width: 810,  height: 1080 },
-  { src: '/images/Gallery/Honda%20City%20GM6%20%282%29.jpeg', alt: 'Honda City GM6 — CVT Transmission Repair',  width: 960,  height: 1280 },
-  { src: '/images/Gallery/Honda%20Civic%20FC.jpeg',      alt: 'Honda Civic FC — AT Gearbox Service',        width: 960,  height: 1280 },
-  { src: '/images/Gallery/Mercedes.jpeg',               alt: 'Mercedes — Transmission Diagnostic',         width: 810,  height: 1080 },
-  { src: '/images/Gallery/Nissan%20X-Trail.jpeg',        alt: 'Nissan X-Trail — Gearbox Overhaul',          width: 960,  height: 1280 },
-  { src: '/images/Gallery/Toyota%20Alphard.jpeg',        alt: 'Toyota Alphard — CVT Service',               width: 960,  height: 1280 },
-  { src: '/images/Gallery/Toyota%20GT86%20II.jpeg',      alt: 'Toyota GT86 — Full Transmission Rebuild',    width: 720,  height: 1080 },
-  { src: '/images/Gallery/Perodua%20Myvi.jpeg',          alt: 'Perodua Myvi — Gearbox Service',             width: 960,  height: 1280 },
+  { src: '/images/Gallery/Toyota%20GT86.jpeg',              alt: 'Toyota GT86 gearbox overhaul at One X Transmission Shah Alam',           width: 810,  height: 1080 },
+  { src: '/images/Gallery/Honda%20City%20GM6%20%282%29.jpeg', alt: 'Honda City GM6 CVT transmission repair at One X Transmission Shah Alam',  width: 960,  height: 1280 },
+  { src: '/images/Gallery/Honda%20Civic%20FC.jpeg',          alt: 'Honda Civic FC automatic gearbox service at One X Transmission',         width: 960,  height: 1280 },
+  { src: '/images/Gallery/Mercedes.jpeg',                   alt: 'Mercedes transmission diagnostic at One X Transmission Shah Alam',        width: 810,  height: 1080 },
+  { src: '/images/Gallery/Nissan%20X-Trail.jpeg',            alt: 'Nissan X-Trail gearbox overhaul at One X Transmission Selangor',         width: 960,  height: 1280 },
+  { src: '/images/Gallery/Toyota%20Alphard.jpeg',            alt: 'Toyota Alphard CVT service at One X Transmission Shah Alam',             width: 960,  height: 1280 },
+  { src: '/images/Gallery/Toyota%20GT86%20II.jpeg',          alt: 'Toyota GT86 full transmission rebuild at One X Transmission Shah Alam',   width: 720,  height: 1080 },
+  { src: '/images/Gallery/Perodua%20Myvi.jpeg',              alt: 'Perodua Myvi gearbox service at One X Transmission Shah Alam',           width: 960,  height: 1280 },
 ] as const
 
 // ─── Media Slot Manifest ───
@@ -693,3 +717,34 @@ export const mediaSlots = {
     description: 'Service section. Fluid change or filter replacement in progress.',
   },
 } as const
+
+// ─── Testimonials (not in SiteContent — locale-independent) ───
+
+export const testimonials = [
+  {
+    id: 1,
+    quote:
+      'My Perodua Myvi CVT was slipping badly. One X diagnosed the problem in under an hour — free of charge — and gave me a clear written report before touching anything. The repair has been solid for over a year.',
+    author: 'Hafizuddin R.',
+    vehicle: 'Perodua Myvi 2018',
+    rating: 5,
+  },
+  {
+    id: 2,
+    quote:
+      'Brought my Honda City in after two other workshops gave me different stories. These guys pinpointed the issue immediately. Professional, honest, and the 12-month warranty gives real peace of mind.',
+    author: 'Jasmine T.',
+    vehicle: 'Honda City GM6',
+    rating: 5,
+  },
+  {
+    id: 3,
+    quote:
+      'Toyota Vios gearbox was jerking at low speed. Full overhaul done within the week. The car drives smoother than it did when I first bought it. Highly recommend One X Transmission.',
+    author: 'Mohd Izzat K.',
+    vehicle: 'Toyota Vios 2020',
+    rating: 5,
+  },
+]
+
+export type Testimonial = (typeof testimonials)[number]

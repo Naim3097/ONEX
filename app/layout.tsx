@@ -22,23 +22,54 @@ const satoshi = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://onextransmission.com'),
   title: {
-    default: 'One X Transmission — Gearbox Specialist Shah Alam',
-    template: '%s — One X Transmission',
+    default: 'Gearbox Specialist Shah Alam | Free Diagnosis | One X Transmission',
+    template: '%s | One X Transmission',
   },
   description:
-    'Professional CVT and automatic gearbox repair, overhaul, and servicing in Shah Alam. Free diagnosis, original parts, warranty on all work.',
+    'Shah Alam’s most trusted CVT and automatic gearbox specialist. Free professional diagnosis, full overhaul, and transmission servicing. 15 years experience, 5,000+ vehicles, 12-month warranty.',
+  keywords: [
+    'gearbox specialist Shah Alam',
+    'CVT repair Malaysia',
+    'automatic transmission overhaul Selangor',
+    'gearbox workshop Klang Valley',
+    'transmission repair Shah Alam',
+    'best gearbox workshop Malaysia',
+    'CVT gearbox overhaul',
+    'gearbox diagnosis free',
+  ],
   openGraph: {
     type: 'website',
     locale: 'en_MY',
     alternateLocale: ['ms_MY', 'zh_MY'],
     siteName: 'One X Transmission',
+    images: [
+      {
+        url: 'https://onextransmission.com/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'One X Transmission — Gearbox Specialist Shah Alam',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://onextransmission.com/images/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'MY-10',
+    'geo.placename': 'Shah Alam, Selangor',
+    'geo.position': '2.9790295931497934;101.51856181116906',
+    'ICBM': '2.9790295931497934, 101.51856181116906',
   },
 }
 

@@ -5,6 +5,7 @@ import Philosophy from '@/components/sections/Home/Philosophy'
 import ServicesOverview from '@/components/sections/Home/ServicesOverview'
 import ProcessPreview from '@/components/sections/Home/ProcessPreview'
 import Stats from '@/components/sections/Home/Stats'
+import Testimonials from '@/components/sections/Home/Testimonials'
 import GalleryPreview from '@/components/sections/Home/GalleryPreview'
 import ContactCTA from '@/components/sections/Home/ContactCTA'
 
@@ -14,9 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return generatePageMetadata({
     locale,
     page: 'home',
-    title: 'One X Transmission — Gearbox Specialist Shah Alam',
+    title: 'Gearbox Specialist Shah Alam | Free Diagnosis | One X Transmission',
     description:
-      'Specialist CVT and automatic transmission repair with a diagnostic-first approach. Free professional diagnosis, gearbox overhaul, and transmission servicing in Shah Alam.',
+      'Malaysia’s trusted CVT and automatic gearbox specialist in Shah Alam. Free professional diagnosis, full overhaul, and transmission servicing. 15 years experience, 5,000+ vehicles, 12-month warranty.',
   })
 }
 
@@ -31,6 +32,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ServicesOverview locale={locale} />
       <ProcessPreview locale={locale} />
       <Stats locale={locale} />
+      <Testimonials />
       <GalleryPreview locale={locale} />
       <ContactCTA locale={locale} />
     </>

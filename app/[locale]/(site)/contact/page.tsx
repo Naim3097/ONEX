@@ -1,5 +1,6 @@
 import { type Locale } from '@/content'
 import { generatePageMetadata } from '@/lib/metadata'
+import { generateBreadcrumbJsonLd } from '@/lib/structured-data'
 import ContactHero from '@/components/sections/Contact/ContactHero'
 import ContactForm from '@/components/sections/Contact/ContactForm'
 import ContactInfo from '@/components/sections/Contact/ContactInfo'
@@ -10,18 +11,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return generatePageMetadata({
     locale,
     page: 'contact',
-    title: 'Contact — One X Transmission',
+    title: 'Contact Gearbox Specialist Shah Alam | WhatsApp or Call | One X Transmission',
     description:
-      'Get in touch for a free diagnostic assessment. WhatsApp, call, or visit our Shah Alam workshop. We respond promptly.',
+      'Reach One X Transmission for a free gearbox consultation. Workshop at Batu 7½ Shah Alam, Selangor. WhatsApp +60 11-3105 1677. Mon–Fri 9am–6pm, Sat 9am–5pm.',
   })
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: l } = await params
   const locale = l as Locale
+  const breadcrumbSchema = generateBreadcrumbJsonLd(locale, 'contact', 'Contact')
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ContactHero locale={locale} />
       <section className="section-light section-padding">
         <div className="max-w-wide mx-auto px-5 md:px-10">
