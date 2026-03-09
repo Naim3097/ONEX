@@ -15,10 +15,10 @@ export default function Philosophy({ locale }: PhilosophyProps) {
   return (
     <section className="section-light overflow-hidden">
       <div className="max-w-wide mx-auto px-5 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-center py-24 md:py-32 lg:py-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 xl:gap-24 items-center py-24 md:py-32 lg:py-40">
 
           {/* Left — Text */}
-          <div className="lg:pr-8">
+          <div className="lg:pr-4">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
                 {philosophy.overline}
@@ -50,22 +50,60 @@ export default function Philosophy({ locale }: PhilosophyProps) {
             </FadeIn>
           </div>
 
-          {/* Right — Premise Image */}
-          <FadeIn delay={0.2} className="mt-14 lg:mt-0">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <ParallaxImage
-                src="/images/Premise/Premise%201.jpeg"
-                alt="One X Transmission workshop premises"
-                width={1080}
-                height={810}
-                speed={0.12}
-                overlay={false}
-                className="absolute inset-0 w-full h-full"
-              />
+          {/* Right — Premise Image Mosaic */}
+          <div className="flex flex-col gap-3 mt-14 lg:mt-0">
+
+            {/* Main image — full width */}
+            <FadeIn delay={0.2} direction="left">
+              <div className="relative aspect-video overflow-hidden">
+                <ParallaxImage
+                  src="/images/Premise/ONEX-1.jpg.jpeg"
+                  alt="One X Transmission workshop frontage, Shah Alam"
+                  width={1920}
+                  height={1080}
+                  speed={0.08}
+                  overlay={false}
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </FadeIn>
+
+            {/* Two images side by side */}
+            <div className="grid grid-cols-2 gap-3">
+              <FadeIn delay={0.38} direction="up">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <ParallaxImage
+                    src="/images/Premise/ONEX-2.jpg.jpeg"
+                    alt="One X Transmission workshop interior"
+                    width={1920}
+                    height={1440}
+                    speed={0.06}
+                    overlay={false}
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.52} direction="up">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <ParallaxImage
+                    src="/images/Premise/ONEX-3.jpg.jpeg"
+                    alt="One X Transmission service bay"
+                    width={1920}
+                    height={1440}
+                    speed={0.06}
+                    overlay={false}
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+              </FadeIn>
             </div>
-            {/* Subtle accent line under the image */}
-            <div className="w-12 h-px bg-brand-red mt-5" />
-          </FadeIn>
+
+            {/* Accent line */}
+            <FadeIn delay={0.6} direction="none">
+              <div className="w-12 h-px bg-brand-red" />
+            </FadeIn>
+
+          </div>
 
         </div>
       </div>
