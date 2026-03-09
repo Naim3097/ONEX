@@ -3,9 +3,9 @@ import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
 
 const PREMISE_IMAGES = [
-  { src: '/images/Premise/Premise%201.jpeg', alt: 'One X Transmission workshop' },
-  { src: '/images/Premise/Premise%202.jpeg', alt: 'One X Transmission service bay' },
-  { src: '/images/Premise/Premise%203.jpeg', alt: 'One X Transmission premises' },
+  { src: '/images/Premise/ONEX-3.jpg.jpeg', alt: 'One X Transmission signage and service bay' },
+  { src: '/images/Premise/ONEX-1.jpg.jpeg', alt: 'One X Transmission workshop frontage, Shah Alam' },
+  { src: '/images/Premise/ONEX-2.jpg.jpeg', alt: 'One X Transmission workshop interior' },
 ]
 
 interface StoryProps {

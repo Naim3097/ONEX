@@ -32,7 +32,7 @@ export default function RevealText({
   return (
     <Tag ref={ref} className={className} style={{ perspective: 1000 }}>
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden">
+        <span key={i} className="inline-block overflow-hidden pb-[0.2em] -mb-[0.2em]">
           <motion.span
             className="inline-block"
             initial={{ y: 50, rotateX: 80, opacity: 0 }}
