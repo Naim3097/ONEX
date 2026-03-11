@@ -6,7 +6,7 @@ excerpt: "The Toyota Vios is Malaysia's go-to sedan for reliability, but its aut
 category: "Car Guide"
 tags: ["Toyota Vios", "Automatic Gearbox", "Gearbox Problem", "Malaysia"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-2.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Toyota Vios has earned its reputation as one of the most reliable sedans in Malaysia. It is the car of choice for e-hailing drivers, families, and daily commuters alike — and Toyota's conservative engineering approach means problems are less frequent than some competitors.

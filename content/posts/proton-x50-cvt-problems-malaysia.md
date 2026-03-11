@@ -6,7 +6,7 @@ excerpt: "The Proton X50 is one of Malaysia's best-selling SUVs, but its CVT tra
 category: "Car Guide"
 tags: ["Proton X50", "CVT", "Gearbox Problem", "Malaysia"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-1.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1616992515884-9f645b0fbb5d?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Proton X50 has become one of the most popular SUVs in Malaysia since its launch, but like any vehicle with a CVT (Continuously Variable Transmission), it comes with a specific set of potential transmission issues that owners should be aware of.

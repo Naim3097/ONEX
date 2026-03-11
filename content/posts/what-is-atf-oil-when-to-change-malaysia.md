@@ -6,7 +6,7 @@ excerpt: "Most Malaysian drivers know their engine oil needs changing. Far fewer
 category: "Maintenance Guide"
 tags: ["ATF Oil", "Gearbox Fluid", "Automatic Transmission", "Malaysia", "Maintenance"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-9.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1771340742493-52fbd5476ccb?q=80&w=1920&auto=format&fit=crop"
 ---
 
 Almost every Malaysian car owner knows engine oil needs to be changed regularly. But ask the same people about ATF — Automatic Transmission Fluid — and most will look uncertain.

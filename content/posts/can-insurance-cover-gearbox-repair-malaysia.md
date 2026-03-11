@@ -6,7 +6,7 @@ excerpt: "Facing a gearbox repair bill and wondering if your insurance can help?
 category: "Consumer Guide"
 tags: ["Car Insurance", "Gearbox Repair", "Malaysia", "Insurance Claim"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-13.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1707406767667-d30b566ef62f?q=80&w=1920&auto=format&fit=crop"
 ---
 
 A gearbox repair can cost thousands of ringgit. It is natural to wonder: can my insurance cover this?

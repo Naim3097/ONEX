@@ -6,7 +6,7 @@ excerpt: "The Proton Saga is one of Malaysia's most enduring cars. Its automatic
 category: "Car Guide"
 tags: ["Proton Saga", "Automatic Gearbox", "Gearbox Problem", "Malaysia"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-10.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Proton Saga has been a Malaysian motoring institution since 1985. The modern Saga (2016–present) and its popular automatic variant remain one of the most affordable new car options in the country.

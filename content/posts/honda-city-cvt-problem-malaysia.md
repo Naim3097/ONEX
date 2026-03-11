@@ -6,7 +6,7 @@ excerpt: "The Honda City is Malaysia's favourite family sedan, but its CVT trans
 category: "Car Guide"
 tags: ["Honda City", "CVT", "Gearbox Problem", "Malaysia"]
 readTime: "5 min read"
-coverImage: "/images/Gallery/Honda%20City%20GM6%20%282%29.jpeg"
+coverImage: "https://images.unsplash.com/photo-1706675804644-c8fa831038ad?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Honda City has consistently been one of the top-selling sedans in Malaysia for over two decades. The GM5 and GM6 generations — both equipped with Honda's Earth Dreams CVT — are particularly common, and both share a set of known transmission-related issues that owners should understand.

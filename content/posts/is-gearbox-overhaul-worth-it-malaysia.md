@@ -6,7 +6,7 @@ excerpt: "A gearbox overhaul quote can be shocking. Before you decide, here is w
 category: "Repair Guide"
 tags: ["Gearbox Overhaul", "Repair Cost", "Malaysia", "Worth It"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-12.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1770656505709-fd97236989b9?q=80&w=1920&auto=format&fit=crop"
 ---
 
 A gearbox overhaul quote arrives and it is not a small number. RM 2,500. RM 4,000. Sometimes more.

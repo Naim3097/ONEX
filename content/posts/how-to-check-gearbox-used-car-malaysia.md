@@ -6,7 +6,7 @@ excerpt: "The gearbox is the most expensive thing to fix on a used car. Here's e
 category: "Buying Guide"
 tags: ["Used Car", "Gearbox Check", "Malaysia", "Car Buying Tips"]
 readTime: "6 min read"
-coverImage: "/images/Premise/ONEX-7.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1727893304219-063d142ce6f3?q=80&w=1920&auto=format&fit=crop"
 ---
 
 Buying a used car in Malaysia? The engine usually gets all the attention during an inspection — but the gearbox is often the more expensive repair if something goes wrong.

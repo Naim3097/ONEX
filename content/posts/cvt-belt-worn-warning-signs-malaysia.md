@@ -6,7 +6,7 @@ excerpt: "The CVT belt is the heart of your CVT transmission. When it fails, the
 category: "Maintenance Guide"
 tags: ["CVT Belt", "CVT", "Gearbox", "Malaysia", "Warning Signs"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-14.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1642075223291-f9ec545889fa?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The CVT belt is the most critical component in a continuously variable transmission. It is what transmits power from engine to wheels — and when it fails or wears severely, it typically means a full CVT overhaul.

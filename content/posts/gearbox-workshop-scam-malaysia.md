@@ -6,7 +6,7 @@ excerpt: "Gearbox repairs are expensive, and not all workshops are honest. Here 
 category: "Consumer Guide"
 tags: ["Workshop Scam", "Gearbox Repair", "Malaysia", "Consumer Guide"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-8.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1747511578112-3d21e8b3d5d7?q=80&w=1920&auto=format&fit=crop"
 ---
 
 Gearbox problems make car owners vulnerable. The repair is expensive, the technology is opaque to most people, and the fear of being stranded is real. Unscrupulous workshops exploit exactly this situation.

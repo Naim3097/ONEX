@@ -6,7 +6,7 @@ excerpt: "The Perodua Axia's automatic transmission is built for everyday Malays
 category: "Car Guide"
 tags: ["Perodua Axia", "Gearbox", "Automatic Transmission", "Malaysia"]
 readTime: "4 min read"
-coverImage: "/images/Gallery/Perodua%20Myvi.jpeg"
+coverImage: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Perodua Axia is Malaysia's most affordable city car and one of the best-selling nameplates in the country. Its automatic variant is popular especially among first-time car owners and daily commuters.

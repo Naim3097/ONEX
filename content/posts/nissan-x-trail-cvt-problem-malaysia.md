@@ -6,7 +6,7 @@ excerpt: "The Nissan X-Trail is a popular family SUV in Malaysia, but its CVT ha
 category: "Car Guide"
 tags: ["Nissan X-Trail", "CVT", "Gearbox Problem", "Malaysia"]
 readTime: "5 min read"
-coverImage: "/images/Gallery/Nissan%20X-Trail.jpeg"
+coverImage: "https://images.unsplash.com/photo-1593142927924-087946ba0a16?q=80&w=1920&auto=format&fit=crop"
 ---
 
 The Nissan X-Trail (T32, 2014–present) has been a consistently popular family SUV in Malaysia. It is spacious, practical, and carries a reasonable price tag relative to its class.

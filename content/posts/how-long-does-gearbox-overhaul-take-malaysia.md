@@ -6,7 +6,7 @@ excerpt: "You need your car back as soon as possible. How long does a gearbox re
 category: "Repair Guide"
 tags: ["Gearbox Overhaul", "Repair Time", "Malaysia", "Transmission"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-15.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?q=80&w=1920&auto=format&fit=crop"
 ---
 
 For most Malaysians, the car is not a luxury — it is a necessity. Not being able to drive can mean missed work, expensive Grab rides, and significant daily inconvenience.

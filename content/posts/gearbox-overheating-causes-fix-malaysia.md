@@ -6,7 +6,7 @@ excerpt: "Gearbox overheating is a common problem in Malaysia's heat and traffic
 category: "Repair Guide"
 tags: ["Gearbox Overheating", "Transmission Problem", "Malaysia", "CVT", "Automatic"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-11.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1657394404780-1f10392924e9?q=80&w=1920&auto=format&fit=crop"
 ---
 
 Malaysia's combination of 32–38°C ambient temperatures, heavy city traffic, and hilly terrain creates some of the harshest operating conditions for an automatic transmission in the world.

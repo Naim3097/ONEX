@@ -6,7 +6,7 @@ excerpt: "Car manufacturers say every 80,000 km or more. Malaysian mechanics say
 category: "Maintenance Guide"
 tags: ["Gearbox Oil", "ATF", "Maintenance", "Malaysia", "CVT"]
 readTime: "4 min read"
-coverImage: "/images/Premise/ONEX-4.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1920&auto=format&fit=crop"
 ---
 
 One of the most common questions we receive at the workshop: "How often should I change my gearbox oil?"

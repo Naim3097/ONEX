@@ -6,7 +6,7 @@ excerpt: "CVT or conventional automatic — which handles Malaysian roads, traff
 category: "Car Guide"
 tags: ["CVT", "Automatic Transmission", "Malaysia", "Transmission Comparison"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-5.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1607282061645-52fa09bde395?q=80&w=1920&auto=format&fit=crop"
 ---
 
 If you are shopping for a new or used car in Malaysia right now, chances are you are comparing a CVT against a conventional automatic. Almost every new car in Malaysia now comes with one or the other.

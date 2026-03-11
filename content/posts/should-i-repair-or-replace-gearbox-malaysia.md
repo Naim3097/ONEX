@@ -6,7 +6,7 @@ excerpt: "Your workshop says you need a gearbox repair. But is it worth it, or s
 category: "Repair Guide"
 tags: ["Gearbox Repair", "Gearbox Overhaul", "Malaysia", "Car Advice"]
 readTime: "5 min read"
-coverImage: "/images/Premise/ONEX-6.jpg.jpeg"
+coverImage: "https://images.unsplash.com/photo-1727893359929-9980a2171105?q=80&w=1920&auto=format&fit=crop"
 ---
 
 Your gearbox has given up. The workshop has given you a quote for a repair or overhaul. Now you have a decision to make: is it worth fixing, or is it time to let go of the car?
