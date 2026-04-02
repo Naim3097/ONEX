@@ -4,26 +4,28 @@ import { getAllPosts } from '@/lib/posts'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://onextransmission.com'
   const locales = ['en', 'ms', 'zh']
-  const pages = ['', '/about', '/capabilities', '/process', '/faq', '/contact', '/blog']
+  const pages = ['', '/about', '/capabilities', '/process', '/faq', '/contact', '/blog', '/locations/kulim']
 
   const priorities: Record<string, number> = {
-    '':              1.0,
-    '/capabilities': 0.9,
-    '/contact':      0.9,
-    '/about':        0.8,
-    '/faq':          0.8,
-    '/blog':         0.8,
-    '/process':      0.7,
+    '':                   1.0,
+    '/capabilities':      0.9,
+    '/contact':           0.9,
+    '/locations/kulim':   0.9,
+    '/about':             0.8,
+    '/faq':               0.8,
+    '/blog':              0.8,
+    '/process':           0.7,
   }
 
   const frequencies: Record<string, 'weekly' | 'monthly'> = {
-    '':              'weekly',
-    '/capabilities': 'monthly',
-    '/contact':      'monthly',
-    '/about':        'monthly',
-    '/faq':          'monthly',
-    '/blog':         'weekly',
-    '/process':      'monthly',
+    '':                   'weekly',
+    '/capabilities':      'monthly',
+    '/contact':           'monthly',
+    '/locations/kulim':   'weekly',
+    '/about':             'monthly',
+    '/faq':               'monthly',
+    '/blog':              'weekly',
+    '/process':           'monthly',
   }
 
   const entries: MetadataRoute.Sitemap = []

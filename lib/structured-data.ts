@@ -53,7 +53,7 @@ export function generateLocalBusinessJsonLd() {
     currenciesAccepted: 'MYR',
     paymentAccepted: 'Cash, Bank Transfer',
     keywords:
-      'gearbox specialist Shah Alam, CVT transmission repair Malaysia, automatic gearbox overhaul Selangor, transmission workshop Klang Valley, best gearbox workshop Malaysia, trusted transmission repair',
+      'gearbox specialist Shah Alam, CVT transmission repair Malaysia, automatic gearbox overhaul Selangor, transmission workshop Klang Valley, best gearbox workshop Malaysia, trusted transmission repair, gearbox specialist Kulim, transmission workshop Kedah, CVT repair Penang, gearbox workshop Bukit Mertajam, transmission repair Sungai Petani, gearbox Nibong Tebal, gearbox Parit Buntar',
     sameAs: [
       'https://maps.google.com/?q=2.9790295931497934,101.51856181116906',
       'https://www.waze.com/ul?ll=2.9790295931497934%2C101.51856181116906&navigate=yes',
@@ -67,6 +67,13 @@ export function generateLocalBusinessJsonLd() {
       { '@type': 'City', name: 'Cyberjaya' },
       { '@type': 'AdministrativeArea', name: 'Selangor' },
       { '@type': 'AdministrativeArea', name: 'Klang Valley' },
+      { '@type': 'City', name: 'Kulim' },
+      { '@type': 'City', name: 'Bukit Mertajam' },
+      { '@type': 'City', name: 'Sungai Petani' },
+      { '@type': 'City', name: 'Nibong Tebal' },
+      { '@type': 'City', name: 'Parit Buntar' },
+      { '@type': 'AdministrativeArea', name: 'Kedah' },
+      { '@type': 'AdministrativeArea', name: 'Penang' },
     ],
     serviceArea: {
       '@type': 'GeoCircle',

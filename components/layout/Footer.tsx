@@ -76,21 +76,29 @@ export default function Footer({ locale }: FooterProps) {
           {/* Address Column */}
           <div className="lg:col-span-2">
             <h4 className="text-overline text-neutral-500 uppercase tracking-widest mb-5">
-              Location
+              Locations
             </h4>
+            <p className="text-body-sm text-neutral-500 uppercase tracking-wider mb-2">Shah Alam</p>
             <a
               href={business.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 block leading-relaxed"
+              className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 block leading-relaxed mb-4"
             >
               {business.address}
             </a>
-            <div className="mt-4 space-y-1 text-body-sm text-neutral-500">
+            <div className="space-y-1 text-body-sm text-neutral-500 mb-6">
               <p>Mon–Fri: {business.hours.weekdays}</p>
               <p>Sat: {business.hours.saturday}</p>
               <p>Sun: {business.hours.sunday}</p>
             </div>
+            <p className="text-body-sm text-neutral-500 uppercase tracking-wider mb-2">Kulim, Kedah</p>
+            <Link
+              href={`/${locale}/locations/kulim`}
+              className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 block"
+            >
+              New Branch — Opening Soon
+            </Link>
           </div>
         </div>
 

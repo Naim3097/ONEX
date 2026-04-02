@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -14,6 +14,12 @@ export default function Header({ locale }: HeaderProps) {
   const content = getContent(locale)
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileMoreOpen, setMobileMoreOpen] = useState(false)
+  const [mobileBranchesOpen, setMobileBranchesOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [branchesOpen, setBranchesOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const branchesRef = useRef<HTMLDivElement>(null)
   const shouldReduceMotion = useReducedMotion()
 
   const handleScroll = useCallback(() => {
@@ -34,13 +40,44 @@ export default function Header({ locale }: HeaderProps) {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
-  const navLinks = [
+  // Close dropdowns on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+      if (branchesRef.current && !branchesRef.current.contains(e.target as Node)) {
+        setBranchesOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const primaryLinks = [
     { href: `/${locale}`, label: content.nav.home },
-    { href: `/${locale}/about`, label: content.nav.about },
     { href: `/${locale}/capabilities`, label: content.nav.capabilities },
     { href: `/${locale}/process`, label: content.nav.process },
+    { href: `/${locale}/contact`, label: content.nav.contact },
+  ]
+
+  const branchLinks = [
+    { href: `/${locale}/locations/kulim`, label: 'Kulim, Kedah', badge: 'New', comingSoon: false },
+    { href: null, label: 'Pahang', badge: null, comingSoon: true },
+    { href: null, label: 'Johor', badge: null, comingSoon: true },
+  ]
+
+  const moreLinks = [
+    { href: `/${locale}/about`, label: content.nav.about },
     { href: `/${locale}/faq`, label: content.nav.faq },
     { href: `/${locale}/blog`, label: content.nav.blog },
+  ]
+
+  // All links flattened for mobile
+  const allMobileLinks = [
+    { href: `/${locale}`, label: content.nav.home },
+    { href: `/${locale}/capabilities`, label: content.nav.capabilities },
+    { href: `/${locale}/process`, label: content.nav.process },
     { href: `/${locale}/contact`, label: content.nav.contact },
   ]
 
@@ -68,15 +105,129 @@ export default function Header({ locale }: HeaderProps) {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8" aria-label="Primary navigation">
-            {navLinks.map((link) => (
+            {primaryLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-body-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium"
+                className="relative text-body-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium inline-flex items-center gap-1.5"
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* Branches dropdown */}
+            <div
+              ref={branchesRef}
+              className="relative"
+              onMouseEnter={() => setBranchesOpen(true)}
+              onMouseLeave={() => setBranchesOpen(false)}
+            >
+              <button
+                onClick={() => setBranchesOpen((v) => !v)}
+                className="inline-flex items-center gap-1.5 text-body-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium"
+                aria-expanded={branchesOpen}
+              >
+                Branches
+                <span className="text-[10px] font-semibold bg-brand-red text-white px-1.5 py-0.5 rounded-sm leading-none">New</span>
+                <svg
+                  className={`w-3 h-3 transition-transform duration-200 ${branchesOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                >
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {branchesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className="absolute top-full left-0 mt-2 w-52 bg-neutral-950 border border-white/10 shadow-xl py-1"
+                  >
+                    <p className="px-5 pt-3 pb-2 text-[10px] font-semibold text-neutral-500 uppercase tracking-widest">
+                      Our Locations
+                    </p>
+                    {branchLinks.map((branch) =>
+                      branch.comingSoon ? (
+                        <div
+                          key={branch.label}
+                          className="flex items-center justify-between px-5 py-3 text-body-sm text-neutral-600 cursor-not-allowed"
+                        >
+                          <span>{branch.label}</span>
+                          <span className="text-[10px] font-medium text-neutral-500 border border-neutral-700 px-1.5 py-0.5 rounded-sm">
+                            Soon
+                          </span>
+                        </div>
+                      ) : (
+                        <Link
+                          key={branch.label}
+                          href={branch.href!}
+                          onClick={() => setBranchesOpen(false)}
+                          className="flex items-center justify-between px-5 py-3 text-body-sm text-neutral-300 hover:text-white hover:bg-white/5 transition-colors duration-150"
+                        >
+                          <span>{branch.label}</span>
+                          {branch.badge && (
+                            <span className="text-[10px] font-semibold bg-brand-red text-white px-1.5 py-0.5 rounded-sm leading-none">
+                              {branch.badge}
+                            </span>
+                          )}
+                        </Link>
+                      )
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* More dropdown */}
+            <div
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <button
+                onClick={() => setDropdownOpen((v) => !v)}
+                className="inline-flex items-center gap-1.5 text-body-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium"
+                aria-expanded={dropdownOpen}
+              >
+                More
+                <svg
+                  className={`w-3 h-3 transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {dropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className="absolute top-full right-0 mt-2 w-44 bg-neutral-950 border border-white/10 shadow-xl py-1"
+                  >
+                    {moreLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setDropdownOpen(false)}
+                        className="block px-5 py-3 text-body-sm text-neutral-300 hover:text-white hover:bg-white/5 transition-colors duration-150"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Desktop CTA + Locale Switcher */}
@@ -134,7 +285,7 @@ export default function Header({ locale }: HeaderProps) {
             transition={{ duration: 0.3, ease: [0, 0.4, 0, 1] }}
           >
             <nav className="flex flex-col gap-6" aria-label="Mobile navigation">
-              {navLinks.map((link, i) => (
+              {allMobileLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={shouldReduceMotion ? {} : { opacity: 0, x: -24 }}
@@ -143,13 +294,124 @@ export default function Header({ locale }: HeaderProps) {
                 >
                   <Link
                     href={link.href}
-                    className="text-h3 text-white hover:text-brand-red transition-colors duration-200"
+                    className="text-h3 text-white hover:text-brand-red transition-colors duration-200 inline-flex items-center gap-3"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
+                    {'badge' in link && link.badge && (
+                      <span className="text-xs font-semibold bg-brand-red text-white px-2 py-0.5 rounded-sm leading-none">
+                        {link.badge}
+                      </span>
+                    )}
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Branches section — expandable */}
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, x: -24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 + allMobileLinks.length * 0.05, duration: 0.4, ease: [0, 0.4, 0, 1] }}
+              >
+                <button
+                  onClick={() => setMobileBranchesOpen((v) => !v)}
+                  className="text-h3 text-white hover:text-brand-red transition-colors duration-200 inline-flex items-center gap-3"
+                >
+                  Branches
+                  <span className="text-xs font-semibold bg-brand-red text-white px-2 py-0.5 rounded-sm leading-none">New</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${mobileBranchesOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"
+                  >
+                    <path d="M2 4l4 4 4-4" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileBranchesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="flex flex-col gap-4 pl-4 pt-4 border-l border-white/10 mt-3">
+                        {branchLinks.map((branch) =>
+                          branch.comingSoon ? (
+                            <div key={branch.label} className="flex items-center gap-3 text-xl text-neutral-600 cursor-not-allowed">
+                              {branch.label}
+                              <span className="text-xs font-medium text-neutral-500 border border-neutral-700 px-1.5 py-0.5 rounded-sm">
+                                Soon
+                              </span>
+                            </div>
+                          ) : (
+                            <Link
+                              key={branch.label}
+                              href={branch.href!}
+                              className="flex items-center gap-3 text-xl text-neutral-300 hover:text-white transition-colors duration-200"
+                              onClick={() => { setMobileOpen(false); setMobileBranchesOpen(false) }}
+                            >
+                              {branch.label}
+                              {branch.badge && (
+                                <span className="text-xs font-semibold bg-brand-red text-white px-2 py-0.5 rounded-sm leading-none">
+                                  {branch.badge}
+                                </span>
+                              )}
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {/* More section — expandable */}
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, x: -24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 + (allMobileLinks.length + 1) * 0.05, duration: 0.4, ease: [0, 0.4, 0, 1] }}
+              >
+                <button
+                  onClick={() => setMobileMoreOpen((v) => !v)}
+                  className="text-h3 text-white hover:text-brand-red transition-colors duration-200 inline-flex items-center gap-3"
+                >
+                  More
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${mobileMoreOpen ? 'rotate-180' : ''}`}
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="M2 4l4 4 4-4" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileMoreOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="flex flex-col gap-4 pl-4 pt-4 border-l border-white/10 mt-3">
+                        {moreLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="text-xl text-neutral-300 hover:text-white transition-colors duration-200"
+                            onClick={() => { setMobileOpen(false); setMobileMoreOpen(false) }}
+                          >
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </nav>
 
             <motion.div
@@ -191,3 +453,4 @@ export default function Header({ locale }: HeaderProps) {
     </>
   )
 }
+
