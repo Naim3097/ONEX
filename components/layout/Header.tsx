@@ -74,7 +74,7 @@ export default function Header({ locale }: HeaderProps) {
   ]
 
   // All links flattened for mobile
-  const allMobileLinks = [
+  const allMobileLinks: { href: string; label: string; badge?: string }[] = [
     { href: `/${locale}`, label: content.nav.home },
     { href: `/${locale}/capabilities`, label: content.nav.capabilities },
     { href: `/${locale}/process`, label: content.nav.process },
