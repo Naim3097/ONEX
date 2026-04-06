@@ -41,6 +41,7 @@ export default function AdminPage() {
   const [error, setError] = useState('')
   const [selected, setSelected] = useState<Booking | null>(null)
   const [updating, setUpdating] = useState(false)
+  const [verifying, setVerifying] = useState(false)
 
   const fetchBookings = useCallback(async () => {
     setLoading(true)
@@ -149,8 +150,6 @@ export default function AdminPage() {
       setUpdating(false)
     }
   }
-
-  const [verifying, setVerifying] = useState(false)
 
   const verifyPayment = async (bookingId: string) => {
     setVerifying(true)
