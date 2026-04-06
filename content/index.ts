@@ -23,6 +23,7 @@ export const business = {
     'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%20would%20like%20to%20enquire%20about%20gearbox%20services.',
   whatsappDoorToDoor:
     'https://wa.me/+601131051677?text=ONEX%20-%20Hi%2C%20I%20would%20like%20to%20book%20a%20door-to-door%20inspection.',
+  bookingUrl: '/booking',
   address:
     'GF LOT 184107 (LOT LAMA 3579), Jalan Haji Taib, Batu 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia',
   addressShort: '40460 Shah Alam, Selangor',
@@ -217,6 +218,70 @@ interface SiteContent {
       hoursTitle: string
       emergencyTitle: string
       emergencyBody: string
+    }
+  }
+  booking: {
+    hero: {
+      overline: string
+      headline: string
+      body: string
+    }
+    form: {
+      stepDetails: string
+      stepReview: string
+      detailsTitle: string
+      detailsSubtitle: string
+      reviewTitle: string
+      reviewSubtitle: string
+      fields: {
+        name: string
+        phone: string
+        address: string
+        vehicleModel: string
+        issues: string
+        dateTime: string
+      }
+      labels: {
+        customer: string
+        contact: string
+        vehicle: string
+        date: string
+        time: string
+        location: string
+        problem: string
+      }
+      depositNotice: string
+      depositAmount: string
+      next: string
+      back: string
+      pay: string
+      processing: string
+    }
+    timeSlots: string[]
+    success: {
+      title: string
+      body: string
+      invoice: string
+      amount: string
+      payment: string
+      receipt: string
+      home: string
+    }
+    cancelled: {
+      title: string
+      body: string
+      retry: string
+      home: string
+    }
+    error: {
+      title: string
+      body: string
+      retry: string
+      home: string
+    }
+    loading: {
+      title: string
+      body: string
     }
   }
   footer: {
@@ -432,12 +497,12 @@ const en: SiteContent = {
       description:
         'We bring the diagnosis to you. Book an appointment and our technician visits your home or office to perform a complete professional assessment. If you decide to proceed with repairs, we collect your car, carry out the work at our workshop, and return it to your door.',
       coverage: 'Klang Valley',
-      available: 'By appointment · WhatsApp to book',
+      available: 'By appointment · Book online',
       steps: [
         {
           number: '01',
-          title: 'Book via WhatsApp',
-          description: 'Message us to schedule a convenient time. We confirm the appointment and send our technician to your location.',
+          title: 'Book online',
+          description: 'Reserve your slot through our booking system. Pay a small RM 2 deposit to confirm. We schedule a technician to your location.',
         },
         {
           number: '02',
@@ -567,7 +632,7 @@ const en: SiteContent = {
       {
         question: 'Do you offer door-to-door inspection?',
         answer:
-          'Yes. Our door-to-door service covers the full Klang Valley area. A technician visits your home or office to carry out a complete professional diagnostic assessment on-site — free of charge. If you decide to proceed with repairs, we collect your vehicle, complete all work at our workshop, and deliver it back to your door. WhatsApp us to book an appointment.',
+          'Yes. Our door-to-door service covers the full Klang Valley area. A technician visits your home or office to carry out a complete professional diagnostic assessment on-site — free of charge. If you decide to proceed with repairs, we collect your vehicle, complete all work at our workshop, and deliver it back to your door. Book your appointment online with a small RM 2 deposit to confirm your slot.',
       },
       {
         question: 'Are there extra charges for door-to-door pick-up and delivery?',
@@ -602,6 +667,75 @@ const en: SiteContent = {
       hoursTitle: 'Operating Hours',
       emergencyTitle: '24/7 Emergency',
       emergencyBody: 'For emergency or towing assistance, call us anytime.',
+    },
+  },
+  booking: {
+    hero: {
+      overline: 'Door-to-Door Booking',
+      headline: 'Book your inspection.',
+      body: 'Reserve a door-to-door diagnostic visit. A technician comes to your location for a full professional assessment.',
+    },
+    form: {
+      stepDetails: 'Details',
+      stepReview: 'Review & Pay',
+      detailsTitle: 'Booking Details',
+      detailsSubtitle: 'Fill in your information to proceed',
+      reviewTitle: 'Confirm Booking',
+      reviewSubtitle: 'Review your details before payment',
+      fields: {
+        name: 'Full Name',
+        phone: 'Phone Number',
+        address: 'City / Area',
+        vehicleModel: 'Car Model',
+        issues: 'Describe the problem...',
+        dateTime: 'Select Date & Time',
+      },
+      labels: {
+        customer: 'Customer',
+        contact: 'Contact',
+        vehicle: 'Vehicle',
+        date: 'Date',
+        time: 'Time',
+        location: 'Service Location',
+        problem: 'Problem Description',
+      },
+      depositNotice: 'To confirm booking, pay a deposit of',
+      depositAmount: 'RM 2',
+      next: 'Review Booking',
+      back: 'Back',
+      pay: 'Pay RM 2 Deposit',
+      processing: 'Processing...',
+    },
+    timeSlots: [
+      '08:00 AM - 10:00 AM',
+      '10:00 AM - 12:00 PM',
+      '01:00 PM - 03:00 PM',
+      '03:00 PM - 05:00 PM',
+    ],
+    success: {
+      title: 'Payment Successful',
+      body: 'Your booking is confirmed. We have received your deposit.',
+      invoice: 'Invoice',
+      amount: 'Amount',
+      payment: 'Payment',
+      receipt: 'Download Receipt',
+      home: 'Return to Home',
+    },
+    cancelled: {
+      title: 'Payment Cancelled',
+      body: 'You cancelled the payment process.',
+      retry: 'Try Again',
+      home: 'Return to Home',
+    },
+    error: {
+      title: 'Payment Issue',
+      body: 'There was an issue with your payment. Please try again.',
+      retry: 'Try Again',
+      home: 'Return to Home',
+    },
+    loading: {
+      title: 'Verifying Payment...',
+      body: 'Please wait while we confirm your transaction.',
     },
   },
   footer: {
@@ -841,12 +975,12 @@ const ms: SiteContent = {
       description:
         'Kami bawa diagnosis ke tempat anda. Buat temujanji dan juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian profesional kenderaan anda yang lengkap. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kereta anda, menjalankan kerja di bengkel kami, dan menghantarnya semula ke pintu anda.',
       coverage: 'Lembah Klang',
-      available: 'Mengikut temujanji · WhatsApp untuk menempah',
+      available: 'Mengikut temujanji · Tempah dalam talian',
       steps: [
         {
           number: '01',
-          title: 'Tempah melalui WhatsApp',
-          description: 'Hubungi kami untuk menjadualkan masa yang sesuai. Kami mengesahkan temujanji dan menghantar juruteknik ke lokasi anda.',
+          title: 'Tempah dalam talian',
+          description: 'Tempah slot anda melalui sistem tempahan kami. Bayar deposit RM 2 untuk mengesahkan. Kami menjadualkan juruteknik ke lokasi anda.',
         },
         {
           number: '02',
@@ -976,7 +1110,7 @@ const ms: SiteContent = {
       {
         question: 'Adakah anda menawarkan pemeriksaan pintu ke pintu?',
         answer:
-          'Ya. Perkhidmatan pintu ke pintu kami meliputi seluruh kawasan Lembah Klang. Juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian diagnostik profesional di tempat — percuma. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kenderaan, menyelesaikan kerja di bengkel, dan menghantarnya kembali ke pintu anda. WhatsApp kami untuk menempah temujanji.',
+          'Ya. Perkhidmatan pintu ke pintu kami meliputi seluruh kawasan Lembah Klang. Juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian diagnostik profesional di tempat — percuma. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kenderaan, menyelesaikan kerja di bengkel, dan menghantarnya kembali ke pintu anda. Tempah dalam talian dengan deposit RM 2 untuk mengesahkan slot anda.',
       },
       {
         question: 'Adakah terdapat caj tambahan untuk pengambilan dan penghantaran pintu ke pintu?',
@@ -1011,6 +1145,75 @@ const ms: SiteContent = {
       hoursTitle: 'Waktu Operasi',
       emergencyTitle: 'Kecemasan 24/7',
       emergencyBody: 'Untuk bantuan kecemasan atau tunda, hubungi kami bila-bila masa.',
+    },
+  },
+  booking: {
+    hero: {
+      overline: 'Tempahan Pintu ke Pintu',
+      headline: 'Tempah pemeriksaan anda.',
+      body: 'Tempah lawatan diagnostik pintu ke pintu. Juruteknik kami akan datang ke lokasi anda untuk penilaian profesional.',
+    },
+    form: {
+      stepDetails: 'Butiran',
+      stepReview: 'Semak & Bayar',
+      detailsTitle: 'Butiran Tempahan',
+      detailsSubtitle: 'Isi maklumat anda untuk meneruskan',
+      reviewTitle: 'Sahkan Tempahan',
+      reviewSubtitle: 'Semak butiran anda sebelum pembayaran',
+      fields: {
+        name: 'Nama Penuh',
+        phone: 'Nombor Telefon',
+        address: 'Bandar / Kawasan',
+        vehicleModel: 'Model Kereta',
+        issues: 'Huraikan masalah...',
+        dateTime: 'Pilih Tarikh & Masa',
+      },
+      labels: {
+        customer: 'Pelanggan',
+        contact: 'Hubungi',
+        vehicle: 'Kenderaan',
+        date: 'Tarikh',
+        time: 'Masa',
+        location: 'Lokasi Servis',
+        problem: 'Huraian Masalah',
+      },
+      depositNotice: 'Untuk mengesahkan tempahan, bayar deposit sebanyak',
+      depositAmount: 'RM 2',
+      next: 'Semak Tempahan',
+      back: 'Kembali',
+      pay: 'Bayar Deposit RM 2',
+      processing: 'Memproses...',
+    },
+    timeSlots: [
+      '08:00 AM - 10:00 AM',
+      '10:00 AM - 12:00 PM',
+      '01:00 PM - 03:00 PM',
+      '03:00 PM - 05:00 PM',
+    ],
+    success: {
+      title: 'Pembayaran Berjaya',
+      body: 'Tempahan anda disahkan. Kami telah menerima deposit anda.',
+      invoice: 'Invois',
+      amount: 'Jumlah',
+      payment: 'Pembayaran',
+      receipt: 'Muat Turun Resit',
+      home: 'Kembali ke Utama',
+    },
+    cancelled: {
+      title: 'Pembayaran Dibatalkan',
+      body: 'Anda telah membatalkan proses pembayaran.',
+      retry: 'Cuba Lagi',
+      home: 'Kembali ke Utama',
+    },
+    error: {
+      title: 'Isu Pembayaran',
+      body: 'Terdapat masalah dengan pembayaran anda. Sila cuba lagi.',
+      retry: 'Cuba Lagi',
+      home: 'Kembali ke Utama',
+    },
+    loading: {
+      title: 'Mengesahkan Pembayaran...',
+      body: 'Sila tunggu sementara kami mengesahkan transaksi anda.',
     },
   },
   footer: {
@@ -1245,12 +1448,12 @@ const zh: SiteContent = {
       description:
         '我们将诊断送上门。预约后，我们的技术员将前往您的住所或办公室，为您的车辆进行完整的专业评估。如您决定进行维修，我们负责收车、在维修店完成所有维修工作，并将车辆送回您家门口。',
       coverage: '巴生谷',
-      available: '须预约 · WhatsApp预约',
+      available: '须预约 · 在线预约',
       steps: [
         {
           number: '01',
-          title: '通过WhatsApp预约',
-          description: '发信息给我们安排方便的时间。我们确认预约后，派技术员前往您的所在地。',
+          title: '在线预约',
+          description: '通过我们的预约系统预订时间段。支付RM 2押金确认预约。我们将安排技术员前往您的所在地。',
         },
         {
           number: '02',
@@ -1379,7 +1582,7 @@ const zh: SiteContent = {
       {
         question: '你们提供上门检测服务吗？',
         answer:
-          '是的。我们的上门服务覆盖整个巴生谷地区。技术员将前往您的住所或办公室，在现场进行完整的专业诊断评估——免费。如果您决定进行维修，我们收取车辆、在维修店完成所有工作，并将车辆送回您家门口。请通过WhatsApp预约。',
+          '是的。我们的上门服务覆盖整个巴生谷地区。技术员将前往您的住所或办公室，在现场进行完整的专业诊断评估——免费。如果您决定进行维修，我们收取车辆、在维修店完成所有工作，并将车辆送回您家门口。在线预约，支付RM 2押金即可确认预约。',
       },
       {
         question: '上门收送车辆是否有额外费用？',
@@ -1414,6 +1617,75 @@ const zh: SiteContent = {
       hoursTitle: '营业时间',
       emergencyTitle: '24/7紧急服务',
       emergencyBody: '如需紧急或拖车协助，请随时致电我们。',
+    },
+  },
+  booking: {
+    hero: {
+      overline: '上门预约',
+      headline: '预约您的检测。',
+      body: '预约上门诊断服务。技术员将前往您的所在地进行全面专业评估。',
+    },
+    form: {
+      stepDetails: '详情',
+      stepReview: '确认 & 付款',
+      detailsTitle: '预约详情',
+      detailsSubtitle: '填写您的信息以继续',
+      reviewTitle: '确认预约',
+      reviewSubtitle: '付款前请确认您的信息',
+      fields: {
+        name: '全名',
+        phone: '电话号码',
+        address: '城市 / 地区',
+        vehicleModel: '车型',
+        issues: '描述问题...',
+        dateTime: '选择日期及时间',
+      },
+      labels: {
+        customer: '客户',
+        contact: '联系方式',
+        vehicle: '车辆',
+        date: '日期',
+        time: '时间',
+        location: '服务地点',
+        problem: '问题描述',
+      },
+      depositNotice: '确认预约需支付押金',
+      depositAmount: 'RM 2',
+      next: '确认预约',
+      back: '返回',
+      pay: '支付 RM 2 押金',
+      processing: '处理中...',
+    },
+    timeSlots: [
+      '08:00 AM - 10:00 AM',
+      '10:00 AM - 12:00 PM',
+      '01:00 PM - 03:00 PM',
+      '03:00 PM - 05:00 PM',
+    ],
+    success: {
+      title: '付款成功',
+      body: '您的预约已确认。我们已收到您的押金。',
+      invoice: '发票号',
+      amount: '金额',
+      payment: '支付方式',
+      receipt: '下载收据',
+      home: '返回首页',
+    },
+    cancelled: {
+      title: '付款已取消',
+      body: '您已取消付款流程。',
+      retry: '重试',
+      home: '返回首页',
+    },
+    error: {
+      title: '付款问题',
+      body: '处理您的付款时出现问题，请重试。',
+      retry: '重试',
+      home: '返回首页',
+    },
+    loading: {
+      title: '验证付款中...',
+      body: '请稍候，正在确认您的交易。',
     },
   },
   footer: {

@@ -26,3 +26,6 @@ next-env.d.ts
 
 # raw source video (not served by the site)
 vecteezy_*.mp4
+
+# BOOX standalone app (reference only)
+BOOX/

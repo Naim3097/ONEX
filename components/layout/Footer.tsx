@@ -104,7 +104,9 @@ export default function Footer({ locale }: FooterProps) {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-caption text-neutral-600">{content.footer.copyright}</p>
+          <Link href="/0x" className="text-caption text-neutral-600 hover:text-neutral-600 cursor-default">
+            {content.footer.copyright}
+          </Link>
           <div className="flex items-center gap-3 text-caption text-neutral-600">
             {(['en', 'ms', 'zh'] as const).map((l, i) => (
               <span key={l} className="flex items-center">

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getContent, business, type Locale } from '@/content'
+import { getContent, type Locale } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
 import Text from '@/components/typography/Text'
@@ -45,9 +45,7 @@ export default function DoorToDoorSection({ locale }: DoorToDoorSectionProps) {
 
             <FadeIn delay={0.4}>
               <Link
-                href={business.whatsappDoorToDoor}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/${locale}/booking`}
                 className="cta-primary inline-flex"
               >
                 {d2d.cta}

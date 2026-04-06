@@ -21,6 +21,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/api') ||
     pathname.startsWith('/images') ||
     pathname.startsWith('/fonts') ||
+    pathname.startsWith('/0x') ||
     pathname.includes('.')
   ) {
     return NextResponse.next()

@@ -43,6 +43,14 @@ export default function ServicesOverview({ locale }: ServicesOverviewProps) {
                   <Text variant="caption" className="text-neutral-500">
                     {item.detail}
                   </Text>
+                  {i === 3 && (
+                    <Link
+                      href={`/${locale}/booking`}
+                      className="inline-block mt-4 text-body-sm font-medium text-brand-red hover:text-brand-red-light transition-colors duration-200"
+                    >
+                      Book Now →
+                    </Link>
+                  )}
                 </div>
               </div>
             </FadeIn>
