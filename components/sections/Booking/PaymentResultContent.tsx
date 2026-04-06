@@ -1,7 +1,7 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { getContent, business, type Locale } from '@/content'
+import { type Locale } from '@/content'
 import Link from 'next/link'
 import FadeIn from '@/components/motion/FadeIn'
 
@@ -104,6 +104,27 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
 
   const icon = iconMap[outcome]
 
+  const whatsappMessages = {
+    success: {
+      en: `ONEX BOOKING - Hi, I've just paid the RM2 deposit for a door-to-door inspection booking. Please confirm my appointment. Thank you!`,
+      ms: `ONEX BOOKING - Hi, saya telah membayar deposit RM2 untuk tempahan pemeriksaan pintu ke pintu. Sila sahkan temujanji saya. Terima kasih!`,
+      zh: `ONEX BOOKING - 您好，我已支付RM2押金预约上门检测服务。请确认我的预约。谢谢！`,
+    },
+    failed: {
+      en: `ONEX BOOKING - Hi, I tried to make a booking payment but it failed. Could you help me?`,
+      ms: `ONEX BOOKING - Hi, saya cuba membuat pembayaran tempahan tetapi gagal. Boleh tolong saya?`,
+      zh: `ONEX BOOKING - 您好，我尝试付款预约但失败了。请问可以帮忙吗？`,
+    },
+    cancelled: {
+      en: `ONEX BOOKING - Hi, I cancelled my booking payment. I'd like to reschedule. Can you assist?`,
+      ms: `ONEX BOOKING - Hi, saya membatalkan pembayaran tempahan. Saya ingin menjadualkan semula. Boleh bantu?`,
+      zh: `ONEX BOOKING - 您好，我取消了预约付款。我想重新安排，请问可以帮忙吗？`,
+    },
+  }
+
+  const waText = encodeURIComponent(whatsappMessages[outcome][locale] || whatsappMessages[outcome].en)
+  const waLink = `https://wa.me/+601131051677?text=${waText}`
+
   return (
     <section className="section-dark min-h-[80vh] flex items-center justify-center">
       <FadeIn>
@@ -122,7 +143,7 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
               </Link>
             )}
             <a
-              href={business.whatsappLink}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               className={outcome === 'success' ? 'cta-primary block w-full text-center' : 'cta-secondary block w-full text-center'}
