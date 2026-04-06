@@ -92,12 +92,13 @@ export default function BookingForm({ locale }: BookingFormProps) {
       }
 
       if (paymentData.success && paymentData.redirectUrl) {
-        // Store Lean.x billNo in Firestore for webhook matching
+        // Store Lean.x billNo in Firestore (fire and forget — don't block redirect)
         if (paymentData.billNo) {
-          const { doc, updateDoc } = await import('firebase/firestore')
-          await updateDoc(doc(db, 'bookings', docRef.id), {
-            leanxBillNo: paymentData.billNo,
-            leanxInvoiceRef: paymentData.invoiceRef,
+          import('firebase/firestore').then(({ doc, updateDoc }) => {
+            updateDoc(doc(db, 'bookings', docRef.id), {
+              leanxBillNo: paymentData.billNo,
+              leanxInvoiceRef: paymentData.invoiceRef,
+            }).catch(() => {})
           })
         }
         window.location.href = paymentData.redirectUrl
