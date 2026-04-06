@@ -150,6 +150,24 @@ export default function AdminPage() {
     }
   }
 
+  const [verifying, setVerifying] = useState(false)
+
+  const verifyPayment = async (bookingId: string) => {
+    setVerifying(true)
+    try {
+      const res = await fetch(`/api/check-payment-status?bookingId=${bookingId}`)
+      const data = await res.json()
+      if (data.success && data.status) {
+        setBookings(prev => prev.map(b => b.id === bookingId ? { ...b, status: data.status, paymentStatus: data.paymentStatus || b.paymentStatus } : b))
+        setSelected(prev => prev ? { ...prev, status: data.status, paymentStatus: data.paymentStatus || prev.paymentStatus } : null)
+      }
+    } catch {
+      // silently fail
+    } finally {
+      setVerifying(false)
+    }
+  }
+
   const confirmedCount = bookings.filter(b => b.status === 'confirmed').length
 
   const stats = {
@@ -291,6 +309,17 @@ export default function AdminPage() {
                   <span className="text-neutral-200 text-right break-all">{row.value}</span>
                 </div>
               ))}
+
+              {/* Verify Payment with Lean.x */}
+              <div className="pt-4 border-t border-neutral-800">
+                <button
+                  onClick={() => verifyPayment(selected.id)}
+                  disabled={verifying || selected.status === 'confirmed' || selected.status === 'completed'}
+                  className="w-full px-4 py-2.5 text-xs font-medium border border-emerald-800/50 bg-emerald-950/30 text-emerald-400 hover:bg-emerald-900/40 hover:border-emerald-700 transition-colors disabled:opacity-40 disabled:cursor-default"
+                >
+                  {verifying ? 'Checking Lean.x...' : selected.status === 'confirmed' || selected.status === 'completed' ? 'Payment Verified ✓' : 'Verify Payment with Lean.x'}
+                </button>
+              </div>
 
               {/* Manual Status Update */}
               <div className="pt-4 border-t border-neutral-800">

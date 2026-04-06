@@ -92,7 +92,7 @@ export default function BookingForm({ locale }: BookingFormProps) {
       }
 
       if (paymentData.success && paymentData.redirectUrl) {
-        // Store Lean.x billNo in Firestore (fire and forget — don't block redirect)
+        // Store Lean.x billNo + bookingId in Firestore (fire and forget — don't block redirect)
         if (paymentData.billNo) {
           import('firebase/firestore').then(({ doc, updateDoc }) => {
             updateDoc(doc(db, 'bookings', docRef.id), {
@@ -100,6 +100,10 @@ export default function BookingForm({ locale }: BookingFormProps) {
               leanxInvoiceRef: paymentData.invoiceRef,
             }).catch(() => {})
           })
+        }
+        // Store bookingId so the success page can verify payment
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('onex_booking_id', docRef.id)
         }
         window.location.href = paymentData.redirectUrl
       } else {
