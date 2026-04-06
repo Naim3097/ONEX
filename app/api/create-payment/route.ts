@@ -60,7 +60,9 @@ export async function POST(request: NextRequest) {
     const host = request.headers.get('host')
     const baseUrl = `${protocol}://${host}`
     const redirectUrl = `${baseUrl}/en/booking/success`
-    const callbackUrl = `${baseUrl}/api/payment-webhook`
+    const callbackUrl = `https://www.onextransmission.com/api/payment-webhook`
+
+    console.log('Payment URLs:', { baseUrl, redirectUrl, callbackUrl })
 
     const leanxPayload = {
       collection_uuid: collectionUuid,

@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAdminDb } from '@/lib/firebase-admin'
 
+export async function GET() {
+  return NextResponse.json({ status: 'Webhook endpoint active', timestamp: new Date().toISOString() })
+}
+
 interface LeanXWebhookPayload {
   invoice_no: string
   amount: string
