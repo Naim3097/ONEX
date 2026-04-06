@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react'
 
+import Link from 'next/link'
+
 interface Booking {
   id: string
   name: string
@@ -186,6 +188,12 @@ export default function AdminPage() {
           <p className="text-xs text-neutral-600 mt-1">Door-to-door inspection management</p>
         </div>
         <div className="flex items-center gap-3">
+          <Link
+            href="/0x/schedule"
+            className="px-3 py-1.5 text-xs border border-emerald-800/50 text-emerald-400 hover:bg-emerald-950/30 hover:border-emerald-700 transition-colors"
+          >
+            Schedule
+          </Link>
           <button
             onClick={fetchBookings}
             className="px-3 py-1.5 text-xs border border-neutral-800 text-neutral-500 hover:text-neutral-300 hover:border-neutral-600 transition-colors"
