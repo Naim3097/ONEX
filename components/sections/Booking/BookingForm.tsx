@@ -72,7 +72,7 @@ export default function BookingForm({ locale }: BookingFormProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          amount: 2,
+          amount: 10,
           invoiceRef: `BOOKING-${docRef.id}`,
           customerName: data.name,
           customerEmail: 'guest@onexbooking.com',

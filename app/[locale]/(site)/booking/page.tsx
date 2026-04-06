@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     zh: '预约上门检测服务 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
-    en: 'Book a door-to-door transmission inspection. Our technician visits your location for a full professional diagnostic assessment. RM 2 deposit to confirm.',
-    ms: 'Tempah pemeriksaan transmisi pintu ke pintu. Juruteknik kami melawat lokasi anda untuk penilaian diagnostik profesional. Deposit RM 2 untuk mengesahkan.',
-    zh: '预约上门变速箱检测服务。我们的技术员将前往您的所在地进行全面专业诊断评估。RM 2押金确认。',
+    en: 'Book a door-to-door transmission inspection. Our technician visits your location for a full professional diagnostic assessment. RM 10 deposit to confirm.',
+    ms: 'Tempah pemeriksaan transmisi pintu ke pintu. Juruteknik kami melawat lokasi anda untuk penilaian diagnostik profesional. Deposit RM 10 untuk mengesahkan.',
+    zh: '预约上门变速箱检测服务。我们的技术员将前往您的所在地进行全面专业诊断评估。RM 10押金确认。',
   }
   return generatePageMetadata({
     locale,

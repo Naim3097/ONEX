@@ -502,7 +502,7 @@ const en: SiteContent = {
         {
           number: '01',
           title: 'Book online',
-          description: 'Reserve your slot through our booking system. Pay a small RM 2 deposit to confirm. We schedule a technician to your location.',
+          description: 'Reserve your slot through our booking system. Pay a small RM 10 deposit to confirm. We schedule a technician to your location.',
         },
         {
           number: '02',
@@ -632,7 +632,7 @@ const en: SiteContent = {
       {
         question: 'Do you offer door-to-door inspection?',
         answer:
-          'Yes. Our door-to-door service covers the full Klang Valley area. A technician visits your home or office to carry out a complete professional diagnostic assessment on-site — free of charge. If you decide to proceed with repairs, we collect your vehicle, complete all work at our workshop, and deliver it back to your door. Book your appointment online with a small RM 2 deposit to confirm your slot.',
+          'Yes. Our door-to-door service covers the full Klang Valley area. A technician visits your home or office to carry out a complete professional diagnostic assessment on-site — free of charge. If you decide to proceed with repairs, we collect your vehicle, complete all work at our workshop, and deliver it back to your door. Book your appointment online with a small RM 10 deposit to confirm your slot.',
       },
       {
         question: 'Are there extra charges for door-to-door pick-up and delivery?',
@@ -700,10 +700,10 @@ const en: SiteContent = {
         problem: 'Problem Description',
       },
       depositNotice: 'To confirm booking, pay a deposit of',
-      depositAmount: 'RM 2',
+      depositAmount: 'RM 10',
       next: 'Review Booking',
       back: 'Back',
-      pay: 'Pay RM 2 Deposit',
+      pay: 'Pay RM 10 Deposit',
       processing: 'Processing...',
     },
     timeSlots: [
@@ -980,7 +980,7 @@ const ms: SiteContent = {
         {
           number: '01',
           title: 'Tempah dalam talian',
-          description: 'Tempah slot anda melalui sistem tempahan kami. Bayar deposit RM 2 untuk mengesahkan. Kami menjadualkan juruteknik ke lokasi anda.',
+          description: 'Tempah slot anda melalui sistem tempahan kami. Bayar deposit RM 10 untuk mengesahkan. Kami menjadualkan juruteknik ke lokasi anda.',
         },
         {
           number: '02',
@@ -1110,7 +1110,7 @@ const ms: SiteContent = {
       {
         question: 'Adakah anda menawarkan pemeriksaan pintu ke pintu?',
         answer:
-          'Ya. Perkhidmatan pintu ke pintu kami meliputi seluruh kawasan Lembah Klang. Juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian diagnostik profesional di tempat — percuma. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kenderaan, menyelesaikan kerja di bengkel, dan menghantarnya kembali ke pintu anda. Tempah dalam talian dengan deposit RM 2 untuk mengesahkan slot anda.',
+          'Ya. Perkhidmatan pintu ke pintu kami meliputi seluruh kawasan Lembah Klang. Juruteknik kami akan melawat rumah atau pejabat anda untuk menjalankan penilaian diagnostik profesional di tempat — percuma. Jika anda memutuskan untuk meneruskan pembaikan, kami mengambil kenderaan, menyelesaikan kerja di bengkel, dan menghantarnya kembali ke pintu anda. Tempah dalam talian dengan deposit RM 10 untuk mengesahkan slot anda.',
       },
       {
         question: 'Adakah terdapat caj tambahan untuk pengambilan dan penghantaran pintu ke pintu?',
@@ -1178,10 +1178,10 @@ const ms: SiteContent = {
         problem: 'Huraian Masalah',
       },
       depositNotice: 'Untuk mengesahkan tempahan, bayar deposit sebanyak',
-      depositAmount: 'RM 2',
+      depositAmount: 'RM 10',
       next: 'Semak Tempahan',
       back: 'Kembali',
-      pay: 'Bayar Deposit RM 2',
+      pay: 'Bayar Deposit RM 10',
       processing: 'Memproses...',
     },
     timeSlots: [
@@ -1453,7 +1453,7 @@ const zh: SiteContent = {
         {
           number: '01',
           title: '在线预约',
-          description: '通过我们的预约系统预订时间段。支付RM 2押金确认预约。我们将安排技术员前往您的所在地。',
+          description: '通过我们的预约系统预订时间段。支付RM 10押金确认预约。我们将安排技术员前往您的所在地。',
         },
         {
           number: '02',
@@ -1582,7 +1582,7 @@ const zh: SiteContent = {
       {
         question: '你们提供上门检测服务吗？',
         answer:
-          '是的。我们的上门服务覆盖整个巴生谷地区。技术员将前往您的住所或办公室，在现场进行完整的专业诊断评估——免费。如果您决定进行维修，我们收取车辆、在维修店完成所有工作，并将车辆送回您家门口。在线预约，支付RM 2押金即可确认预约。',
+          '是的。我们的上门服务覆盖整个巴生谷地区。技术员将前往您的住所或办公室，在现场进行完整的专业诊断评估——免费。如果您决定进行维修，我们收取车辆、在维修店完成所有工作，并将车辆送回您家门口。在线预约，支付RM 10押金即可确认预约。',
       },
       {
         question: '上门收送车辆是否有额外费用？',
@@ -1650,10 +1650,10 @@ const zh: SiteContent = {
         problem: '问题描述',
       },
       depositNotice: '确认预约需支付押金',
-      depositAmount: 'RM 2',
+      depositAmount: 'RM 10',
       next: '确认预约',
       back: '返回',
-      pay: '支付 RM 2 押金',
+      pay: '支付 RM 10 押金',
       processing: '处理中...',
     },
     timeSlots: [
