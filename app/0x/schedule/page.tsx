@@ -28,7 +28,10 @@ const statusColors: Record<string, string> = {
 }
 
 function formatDate(d: Date): string {
-  return d.toISOString().split('T')[0]
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${y}-${m}-${day}`
 }
 
 function displayDate(d: Date): string {
@@ -125,8 +128,7 @@ export default function SchedulePage() {
     .filter(b => {
       if (!paidStatuses.includes(b.status)) return false
       if (!b.date) return false
-      // Handle Firestore timestamp or date string
-      const bDate = typeof b.date === 'string' ? b.date.split('T')[0] : new Date(b.date).toISOString().split('T')[0]
+      const bDate = formatDate(new Date(b.date))
       return bDate === dateStr
     })
     .sort((a, b) => {
@@ -140,7 +142,7 @@ export default function SchedulePage() {
   const upcomingDates = [...new Set(
     bookings
       .filter(b => paidStatuses.includes(b.status) && b.date)
-      .map(b => typeof b.date === 'string' ? b.date.split('T')[0] : new Date(b.date).toISOString().split('T')[0])
+      .map(b => formatDate(new Date(b.date)))
   )].sort()
 
   const prevDay = () => {
@@ -285,8 +287,7 @@ export default function SchedulePage() {
               const date = new Date(d + 'T00:00:00')
               const count = bookings.filter(b => {
                 if (!paidStatuses.includes(b.status) || !b.date) return false
-                const bd = typeof b.date === 'string' ? b.date.split('T')[0] : new Date(b.date).toISOString().split('T')[0]
-                return bd === d
+                return formatDate(new Date(b.date)) === d
               }).length
               const isSelected = d === dateStr
               return (
