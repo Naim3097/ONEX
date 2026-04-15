@@ -1,0 +1,249 @@
+import { type Locale, getContent, business } from '@/content'
+import { generatePageMetadata } from '@/lib/metadata'
+import Link from 'next/link'
+import FadeIn from '@/components/motion/FadeIn'
+import RevealText from '@/components/motion/RevealText'
+import Text from '@/components/typography/Text'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: l } = await params
+  const locale = l as Locale
+  const titles: Record<string, string> = {
+    en: 'Gearbox Service Package RM 460 | ATF + Filter + FREE OBD2 | One X Transmission',
+    ms: 'Pakej Servis Gearbox RM 460 | ATF + Penapis + PERCUMA OBD2 | One X Transmission',
+    zh: '变速箱保养套餐 RM 460 | ATF + 滤清器 + 免费OBD2 | One X Transmission',
+  }
+  const descriptions: Record<string, string> = {
+    en: 'Limited time gearbox service package — ATF oil replace, auto filter, and FREE OBD2 device for only RM 460. 3-month warranty included. Walk in or WhatsApp to book.',
+    ms: 'Pakej servis gearbox tawaran terhad — tukar minyak ATF, penapis auto, dan PERCUMA peranti OBD2 hanya RM 460. Waranti 3 bulan disertakan. Walk-in atau WhatsApp untuk tempah.',
+    zh: '限时变速箱保养套餐 — ATF换油、自动滤清器及免费OBD2设备仅需RM 460。含3个月保修。到店或WhatsApp预约。',
+  }
+  return generatePageMetadata({
+    locale,
+    page: 'packages',
+    title: titles[locale] ?? titles.en,
+    description: descriptions[locale] ?? descriptions.en,
+  })
+}
+
+export default async function PackagesPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: l } = await params
+  const locale = l as Locale
+  const { promo } = getContent(locale)
+  const { landing } = promo
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="section-dark section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
+            <div className="max-w-3xl">
+              <FadeIn>
+                <Text variant="overline" className="text-brand-red mb-5">
+                  {promo.overline}
+                </Text>
+              </FadeIn>
+
+              <RevealText
+                text={landing.heroHeadline}
+                as="h1"
+                className="text-h1 text-white mb-6 md:mb-8"
+              />
+
+              <FadeIn delay={0.3}>
+                <p className="text-body-lg text-neutral-400 leading-relaxed max-w-2xl mb-10 md:mb-12">
+                  {landing.heroBody}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.5}>
+                <div className="flex flex-col sm:flex-row items-center gap-5">
+                  <Link
+                    href={business.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-primary"
+                  >
+                    {promo.ctaPrimary}
+                  </Link>
+                  <a href={business.phoneTel} className="text-body-sm text-neutral-400 font-medium tracking-wide hover:text-white transition-colors duration-300">
+                    {business.phone}
+                  </a>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Image placeholder */}
+            <FadeIn delay={0.4}>
+              <div className="border border-white/10 bg-white/5 w-full lg:w-[280px] aspect-[4/3]" />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* What's included */}
+      <section className="section-light section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="max-w-2xl mb-14 md:mb-20">
+            <FadeIn>
+              <Text variant="overline" className="text-brand-red mb-5">
+                {landing.includedTitle}
+              </Text>
+            </FadeIn>
+            <RevealText
+              text={landing.includedTitle}
+              as="h2"
+              className="text-h2 text-neutral-950"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200">
+            {landing.included.map((item, i) => (
+              <FadeIn key={item.title} delay={0.1 * i} className="bg-neutral-50 p-8 md:p-10 lg:p-12">
+                <div className="flex flex-col h-full">
+                  <Text variant="overline" className="text-brand-red/80 mb-6">
+                    {String(i + 1).padStart(2, '0')}
+                  </Text>
+                  <h3 className="text-h4 text-neutral-950 mb-4">{item.title}</h3>
+                  <p className="text-body text-neutral-600 leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who should get this + Warranty */}
+      <section className="section-dark section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div>
+              <FadeIn>
+                <Text variant="overline" className="text-brand-red mb-5">
+                  {landing.whoTitle}
+                </Text>
+              </FadeIn>
+              <RevealText
+                text={landing.whoTitle}
+                as="h2"
+                className="text-h2 text-white mb-8"
+              />
+              <FadeIn delay={0.2}>
+                <ul className="space-y-4">
+                  {landing.whoItems.map((item, i) => (
+                    <li key={i} className="text-body text-neutral-300 flex items-baseline gap-3">
+                      <span className="w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 mt-2" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
+            </div>
+
+            <FadeIn direction="right" delay={0.2}>
+              <div className="border border-white/10 bg-white/[0.03] p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <svg className="w-8 h-8 text-brand-red shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                  <h3 className="text-h4 text-white">{landing.warrantyTitle}</h3>
+                </div>
+                <p className="text-body text-neutral-400 leading-relaxed">
+                  {landing.warrantyBody}
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Compatible models */}
+      <section className="section-light section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="max-w-2xl mb-14 md:mb-20">
+            <FadeIn>
+              <Text variant="overline" className="text-brand-red mb-5">
+                {landing.modelsTitle}
+              </Text>
+            </FadeIn>
+            <RevealText
+              text={landing.modelsTitle}
+              as="h2"
+              className="text-h2 text-neutral-950"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-neutral-200">
+            {landing.models.map((model, i) => (
+              <FadeIn key={model} delay={0.05 * i} className="bg-neutral-50 px-6 py-5">
+                <p className="text-body-sm text-neutral-700 flex items-center gap-3">
+                  <span className="w-1 h-1 bg-brand-red rounded-full shrink-0" />
+                  {model}
+                </p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="section-dark section-padding">
+        <div className="max-w-narrow mx-auto px-5 md:px-10 text-center">
+          <FadeIn>
+            <Text variant="overline" className="text-brand-red mb-5">
+              {promo.badge}
+            </Text>
+          </FadeIn>
+
+          <RevealText
+            text={landing.footerCta}
+            as="h2"
+            className="text-h1 text-white mb-6 md:mb-8"
+          />
+
+          <FadeIn delay={0.3}>
+            <p className="text-body-lg text-neutral-400 max-w-lg mx-auto mb-10 leading-relaxed">
+              {landing.footerBody}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.5}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <Link
+                href={business.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-primary"
+              >
+                {promo.ctaPrimary}
+              </Link>
+              <a href={business.phoneTel} className="text-body-sm text-neutral-400 font-medium tracking-wide hover:text-white transition-colors duration-300">
+                {business.phone}
+              </a>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.7}>
+            <div className="mt-14 md:mt-18 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 text-body-sm text-neutral-500">
+              <span>Mon–Fri: {business.hours.weekdays}</span>
+              <span className="hidden md:inline text-neutral-700">|</span>
+              <span>Sat: {business.hours.saturday}</span>
+              <span className="hidden md:inline text-neutral-700">|</span>
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-200"
+              >
+                {business.addressShort}
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
+  )
+}

@@ -284,6 +284,85 @@ interface SiteContent {
       body: string
     }
   }
+  promo: {
+    badge: string
+    overline: string
+    headline: string
+    subheadline: string
+    price: string
+    originalPrice: string
+    ctaPrimary: string
+    ctaSecondary: string
+    // Landing page
+    landing: {
+      heroHeadline: string
+      heroBody: string
+      includedTitle: string
+      included: { title: string; description: string }[]
+      whoTitle: string
+      whoItems: string[]
+      modelsTitle: string
+      models: string[]
+      warrantyTitle: string
+      warrantyBody: string
+      footerCta: string
+      footerBody: string
+    }
+  }
+  shop: {
+    nav: string
+    hero: {
+      overline: string
+      headline: string
+      body: string
+    }
+    categories: {
+      all: string
+      service: string
+      device: string
+    }
+    addToCart: string
+    added: string
+    viewDetails: string
+    items: string
+    includes: string
+    warranty: string
+    cart: {
+      title: string
+      empty: string
+      continueShopping: string
+      remove: string
+      total: string
+      checkout: string
+      quantity: string
+    }
+    checkout: {
+      title: string
+      subtitle: string
+      fields: {
+        name: string
+        phone: string
+        email: string
+        address: string
+        notes: string
+      }
+      orderSummary: string
+      payNow: string
+      processing: string
+    }
+    success: {
+      title: string
+      body: string
+      orderId: string
+      amount: string
+      home: string
+    }
+    cancelled: {
+      title: string
+      body: string
+      retry: string
+    }
+  }
   footer: {
     tagline: string
     copyright: string
@@ -738,6 +817,111 @@ const en: SiteContent = {
       body: 'Please wait while we confirm your transaction.',
     },
   },
+  promo: {
+    badge: 'Limited Time',
+    overline: 'Promo Package',
+    headline: 'Gearbox Service Package',
+    subheadline: 'ATF Oil Replace + Auto Filter + FREE OBD2 Device — everything your transmission needs in one visit.',
+    price: 'RM 460',
+    originalPrice: 'RM 580',
+    ctaPrimary: 'Claim This Offer',
+    ctaSecondary: 'Learn More',
+    landing: {
+      heroHeadline: 'Complete Gearbox\nService Package',
+      heroBody: 'ATF oil replacement, automatic filter change, and a FREE OBD2 diagnostic device — bundled into one affordable visit. Keep your transmission healthy and monitor your vehicle anytime.',
+      includedTitle: "What's Included",
+      included: [
+        {
+          title: 'ATF Oil Replace',
+          description: 'Complete drain and replacement with premium automatic transmission fluid matched to your vehicle specification. Fresh fluid restores smooth shifting and reduces heat buildup.',
+        },
+        {
+          title: 'Auto Filter',
+          description: 'Your gearbox filter catches metal particles and debris that accumulate over time. A new filter ensures clean fluid circulation and protects internal components from wear.',
+        },
+        {
+          title: 'FREE OBD2 Device',
+          description: 'Get a complimentary OBD2 diagnostic device with your service. Monitor your vehicle\'s health, read error codes, and catch potential issues early — right from your phone.',
+        },
+      ],
+      whoTitle: 'Who Should Get This',
+      whoItems: [
+        'Vehicles above 40,000 km that haven\'t had a gearbox service',
+        'Cars experiencing rough or delayed gear shifts',
+        'Owners who want to extend transmission lifespan',
+        'Vehicles with dark or burnt-smelling ATF fluid',
+        'Anyone preparing for a long road trip or vehicle inspection',
+      ],
+      modelsTitle: 'Compatible Models',
+      models: [
+        'Perodua Myvi, Axia, Bezza, Aruz, Alza',
+        'Proton Saga, X50, X70, Iriz, Persona',
+        'Honda City, Civic, Jazz, CR-V, HR-V',
+        'Toyota Vios, Camry, Alphard, RAV4',
+        'Nissan Almera, X-Trail, Serena',
+        'Mazda 2, 3, CX-5, CX-3',
+        'And more — contact us for your specific model',
+      ],
+      warrantyTitle: '3-Month Warranty',
+      warrantyBody: 'Every service package comes with a 3-month / 5,000 km warranty. If anything doesn\'t feel right after your service, bring it back — we\'ll make it right.',
+      footerCta: 'Book Your Service Package',
+      footerBody: 'Limited time pricing. Walk in or WhatsApp us to secure your slot.',
+    },
+  },
+  shop: {
+    nav: 'Shop',
+    hero: {
+      overline: 'Shop',
+      headline: 'Products & Services',
+      body: 'Gearbox service packages and diagnostic tools — order online and we\'ll handle the rest.',
+    },
+    categories: {
+      all: 'All',
+      service: 'Services',
+      device: 'Devices',
+    },
+    addToCart: 'Add to Cart',
+    added: 'Added',
+    viewDetails: 'View Details',
+    items: 'items',
+    includes: 'Includes',
+    warranty: 'Warranty',
+    cart: {
+      title: 'Your Cart',
+      empty: 'Your cart is empty.',
+      continueShopping: 'Continue Shopping',
+      remove: 'Remove',
+      total: 'Total',
+      checkout: 'Proceed to Checkout',
+      quantity: 'Qty',
+    },
+    checkout: {
+      title: 'Checkout',
+      subtitle: 'Fill in your details to complete your order.',
+      fields: {
+        name: 'Full Name',
+        phone: 'Phone Number',
+        email: 'Email Address',
+        address: 'Delivery / Service Address',
+        notes: 'Order Notes (optional)',
+      },
+      orderSummary: 'Order Summary',
+      payNow: 'Pay Now',
+      processing: 'Processing...',
+    },
+    success: {
+      title: 'Order Confirmed',
+      body: 'Your payment has been received. Our team will contact you shortly to arrange your service or delivery.',
+      orderId: 'Order ID',
+      amount: 'Amount Paid',
+      home: 'Back to Home',
+    },
+    cancelled: {
+      title: 'Payment Cancelled',
+      body: 'Your payment was cancelled or failed. Your order has not been confirmed. You can try again anytime.',
+      retry: 'Try Again',
+    },
+  },
   footer: {
     tagline:
       'Specialist CVT and automatic transmission repair and servicing in Shah Alam.',
@@ -758,6 +942,7 @@ const en: SiteContent = {
           { label: 'Gearbox Diagnosis', href: '/capabilities' },
           { label: 'CVT & AT Overhaul', href: '/capabilities' },
           { label: 'Transmission Servicing', href: '/capabilities' },
+          { label: 'Service Package', href: '/packages' },
           { label: 'Door-to-Door Service', href: '/capabilities' },
         ],
       },
@@ -1216,6 +1401,111 @@ const ms: SiteContent = {
       body: 'Sila tunggu sementara kami mengesahkan transaksi anda.',
     },
   },
+  promo: {
+    badge: 'Tawaran Terhad',
+    overline: 'Pakej Promosi',
+    headline: 'Pakej Servis Gearbox',
+    subheadline: 'Tukar Minyak ATF + Penapis Auto + PERCUMA Peranti OBD2 — semua yang transmisi anda perlukan dalam satu lawatan.',
+    price: 'RM 460',
+    originalPrice: 'RM 580',
+    ctaPrimary: 'Dapatkan Tawaran Ini',
+    ctaSecondary: 'Ketahui Lebih Lanjut',
+    landing: {
+      heroHeadline: 'Pakej Servis\nGearbox Lengkap',
+      heroBody: 'Penggantian minyak ATF, penukaran penapis automatik, dan PERCUMA peranti diagnostik OBD2 — digabungkan dalam satu lawatan yang berpatutan. Jaga kesihatan transmisi anda dan pantau kenderaan anda bila-bila masa.',
+      includedTitle: 'Apa Yang Termasuk',
+      included: [
+        {
+          title: 'Tukar Minyak ATF',
+          description: 'Penyaliran dan penggantian lengkap dengan cecair transmisi automatik premium yang sepadan dengan spesifikasi kenderaan anda. Cecair baru memulihkan penukaran gear yang lancar dan mengurangkan pembentukan haba.',
+        },
+        {
+          title: 'Penapis Auto',
+          description: 'Penapis gearbox anda menangkap zarah logam dan serpihan yang terkumpul dari masa ke masa. Penapis baru memastikan peredaran cecair yang bersih dan melindungi komponen dalaman daripada haus.',
+        },
+        {
+          title: 'PERCUMA Peranti OBD2',
+          description: 'Dapatkan peranti diagnostik OBD2 percuma dengan servis anda. Pantau kesihatan kenderaan, baca kod ralat, dan kesan masalah awal — terus dari telefon anda.',
+        },
+      ],
+      whoTitle: 'Siapa Perlu Dapatkan Ini',
+      whoItems: [
+        'Kenderaan melebihi 40,000 km yang belum pernah membuat servis gearbox',
+        'Kereta yang mengalami penukaran gear yang kasar atau lambat',
+        'Pemilik yang ingin memanjangkan jangka hayat transmisi',
+        'Kenderaan dengan cecair ATF yang gelap atau berbau hangit',
+        'Sesiapa yang bersiap untuk perjalanan jauh atau pemeriksaan kenderaan',
+      ],
+      modelsTitle: 'Model Yang Sesuai',
+      models: [
+        'Perodua Myvi, Axia, Bezza, Aruz, Alza',
+        'Proton Saga, X50, X70, Iriz, Persona',
+        'Honda City, Civic, Jazz, CR-V, HR-V',
+        'Toyota Vios, Camry, Alphard, RAV4',
+        'Nissan Almera, X-Trail, Serena',
+        'Mazda 2, 3, CX-5, CX-3',
+        'Dan banyak lagi — hubungi kami untuk model spesifik anda',
+      ],
+      warrantyTitle: 'Waranti 3 Bulan',
+      warrantyBody: 'Setiap pakej servis disertakan waranti 3 bulan / 5,000 km. Jika ada sebarang masalah selepas servis, bawa kembali — kami akan selesaikan.',
+      footerCta: 'Tempah Pakej Servis Anda',
+      footerBody: 'Harga tawaran terhad. Walk-in atau WhatsApp kami untuk menempah slot anda.',
+    },
+  },
+  shop: {
+    nav: 'Kedai',
+    hero: {
+      overline: 'Kedai',
+      headline: 'Produk & Perkhidmatan',
+      body: 'Pakej servis gearbox dan alat diagnostik — tempah dalam talian dan kami uruskan selebihnya.',
+    },
+    categories: {
+      all: 'Semua',
+      service: 'Perkhidmatan',
+      device: 'Peranti',
+    },
+    addToCart: 'Tambah ke Troli',
+    added: 'Ditambah',
+    viewDetails: 'Lihat Butiran',
+    items: 'item',
+    includes: 'Termasuk',
+    warranty: 'Waranti',
+    cart: {
+      title: 'Troli Anda',
+      empty: 'Troli anda kosong.',
+      continueShopping: 'Teruskan Membeli',
+      remove: 'Buang',
+      total: 'Jumlah',
+      checkout: 'Teruskan ke Pembayaran',
+      quantity: 'Kuantiti',
+    },
+    checkout: {
+      title: 'Pembayaran',
+      subtitle: 'Isi butiran anda untuk menyelesaikan pesanan.',
+      fields: {
+        name: 'Nama Penuh',
+        phone: 'Nombor Telefon',
+        email: 'Alamat Emel',
+        address: 'Alamat Penghantaran / Servis',
+        notes: 'Nota Pesanan (pilihan)',
+      },
+      orderSummary: 'Ringkasan Pesanan',
+      payNow: 'Bayar Sekarang',
+      processing: 'Memproses...',
+    },
+    success: {
+      title: 'Pesanan Disahkan',
+      body: 'Pembayaran anda telah diterima. Pasukan kami akan menghubungi anda untuk mengatur servis atau penghantaran.',
+      orderId: 'ID Pesanan',
+      amount: 'Jumlah Dibayar',
+      home: 'Kembali ke Utama',
+    },
+    cancelled: {
+      title: 'Pembayaran Dibatalkan',
+      body: 'Pembayaran anda dibatalkan atau gagal. Pesanan anda belum disahkan. Anda boleh cuba semula bila-bila masa.',
+      retry: 'Cuba Semula',
+    },
+  },
   footer: {
     tagline: 'Pakar pembaikan dan servis gearbox CVT dan automatik di Shah Alam.',
     copyright: `\u00A9 ${new Date().getFullYear()} One X Transmission. Semua hak terpelihara.`,
@@ -1235,6 +1525,7 @@ const ms: SiteContent = {
           { label: 'Diagnosis Gearbox', href: '/capabilities' },
           { label: 'Baik Pulih CVT & AT', href: '/capabilities' },
           { label: 'Servis Transmisi', href: '/capabilities' },
+          { label: 'Pakej Servis', href: '/packages' },
           { label: 'Servis Pintu ke Pintu', href: '/capabilities' },
         ],
       },
@@ -1688,6 +1979,111 @@ const zh: SiteContent = {
       body: '请稍候，正在确认您的交易。',
     },
   },
+  promo: {
+    badge: '限时优惠',
+    overline: '促销套餐',
+    headline: '变速箱保养套餐',
+    subheadline: 'ATF换油 + 自动滤清器 + 免费OBD2设备 — 一次到位，满足变速箱所有需求。',
+    price: 'RM 460',
+    originalPrice: 'RM 580',
+    ctaPrimary: '立即预约',
+    ctaSecondary: '了解更多',
+    landing: {
+      heroHeadline: '完整变速箱\n保养套餐',
+      heroBody: 'ATF变速箱油更换、自动滤清器更换及免费OBD2诊断设备 — 一次经济实惠的到店服务。保持变速箱健康运转，随时监测车辆状态。',
+      includedTitle: '套餐包含',
+      included: [
+        {
+          title: 'ATF变速箱油更换',
+          description: '完全排放并更换匹配您车辆规格的优质自动变速箱油。新鲜的变速箱油能恢复顺畅换挡并减少热量积聚。',
+        },
+        {
+          title: '自动滤清器',
+          description: '变速箱滤清器会随时间积累金属颗粒和碎屑。新滤清器确保油液清洁循环，保护内部零件免受磨损。',
+        },
+        {
+          title: '免费OBD2设备',
+          description: '保养即送OBD2诊断设备。随时监测车辆健康状态、读取故障码、及早发现潜在问题 — 直接通过手机操作。',
+        },
+      ],
+      whoTitle: '适用对象',
+      whoItems: [
+        '行驶超过40,000公里且未做过变速箱保养的车辆',
+        '换挡粗糙或延迟的汽车',
+        '希望延长变速箱使用寿命的车主',
+        'ATF油液变黑或有烧焦味的车辆',
+        '准备长途旅行或车辆检查的车主',
+      ],
+      modelsTitle: '适用车型',
+      models: [
+        'Perodua Myvi, Axia, Bezza, Aruz, Alza',
+        'Proton Saga, X50, X70, Iriz, Persona',
+        'Honda City, Civic, Jazz, CR-V, HR-V',
+        'Toyota Vios, Camry, Alphard, RAV4',
+        'Nissan Almera, X-Trail, Serena',
+        'Mazda 2, 3, CX-5, CX-3',
+        '更多车型 — 请联系我们确认您的具体型号',
+      ],
+      warrantyTitle: '3个月保修',
+      warrantyBody: '每个保养套餐均附赠3个月/5,000公里保修。如果保养后有任何不适，请带回来 — 我们会妥善处理。',
+      footerCta: '预约保养套餐',
+      footerBody: '限时优惠价格。到店或WhatsApp我们预约。',
+    },
+  },
+  shop: {
+    nav: '商店',
+    hero: {
+      overline: '商店',
+      headline: '产品与服务',
+      body: '变速箱保养套餐和诊断工具 — 在线下单，我们为您安排一切。',
+    },
+    categories: {
+      all: '全部',
+      service: '服务',
+      device: '设备',
+    },
+    addToCart: '加入购物车',
+    added: '已添加',
+    viewDetails: '查看详情',
+    items: '件商品',
+    includes: '包含',
+    warranty: '保修',
+    cart: {
+      title: '购物车',
+      empty: '购物车为空。',
+      continueShopping: '继续购物',
+      remove: '移除',
+      total: '合计',
+      checkout: '去结算',
+      quantity: '数量',
+    },
+    checkout: {
+      title: '结算',
+      subtitle: '填写您的信息以完成订单。',
+      fields: {
+        name: '姓名',
+        phone: '电话号码',
+        email: '电子邮箱',
+        address: '送货/服务地址',
+        notes: '订单备注（选填）',
+      },
+      orderSummary: '订单摘要',
+      payNow: '立即支付',
+      processing: '处理中...',
+    },
+    success: {
+      title: '订单已确认',
+      body: '您的付款已收到。我们的团队将尽快联系您安排服务或配送。',
+      orderId: '订单编号',
+      amount: '支付金额',
+      home: '返回首页',
+    },
+    cancelled: {
+      title: '付款已取消',
+      body: '您的付款已取消或失败。订单尚未确认。您可以随时重试。',
+      retry: '重试',
+    },
+  },
   footer: {
     tagline: '莎阿南专业CVT和自动变速箱维修与保养服务。',
     copyright: `\u00A9 ${new Date().getFullYear()} One X Transmission. 版权所有。`,
@@ -1707,6 +2103,7 @@ const zh: SiteContent = {
           { label: '变速箱诊断', href: '/capabilities' },
           { label: 'CVT & AT大修', href: '/capabilities' },
           { label: '变速箱保养', href: '/capabilities' },
+          { label: '保养套餐', href: '/packages' },
           { label: '上门检测服务', href: '/capabilities' },
         ],
       },

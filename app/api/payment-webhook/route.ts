@@ -52,59 +52,69 @@ export async function POST(request: NextRequest) {
     }
 
     const db = getAdminDb()
-    let bookingRef
-    let bookingDoc
+    let docRef: FirebaseFirestore.DocumentReference | undefined
+    let docSnap: FirebaseFirestore.DocumentSnapshot | undefined
 
-    // Strategy 1: Try as our invoice_ref format (BOOKING-{docId})
-    if (payload.invoice_no.startsWith('BOOKING-')) {
-      const bookingId = payload.invoice_no.replace('BOOKING-', '')
-      bookingRef = db.collection('bookings').doc(bookingId)
-      bookingDoc = await bookingRef.get()
+    // Determine collection based on invoice prefix
+    const isOrder = payload.invoice_no.startsWith('ORDER-')
+    const collectionName = isOrder ? 'orders' : 'bookings'
+
+    // Strategy 1: Try as our invoice_ref format (BOOKING-{docId} or ORDER-{docId})
+    if (payload.invoice_no.startsWith('BOOKING-') || payload.invoice_no.startsWith('ORDER-')) {
+      const docId = payload.invoice_no.replace(/^(BOOKING|ORDER)-/, '')
+      docRef = db.collection(collectionName).doc(docId)
+      docSnap = await docRef.get()
     }
 
-    // Strategy 2: Try matching Lean.x billNo stored in Firestore
-    if (!bookingDoc || !bookingDoc.exists) {
+    // Strategy 2: Try matching Lean.x billNo stored in Firestore (both collections)
+    if (!docSnap || !docSnap.exists) {
       console.log('Trying leanxBillNo lookup for:', payload.invoice_no)
-      const snapshot = await db.collection('bookings')
-        .where('leanxBillNo', '==', payload.invoice_no)
-        .limit(1)
-        .get()
-      if (!snapshot.empty) {
-        bookingRef = snapshot.docs[0].ref
-        bookingDoc = snapshot.docs[0]
+      for (const col of ['bookings', 'orders']) {
+        const snapshot = await db.collection(col)
+          .where('leanxBillNo', '==', payload.invoice_no)
+          .limit(1)
+          .get()
+        if (!snapshot.empty) {
+          docRef = snapshot.docs[0].ref
+          docSnap = snapshot.docs[0]
+          break
+        }
       }
     }
 
-    // Strategy 3: Try matching by leanxInvoiceRef
-    if (!bookingDoc || !bookingDoc.exists) {
+    // Strategy 3: Try matching by leanxInvoiceRef (both collections)
+    if (!docSnap || !docSnap.exists) {
       console.log('Trying leanxInvoiceRef lookup for:', payload.invoice_no)
-      const snapshot = await db.collection('bookings')
-        .where('leanxInvoiceRef', '==', payload.invoice_no)
-        .limit(1)
-        .get()
-      if (!snapshot.empty) {
-        bookingRef = snapshot.docs[0].ref
-        bookingDoc = snapshot.docs[0]
+      for (const col of ['bookings', 'orders']) {
+        const snapshot = await db.collection(col)
+          .where('leanxInvoiceRef', '==', payload.invoice_no)
+          .limit(1)
+          .get()
+        if (!snapshot.empty) {
+          docRef = snapshot.docs[0].ref
+          docSnap = snapshot.docs[0]
+          break
+        }
       }
     }
 
-    if (!bookingDoc || !bookingDoc.exists || !bookingRef) {
-      console.error('Booking not found for invoice_no:', payload.invoice_no)
-      return NextResponse.json({ error: 'Booking not found' }, { status: 404 })
+    if (!docSnap || !docSnap.exists || !docRef) {
+      console.error('Document not found for invoice_no:', payload.invoice_no)
+      return NextResponse.json({ error: 'Document not found' }, { status: 404 })
     }
 
-    let bookingStatus = 'pending'
+    let docStatus = 'pending'
     if (payload.invoice_status === 'SUCCESS') {
-      bookingStatus = 'confirmed'
+      docStatus = 'confirmed'
     } else if (
       payload.invoice_status === 'FAILED' ||
       payload.invoice_status === 'CANCELLED'
     ) {
-      bookingStatus = 'cancelled'
+      docStatus = 'cancelled'
     }
 
-    await bookingRef.update({
-      status: bookingStatus,
+    await docRef.update({
+      status: docStatus,
       paymentStatus: payload.invoice_status,
       paymentInvoiceNo: payload.invoice_no,
       paymentAmount: parseFloat(payload.amount),
@@ -117,8 +127,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Webhook processed successfully',
-      bookingId: bookingRef.id,
-      status: bookingStatus,
+      docId: docRef.id,
+      status: docStatus,
     })
   } catch (error) {
     console.error('Webhook processing error:', error)

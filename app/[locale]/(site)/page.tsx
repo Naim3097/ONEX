@@ -5,6 +5,7 @@ import Philosophy from '@/components/sections/Home/Philosophy'
 import ServicesOverview from '@/components/sections/Home/ServicesOverview'
 import ProcessPreview from '@/components/sections/Home/ProcessPreview'
 import Stats from '@/components/sections/Home/Stats'
+import PromoTeaser from '@/components/sections/Home/PromoTeaser'
 import Testimonials from '@/components/sections/Home/Testimonials'
 import GalleryPreview from '@/components/sections/Home/GalleryPreview'
 import ContactCTA from '@/components/sections/Home/ContactCTA'
@@ -41,6 +42,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ServicesOverview locale={locale} />
       <ProcessPreview locale={locale} />
       <Stats locale={locale} />
+      <PromoTeaser locale={locale} />
       <Testimonials />
       <GalleryPreview locale={locale} />
       <ContactCTA locale={locale} />

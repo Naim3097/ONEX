@@ -1,0 +1,83 @@
+'use client'
+
+import Link from 'next/link'
+import { type Locale, getContent, business } from '@/content'
+import FadeIn from '@/components/motion/FadeIn'
+import RevealText from '@/components/motion/RevealText'
+import Text from '@/components/typography/Text'
+
+interface PromoTeaserProps {
+  locale: Locale
+}
+
+export default function PromoTeaser({ locale }: PromoTeaserProps) {
+  const { promo } = getContent(locale)
+
+  return (
+    <section className="section-dark section-padding">
+      <div className="max-w-wide mx-auto px-5 md:px-10">
+        {/* Header */}
+        <div className="max-w-2xl mb-14 md:mb-20">
+          <FadeIn>
+            <Text variant="overline" className="text-brand-red mb-5">
+              {promo.overline}
+            </Text>
+          </FadeIn>
+          <RevealText
+            text={promo.headline}
+            as="h2"
+            className="text-h2 text-white mb-5"
+          />
+          <FadeIn delay={0.2}>
+            <p className="text-body-lg text-neutral-400 leading-relaxed max-w-lg">
+              {promo.subheadline}
+            </p>
+          </FadeIn>
+        </div>
+
+        {/* Package card */}
+        <FadeIn delay={0.3}>
+          <div className="border border-white/10 bg-white/[0.03]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch">
+              {/* Left — included items */}
+              <div className="p-8 md:p-10 lg:p-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                  {promo.landing.included.map((item, i) => (
+                    <div key={item.title}>
+                      <Text variant="overline" className="text-brand-red/80 mb-3">
+                        {String(i + 1).padStart(2, '0')}
+                      </Text>
+                      <h3 className="text-h4 text-white mb-2">{item.title}</h3>
+                      <p className="text-body-sm text-neutral-500 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                  <Link
+                    href={business.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-primary"
+                  >
+                    {promo.ctaPrimary}
+                  </Link>
+                  <Link href={`/${locale}/packages`} className="cta-ghost">
+                    {promo.ctaSecondary}
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right — image placeholder */}
+              <div className="border-t lg:border-t-0 lg:border-l border-white/10 flex items-center justify-center px-10 py-8 lg:px-14 lg:py-12 min-h-[200px] lg:min-w-[280px]">
+                <div className="w-full h-full min-h-[160px] bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  )
+}
