@@ -87,12 +87,12 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
 
             {/* Floating promo image */}
             <FadeIn delay={0.4}>
-              <div className="relative w-full lg:w-[360px]">
+              <div className="relative w-full lg:w-[480px] lg:animate-float">
                 <Image
                   src="/images/asset promotion/promo.png"
                   alt="Pakej Servis Gearbox"
-                  width={360}
-                  height={480}
+                  width={480}
+                  height={640}
                   className="w-full h-auto object-contain drop-shadow-2xl"
                   priority
                 />
