@@ -11,6 +11,7 @@ import {
   getProductBadge,
 } from '@/lib/products'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
 import Text from '@/components/typography/Text'
@@ -58,9 +59,22 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       <section className="section-dark pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-wide mx-auto px-5 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-            {/* Image placeholder */}
+            {/* Product image */}
             <FadeIn>
-              <div className="aspect-square bg-neutral-800 w-full" />
+              {product.image ? (
+                <div className="aspect-square bg-neutral-800 w-full overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={name}
+                    width={800}
+                    height={800}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+              ) : (
+                <div className="aspect-square bg-neutral-800 w-full" />
+              )}
             </FadeIn>
 
             {/* Product info */}

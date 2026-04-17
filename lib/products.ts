@@ -4,6 +4,7 @@
 
 export interface Product {
   slug: string
+  image?: string
   name: Record<string, string>
   description: Record<string, string>
   shortDescription: Record<string, string>
@@ -19,6 +20,7 @@ export interface Product {
 export const products: Product[] = [
   {
     slug: 'atf-gearbox-service-package',
+    image: '/images/asset promotion/kedai promotion pakej.png',
     name: {
       en: 'ATF Gearbox Service Package',
       ms: 'Pakej Servis Gearbox ATF',
@@ -56,6 +58,7 @@ export const products: Product[] = [
   },
   {
     slug: 'obd2-diagnostic-device',
+    image: '/images/asset promotion/obd2.png',
     name: {
       en: 'OBD2 Diagnostic Device',
       ms: 'Peranti Diagnostik OBD2',

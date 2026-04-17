@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { type Product, getProductName, getProductShortDescription, getProductBadge, getProductIncludes } from '@/lib/products'
 import { getContent, type Locale } from '@/content'
@@ -33,7 +34,17 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
       {/* Image area */}
       <Link href={`/${locale}/shop/${product.slug}`} className="relative block">
         <div className="aspect-[4/3] bg-neutral-800 overflow-hidden">
-          <div className="w-full h-full bg-neutral-800 group-hover:scale-[1.02] transition-transform duration-500" />
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={name}
+              width={600}
+              height={450}
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            />
+          ) : (
+            <div className="w-full h-full bg-neutral-800 group-hover:scale-[1.02] transition-transform duration-500" />
+          )}
         </div>
         {/* Badge */}
         {badge && (
