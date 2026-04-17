@@ -20,7 +20,7 @@ export interface Product {
 export const products: Product[] = [
   {
     slug: 'atf-gearbox-service-package',
-    image: '/images/asset promotion/kedai promotion pakej.png',
+    image: '/images/asset promotion/kedai promotion pakej amended.png',
     name: {
       en: 'ATF Gearbox Service Package',
       ms: 'Pakej Servis Gearbox ATF',
