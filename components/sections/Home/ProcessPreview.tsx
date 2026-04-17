@@ -33,7 +33,7 @@ export default function ProcessPreview({ locale }: ProcessPreviewProps) {
             <FadeIn key={step.number} delay={0.1 * i}>
               <div className="relative">
                 {/* Step number */}
-                <span className="block text-display text-neutral-100 font-bold mb-4 select-none">
+                <span className="block text-display text-brand-red font-bold mb-4 select-none">
                   {step.number}
                 </span>
                 <h3 className="text-h4 text-neutral-950 mb-3">{step.title}</h3>
@@ -50,7 +50,7 @@ export default function ProcessPreview({ locale }: ProcessPreviewProps) {
         </div>
 
         <FadeIn delay={0.5} className="mt-12 md:mt-16 text-center">
-          <Link href={`/${locale}/process`} className="cta-secondary">
+          <Link href={`/${locale}/process`} className="inline-block px-8 py-3 bg-brand-red text-white font-medium tracking-wide uppercase text-sm transition-colors duration-300 hover:bg-neutral-950 hover:text-brand-red">
             See Full Process
           </Link>
         </FadeIn>
