@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { type Locale, getContent, business } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
@@ -70,9 +71,15 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
                 </div>
               </div>
 
-              {/* Right — image placeholder */}
-              <div className="border-t lg:border-t-0 lg:border-l border-white/10 flex items-center justify-center px-10 py-8 lg:px-14 lg:py-12 min-h-[200px] lg:min-w-[280px]">
-                <div className="w-full h-full min-h-[160px] bg-white/5" />
+              {/* Right — promo image */}
+              <div className="border-t lg:border-t-0 lg:border-l border-white/10 flex items-center justify-center min-h-[200px] lg:min-w-[280px] overflow-hidden">
+                <Image
+                  src="/images/asset promotion/PROMO 1 B.jpg"
+                  alt="Pakej Servis Gearbox"
+                  width={400}
+                  height={500}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
