@@ -1,5 +1,6 @@
 import { type Locale, getContent, business } from '@/content'
 import { generatePageMetadata } from '@/lib/metadata'
+import Image from 'next/image'
 import Link from 'next/link'
 import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
@@ -35,9 +36,19 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
   return (
     <>
       {/* Hero */}
-      <section className="section-dark section-padding">
-        <div className="max-w-wide mx-auto px-5 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start">
+      <section className="relative section-padding overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/asset promotion/red bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 max-w-wide mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center">
             <div className="max-w-3xl">
               <FadeIn>
                 <Text variant="overline" className="text-brand-red mb-5">
@@ -52,7 +63,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
               />
 
               <FadeIn delay={0.3}>
-                <p className="text-body-lg text-neutral-400 leading-relaxed max-w-2xl mb-10 md:mb-12">
+                <p className="text-body-lg text-neutral-300 leading-relaxed max-w-2xl mb-10 md:mb-12">
                   {landing.heroBody}
                 </p>
               </FadeIn>
@@ -67,16 +78,25 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
                   >
                     {promo.ctaPrimary}
                   </Link>
-                  <a href={business.phoneTel} className="text-body-sm text-neutral-400 font-medium tracking-wide hover:text-white transition-colors duration-300">
+                  <a href={business.phoneTel} className="text-body-sm text-neutral-300 font-medium tracking-wide hover:text-white transition-colors duration-300">
                     {business.phone}
                   </a>
                 </div>
               </FadeIn>
             </div>
 
-            {/* Image placeholder */}
+            {/* Floating promo image */}
             <FadeIn delay={0.4}>
-              <div className="border border-white/10 bg-white/5 w-full lg:w-[280px] aspect-[4/3]" />
+              <div className="relative w-full lg:w-[360px]">
+                <Image
+                  src="/images/asset promotion/promo.png"
+                  alt="Pakej Servis Gearbox"
+                  width={360}
+                  height={480}
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
             </FadeIn>
           </div>
         </div>
