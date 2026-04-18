@@ -1,6 +1,7 @@
 ---
 title: "Pakej Servis Gearbox ATF RM 439 — Apa Yang Termasuk & Kenapa Berbaloi"
 slug: "pakej-servis-gearbox-atf-rm439"
+locale: "ms"
 date: "2026-04-18"
 excerpt: "Pakej servis gearbox all-in-one dari One X Transmission — tukar minyak ATF, penapis auto, dan PERCUMA peranti OBD2. Hanya RM 439. Ini semua yang anda dapat."
 category: "Pakej Servis"

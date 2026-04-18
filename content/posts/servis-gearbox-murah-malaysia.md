@@ -1,6 +1,7 @@
 ---
 title: "Servis Gearbox Murah Malaysia — Harga Sebenar vs Kos Tersembunyi"
 slug: "servis-gearbox-murah-malaysia"
+locale: "ms"
 date: "2026-04-16"
 excerpt: "Ramai cari servis gearbox murah, tapi murah yang salah boleh jadi lebih mahal. Ini panduan harga sebenar servis gearbox di Malaysia dan cara elak bengkel yang tipu."
 category: "Panduan Harga"

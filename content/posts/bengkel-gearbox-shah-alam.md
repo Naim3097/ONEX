@@ -1,6 +1,7 @@
 ---
 title: "Bengkel Gearbox Terbaik Shah Alam — Pakar CVT & Transmisi Automatik"
 slug: "bengkel-gearbox-shah-alam"
+locale: "ms"
 date: "2026-04-17"
 excerpt: "Cari bengkel gearbox yang boleh dipercayai di Shah Alam? One X Transmission pakar dalam servis CVT, overhaul gearbox automatik, dan diagnosis transmisi. Ini sebab kami pilihan utama."
 category: "Panduan Bengkel"
