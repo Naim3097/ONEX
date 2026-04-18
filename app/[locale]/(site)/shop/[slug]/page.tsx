@@ -92,20 +92,29 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
               {!product.comingSoon && (
                 <FadeIn delay={0.15}>
-                  <div className="flex items-baseline gap-3 mb-6">
+                  <div className="mb-6">
                     {product.depositAmount ? (
                       <>
-                        <span className="text-xs font-bold uppercase tracking-wider text-brand-red mr-1">DEPOSIT TEMPAHAN</span>
-                        <span className="text-h3 text-white font-bold">RM {product.depositAmount}</span>
-                        <span className="text-h3 text-neutral-500 font-bold">RM {product.price}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red block mb-2">DEPOSIT TEMPAHAN</span>
+                        <div className="flex items-baseline gap-3 flex-wrap">
+                          <span className="text-h4 sm:text-h3 text-white font-bold">RM {product.depositAmount}</span>
+                          <span className="text-h4 sm:text-h3 text-neutral-500 font-bold">RM {product.price}</span>
+                          {product.originalPrice && (
+                            <span className="text-body-sm text-neutral-600 line-through">
+                              RM {product.originalPrice}
+                            </span>
+                          )}
+                        </div>
                       </>
                     ) : (
-                      <span className="text-h3 text-white font-bold">RM {product.price}</span>
-                    )}
-                    {product.originalPrice && (
-                      <span className="text-body text-neutral-600 line-through">
-                        RM {product.originalPrice}
-                      </span>
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <span className="text-h4 sm:text-h3 text-white font-bold">RM {product.price}</span>
+                        {product.originalPrice && (
+                          <span className="text-body text-neutral-600 line-through">
+                            RM {product.originalPrice}
+                          </span>
+                        )}
+                      </div>
                     )}
                   </div>
                 </FadeIn>
