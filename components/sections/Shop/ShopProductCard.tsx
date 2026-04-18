@@ -104,13 +104,9 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
                 <>
                   {hasDeposit ? (
                     <>
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-h5 text-white font-bold">RM {product.depositAmount}</span>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red">{shop.depositLabel}</span>
-                      </div>
-                      <span className="block text-body-sm text-neutral-400 mt-1">
-                        Full price: RM {product.price}
-                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red mb-1 block">{shop.depositLabel}</span>
+                      <span className="text-h5 text-white font-bold">RM {product.depositAmount}</span>
+                      <span className="text-h5 text-neutral-400 font-bold ml-3">RM {product.price}</span>
                     </>
                   ) : (
                     <>
