@@ -102,7 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
         {/* End Google Tag Manager */}
 
-        {/* META Pixel */}
+        {/* Meta Pixel Code */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -120,7 +120,7 @@ fbq('track', 'PageView');`}
             src="https://www.facebook.com/tr?id=1511178086105995&ev=PageView&noscript=1"
           />
         </noscript>
-        {/* End META Pixel */}
+        {/* End Meta Pixel Code */}
       </head>
       <body className="font-satoshi">
         {/* Google Tag Manager (noscript) */}

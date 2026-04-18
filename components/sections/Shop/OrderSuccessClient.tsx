@@ -51,8 +51,10 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
           // Fire META Pixel Purchase event
           if (typeof window !== 'undefined' && (window as any).fbq) {
             (window as any).fbq('track', 'Purchase', {
-              value: data.paymentAmount || 50.00,
+              value: data.amount || 50.00,
               currency: 'MYR',
+              content_type: 'product',
+              content_name: 'ATF Service Deposit',
             })
           }
         } else if (data.status === 'cancelled') {

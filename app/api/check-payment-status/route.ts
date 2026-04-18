@@ -57,6 +57,7 @@ export async function GET(request: NextRequest) {
         success: true,
         status: booking.status,
         paymentStatus: booking.paymentStatus || 'SUCCESS',
+        amount: booking.totalAmount || booking.amount || null,
       })
     }
 
