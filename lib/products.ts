@@ -57,7 +57,7 @@ export const products: Product[] = [
       zh: '3个月/5,000公里保修',
     },
     inStock: true,
-    depositAmount: 50,
+    depositAmount: 1,
   },
   {
     slug: 'obd2-diagnostic-device',
