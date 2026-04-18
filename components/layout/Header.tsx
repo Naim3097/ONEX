@@ -109,14 +109,14 @@ export default function Header({ locale }: HeaderProps) {
           </Link>
 
           {/* Right — Shop + Cart + CTA + Burger */}
-          <div className="flex items-center gap-1 sm:gap-3 relative z-[60]">
+          <div className="flex items-center gap-0.5 sm:gap-2 relative z-[60]">
             {/* Shop icon */}
             <Link
               href={`/${locale}/shop`}
-              className={`relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-neutral-300 hover:text-white transition-all duration-200 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              className={`relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-neutral-300 hover:text-white transition-all duration-200 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
               aria-label="Shop"
             >
-              <svg className="w-[18px] h-[18px] sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
               </svg>
             </Link>
@@ -124,14 +124,14 @@ export default function Header({ locale }: HeaderProps) {
             {/* Cart icon */}
             <Link
               href={`/${locale}/shop/cart`}
-              className={`relative w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-neutral-300 hover:text-white transition-all duration-200 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              className={`relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-neutral-300 hover:text-white transition-all duration-200 ${menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
               aria-label="Cart"
             >
-              <svg className="w-[18px] h-[18px] sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute top-0 right-0 sm:-top-0.5 sm:-right-0.5 bg-brand-red text-white text-[8px] sm:text-[9px] font-bold w-3.5 h-3.5 sm:w-4 sm:h-4 flex items-center justify-center leading-none rounded-full">
+                <span className="absolute top-0 right-0 bg-brand-red text-white text-[8px] sm:text-[9px] font-bold min-w-3.5 h-3.5 sm:min-w-4 sm:h-4 flex items-center justify-center leading-none rounded-full px-0.5">
                   {totalItems}
                 </span>
               )}
@@ -149,7 +149,7 @@ export default function Header({ locale }: HeaderProps) {
 
             {/* Burger */}
             <button
-              className="w-9 h-9 sm:w-10 sm:h-10 flex flex-col items-center justify-center gap-1.5"
+              className="w-8 h-8 sm:w-10 sm:h-10 flex flex-col items-center justify-center gap-1.5"
               onMouseEnter={openMenu}
               onMouseLeave={scheduleClose}
               onClick={() => setMenuOpen(!menuOpen)}
