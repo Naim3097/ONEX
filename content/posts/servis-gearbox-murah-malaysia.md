@@ -6,7 +6,7 @@ excerpt: "Ramai cari servis gearbox murah, tapi murah yang salah boleh jadi lebi
 category: "Panduan Harga"
 tags: ["Servis Gearbox Murah", "Harga Servis Gearbox", "Tukar Minyak Gearbox Harga", "Malaysia", "Bengkel Gearbox Murah", "Kos Servis Transmisi"]
 readTime: "5 min"
-coverImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1920&auto=format&fit=crop"
+coverImage: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1920&auto=format&fit=crop"
 ---
 
 "Servis gearbox murah" — ini antara carian paling popular di Google Malaysia oleh pemilik kereta. Tapi hati-hati: murah yang salah boleh menyebabkan kerosakan lebih teruk dan bil yang jauh lebih tinggi.

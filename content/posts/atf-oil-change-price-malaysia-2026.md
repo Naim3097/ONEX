@@ -6,7 +6,7 @@ excerpt: "How much should an ATF oil change cost in Malaysia in 2026? We break d
 category: "Pricing Guide"
 tags: ["ATF Oil Change", "ATF Oil Price", "Gearbox Service Cost", "Malaysia", "2026", "Transmission Fluid Change Price"]
 readTime: "5 min read"
-coverImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1920&auto=format&fit=crop"
+coverImage: "https://images.unsplash.com/photo-1657394404780-1f10392924e9?q=80&w=1920&auto=format&fit=crop"
 ---
 
 One of the most common questions Malaysian car owners ask before a gearbox service: **how much will it cost?**
