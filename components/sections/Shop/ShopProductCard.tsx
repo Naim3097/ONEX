@@ -102,18 +102,27 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
             <div>
               {!isComingSoon && (
                 <>
-                  <span className="text-h5 text-white font-bold">RM {product.price}</span>
-                  {product.originalPrice && (
-                    <span className="text-body-sm text-neutral-600 line-through ml-2">
-                      RM {product.originalPrice}
-                    </span>
+                  {hasDeposit ? (
+                    <>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-h5 text-white font-bold">RM {product.depositAmount}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red">{shop.depositLabel}</span>
+                      </div>
+                      <span className="block text-body-sm text-neutral-400 mt-1">
+                        Full price: RM {product.price}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-h5 text-white font-bold">RM {product.price}</span>
+                      {product.originalPrice && (
+                        <span className="text-body-sm text-neutral-600 line-through ml-2">
+                          RM {product.originalPrice}
+                        </span>
+                      )}
+                    </>
                   )}
                 </>
-              )}
-              {hasDeposit && !isComingSoon && (
-                <span className="block text-[10px] text-neutral-500 mt-1">
-                  {shop.depositLabel}: RM {product.depositAmount}
-                </span>
               )}
             </div>
             {isComingSoon ? (
