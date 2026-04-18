@@ -261,19 +261,22 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                     />
                   </div>
                 </FadeIn>
-                <FadeIn delay={0.15}>
-                  <div>
-                    <label htmlFor="checkout-address" className="sr-only">{shop.checkout.fields.address}</label>
-                    <input
-                      type="text"
-                      id="checkout-address"
-                      placeholder={shop.checkout.fields.address}
-                      value={form.address}
-                      onChange={(e) => updateField('address', e.target.value)}
-                      className={inputClasses}
-                    />
-                  </div>
-                </FadeIn>
+                {/* Address — hide for service orders (customer comes to workshop) */}
+                {!hasServiceItems && (
+                  <FadeIn delay={0.15}>
+                    <div>
+                      <label htmlFor="checkout-address" className="sr-only">{shop.checkout.fields.address}</label>
+                      <input
+                        type="text"
+                        id="checkout-address"
+                        placeholder={shop.checkout.fields.address}
+                        value={form.address}
+                        onChange={(e) => updateField('address', e.target.value)}
+                        className={inputClasses}
+                      />
+                    </div>
+                  </FadeIn>
+                )}
 
                 {/* Service-specific fields: vehicle, date, time slot */}
                 {hasServiceItems && (

@@ -125,20 +125,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                 </FadeIn>
               )}
 
-              {/* Warranty */}
-              {warranty && (
-                <FadeIn delay={0.3}>
-                  <div className="mb-8 p-4 bg-neutral-900 border border-neutral-800">
-                    <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">
-                      {shop.warranty}
-                    </span>
-                    <p className="text-body-sm text-neutral-300 mt-1">{warranty}</p>
-                  </div>
-                </FadeIn>
-              )}
-
               {/* Add to cart */}
-              <FadeIn delay={0.35}>
+              <FadeIn delay={0.3}>
                 <ProductActions product={product} locale={locale} />
               </FadeIn>
             </div>

@@ -233,6 +233,22 @@ export default function AdminPage() {
     }
   }
 
+  const verifyOrderPayment = async (orderId: string) => {
+    setVerifying(true)
+    try {
+      const res = await fetch(`/api/check-payment-status?orderId=${orderId}`)
+      const data = await res.json()
+      if (data.success && data.status) {
+        setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: data.status, paymentStatus: data.paymentStatus || o.paymentStatus } : o))
+        setSelectedOrder(prev => prev ? { ...prev, status: data.status, paymentStatus: data.paymentStatus || prev.paymentStatus } : null)
+      }
+    } catch {
+      // silently fail
+    } finally {
+      setVerifying(false)
+    }
+  }
+
   const confirmedCount = bookings.filter(b => b.status === 'confirmed').length
 
   const bookingStats = {
@@ -522,7 +538,6 @@ export default function AdminPage() {
                 { label: 'Phone', value: selectedOrder.customerPhone },
                 { label: 'Email', value: selectedOrder.customerEmail },
                 { label: 'Vehicle', value: selectedOrder.vehicleModel || '-' },
-                { label: 'Address', value: selectedOrder.customerAddress || '-' },
                 { label: 'Service Date', value: selectedOrder.preferredDate || '-' },
                 { label: 'Time Slot', value: selectedOrder.timeSlot || '-' },
                 { label: 'Status', value: selectedOrder.status.replace('_', ' ').toUpperCase() },
@@ -554,6 +569,17 @@ export default function AdminPage() {
                   ))}
                 </div>
               )}
+
+              {/* Verify Payment with Lean.x */}
+              <div className="pt-4 border-t border-neutral-800">
+                <button
+                  onClick={() => verifyOrderPayment(selectedOrder.id)}
+                  disabled={verifying || selectedOrder.status === 'confirmed' || selectedOrder.status === 'completed'}
+                  className="w-full px-4 py-2.5 text-xs font-medium border border-emerald-800/50 bg-emerald-950/30 text-emerald-400 hover:bg-emerald-900/40 hover:border-emerald-700 transition-colors disabled:opacity-40 disabled:cursor-default"
+                >
+                  {verifying ? 'Checking Lean.x...' : selectedOrder.status === 'confirmed' || selectedOrder.status === 'completed' ? 'Payment Verified ✓' : 'Verify Payment with Lean.x'}
+                </button>
+              </div>
 
               {/* Manual Status Update */}
               <div className="pt-4 border-t border-neutral-800">

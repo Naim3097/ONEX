@@ -38,11 +38,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       <Hero locale={locale} />
+      <PromoTeaser locale={locale} />
       <Philosophy locale={locale} />
       <ServicesOverview locale={locale} />
       <ProcessPreview locale={locale} />
       <Stats locale={locale} />
-      <PromoTeaser locale={locale} />
       <Testimonials />
       <GalleryPreview locale={locale} />
       <ContactCTA locale={locale} />

@@ -26,9 +26,13 @@ interface LeanXTransactionResponse {
 export async function GET(request: NextRequest) {
   try {
     const bookingId = request.nextUrl.searchParams.get('bookingId')
+    const orderId = request.nextUrl.searchParams.get('orderId')
+    const docId = bookingId || orderId
+    const collectionName = orderId ? 'orders' : 'bookings'
+    const invoicePrefix = orderId ? 'ORDER' : 'BOOKING'
 
-    if (!bookingId) {
-      return NextResponse.json({ error: 'Missing bookingId' }, { status: 400 })
+    if (!docId) {
+      return NextResponse.json({ error: 'Missing bookingId or orderId' }, { status: 400 })
     }
 
     const authToken = process.env.LEANX_AUTH_TOKEN?.trim()
@@ -36,13 +40,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Payment gateway not configured' }, { status: 500 })
     }
 
-    // Get booking from Firestore
+    // Get document from Firestore
     const db = getAdminDb()
-    const bookingRef = db.collection('bookings').doc(bookingId)
+    const bookingRef = db.collection(collectionName).doc(docId)
     const bookingDoc = await bookingRef.get()
 
     if (!bookingDoc.exists) {
-      return NextResponse.json({ error: 'Booking not found' }, { status: 404 })
+      return NextResponse.json({ error: 'Document not found' }, { status: 404 })
     }
 
     const booking = bookingDoc.data()!
@@ -57,7 +61,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Try to find the Lean.x invoice number
-    const invoiceNo = booking.leanxBillNo || booking.leanxInvoiceRef || `BOOKING-${bookingId}`
+    const invoiceNo = booking.leanxBillNo || booking.leanxInvoiceRef || `${invoicePrefix}-${docId}`
 
     const apiHost = process.env.LEANX_API_HOST || 'https://api.leanx.io'
 

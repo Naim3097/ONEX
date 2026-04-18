@@ -136,45 +136,29 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Who should get this + Warranty */}
+      {/* Who should get this */}
       <section className="section-dark section-padding">
         <div className="max-w-wide mx-auto px-5 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
-              <FadeIn>
-                <Text variant="overline" className="text-brand-red mb-5">
-                  {landing.whoTitle}
-                </Text>
-              </FadeIn>
-              <RevealText
-                text={landing.whoTitle}
-                as="h2"
-                className="text-h2 text-white mb-8"
-              />
-              <FadeIn delay={0.2}>
-                <ul className="space-y-4">
-                  {landing.whoItems.map((item, i) => (
-                    <li key={i} className="text-body text-neutral-300 flex items-baseline gap-3">
-                      <span className="w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 mt-2" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </FadeIn>
-            </div>
-
-            <FadeIn direction="right" delay={0.2}>
-              <div className="border border-white/10 bg-white/[0.03] p-8 md:p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <svg className="w-8 h-8 text-brand-red shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                  <h3 className="text-h4 text-white">{landing.warrantyTitle}</h3>
-                </div>
-                <p className="text-body text-neutral-400 leading-relaxed">
-                  {landing.warrantyBody}
-                </p>
-              </div>
+          <div className="max-w-3xl">
+            <FadeIn>
+              <Text variant="overline" className="text-brand-red mb-5">
+                {landing.whoTitle}
+              </Text>
+            </FadeIn>
+            <RevealText
+              text={landing.whoTitle}
+              as="h2"
+              className="text-h2 text-white mb-8"
+            />
+            <FadeIn delay={0.2}>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {landing.whoItems.map((item, i) => (
+                  <li key={i} className="text-body text-neutral-300 flex items-baseline gap-3">
+                    <span className="w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 mt-2" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </FadeIn>
           </div>
         </div>
@@ -196,9 +180,9 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-neutral-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px">
             {landing.models.map((model, i) => (
-              <FadeIn key={model} delay={0.05 * i} className="bg-neutral-50 px-6 py-5">
+              <FadeIn key={model} delay={0.05 * i} className="bg-neutral-50 border border-neutral-200 px-6 py-5">
                 <p className="text-body-sm text-neutral-700 flex items-center gap-3">
                   <span className="w-1 h-1 bg-brand-red rounded-full shrink-0" />
                   {model}

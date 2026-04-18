@@ -15,7 +15,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
   const { promo } = getContent(locale)
 
   return (
-    <section className="section-dark section-padding">
+    <section className="bg-white section-padding">
       <div className="max-w-wide mx-auto px-5 md:px-10">
         {/* Header */}
         <div className="max-w-2xl mb-14 md:mb-20">
@@ -27,10 +27,10 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
           <RevealText
             text={promo.headline}
             as="h2"
-            className="text-h2 text-white mb-5"
+            className="text-h2 text-neutral-950 mb-5"
           />
           <FadeIn delay={0.2}>
-            <p className="text-body-lg text-neutral-400 leading-relaxed max-w-lg">
+            <p className="text-body-lg text-neutral-500 leading-relaxed max-w-lg">
               {promo.subheadline}
             </p>
           </FadeIn>
@@ -38,10 +38,10 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
 
         {/* Package card */}
         <FadeIn delay={0.3}>
-          <div className="border border-white/10 bg-white/[0.03]">
+          <div className="border border-neutral-200 bg-neutral-50">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch">
               {/* Promo image — top on mobile, right on desktop */}
-              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-white/10 flex items-center justify-center min-h-[200px] lg:min-w-[280px] overflow-hidden">
+              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 flex items-center justify-center min-h-[200px] lg:min-w-[280px] overflow-hidden">
                 <Image
                   src="/images/asset promotion/PROMO 1 B.jpg"
                   alt="Pakej Servis Gearbox"
@@ -59,7 +59,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
                       <Text variant="overline" className="text-brand-red/80 mb-3">
                         {String(i + 1).padStart(2, '0')}
                       </Text>
-                      <h3 className="text-h4 text-white mb-2">{item.title}</h3>
+                      <h3 className="text-h4 text-neutral-950 mb-2">{item.title}</h3>
                       <p className="text-body-sm text-neutral-500 leading-relaxed">
                         {item.description}
                       </p>
@@ -67,7 +67,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
                   ))}
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center gap-5">
                   <Link
                     href={business.whatsappLink}
                     target="_blank"

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { getContent, type Locale } from '@/content'
 import { getProductName } from '@/lib/products'
 import { useCart } from '@/lib/cart-context'
@@ -52,8 +53,18 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                   return (
                     <FadeIn key={item.product.slug}>
                       <div className="bg-neutral-900 border border-neutral-800 p-6 flex gap-6">
-                        {/* Thumbnail placeholder */}
-                        <div className="w-20 h-20 bg-neutral-800 flex-shrink-0" />
+                        {/* Thumbnail */}
+                        <div className="w-20 h-20 bg-neutral-800 flex-shrink-0 overflow-hidden">
+                          {item.product.image && (
+                            <Image
+                              src={item.product.image}
+                              alt={name}
+                              width={80}
+                              height={80}
+                              className="w-full h-full object-cover"
+                            />
+                          )}
+                        </div>
 
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-4 mb-2">
