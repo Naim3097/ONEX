@@ -42,7 +42,6 @@ Di One X Transmission, kami bukan bengkel am yang "juga buat gearbox." Kami beng
 - **Diagnosis percuma** — Kami periksa gearbox anda dan beritahu masalah sebenar sebelum anda bayar apa-apa
 - **Pakar CVT & automatik** — Pengalaman dengan Perodua, Proton, Toyota, Honda, Nissan, dan banyak lagi
 - **Harga telus** — Tiada caj tersembunyi, tiada upselling
-- **Waranti servis** — 3 bulan / 5,000 km untuk pakej servis ATF
 - **Perkhidmatan Door-to-Door** — Kami datang ambil kereta anda jika tak dapat drive
 
 ### Lokasi
@@ -58,7 +57,6 @@ Untuk penyelenggaraan berkala, kami tawarkan pakej all-in-one:
 - ✅ Tukar minyak ATF
 - ✅ Tukar penapis auto
 - ✅ PERCUMA peranti diagnostik OBD2
-- ✅ Waranti 3 bulan / 5,000 km
 
 Harga asal RM 580, kini **RM 439** sahaja. Tempah melalui [halaman shop](/ms/shop) kami dengan deposit RM 50.
 

@@ -51,11 +51,6 @@ export const products: Product[] = [
       ms: ['Tukar Minyak ATF', 'Penapis Auto', 'PERCUMA Peranti OBD2'],
       zh: ['ATF变速箱油更换', '自动滤清器', '免费OBD2设备'],
     },
-    warranty: {
-      en: '3-month / 5,000 km warranty',
-      ms: 'Waranti 3 bulan / 5,000 km',
-      zh: '3个月/5,000公里保修',
-    },
     inStock: true,
     depositAmount: 50,
   },

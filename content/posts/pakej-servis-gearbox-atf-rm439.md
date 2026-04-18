@@ -74,7 +74,6 @@ Pakej servis ATF merangkumi kebanyakan kenderaan transmisi automatik yang biasa 
 2. **Pilih tarikh** — Hari bekerja atau Sabtu yang sesuai
 3. **Drive in atau Door-to-Door** — Datang ke bengkel kami di Shah Alam atau Kulim, atau kami datang ke anda
 4. **Servis siap** — ATF ditukar, penapis diganti, peranti OBD2 diserahkan
-5. **Waranti 3 bulan / 5,000 km** — Ketenangan fikiran selepas servis
 
 Deposit RM 50 ditolak daripada jumlah harga RM 439. Anda bayar baki RM 389 di bengkel pada hari servis.
 
@@ -91,12 +90,6 @@ Berikut pecahan harga biasa jika dibayar berasingan:
 | **Jumlah (berasingan)** | **RM 350–560** |
 
 Pada harga RM 439 dengan segala-galanya — termasuk peranti OBD2 percuma — anda mendapat servis pakar pada harga yang adil dan telus. Tiada caj tersembunyi, tiada upselling.
-
-## Waranti 3 Bulan / 5,000 km
-
-Setiap pakej servis ATF datang dengan **waranti 3 bulan atau 5,000 km** (mana yang dahulu). Jika anda alami sebarang masalah transmisi berkaitan servis dalam tempoh ini, bawa kembali dan kami akan betulkan.
-
-Ini komitmen kami terhadap kerja berkualiti.
 
 ## Tempah Pakej Servis ATF Anda
 

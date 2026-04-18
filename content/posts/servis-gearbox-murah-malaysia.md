@@ -49,7 +49,6 @@ Ada bengkel yang tawarkan servis gearbox serendah RM 80–100. Ini biasanya berm
 1. **Minyak yang digunakan bukan spesifikasi betul** — Minyak murah boleh rosakkan seal dan clutch pack
 2. **Tidak tukar penapis** — Jimat kos tapi debris terus beredar dalam sistem
 3. **Tidak flush sepenuhnya** — Hanya tukar sebahagian minyak, bukan keseluruhan
-4. **Tiada waranti** — Jika rosak selepas servis, itu masalah anda
 
 Jangan tertipu dengan harga rendah tanpa tahu apa yang anda dapat.
 
@@ -62,15 +61,13 @@ Di One X Transmission, kami tawarkan **Pakej Servis Gearbox ATF pada RM 439** ya
 - ✅ Tukar minyak ATF (spesifikasi betul untuk kereta anda)
 - ✅ Tukar penapis auto
 - ✅ PERCUMA peranti diagnostik OBD2
-- ✅ Waranti 3 bulan / 5,000 km
 - ✅ Tiada caj tersembunyi
 
 ## Cara Elak Bengkel Gearbox Yang Tipu
 
 1. **Minta sebut harga bertulis** — Sebelum serah kereta, dapatkan harga hitam putih
 2. **Tanya jenama minyak yang digunakan** — Bengkel jujur akan tunjukkan tin minyak
-3. **Tanya tentang waranti** — Bengkel yang yakin dengan kerja mereka akan beri waranti
-4. **Jangan tergesa-gesa** — Bengkel yang tekan anda buat keputusan cepat biasanya ada sesuatu yang disembunyikan
+3. **Jangan tergesa-gesa** — Bengkel yang tekan anda buat keputusan cepat biasanya ada sesuatu yang disembunyikan
 5. **Baca review Google** — Semak pengalaman pelanggan lain
 
 ## Servis Gearbox Murah vs Servis Gearbox Berbaloi
@@ -80,7 +77,6 @@ Di One X Transmission, kami tawarkan **Pakej Servis Gearbox ATF pada RM 439** ya
 | Minyak ATF | Jenama tak diketahui | Spesifikasi betul |
 | Penapis | Tak ditukar | Ditukar |
 | Diagnostik | Tiada | Ada |
-| Waranti | Tiada | 3 bulan |
 | Risiko | Tinggi | Rendah |
 
 Kesimpulannya: **servis gearbox murah bukan sentiasa jimat**. Servis yang betul pada harga berpatutan adalah pelaburan yang melindungi gearbox anda untuk beribu-ribu kilometer lagi.

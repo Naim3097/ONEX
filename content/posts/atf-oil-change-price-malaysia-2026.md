@@ -95,7 +95,6 @@ At One X Transmission, we offer a complete ATF service package at a fixed price:
 | ATF oil replacement | Spec-matched to your car |
 | Auto filter change | Included |
 | OBD2 diagnostic device | FREE (worth RM 50–80) |
-| Warranty | 3 months / 5,000 km |
 | **Total price** | **RM 439** |
 
 No hidden charges. Book with a RM 50 deposit through our [shop page](/en/shop). Balance of RM 389 payable on service day.

@@ -29,8 +29,7 @@ Watch out for these warning signs:
 1. **"We can fix any gearbox problem for RM 200"** — If it sounds too cheap, the service will match
 2. **No diagnostic equipment visible** — A real transmission shop has OBD scanners, pressure testers, and test benches
 3. **Reluctance to explain the problem** — A good specialist will show you the worn parts and explain what failed
-4. **No warranty offered** — Quality workshops stand behind their work
-5. **Pressure to decide immediately** — "If you don't fix it today, it'll cost double next week" is a manipulation tactic
+4. **Pressure to decide immediately** — "If you don't fix it today, it'll cost double next week" is a manipulation tactic
 
 ## What a Quality Gearbox Service Looks Like
 
@@ -57,7 +56,6 @@ A proper service should include:
 - Torque converter inspection or replacement
 - Reassembly and calibration
 - Extended road testing
-- Warranty on parts and labour
 
 ## One X Transmission — Shah Alam
 
@@ -66,7 +64,7 @@ Located in Shah Alam, One X Transmission is a dedicated gearbox specialist works
 ### What we offer:
 
 - **Free diagnosis** — We assess your gearbox and tell you exactly what's wrong before you spend anything
-- **ATF Service Package** — RM 439 all-in (ATF oil + filter + FREE OBD2 device + 3-month warranty)
+- **ATF Service Package** — RM 439 all-in (ATF oil + filter + FREE OBD2 device)
 - **Full overhaul** — For transmissions that need complete rebuilding
 - **CVT specialist** — Experienced with Perodua, Proton, Honda, Nissan, and Toyota CVT systems
 - **Door-to-Door service** — We can collect your car if you can't drive it in
