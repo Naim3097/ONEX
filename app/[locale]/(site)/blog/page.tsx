@@ -1,5 +1,5 @@
 import { type Locale } from '@/content'
-import { getAllPosts } from '@/lib/posts'
+import { getPostsByLocale } from '@/lib/posts'
 import BlogHero from '@/components/sections/Blog/BlogHero'
 import BlogGrid from '@/components/sections/Blog/BlogGrid'
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: l } = await params
   const locale = l as Locale
-  const posts = getAllPosts()
+  const posts = getPostsByLocale(l)
 
   return (
     <>

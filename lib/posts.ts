@@ -16,6 +16,7 @@ export interface PostMeta {
   tags: string[]
   readTime: string
   coverImage?: string
+  locale: string
 }
 
 export interface Post extends PostMeta {
@@ -52,6 +53,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     tags: Array.isArray(data.tags) ? data.tags : [],
     readTime: data.readTime ?? '5 min read',
     coverImage: data.coverImage ?? undefined,
+    locale: data.locale ?? 'en',
   }
 }
 
@@ -73,8 +75,13 @@ export async function getPost(slug: string): Promise<Post | null> {
     tags: Array.isArray(data.tags) ? data.tags : [],
     readTime: data.readTime ?? '5 min read',
     coverImage: data.coverImage ?? undefined,
+    locale: data.locale ?? 'en',
     contentHtml: processedContent.toString(),
   }
+}
+
+export function getPostsByLocale(locale: string): PostMeta[] {
+  return getAllPosts().filter((p) => p.locale === locale)
 }
 
 export function formatDate(dateString: string): string {

@@ -1,6 +1,7 @@
 ---
 title: "Tukar Minyak Gearbox — Bila, Berapa & Di Mana di Malaysia"
 slug: "tukar-minyak-gearbox-malaysia"
+locale: "ms"
 date: "2026-04-14"
 excerpt: "Panduan lengkap tukar minyak gearbox di Malaysia — bila perlu tukar, berapa kos sebenar, dan bengkel mana yang boleh dipercayai. Jangan tunggu sampai gearbox rosak."
 category: "Panduan Penyelenggaraan"
