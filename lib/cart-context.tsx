@@ -16,6 +16,7 @@ interface CartContextValue {
   clearCart: () => void
   totalItems: number
   totalPrice: number
+  lastAdded: string | null
 }
 
 const CartContext = createContext<CartContextValue | null>(null)
@@ -40,6 +41,7 @@ function saveCart(items: CartItem[]) {
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
   const [loaded, setLoaded] = useState(false)
+  const [lastAdded, setLastAdded] = useState<string | null>(null)
 
   useEffect(() => {
     setItems(loadCart())
@@ -62,6 +64,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...prev, { product, quantity }]
     })
+    setLastAdded(product.slug)
+    setTimeout(() => setLastAdded(null), 2500)
   }, [])
 
   const removeItem = useCallback((slug: string) => {
@@ -89,7 +93,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, 0)
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, updateQuantity, clearCart, totalItems, totalPrice }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, updateQuantity, clearCart, totalItems, totalPrice, lastAdded }}>
       {children}
     </CartContext.Provider>
   )

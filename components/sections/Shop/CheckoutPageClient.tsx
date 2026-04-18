@@ -285,11 +285,15 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                             const val = e.target.value
                             // Block Sundays
                             const d = new Date(val + 'T00:00:00')
-                            if (d.getDay() === 0) return
+                            if (d.getDay() === 0) {
+                              updateField('preferredDate', '')
+                              return
+                            }
                             updateField('preferredDate', val)
                           }}
                           className="w-full p-4 text-body-sm font-medium bg-neutral-900 border border-neutral-800 text-white focus:border-brand-red focus:outline-none transition-colors duration-200 [color-scheme:dark]"
                         />
+                        <p className="text-[11px] text-neutral-600 mt-1.5">* Closed on Sundays / Tutup pada hari Ahad</p>
                       </div>
                     </FadeIn>
                     <FadeIn delay={0.3}>

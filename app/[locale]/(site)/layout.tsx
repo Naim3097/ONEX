@@ -2,6 +2,7 @@ import { type Locale, locales } from '@/content'
 import PageShell from '@/components/layout/PageShell'
 import { generateLocalBusinessJsonLd } from '@/lib/structured-data'
 import { CartProvider } from '@/lib/cart-context'
+import CartToast from '@/components/ui/CartToast'
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -24,6 +25,7 @@ export default async function SiteLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessJsonLd()) }}
       />
       <PageShell locale={locale}>{children}</PageShell>
+      <CartToast locale={locale} />
     </CartProvider>
   )
 }
