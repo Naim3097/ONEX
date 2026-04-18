@@ -21,26 +21,33 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
   const shortDesc = getProductShortDescription(product, locale)
   const badge = getProductBadge(product, locale)
   const includes = getProductIncludes(product, locale)
+  const isComingSoon = product.comingSoon === true
+  const hasDeposit = typeof product.depositAmount === 'number'
 
   const handleAdd = () => {
+    if (isComingSoon) return
     addItem(product)
     setAdded(true)
     setTimeout(() => setAdded(false), 1500)
   }
 
   return (
-    <div className="group bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-all duration-300 flex flex-col h-full">
+    <div className={`group bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-all duration-300 flex flex-col h-full ${isComingSoon ? 'opacity-75' : ''}`}>
       {/* Image area */}
       <Link href={`/${locale}/shop/${product.slug}`} className="relative block">
         <div className="aspect-[4/3] bg-neutral-800 overflow-hidden">
           <div className="w-full h-full bg-neutral-800 group-hover:scale-[1.02] transition-transform duration-500" />
         </div>
         {/* Badge */}
-        {badge && (
+        {isComingSoon ? (
+          <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider bg-neutral-700 text-neutral-300 px-2.5 py-1">
+            {shop.comingSoon}
+          </span>
+        ) : badge ? (
           <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white px-2.5 py-1">
             {badge}
           </span>
-        )}
+        ) : null}
         {/* Savings */}
         {product.originalPrice && (
           <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider bg-neutral-950/80 backdrop-blur-sm text-green-400 px-2.5 py-1">
@@ -88,17 +95,28 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
                   RM {product.originalPrice}
                 </span>
               )}
+              {hasDeposit && !isComingSoon && (
+                <span className="block text-[10px] text-neutral-500 mt-1">
+                  {shop.depositLabel}: RM {product.depositAmount}
+                </span>
+              )}
             </div>
-            <button
-              onClick={handleAdd}
-              className={`text-xs font-bold uppercase tracking-wider px-4 py-2.5 transition-all duration-300 ${
-                added
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-neutral-950 hover:bg-brand-red hover:text-white'
-              }`}
-            >
-              {added ? '✓ ' + shop.added : shop.addToCart}
-            </button>
+            {isComingSoon ? (
+              <span className="text-xs font-bold uppercase tracking-wider px-4 py-2.5 bg-neutral-800 text-neutral-500 cursor-default">
+                {shop.comingSoon}
+              </span>
+            ) : (
+              <button
+                onClick={handleAdd}
+                className={`text-xs font-bold uppercase tracking-wider px-4 py-2.5 transition-all duration-300 ${
+                  added
+                    ? 'bg-green-600 text-white'
+                    : 'bg-white text-neutral-950 hover:bg-brand-red hover:text-white'
+                }`}
+              >
+                {added ? '✓ ' + shop.added : hasDeposit ? shop.bookNow : shop.addToCart}
+              </button>
+            )}
           </div>
         </div>
       </div>

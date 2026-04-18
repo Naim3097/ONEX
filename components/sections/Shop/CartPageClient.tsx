@@ -64,12 +64,19 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                               {name}
                             </Link>
                             <span className="text-body font-bold text-white whitespace-nowrap">
-                              RM {item.product.price * item.quantity}
+                              RM {(item.product.depositAmount ?? item.product.price) * item.quantity}
                             </span>
                           </div>
 
                           <p className="text-body-sm text-neutral-500 mb-4">
-                            RM {item.product.price} each
+                            {item.product.depositAmount != null ? (
+                              <>
+                                <span className="text-brand-red-light">{shop.depositLabel}</span>
+                                <span className="text-neutral-600 line-through ml-2">RM {item.product.price} each</span>
+                              </>
+                            ) : (
+                              <>RM {item.product.price} each</>
+                            )}
                           </p>
 
                           <div className="flex items-center justify-between">
@@ -122,7 +129,7 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                           <span className="text-neutral-400">
                             {getProductName(item.product, locale)} × {item.quantity}
                           </span>
-                          <span className="text-neutral-300">RM {item.product.price * item.quantity}</span>
+                          <span className="text-neutral-300">RM {(item.product.depositAmount ?? item.product.price) * item.quantity}</span>
                         </div>
                       ))}
                     </div>

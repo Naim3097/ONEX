@@ -124,6 +124,31 @@ export async function POST(request: NextRequest) {
       paymentUpdatedAt: new Date().toISOString(),
     })
 
+    // Decrement stock on successful order payment
+    if (docStatus === 'confirmed' && isOrder) {
+      try {
+        const orderData = docSnap.data()
+        const items = orderData?.items || []
+        for (const item of items) {
+          if (item.slug && item.quantity) {
+            const inventoryRef = db.collection('inventory').doc(item.slug)
+            const inventoryDoc = await inventoryRef.get()
+            if (inventoryDoc.exists) {
+              const currentStock = inventoryDoc.data()?.stock ?? 0
+              const newStock = Math.max(0, currentStock - item.quantity)
+              await inventoryRef.update({
+                stock: newStock,
+                updatedAt: new Date().toISOString(),
+              })
+            }
+          }
+        }
+      } catch (stockErr) {
+        console.error('Stock decrement error:', stockErr)
+        // Don't fail the webhook — stock error is non-critical
+      }
+    }
+
     return NextResponse.json({
       success: true,
       message: 'Webhook processed successfully',

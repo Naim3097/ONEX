@@ -27,7 +27,7 @@ export default function ShopGrid({ locale }: ShopGridProps) {
   ]
 
   const filtered = products.filter(
-    (p) => p.inStock && (activeCategory === 'all' || p.category === activeCategory)
+    (p) => (p.inStock || p.comingSoon) && (activeCategory === 'all' || p.category === activeCategory)
   )
 
   return (
@@ -39,8 +39,8 @@ export default function ShopGrid({ locale }: ShopGridProps) {
           {categories.map((cat) => {
             const count =
               cat.key === 'all'
-                ? products.filter((p) => p.inStock).length
-                : products.filter((p) => p.inStock && p.category === cat.key).length
+                ? products.filter((p) => p.inStock || p.comingSoon).length
+                : products.filter((p) => (p.inStock || p.comingSoon) && p.category === cat.key).length
             return (
               <button
                 key={cat.key}

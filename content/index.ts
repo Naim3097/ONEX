@@ -327,6 +327,9 @@ interface SiteContent {
     items: string
     includes: string
     warranty: string
+    comingSoon: string
+    bookNow: string
+    depositLabel: string
     cart: {
       title: string
       empty: string
@@ -345,9 +348,15 @@ interface SiteContent {
         email: string
         address: string
         notes: string
+        vehicleModel: string
+        preferredDate: string
+        timeSlot: string
       }
       orderSummary: string
       payNow: string
+      payDeposit: string
+      depositLabel: string
+      depositNotice: string
       processing: string
     }
     success: {
@@ -886,6 +895,9 @@ const en: SiteContent = {
     items: 'items',
     includes: 'Includes',
     warranty: 'Warranty',
+    comingSoon: 'Coming Soon',
+    bookNow: 'Book Now',
+    depositLabel: 'Booking Deposit',
     cart: {
       title: 'Your Cart',
       empty: 'Your cart is empty.',
@@ -904,9 +916,15 @@ const en: SiteContent = {
         email: 'Email Address',
         address: 'Delivery / Service Address',
         notes: 'Order Notes (optional)',
+        vehicleModel: 'Vehicle Model (e.g. Perodua Myvi)',
+        preferredDate: 'Preferred Date',
+        timeSlot: 'Time Slot',
       },
       orderSummary: 'Order Summary',
       payNow: 'Pay Now',
+      payDeposit: 'Pay Deposit',
+      depositLabel: 'Booking Deposit',
+      depositNotice: 'Remaining balance payable at the workshop on your service date.',
       processing: 'Processing...',
     },
     success: {
@@ -1470,6 +1488,9 @@ const ms: SiteContent = {
     items: 'item',
     includes: 'Termasuk',
     warranty: 'Waranti',
+    comingSoon: 'Akan Datang',
+    bookNow: 'Tempah Sekarang',
+    depositLabel: 'Deposit Tempahan',
     cart: {
       title: 'Troli Anda',
       empty: 'Troli anda kosong.',
@@ -1488,9 +1509,15 @@ const ms: SiteContent = {
         email: 'Alamat Emel',
         address: 'Alamat Penghantaran / Servis',
         notes: 'Nota Pesanan (pilihan)',
+        vehicleModel: 'Model Kenderaan (cth. Perodua Myvi)',
+        preferredDate: 'Tarikh Pilihan',
+        timeSlot: 'Slot Masa',
       },
       orderSummary: 'Ringkasan Pesanan',
       payNow: 'Bayar Sekarang',
+      payDeposit: 'Bayar Deposit',
+      depositLabel: 'Deposit Tempahan',
+      depositNotice: 'Baki selebihnya dibayar di bengkel pada tarikh servis anda.',
       processing: 'Memproses...',
     },
     success: {
@@ -2048,6 +2075,9 @@ const zh: SiteContent = {
     items: '件商品',
     includes: '包含',
     warranty: '保修',
+    comingSoon: '即将推出',
+    bookNow: '立即预约',
+    depositLabel: '预约押金',
     cart: {
       title: '购物车',
       empty: '购物车为空。',
@@ -2066,9 +2096,15 @@ const zh: SiteContent = {
         email: '电子邮箱',
         address: '送货/服务地址',
         notes: '订单备注（选填）',
+        vehicleModel: '车型（例如 Perodua Myvi）',
+        preferredDate: '首选日期',
+        timeSlot: '时间段',
       },
       orderSummary: '订单摘要',
       payNow: '立即支付',
+      payDeposit: '支付押金',
+      depositLabel: '预约押金',
+      depositNotice: '余额将在服务当天于车间支付。',
       processing: '处理中...',
     },
     success: {

@@ -14,6 +14,18 @@ export default function ProductActions({ product, locale }: ProductActionsProps)
   const content = getContent(locale)
   const shop = content.shop
   const { addItem } = useCart()
+  const isComingSoon = product.comingSoon === true
+  const hasDeposit = typeof product.depositAmount === 'number'
+
+  if (isComingSoon) {
+    return (
+      <div className="flex gap-4">
+        <span className="cta-ghost flex-1 text-center cursor-default opacity-60">
+          {shop.comingSoon}
+        </span>
+      </div>
+    )
+  }
 
   return (
     <div className="flex gap-4">
@@ -21,7 +33,7 @@ export default function ProductActions({ product, locale }: ProductActionsProps)
         onClick={() => addItem(product)}
         className="cta-primary flex-1 text-center"
       >
-        {shop.addToCart}
+        {hasDeposit ? shop.bookNow : shop.addToCart}
       </button>
       <Link href={`/${locale}/shop/cart`} className="cta-ghost text-center">
         {shop.cart.title}

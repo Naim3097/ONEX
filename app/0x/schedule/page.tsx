@@ -18,6 +18,21 @@ interface Booking {
   createdAt: string
 }
 
+interface Order {
+  id: string
+  orderType: string
+  customerName: string
+  customerPhone: string
+  customerAddress: string
+  vehicleModel: string
+  preferredDate: string
+  timeSlot: string
+  notes: string
+  status: string
+  paymentAmount: number
+  createdAt: string
+}
+
 const statusColors: Record<string, string> = {
   confirmed: 'bg-emerald-900/50 text-emerald-400 border-emerald-800',
   completed: 'bg-blue-900/50 text-blue-400 border-blue-800',
@@ -56,6 +71,7 @@ export default function SchedulePage() {
   const [authLoading, setAuthLoading] = useState(false)
 
   const [bookings, setBookings] = useState<Booking[]>([])
+  const [orders, setOrders] = useState<Order[]>([])
   const [loading, setLoading] = useState(false)
   const [selectedDate, setSelectedDate] = useState<Date>(new Date())
 
@@ -68,6 +84,15 @@ export default function SchedulePage() {
       if (data.bookings) setBookings(data.bookings)
     } catch { /* */ }
     finally { setLoading(false) }
+  }, [])
+
+  const fetchOrders = useCallback(async () => {
+    try {
+      const res = await fetch('/api/admin/orders')
+      if (res.status === 401) return
+      const data = await res.json()
+      if (data.orders) setOrders(data.orders.filter((o: Order) => o.orderType === 'service_promo'))
+    } catch { /* */ }
   }, [])
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -87,8 +112,11 @@ export default function SchedulePage() {
   }
 
   useEffect(() => {
-    if (authed) fetchBookings()
-  }, [authed, fetchBookings])
+    if (authed) {
+      fetchBookings()
+      fetchOrders()
+    }
+  }, [authed, fetchBookings, fetchOrders])
 
   useEffect(() => {
     fetch('/api/admin/bookings')
@@ -120,6 +148,18 @@ export default function SchedulePage() {
     )
   }
 
+  const prevDay = () => {
+    const d = new Date(selectedDate)
+    d.setDate(d.getDate() - 1)
+    setSelectedDate(d)
+  }
+
+  const nextDay = () => {
+    const d = new Date(selectedDate)
+    d.setDate(d.getDate() + 1)
+    setSelectedDate(d)
+  }
+
   // Filter confirmed/completed bookings for the selected date
   const paidStatuses = ['confirmed', 'completed']
   const dateStr = formatDate(selectedDate)
@@ -132,30 +172,33 @@ export default function SchedulePage() {
       return bDate === dateStr
     })
     .sort((a, b) => {
-      // Sort by time slot
       const timeA = a.timeSlot || ''
       const timeB = b.timeSlot || ''
       return timeA.localeCompare(timeB)
     })
 
-  // Get all unique dates that have paid bookings (for quick nav)
-  const upcomingDates = [...new Set(
-    bookings
+  // Filter service promo orders for the selected date
+  const dayOrders = orders
+    .filter(o => {
+      if (!paidStatuses.includes(o.status)) return false
+      if (!o.preferredDate) return false
+      return o.preferredDate === dateStr
+    })
+    .sort((a, b) => {
+      const timeA = a.timeSlot || ''
+      const timeB = b.timeSlot || ''
+      return timeA.localeCompare(timeB)
+    })
+
+  // Get all unique dates that have paid bookings or orders (for quick nav)
+  const upcomingDates = [...new Set([
+    ...bookings
       .filter(b => paidStatuses.includes(b.status) && b.date)
-      .map(b => formatDate(new Date(b.date)))
-  )].sort()
-
-  const prevDay = () => {
-    const d = new Date(selectedDate)
-    d.setDate(d.getDate() - 1)
-    setSelectedDate(d)
-  }
-
-  const nextDay = () => {
-    const d = new Date(selectedDate)
-    d.setDate(d.getDate() + 1)
-    setSelectedDate(d)
-  }
+      .map(b => formatDate(new Date(b.date))),
+    ...orders
+      .filter(o => paidStatuses.includes(o.status) && o.preferredDate)
+      .map(o => o.preferredDate),
+  ])].sort()
 
   const goToday = () => setSelectedDate(new Date())
 
@@ -203,18 +246,20 @@ export default function SchedulePage() {
 
       {/* Day count */}
       <div className="mb-6 flex items-center gap-3">
-        <span className="text-2xl font-bold text-white">{dayBookings.length}</span>
+        <span className="text-2xl font-bold text-white">{dayBookings.length + dayOrders.length}</span>
         <span className="text-xs text-neutral-600 uppercase tracking-widest">
-          {dayBookings.length === 1 ? 'Inspection' : 'Inspections'}
+          {dayBookings.length + dayOrders.length === 1 ? 'Appointment' : 'Appointments'}
         </span>
       </div>
 
       {/* Loading */}
       {loading && <p className="text-neutral-500 text-sm mb-4">Loading...</p>}
 
-      {/* Bookings for the day */}
-      {dayBookings.length > 0 ? (
-        <div className="space-y-3">
+      {/* Door-to-Door Bookings */}
+      {dayBookings.length > 0 && (
+        <>
+          <h3 className="text-[0.65rem] uppercase tracking-widest text-neutral-600 font-bold mb-3">Door-to-Door Inspections</h3>
+          <div className="space-y-3 mb-8">
           {dayBookings.map(b => (
             <div key={b.id} className="bg-neutral-900 border border-neutral-800 p-5">
               <div className="flex items-start justify-between gap-4 mb-4">
@@ -271,10 +316,78 @@ export default function SchedulePage() {
               </div>
             </div>
           ))}
-        </div>
-      ) : (
+          </div>
+        </>
+      )}
+
+      {/* Service Promo Orders */}
+      {dayOrders.length > 0 && (
+        <>
+          <h3 className="text-[0.65rem] uppercase tracking-widest text-amber-500/70 font-bold mb-3">Service Promo Bookings</h3>
+          <div className="space-y-3 mb-8">
+          {dayOrders.map(o => (
+            <div key={o.id} className="bg-neutral-900 border border-amber-900/30 p-5">
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <p className="font-bold text-white text-sm">{o.customerName}</p>
+                  <a href={`tel:${o.customerPhone}`} className="text-xs text-neutral-400 hover:text-white transition-colors">{o.customerPhone}</a>
+                </div>
+                <div className="text-right shrink-0">
+                  {o.timeSlot && (
+                    <p className="text-sm font-bold text-amber-400 bg-amber-950/30 border border-amber-800/40 px-3 py-1 inline-block">
+                      {o.timeSlot}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div>
+                  <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Vehicle</span>
+                  <span className="text-neutral-200">{o.vehicleModel || '-'}</span>
+                </div>
+                <div>
+                  <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Deposit</span>
+                  <span className="text-neutral-200">RM {o.paymentAmount?.toFixed(2) || '0.00'}</span>
+                </div>
+                {o.notes && (
+                  <div className="sm:col-span-2">
+                    <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Notes</span>
+                    <span className="text-neutral-300 italic">{o.notes}</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-neutral-800">
+                <span className={`inline-block px-2 py-0.5 text-[0.6rem] uppercase tracking-wider border ${statusColors[o.status] || statusColors.unknown}`}>
+                  {o.status}
+                </span>
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/${o.customerPhone.replace(/[^0-9+]/g, '')}?text=${encodeURIComponent(`Hi ${o.customerName}, this is One X Transmission. We're confirming your service appointment today at ${o.timeSlot || 'your scheduled time'}. See you at the workshop!`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 text-[0.65rem] border border-emerald-800/50 text-emerald-400 hover:bg-emerald-950/30 transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${o.customerPhone}`}
+                    className="px-3 py-1.5 text-[0.65rem] border border-neutral-800 text-neutral-400 hover:text-neutral-200 hover:border-neutral-600 transition-colors"
+                  >
+                    Call
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+          </div>
+        </>
+      )}
+
+      {dayBookings.length === 0 && dayOrders.length === 0 && !loading && (
         <div className="text-center py-16 text-neutral-600 text-sm border border-neutral-800 border-dashed">
-          No confirmed inspections for this date
+          No confirmed appointments for this date
         </div>
       )}
 
@@ -288,6 +401,9 @@ export default function SchedulePage() {
               const count = bookings.filter(b => {
                 if (!paidStatuses.includes(b.status) || !b.date) return false
                 return formatDate(new Date(b.date)) === d
+              }).length + orders.filter(o => {
+                if (!paidStatuses.includes(o.status) || !o.preferredDate) return false
+                return o.preferredDate === d
               }).length
               const isSelected = d === dateStr
               return (

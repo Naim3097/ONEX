@@ -14,6 +14,8 @@ export interface Product {
   includes?: Record<string, string[]>
   warranty?: Record<string, string>
   inStock: boolean
+  comingSoon?: boolean
+  depositAmount?: number
 }
 
 export const products: Product[] = [
@@ -53,6 +55,7 @@ export const products: Product[] = [
       zh: '3个月/5,000公里保修',
     },
     inStock: true,
+    depositAmount: 1, // Testing: RM 1 deposit. Change to 50 for production.
   },
   {
     slug: 'obd2-diagnostic-device',
@@ -78,7 +81,8 @@ export const products: Product[] = [
       ms: ['Pengimbas Bluetooth OBD2', 'Serasi dengan iOS & Android', 'Panduan aplikasi diagnostik percuma'],
       zh: ['OBD2蓝牙扫描仪', '兼容iOS和Android', '免费诊断应用指南'],
     },
-    inStock: true,
+    inStock: false,
+    comingSoon: true,
   },
 ]
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
@@ -15,10 +15,51 @@ interface CheckoutPageClientProps {
   locale: Locale
 }
 
+const TIME_SLOTS = [
+  '9:00 AM – 11:00 AM',
+  '11:00 AM – 1:00 PM',
+  '2:00 PM – 4:00 PM',
+  '4:00 PM – 6:00 PM',
+]
+
+function getAvailableDates(): Date[] {
+  const dates: Date[] = []
+  const now = new Date()
+  let daysAdded = 0
+  let offset = 1 // start from tomorrow
+
+  while (daysAdded < 3) {
+    const d = new Date(now)
+    d.setDate(d.getDate() + offset)
+    d.setHours(0, 0, 0, 0)
+    // Skip Sundays (day 0)
+    if (d.getDay() !== 0) {
+      dates.push(d)
+      daysAdded++
+    }
+    offset++
+  }
+  return dates
+}
+
+function formatDateDisplay(d: Date): string {
+  return d.toLocaleDateString('en-MY', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' })
+}
+
+function formatDateValue(d: Date): string {
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, '0')
+  const day = String(d.getDate()).padStart(2, '0')
+  return `${y}-${m}-${day}`
+}
+
 export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) {
   const content = getContent(locale)
   const shop = content.shop
   const { items, totalPrice, clearCart } = useCart()
+
+  // Determine if this is a service order (has deposit items)
+  const hasServiceItems = items.some((item) => typeof item.product.depositAmount === 'number')
 
   const [form, setForm] = useState({
     name: '',
@@ -26,9 +67,14 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
     email: '',
     address: '',
     notes: '',
+    vehicleModel: '',
+    preferredDate: '',
+    timeSlot: '',
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  const availableDates = useMemo(() => getAvailableDates(), [])
 
   const updateField = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }))
@@ -37,7 +83,12 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
   const inputClasses =
     'w-full px-5 py-4 bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600 text-body-sm focus:border-brand-red focus:ring-0 outline-none transition-colors duration-200'
 
-  const canSubmit = form.name && form.phone && form.email && items.length > 0
+  const canSubmit =
+    form.name &&
+    form.phone &&
+    form.email &&
+    items.length > 0 &&
+    (!hasServiceItems || (form.vehicleModel && form.preferredDate && form.timeSlot))
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -47,14 +98,15 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
     setError(null)
 
     try {
-      // Create order in Firestore
-      const orderData = {
+      // Build order data
+      const orderData: Record<string, unknown> = {
         items: items.map((item) => ({
           slug: item.product.slug,
           name: getProductName(item.product, locale),
           price: item.product.price,
+          depositAmount: item.product.depositAmount ?? null,
           quantity: item.quantity,
-          subtotal: item.product.price * item.quantity,
+          subtotal: (item.product.depositAmount ?? item.product.price) * item.quantity,
         })),
         totalAmount: totalPrice,
         customerName: form.name,
@@ -66,6 +118,16 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
         paymentStatus: 'pending',
         locale,
         createdAt: new Date(),
+      }
+
+      // Add service-specific fields
+      if (hasServiceItems) {
+        orderData.orderType = 'service_promo'
+        orderData.vehicleModel = form.vehicleModel
+        orderData.preferredDate = form.preferredDate
+        orderData.timeSlot = form.timeSlot
+        orderData.depositAmount = totalPrice
+        orderData.fullServicePrice = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0)
       }
 
       const docRef = await addDoc(collection(db, 'orders'), orderData)
@@ -95,7 +157,6 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
       }
 
       if (paymentData.success && paymentData.redirectUrl) {
-        // Store Lean.x info in Firestore
         if (paymentData.billNo) {
           import('firebase/firestore').then(({ doc, updateDoc }) => {
             updateDoc(doc(db, 'orders', docRef.id), {
@@ -105,7 +166,6 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
           })
         }
 
-        // Store orderId for success page
         if (typeof window !== 'undefined') {
           sessionStorage.setItem('onex_order_id', docRef.id)
         }
@@ -214,7 +274,81 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                     />
                   </div>
                 </FadeIn>
-                <FadeIn delay={0.2}>
+
+                {/* Service-specific fields: vehicle, date, time slot */}
+                {hasServiceItems && (
+                  <>
+                    <FadeIn delay={0.2}>
+                      <div>
+                        <label htmlFor="checkout-vehicle" className="sr-only">{shop.checkout.fields.vehicleModel}</label>
+                        <input
+                          type="text"
+                          id="checkout-vehicle"
+                          placeholder={shop.checkout.fields.vehicleModel}
+                          value={form.vehicleModel}
+                          onChange={(e) => updateField('vehicleModel', e.target.value)}
+                          required
+                          className={inputClasses}
+                        />
+                      </div>
+                    </FadeIn>
+                    <FadeIn delay={0.25}>
+                      <div>
+                        <h3 className="text-body-sm font-bold text-white mb-3 uppercase tracking-wider">
+                          {shop.checkout.fields.preferredDate}
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                          {availableDates.map((d) => {
+                            const val = formatDateValue(d)
+                            const isSelected = form.preferredDate === val
+                            return (
+                              <button
+                                key={val}
+                                type="button"
+                                onClick={() => updateField('preferredDate', val)}
+                                className={`p-4 text-body-sm font-medium transition-all duration-200 border ${
+                                  isSelected
+                                    ? 'bg-brand-red text-white border-brand-red'
+                                    : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:border-neutral-600 hover:text-white'
+                                }`}
+                              >
+                                {formatDateDisplay(d)}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </FadeIn>
+                    <FadeIn delay={0.3}>
+                      <div>
+                        <h3 className="text-body-sm font-bold text-white mb-3 uppercase tracking-wider">
+                          {shop.checkout.fields.timeSlot}
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {TIME_SLOTS.map((slot) => {
+                            const isSelected = form.timeSlot === slot
+                            return (
+                              <button
+                                key={slot}
+                                type="button"
+                                onClick={() => updateField('timeSlot', slot)}
+                                className={`p-4 text-body-sm font-medium transition-all duration-200 border ${
+                                  isSelected
+                                    ? 'bg-brand-red text-white border-brand-red'
+                                    : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:border-neutral-600 hover:text-white'
+                                }`}
+                              >
+                                {slot}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </FadeIn>
+                  </>
+                )}
+
+                <FadeIn delay={hasServiceItems ? 0.35 : 0.2}>
                   <div>
                     <label htmlFor="checkout-notes" className="sr-only">{shop.checkout.fields.notes}</label>
                     <textarea
@@ -246,18 +380,42 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                     </h3>
 
                     <div className="space-y-3 mb-6 pb-6 border-b border-neutral-800">
-                      {items.map((item) => (
-                        <div key={item.product.slug} className="flex justify-between text-body-sm">
-                          <span className="text-neutral-400">
-                            {getProductName(item.product, locale)} × {item.quantity}
-                          </span>
-                          <span className="text-neutral-300">RM {item.product.price * item.quantity}</span>
-                        </div>
-                      ))}
+                      {items.map((item) => {
+                        const hasDeposit = typeof item.product.depositAmount === 'number'
+                        const chargeAmount = (item.product.depositAmount ?? item.product.price) * item.quantity
+                        return (
+                          <div key={item.product.slug}>
+                            <div className="flex justify-between text-body-sm">
+                              <span className="text-neutral-400">
+                                {getProductName(item.product, locale)} × {item.quantity}
+                              </span>
+                              {hasDeposit ? (
+                                <span className="text-neutral-600 line-through">RM {item.product.price * item.quantity}</span>
+                              ) : (
+                                <span className="text-neutral-300">RM {chargeAmount}</span>
+                              )}
+                            </div>
+                            {hasDeposit && (
+                              <div className="flex justify-between text-body-sm mt-1">
+                                <span className="text-brand-red-light text-xs">{shop.checkout.depositLabel}</span>
+                                <span className="text-white font-bold">RM {chargeAmount}</span>
+                              </div>
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
 
+                    {hasServiceItems && (
+                      <p className="text-[10px] text-neutral-600 mb-4">
+                        {shop.checkout.depositNotice}
+                      </p>
+                    )}
+
                     <div className="flex justify-between items-baseline mb-8">
-                      <span className="text-body font-bold text-white">{shop.cart.total}</span>
+                      <span className="text-body font-bold text-white">
+                        {hasServiceItems ? shop.checkout.depositLabel : shop.cart.total}
+                      </span>
                       <span className="text-h4 font-bold text-white">RM {totalPrice}</span>
                     </div>
 
@@ -266,7 +424,7 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                       disabled={!canSubmit || loading}
                       className="cta-primary w-full text-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? shop.checkout.processing : shop.checkout.payNow}
+                      {loading ? shop.checkout.processing : hasServiceItems ? shop.checkout.payDeposit : shop.checkout.payNow}
                     </button>
                   </div>
                 </FadeIn>
