@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { type Locale, getContent, business } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
@@ -39,8 +40,19 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
         <FadeIn delay={0.3}>
           <div className="border border-white/10 bg-white/[0.03]">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch">
-              {/* Left — included items */}
-              <div className="p-8 md:p-10 lg:p-12">
+              {/* Promo image — top on mobile, right on desktop */}
+              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-white/10 flex items-center justify-center min-h-[200px] lg:min-w-[280px] overflow-hidden">
+                <Image
+                  src="/images/asset promotion/PROMO 1 B.jpg"
+                  alt="Pakej Servis Gearbox"
+                  width={400}
+                  height={500}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Included items — below image on mobile, left on desktop */}
+              <div className="order-last lg:order-first p-8 md:p-10 lg:p-12">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                   {promo.landing.included.map((item, i) => (
                     <div key={item.title}>
@@ -68,11 +80,6 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
                     {promo.ctaSecondary}
                   </Link>
                 </div>
-              </div>
-
-              {/* Right — image placeholder */}
-              <div className="border-t lg:border-t-0 lg:border-l border-white/10 flex items-center justify-center px-10 py-8 lg:px-14 lg:py-12 min-h-[200px] lg:min-w-[280px]">
-                <div className="w-full h-full min-h-[160px] bg-white/5" />
               </div>
             </div>
           </div>
