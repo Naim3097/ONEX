@@ -71,9 +71,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
               <FadeIn delay={0.5}>
                 <div className="flex flex-col sm:flex-row items-center gap-5">
                   <Link
-                    href={business.whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`/${locale}/shop`}
                     className="cta-primary"
                   >
                     {promo.ctaPrimary}
@@ -217,9 +215,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
           <FadeIn delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
               <Link
-                href={business.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/${locale}/shop`}
                 className="cta-primary"
               >
                 {promo.ctaPrimary}
