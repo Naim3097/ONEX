@@ -33,7 +33,7 @@ export default function ProductActions({ product, locale }: ProductActionsProps)
         onClick={() => addItem(product)}
         className="cta-primary flex-1 text-center"
       >
-        {hasDeposit ? shop.bookNow : shop.addToCart}
+        {shop.addToCart}
       </button>
       <Link href={`/${locale}/shop/cart`} className="cta-ghost text-center">
         {shop.cart.title}

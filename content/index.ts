@@ -365,11 +365,15 @@ interface SiteContent {
       orderId: string
       amount: string
       home: string
+      whatsapp: string
+      waSuccess: string
     }
     cancelled: {
       title: string
       body: string
       retry: string
+      whatsapp: string
+      waFail: string
     }
   }
   footer: {
@@ -933,11 +937,15 @@ const en: SiteContent = {
       orderId: 'Order ID',
       amount: 'Amount Paid',
       home: 'Back to Home',
+      whatsapp: 'Confirm via WhatsApp',
+      waSuccess: 'ONEX ORDER - Hi, I\'ve just paid the deposit for the service package. Please confirm my order. Thank you!',
     },
     cancelled: {
       title: 'Payment Cancelled',
       body: 'Your payment was cancelled or failed. Your order has not been confirmed. You can try again anytime.',
       retry: 'Try Again',
+      whatsapp: 'Contact via WhatsApp',
+      waFail: 'ONEX ORDER - Hi, I tried to make a payment for the service package but it didn\'t go through. Could you help me?',
     },
   },
   footer: {
@@ -1526,11 +1534,15 @@ const ms: SiteContent = {
       orderId: 'ID Pesanan',
       amount: 'Jumlah Dibayar',
       home: 'Kembali ke Utama',
+      whatsapp: 'Sahkan melalui WhatsApp',
+      waSuccess: 'ONEX ORDER - Hi, saya telah membayar deposit untuk pakej servis. Sila sahkan pesanan saya. Terima kasih!',
     },
     cancelled: {
       title: 'Pembayaran Dibatalkan',
       body: 'Pembayaran anda dibatalkan atau gagal. Pesanan anda belum disahkan. Anda boleh cuba semula bila-bila masa.',
       retry: 'Cuba Semula',
+      whatsapp: 'Hubungi melalui WhatsApp',
+      waFail: 'ONEX ORDER - Hi, saya cuba membuat pembayaran untuk pakej servis tetapi gagal. Boleh tolong saya?',
     },
   },
   footer: {
@@ -2113,11 +2125,15 @@ const zh: SiteContent = {
       orderId: '订单编号',
       amount: '支付金额',
       home: '返回首页',
+      whatsapp: '通过WhatsApp确认',
+      waSuccess: 'ONEX ORDER - 您好，我已支付服务套餐的押金。请确认我的订单。谢谢！',
     },
     cancelled: {
       title: '付款已取消',
       body: '您的付款已取消或失败。订单尚未确认。您可以随时重试。',
       retry: '重试',
+      whatsapp: '通过WhatsApp联系',
+      waFail: 'ONEX ORDER - 您好，我尝试支付服务套餐但失败了。请问可以帮忙吗？',
     },
   },
   footer: {

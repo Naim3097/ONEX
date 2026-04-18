@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
-import { getContent, type Locale } from '@/content'
+import { getContent, type Locale, business } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
 import Text from '@/components/typography/Text'
@@ -84,7 +84,17 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Link href={`/${locale}/shop`} className="cta-primary">
+            <a
+              href={`https://wa.me/+601131051677?text=${encodeURIComponent(shop.cancelled.waFail)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary"
+            >
+              {shop.cancelled.whatsapp}
+            </a>
+          </FadeIn>
+          <FadeIn delay={0.35}>
+            <Link href={`/${locale}/shop`} className="cta-ghost mt-3 inline-block">
               {shop.cancelled.retry}
             </Link>
           </FadeIn>
@@ -135,9 +145,19 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <Link href={`/${locale}`} className="cta-primary">
-            {shop.success.home}
-          </Link>
+          <div className="flex flex-col items-center gap-3">
+            <a
+              href={`https://wa.me/+601131051677?text=${encodeURIComponent(shop.success.waSuccess)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary"
+            >
+              {shop.success.whatsapp}
+            </a>
+            <Link href={`/${locale}`} className="cta-ghost">
+              {shop.success.home}
+            </Link>
+          </div>
         </FadeIn>
       </div>
     </section>

@@ -69,9 +69,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
 
                 <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center gap-5">
                   <Link
-                    href={business.whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`/${locale}/shop`}
                     className="cta-primary"
                   >
                     {promo.ctaPrimary}

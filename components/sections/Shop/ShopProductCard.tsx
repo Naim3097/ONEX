@@ -100,11 +100,15 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
         <div className="mt-auto pt-4 border-t border-neutral-800/50">
           <div className="flex items-end justify-between gap-3">
             <div>
-              <span className="text-h5 text-white font-bold">RM {product.price}</span>
-              {product.originalPrice && (
-                <span className="text-body-sm text-neutral-600 line-through ml-2">
-                  RM {product.originalPrice}
-                </span>
+              {!isComingSoon && (
+                <>
+                  <span className="text-h5 text-white font-bold">RM {product.price}</span>
+                  {product.originalPrice && (
+                    <span className="text-body-sm text-neutral-600 line-through ml-2">
+                      RM {product.originalPrice}
+                    </span>
+                  )}
+                </>
               )}
               {hasDeposit && !isComingSoon && (
                 <span className="block text-[10px] text-neutral-500 mt-1">
@@ -125,7 +129,7 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
                     : 'bg-white text-neutral-950 hover:bg-brand-red hover:text-white'
                 }`}
               >
-                {added ? '✓ ' + shop.added : hasDeposit ? shop.bookNow : shop.addToCart}
+                {added ? '✓ ' + shop.added : shop.addToCart}
               </button>
             )}
           </div>
