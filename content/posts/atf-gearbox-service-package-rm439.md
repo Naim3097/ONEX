@@ -74,7 +74,6 @@ The ATF service package covers most automatic transmission vehicles commonly dri
 2. **Choose your date** — Pick a weekday or Saturday that works for you
 3. **Drive in or use Door-to-Door** — Come to our workshop in Shah Alam or Kulim, or we'll come to you
 4. **Service completed** — ATF drained and replaced, filter changed, OBD2 device handed over
-5. **3-month / 5,000 km warranty** — Peace of mind after the service
 
 The RM 50 deposit is deducted from the total RM 439 price. You pay the remaining RM 389 at the workshop on service day.
 
@@ -91,12 +90,6 @@ Let's break down what you'd typically pay separately:
 | **Total (separate)** | **RM 350–560** |
 
 At RM 439 with everything bundled — including the OBD2 device free — you're getting specialist-level service at a fair, transparent price. No hidden charges, no upselling.
-
-## 3-Month / 5,000 km Warranty
-
-Every ATF service package comes with our **3-month or 5,000 km warranty** (whichever comes first). If you experience any transmission issues related to the service within this period, bring it back and we'll make it right.
-
-This is our commitment to quality work — not just fast work.
 
 ## Book Your ATF Service Package
 

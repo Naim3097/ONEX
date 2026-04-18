@@ -103,7 +103,6 @@ Di One X Transmission, kami tawarkan pakej lengkap:
 - ✅ Tukar minyak ATF (spesifikasi betul)
 - ✅ Tukar penapis auto
 - ✅ PERCUMA peranti diagnostik OBD2
-- ✅ Waranti 3 bulan / 5,000 km
 
 Harga tetap **RM 439**. Tiada caj tersembunyi. Tempah di [halaman shop](/ms/shop) dengan deposit RM 50.
 
