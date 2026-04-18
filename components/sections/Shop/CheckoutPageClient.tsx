@@ -22,35 +22,12 @@ const TIME_SLOTS = [
   '4:00 PM – 6:00 PM',
 ]
 
-function getAvailableDates(): Date[] {
-  const dates: Date[] = []
-  const now = new Date()
-  let daysAdded = 0
-  let offset = 1 // start from tomorrow
-
-  while (daysAdded < 3) {
-    const d = new Date(now)
-    d.setDate(d.getDate() + offset)
-    d.setHours(0, 0, 0, 0)
-    // Skip Sundays (day 0)
-    if (d.getDay() !== 0) {
-      dates.push(d)
-      daysAdded++
-    }
-    offset++
-  }
-  return dates
-}
-
-function formatDateDisplay(d: Date): string {
-  return d.toLocaleDateString('en-MY', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' })
-}
-
-function formatDateValue(d: Date): string {
-  const y = d.getFullYear()
-  const m = String(d.getMonth() + 1).padStart(2, '0')
-  const day = String(d.getDate()).padStart(2, '0')
-  return `${y}-${m}-${day}`
+function getMinDate(): string {
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  // If tomorrow is Sunday, skip to Monday
+  if (tomorrow.getDay() === 0) tomorrow.setDate(tomorrow.getDate() + 1)
+  return tomorrow.toISOString().split('T')[0]
 }
 
 export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) {
@@ -74,7 +51,7 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const availableDates = useMemo(() => getAvailableDates(), [])
+  const minDate = useMemo(() => getMinDate(), [])
 
   const updateField = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }))
@@ -300,26 +277,19 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
                         <h3 className="text-body-sm font-bold text-white mb-3 uppercase tracking-wider">
                           {shop.checkout.fields.preferredDate}
                         </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                          {availableDates.map((d) => {
-                            const val = formatDateValue(d)
-                            const isSelected = form.preferredDate === val
-                            return (
-                              <button
-                                key={val}
-                                type="button"
-                                onClick={() => updateField('preferredDate', val)}
-                                className={`p-4 text-body-sm font-medium transition-all duration-200 border ${
-                                  isSelected
-                                    ? 'bg-brand-red text-white border-brand-red'
-                                    : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:border-neutral-600 hover:text-white'
-                                }`}
-                              >
-                                {formatDateDisplay(d)}
-                              </button>
-                            )
-                          })}
-                        </div>
+                        <input
+                          type="date"
+                          min={minDate}
+                          value={form.preferredDate}
+                          onChange={(e) => {
+                            const val = e.target.value
+                            // Block Sundays
+                            const d = new Date(val + 'T00:00:00')
+                            if (d.getDay() === 0) return
+                            updateField('preferredDate', val)
+                          }}
+                          className="w-full p-4 text-body-sm font-medium bg-neutral-900 border border-neutral-800 text-white focus:border-brand-red focus:outline-none transition-colors duration-200 [color-scheme:dark]"
+                        />
                       </div>
                     </FadeIn>
                     <FadeIn delay={0.3}>
