@@ -48,6 +48,13 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
       .then(data => {
         if (data.status === 'confirmed' || data.status === 'completed') {
           setStatus('confirmed')
+          // Fire META Pixel Purchase event
+          if (typeof window !== 'undefined' && (window as any).fbq) {
+            (window as any).fbq('track', 'Purchase', {
+              value: data.paymentAmount || 50.00,
+              currency: 'MYR',
+            })
+          }
         } else if (data.status === 'cancelled') {
           setStatus('cancelled')
         } else {
