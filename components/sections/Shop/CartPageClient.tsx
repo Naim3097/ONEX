@@ -52,9 +52,9 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                   const name = getProductName(item.product, locale)
                   return (
                     <FadeIn key={item.product.slug}>
-                      <div className="bg-neutral-900 border border-neutral-800 p-6 flex gap-6">
+                      <div className="bg-neutral-900 border border-neutral-800 p-4 sm:p-6 flex gap-4 sm:gap-6">
                         {/* Thumbnail */}
-                        <div className="w-20 h-20 bg-neutral-800 flex-shrink-0 overflow-hidden">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-neutral-800 flex-shrink-0 overflow-hidden">
                           {item.product.image && (
                             <Image
                               src={item.product.image}
@@ -67,28 +67,28 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-4 mb-2">
+                          <div className="flex items-start justify-between gap-2 sm:gap-4 mb-2">
                             <Link
                               href={`/${locale}/shop/${item.product.slug}`}
-                              className="text-body font-bold text-white hover:text-brand-red transition-colors truncate"
+                              className="text-body-sm sm:text-body font-bold text-white hover:text-brand-red transition-colors line-clamp-2"
                             >
                               {name}
                             </Link>
-                            <span className="text-body font-bold text-white whitespace-nowrap">
+                            <span className="text-body-sm sm:text-body font-bold text-white whitespace-nowrap">
                               RM {(item.product.depositAmount ?? item.product.price) * item.quantity}
                             </span>
                           </div>
 
-                          <p className="text-body-sm text-neutral-500 mb-4">
+                          <div className="text-body-sm text-neutral-500 mb-4">
                             {item.product.depositAmount != null ? (
-                              <>
-                                <span className="text-brand-red-light">{shop.depositLabel}</span>
-                                <span className="text-neutral-600 line-through ml-2">RM {item.product.price} each</span>
-                              </>
+                              <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                                <span className="text-brand-red-light text-xs">{shop.depositLabel}</span>
+                                <span className="text-neutral-600 line-through text-xs">RM {item.product.price} each</span>
+                              </div>
                             ) : (
-                              <>RM {item.product.price} each</>
+                              <span className="text-xs">RM {item.product.price} each</span>
                             )}
-                          </p>
+                          </div>
 
                           <div className="flex items-center justify-between">
                             {/* Quantity controls */}
