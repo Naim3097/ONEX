@@ -89,16 +89,26 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
               <RevealText text={name} as="h1" className="text-h2 text-white mb-4" />
 
-              <FadeIn delay={0.15}>
-                <div className="flex items-baseline gap-3 mb-6">
-                  <span className="text-h3 text-white font-bold">RM {product.price}</span>
-                  {product.originalPrice && (
-                    <span className="text-body text-neutral-600 line-through">
-                      RM {product.originalPrice}
-                    </span>
-                  )}
-                </div>
-              </FadeIn>
+              {!product.comingSoon && (
+                <FadeIn delay={0.15}>
+                  <div className="flex items-baseline gap-3 mb-6">
+                    {product.depositAmount ? (
+                      <>
+                        <span className="text-xs font-bold uppercase tracking-wider text-brand-red mr-1">DEPOSIT TEMPAHAN</span>
+                        <span className="text-h3 text-white font-bold">RM {product.depositAmount}</span>
+                        <span className="text-h3 text-neutral-500 font-bold">RM {product.price}</span>
+                      </>
+                    ) : (
+                      <span className="text-h3 text-white font-bold">RM {product.price}</span>
+                    )}
+                    {product.originalPrice && (
+                      <span className="text-body text-neutral-600 line-through">
+                        RM {product.originalPrice}
+                      </span>
+                    )}
+                  </div>
+                </FadeIn>
+              )}
 
               <FadeIn delay={0.2}>
                 <p className="text-body-lg text-neutral-400 leading-relaxed mb-8">

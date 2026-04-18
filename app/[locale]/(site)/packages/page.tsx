@@ -10,14 +10,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: l } = await params
   const locale = l as Locale
   const titles: Record<string, string> = {
-    en: 'Gearbox Service Package RM 460 | ATF + Filter + FREE OBD2 | One X Transmission',
-    ms: 'Pakej Servis Gearbox RM 460 | ATF + Penapis + PERCUMA OBD2 | One X Transmission',
-    zh: '变速箱保养套餐 RM 460 | ATF + 滤清器 + 免费OBD2 | One X Transmission',
+    en: 'Gearbox Service Package RM 439 | ATF + Filter + FREE OBD2 | One X Transmission',
+    ms: 'Pakej Servis Gearbox RM 439 | ATF + Penapis + PERCUMA OBD2 | One X Transmission',
+    zh: '变速箱保养套餐 RM 439 | ATF + 滤清器 + 免费OBD2 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
-    en: 'Limited time gearbox service package — ATF oil replace, auto filter, and FREE OBD2 device for only RM 460. 3-month warranty included. Walk in or WhatsApp to book.',
-    ms: 'Pakej servis gearbox tawaran terhad — tukar minyak ATF, penapis auto, dan PERCUMA peranti OBD2 hanya RM 460. Waranti 3 bulan disertakan. Walk-in atau WhatsApp untuk tempah.',
-    zh: '限时变速箱保养套餐 — ATF换油、自动滤清器及免费OBD2设备仅需RM 460。含3个月保修。到店或WhatsApp预约。',
+    en: 'Limited time gearbox service package — ATF oil replace, auto filter, and FREE OBD2 device for only RM 439. 3-month warranty included. Walk in or WhatsApp to book.',
+    ms: 'Pakej servis gearbox tawaran terhad — tukar minyak ATF, penapis auto, dan PERCUMA peranti OBD2 hanya RM 439. Waranti 3 bulan disertakan. Walk-in atau WhatsApp untuk tempah.',
+    zh: '限时变速箱保养套餐 — ATF换油、自动滤清器及免费OBD2设备仅需RM 439。含3个月保修。到店或WhatsApp预约。',
   }
   return generatePageMetadata({
     locale,

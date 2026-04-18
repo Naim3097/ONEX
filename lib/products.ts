@@ -38,7 +38,7 @@ export const products: Product[] = [
       ms: 'Tukar Minyak ATF + Penapis Auto + PERCUMA OBD2',
       zh: 'ATF换油 + 自动滤清器 + 免费OBD2设备',
     },
-    price: 460,
+    price: 439,
     originalPrice: 580,
     badge: {
       en: 'Best Value',
