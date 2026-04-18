@@ -1,8 +1,8 @@
 import { type Locale, getContent, business } from '@/content'
 import { generatePageMetadata } from '@/lib/metadata'
 import Image from 'next/image'
-import Link from 'next/link'
 import FadeIn from '@/components/motion/FadeIn'
+import AddToCartButton from '@/components/ui/AddToCartButton'
 import RevealText from '@/components/motion/RevealText'
 import Text from '@/components/typography/Text'
 
@@ -70,12 +70,13 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
 
               <FadeIn delay={0.5}>
                 <div className="flex flex-col sm:flex-row items-center gap-5">
-                  <Link
-                    href={`/${locale}/shop`}
+                  <AddToCartButton
+                    locale={locale}
+                    slug="atf-gearbox-service-package"
                     className="cta-primary"
                   >
                     {promo.ctaPrimary}
-                  </Link>
+                  </AddToCartButton>
                   <a href={business.phoneTel} className="text-body-sm text-neutral-300 font-medium tracking-wide hover:text-white transition-colors duration-300">
                     {business.phone}
                   </a>
@@ -214,12 +215,13 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
 
           <FadeIn delay={0.5}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-              <Link
-                href={`/${locale}/shop`}
+              <AddToCartButton
+                locale={locale}
+                slug="atf-gearbox-service-package"
                 className="cta-primary"
               >
                 {promo.ctaPrimary}
-              </Link>
+              </AddToCartButton>
               <a href={business.phoneTel} className="text-body-sm text-neutral-400 font-medium tracking-wide hover:text-white transition-colors duration-300">
                 {business.phone}
               </a>
