@@ -67,7 +67,7 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-2 sm:gap-4 mb-2">
+                          <div className="flex items-start justify-between gap-2 sm:gap-4 mb-1">
                             <Link
                               href={`/${locale}/shop/${item.product.slug}`}
                               className="text-body-sm sm:text-body font-bold text-white hover:text-brand-red transition-colors line-clamp-2"
@@ -79,18 +79,18 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
                             </span>
                           </div>
 
-                          <div className="text-body-sm text-neutral-500 mb-4">
+                          <div className="text-neutral-500 mb-5">
                             {item.product.depositAmount != null ? (
                               <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                                <span className="text-brand-red-light text-xs">{shop.depositLabel}</span>
-                                <span className="text-neutral-600 line-through text-xs">RM {item.product.price} each</span>
+                                <span className="text-brand-red-light text-[11px]">{shop.depositLabel}</span>
+                                <span className="text-neutral-600 line-through text-[11px]">RM {item.product.price} each</span>
                               </div>
                             ) : (
-                              <span className="text-xs">RM {item.product.price} each</span>
+                              <span className="text-[11px] text-neutral-600">RM {item.product.price} each</span>
                             )}
                           </div>
 
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-4">
                             {/* Quantity controls */}
                             <div className="flex items-center border border-neutral-700">
                               <button
@@ -114,7 +114,7 @@ export default function CartPageClient({ locale }: CartPageClientProps) {
 
                             <button
                               onClick={() => removeItem(item.product.slug)}
-                              className="text-xs uppercase tracking-wider text-neutral-600 hover:text-brand-red transition-colors"
+                              className="text-[11px] uppercase tracking-wider text-neutral-600 hover:text-brand-red transition-colors"
                             >
                               {shop.cart.remove}
                             </button>
