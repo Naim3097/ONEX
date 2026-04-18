@@ -116,6 +116,7 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
         body: JSON.stringify({
           amount: totalPrice,
           invoiceRef: `ORDER-${docRef.id}`,
+          orderId: docRef.id,
           customerName: form.name,
           customerEmail: form.email,
           customerPhone: form.phone,

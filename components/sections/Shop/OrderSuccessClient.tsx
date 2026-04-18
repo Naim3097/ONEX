@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { getContent, type Locale } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
@@ -30,18 +31,19 @@ interface OrderSuccessClientProps {
 export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) {
   const content = getContent(locale)
   const shop = content.shop
+  const searchParams = useSearchParams()
 
   const [status, setStatus] = useState<Status>('loading')
 
   useEffect(() => {
-    const storedOrderId = sessionStorage.getItem('onex_order_id')
+    const orderId = searchParams.get('orderId') || sessionStorage.getItem('onex_order_id')
 
-    if (!storedOrderId) {
+    if (!orderId) {
       setStatus('pending')
       return
     }
 
-    fetch(`/api/check-payment-status?orderId=${storedOrderId}`)
+    fetch(`/api/check-payment-status?orderId=${orderId}`)
       .then(res => res.json())
       .then(data => {
         if (data.status === 'confirmed' || data.status === 'completed') {

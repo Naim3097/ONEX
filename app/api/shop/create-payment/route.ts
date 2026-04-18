@@ -14,7 +14,7 @@ interface LeanXBillResponse {
 
 export async function POST(request: NextRequest) {
   try {
-    const { amount, invoiceRef, customerName, customerEmail, customerPhone } =
+    const { amount, invoiceRef, orderId, customerName, customerEmail, customerPhone } =
       await request.json()
 
     if (!amount || !invoiceRef || !customerName || !customerEmail || !customerPhone) {
@@ -59,7 +59,9 @@ export async function POST(request: NextRequest) {
     const protocol = request.headers.get('x-forwarded-proto') || 'https'
     const host = request.headers.get('host')
     const baseUrl = `${protocol}://${host}`
-    const redirectUrl = `${baseUrl}/en/shop/success`
+    const redirectUrl = orderId
+      ? `${baseUrl}/en/shop/success?orderId=${orderId}`
+      : `${baseUrl}/en/shop/success`
     const callbackUrl = `https://www.onextransmission.com/api/payment-webhook`
 
     const leanxPayload = {
