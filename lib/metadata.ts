@@ -10,11 +10,13 @@ interface PageMeta {
   locale: Locale
   page?: string
   path?: string
+  image?: string
 }
 
-export function generatePageMetadata({ title, description, locale, page, path }: PageMeta): Metadata {
+export function generatePageMetadata({ title, description, locale, page, path, image }: PageMeta): Metadata {
   const pagePath = path ?? (page && page !== 'home' ? `/${page}` : '')
   const url = `${baseUrl}/${locale}${pagePath}`
+  const ogImg = image ? `${baseUrl}${image}` : ogImage
 
   const alternates: Record<string, string> = {}
   for (const loc of ['en', 'ms', 'zh']) {
@@ -36,10 +38,10 @@ export function generatePageMetadata({ title, description, locale, page, path }:
       locale: locale === 'ms' ? 'ms_MY' : locale === 'zh' ? 'zh_MY' : 'en_MY',
       images: [
         {
-          url: ogImage,
+          url: ogImg,
           width: 1200,
           height: 630,
-          alt: 'One X Transmission — Gearbox Specialist Shah Alam',
+          alt: title,
         },
       ],
     },
@@ -47,7 +49,7 @@ export function generatePageMetadata({ title, description, locale, page, path }:
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      images: [ogImg],
     },
   }
 }

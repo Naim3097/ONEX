@@ -30,9 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const name = getProductName(product, locale)
   return generatePageMetadata({
     locale,
-    page: 'shop',
+    path: `/shop/${slug}`,
     title: `${name} | One X Transmission`,
     description: getProductDescription(product, locale),
+    image: product.image,
   })
 }
 
