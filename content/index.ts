@@ -297,8 +297,16 @@ interface SiteContent {
     landing: {
       heroHeadline: string
       heroBody: string
+      problemTitle: string
+      problemBody: string
       includedTitle: string
       included: { title: string; description: string }[]
+      bykyTitle: string
+      bykyBody: string
+      bykyFeatures: { title: string; description: string }[]
+      emotionalTitle: string
+      emotionalBody: string
+      emotionalCta: string
       whoTitle: string
       whoItems: string[]
       modelsTitle: string
@@ -840,32 +848,53 @@ const en: SiteContent = {
     ctaPrimary: 'Claim This Offer',
     ctaSecondary: 'Learn More',
     landing: {
-      heroHeadline: 'Complete Gearbox\nService Package',
-      heroBody: 'ATF oil replacement, automatic filter change, and a FREE OBD2 diagnostic device — bundled into one affordable visit. Keep your transmission healthy and monitor your vehicle anytime.',
-      includedTitle: "What's Included",
+      heroHeadline: 'Complete Gearbox Service\nRM439',
+      heroBody: 'ATF oil replacement + new filter + FREE OBD2 device compatible with the BYKI app. One visit. Gearbox sorted. Monitor your car yourself after this.',
+      problemTitle: 'Gears Not Shifting Smoothly?\nDon\'t Wait Until It Breaks.',
+      problemBody: 'Delayed gear shifts. Strange sounds when reversing. ATF fluid that\'s changed colour.\n\nMost gearbox problems can actually be prevented if maintained before they get worse.\n\nThis package isn\'t just an oil change. It\'s a step towards knowing your car better.',
+      includedTitle: 'What You Get',
       included: [
         {
-          title: 'ATF Oil Replace',
-          description: 'Complete drain and replacement with premium automatic transmission fluid matched to your vehicle specification. Fresh fluid restores smooth shifting and reduces heat buildup.',
+          title: 'ATF Oil Replacement',
+          description: 'Full drain and replacement using premium automatic transmission fluid matched to your vehicle\'s specifications. Fresh fluid restores smooth gear shifts and reduces excess heat.',
         },
         {
-          title: 'Auto Filter',
-          description: 'Your gearbox filter catches metal particles and debris that accumulate over time. A new filter ensures clean fluid circulation and protects internal components from wear.',
+          title: 'New Gearbox Filter',
+          description: 'The gearbox filter catches metal particles and debris that build up over time. A new filter keeps fluid circulation clean and internal components protected.',
         },
         {
           title: 'FREE OBD2 Device',
-          description: 'Get a complimentary OBD2 diagnostic device with your service. Monitor your vehicle\'s health, read error codes, and catch potential issues early — right from your phone.',
+          description: 'An OBD2 diagnostic device fully compatible with the BYKI app. Plug it into your vehicle\'s OBD2 port, connect via Bluetooth, and you can monitor your car from your phone. Device value alone: RM150+. Yours free.',
         },
       ],
-      whoTitle: 'Who Should Get This',
-      whoItems: [
-        'Vehicles above 40,000 km that haven\'t had a gearbox service',
-        'Cars experiencing rough or delayed gear shifts',
-        'Owners who want to extend transmission lifespan',
-        'Vehicles with dark or burnt-smelling ATF fluid',
-        'Anyone preparing for a long road trip or vehicle inspection',
+      bykyTitle: 'What BYKI Can Do For You',
+      bykyBody: 'With the OBD2 device you receive and the free BYKI app, you can monitor your car anytime, from your phone.',
+      bykyFeatures: [
+        {
+          title: 'Live Sensor Data',
+          description: 'See what\'s happening inside your engine right now. RPM, coolant temperature, throttle, fuel efficiency. All moving in real-time before your eyes. Like an extra dashboard, but with more detail.',
+        },
+        {
+          title: 'Health Scan',
+          description: 'Run a full vehicle scan and get a health score from 0 to 100. BYKI breaks down the analysis by system: engine, transmission, emissions, electrical. So you know which parts need attention and which are still fine.',
+        },
+        {
+          title: 'Fault Codes Translated',
+          description: 'Warning light on? BYKI reads the fault code and explains it in plain language. Not just "P0301", but what it means, how serious it is, and estimated repair costs. You know what\'s going on before stepping into a workshop.',
+        },
       ],
-      modelsTitle: 'Compatible Models',
+      emotionalTitle: 'You Don\'t Have to Be a Mechanic.',
+      emotionalBody: 'You just need to know what\'s happening with your car.',
+      emotionalCta: 'BYKI is free for everyone. A compatible OBD2 device? Yours free with this package.',
+      whoTitle: 'Who Should Get This Package',
+      whoItems: [
+        'Vehicles over 40,000 km that have never had a gearbox service',
+        'Cars starting to feel rough or slow gear shifts',
+        'Owners who want to maintain their transmission long-term',
+        'ATF fluid that\'s turned dark or smells burnt',
+        'Anyone who wants to monitor their car\'s health without depending on a workshop',
+      ],
+      modelsTitle: 'Compatible With Your Car',
       models: [
         'Perodua Myvi, Axia, Bezza, Aruz, Alza',
         'Proton Saga, X50, X70, Iriz, Persona',
@@ -873,12 +902,12 @@ const en: SiteContent = {
         'Toyota Vios, Camry, Alphard, RAV4',
         'Nissan Almera, X-Trail, Serena',
         'Mazda 2, 3, CX-5, CX-3',
-        'And more — contact us for your specific model',
+        'And more. Contact us for your specific model',
       ],
       warrantyTitle: '3-Month Warranty',
-      warrantyBody: 'Every service package comes with a 3-month / 5,000 km warranty. If anything doesn\'t feel right after your service, bring it back — we\'ll make it right.',
-      footerCta: 'Book Your Service Package',
-      footerBody: 'Limited time pricing. Walk in or WhatsApp us to secure your slot.',
+      warrantyBody: 'Every service package comes with a 3-month / 5,000 km warranty. If anything doesn\'t feel right after your service, bring it back and we\'ll make it right.',
+      footerCta: 'RM439\nGearbox Service + Free OBD2 Device',
+      footerBody: 'Take care of your gearbox today, and monitor your car yourself after this. Limited slots each week. Contact us to book.',
     },
   },
   shop: {
@@ -1437,32 +1466,53 @@ const ms: SiteContent = {
     ctaPrimary: 'Dapatkan Tawaran Ini',
     ctaSecondary: 'Ketahui Lebih Lanjut',
     landing: {
-      heroHeadline: 'Pakej Servis\nGearbox Lengkap',
-      heroBody: 'Penggantian minyak ATF, penukaran penapis automatik, dan PERCUMA peranti diagnostik OBD2 — digabungkan dalam satu lawatan yang berpatutan. Jaga kesihatan transmisi anda dan pantau kenderaan anda bila-bila masa.',
-      includedTitle: 'Apa Yang Termasuk',
+      heroHeadline: 'Servis Gearbox Lengkap\nRM439',
+      heroBody: 'Tukar minyak ATF + penapis baru + PERCUMA peranti OBD2 yang serasi dengan aplikasi BYKI. Satu lawatan. Gearbox dijaga. Kereta anda boleh dipantau sendiri lepas ni.',
+      problemTitle: 'Gear Tak Smooth?\nJangan Tunggu Sampai Rosak.',
+      problemBody: 'Gear lambat masuk. Bunyi pelik waktu undur. Minyak ATF dah bertukar warna.\n\nKebanyakan masalah gearbox sebenarnya boleh dielakkan kalau dijaga sebelum jadi teruk.\n\nPakej ni bukan sekadar tukar minyak. Ia satu langkah untuk anda kenal kereta anda lebih baik.',
+      includedTitle: 'Apa Yang Anda Dapat',
       included: [
         {
           title: 'Tukar Minyak ATF',
-          description: 'Penyaliran dan penggantian lengkap dengan cecair transmisi automatik premium yang sepadan dengan spesifikasi kenderaan anda. Cecair baru memulihkan penukaran gear yang lancar dan mengurangkan pembentukan haba.',
+          description: 'Penyaliran dan penggantian penuh menggunakan cecair transmisi automatik premium yang sepadan dengan spesifikasi kenderaan anda. Cecair baru memulihkan penukaran gear yang lancar dan mengurangkan haba berlebihan.',
         },
         {
-          title: 'Penapis Auto',
-          description: 'Penapis gearbox anda menangkap zarah logam dan serpihan yang terkumpul dari masa ke masa. Penapis baru memastikan peredaran cecair yang bersih dan melindungi komponen dalaman daripada haus.',
+          title: 'Penapis Gearbox Baru',
+          description: 'Penapis gearbox menangkap zarah logam dan serpihan yang terkumpul dari masa ke masa. Penapis baru pastikan peredaran cecair kekal bersih dan komponen dalaman dilindungi.',
         },
         {
           title: 'PERCUMA Peranti OBD2',
-          description: 'Dapatkan peranti diagnostik OBD2 percuma dengan servis anda. Pantau kesihatan kenderaan, baca kod ralat, dan kesan masalah awal — terus dari telefon anda.',
+          description: 'Peranti diagnostik OBD2 yang serasi sepenuhnya dengan aplikasi BYKI. Pasang pada port OBD2 kenderaan anda, sambung melalui Bluetooth, dan anda sudah boleh pantau kereta sendiri dari phone. Nilai peranti sahaja: RM150+. Anda dapat percuma.',
         },
       ],
-      whoTitle: 'Siapa Perlu Dapatkan Ini',
-      whoItems: [
-        'Kenderaan melebihi 40,000 km yang belum pernah membuat servis gearbox',
-        'Kereta yang mengalami penukaran gear yang kasar atau lambat',
-        'Pemilik yang ingin memanjangkan jangka hayat transmisi',
-        'Kenderaan dengan cecair ATF yang gelap atau berbau hangit',
-        'Sesiapa yang bersiap untuk perjalanan jauh atau pemeriksaan kenderaan',
+      bykyTitle: 'Apa Yang BYKI Boleh Buat Untuk Anda',
+      bykyBody: 'Dengan peranti OBD2 yang anda terima dan aplikasi BYKI yang percuma, anda boleh pantau kereta sendiri, bila-bila masa, dari phone anda.',
+      bykyFeatures: [
+        {
+          title: 'Data Sensor Langsung',
+          description: 'Tengok apa yang berlaku dalam enjin anda sekarang. RPM, suhu coolant, throttle, kecekapan bahan api. Semuanya bergerak depan mata anda secara langsung. Macam dashboard tambahan, tapi lebih detail.',
+        },
+        {
+          title: 'Imbasan Kesihatan',
+          description: 'Scan penuh kenderaan anda dan dapat skor kesihatan dari 0 hingga 100. BYKI pecahkan analisis mengikut sistem: enjin, transmisi, emisi, elektrikal. Supaya anda tahu bahagian mana yang perlu perhatian, dan mana yang masih okay.',
+        },
+        {
+          title: 'Fault Code Diterjemah',
+          description: 'Lampu amaran menyala? BYKI baca kod kerosakan dan terangkan dalam bahasa yang anda faham. Bukan sekadar "P0301", tapi apa maknanya, serius ke tidak, dan anggaran kos pembaikan. Anda tahu apa yang berlaku sebelum masuk bengkel.',
+        },
       ],
-      modelsTitle: 'Model Yang Sesuai',
+      emotionalTitle: 'Anda Tak Perlu Jadi Mekanik.',
+      emotionalBody: 'Anda cuma perlu tahu apa yang berlaku pada kereta anda.',
+      emotionalCta: 'BYKI percuma untuk semua orang. Peranti OBD2 yang serasi? Anda dapat percuma dalam pakej ni.',
+      whoTitle: 'Siapa Patut Dapatkan Pakej Ni',
+      whoItems: [
+        'Kenderaan melebihi 40,000 km yang belum pernah servis gearbox',
+        'Kereta yang dah mula rasa gear kasar atau lambat masuk',
+        'Pemilik yang nak jaga transmisi untuk jangka panjang',
+        'Minyak ATF yang dah gelap atau berbau hangit',
+        'Sesiapa yang nak pantau kesihatan kereta sendiri tanpa bergantung pada bengkel',
+      ],
+      modelsTitle: 'Sesuai Untuk Kereta Anda',
       models: [
         'Perodua Myvi, Axia, Bezza, Aruz, Alza',
         'Proton Saga, X50, X70, Iriz, Persona',
@@ -1470,12 +1520,12 @@ const ms: SiteContent = {
         'Toyota Vios, Camry, Alphard, RAV4',
         'Nissan Almera, X-Trail, Serena',
         'Mazda 2, 3, CX-5, CX-3',
-        'Dan banyak lagi — hubungi kami untuk model spesifik anda',
+        'Dan banyak lagi. Hubungi kami untuk model spesifik anda',
       ],
       warrantyTitle: 'Waranti 3 Bulan',
-      warrantyBody: 'Setiap pakej servis disertakan waranti 3 bulan / 5,000 km. Jika ada sebarang masalah selepas servis, bawa kembali — kami akan selesaikan.',
-      footerCta: 'Tempah Pakej Servis Anda',
-      footerBody: 'Harga tawaran terhad. Walk-in atau WhatsApp kami untuk menempah slot anda.',
+      warrantyBody: 'Setiap pakej servis disertakan waranti 3 bulan / 5,000 km. Jika ada sebarang masalah selepas servis, bawa kembali dan kami akan selesaikan.',
+      footerCta: 'RM439\nServis Gearbox + Peranti OBD2 Percuma',
+      footerBody: 'Jaga gearbox anda hari ini, dan pantau kereta anda sendiri selepas ni. Slot terhad setiap minggu. Hubungi kami untuk tempah.',
     },
   },
   shop: {
@@ -2028,32 +2078,53 @@ const zh: SiteContent = {
     ctaPrimary: '立即预约',
     ctaSecondary: '了解更多',
     landing: {
-      heroHeadline: '完整变速箱\n保养套餐',
-      heroBody: 'ATF变速箱油更换、自动滤清器更换及免费OBD2诊断设备 — 一次经济实惠的到店服务。保持变速箱健康运转，随时监测车辆状态。',
+      heroHeadline: '完整变速箱保养\nRM439',
+      heroBody: '更换ATF变速箱油 + 全新滤清器 + 免费赠送兼容BYKI应用的OBD2设备。一次到店，变速箱搞定，之后自己就能监测爱车。',
+      problemTitle: '换挡不顺畅？\n别等到坏了才修。',
+      problemBody: '挂挡迟缓。倒车时有异响。ATF油液已经变色。\n\n大多数变速箱问题其实可以预防，只要在恶化之前做好保养。\n\n这个套餐不只是换油，而是让你更了解自己的车。',
       includedTitle: '套餐包含',
       included: [
         {
           title: 'ATF变速箱油更换',
-          description: '完全排放并更换匹配您车辆规格的优质自动变速箱油。新鲜的变速箱油能恢复顺畅换挡并减少热量积聚。',
+          description: '完全排放并使用匹配您车辆规格的优质自动变速箱油进行更换。新鲜油液恢复顺畅换挡并减少多余热量。',
         },
         {
-          title: '自动滤清器',
-          description: '变速箱滤清器会随时间积累金属颗粒和碎屑。新滤清器确保油液清洁循环，保护内部零件免受磨损。',
+          title: '全新变速箱滤清器',
+          description: '变速箱滤清器会随时间积累金属颗粒和碎屑。新滤清器确保油液循环清洁，保护内部零件。',
         },
         {
           title: '免费OBD2设备',
-          description: '保养即送OBD2诊断设备。随时监测车辆健康状态、读取故障码、及早发现潜在问题 — 直接通过手机操作。',
+          description: '完全兼容BYKI应用的OBD2诊断设备。插入车辆OBD2端口，通过蓝牙连接，即可用手机监测爱车。设备单独价值：RM150+，免费赠送。',
         },
       ],
-      whoTitle: '适用对象',
-      whoItems: [
-        '行驶超过40,000公里且未做过变速箱保养的车辆',
-        '换挡粗糙或延迟的汽车',
-        '希望延长变速箱使用寿命的车主',
-        'ATF油液变黑或有烧焦味的车辆',
-        '准备长途旅行或车辆检查的车主',
+      bykyTitle: 'BYKI能为你做什么',
+      bykyBody: '凭借您收到的OBD2设备和免费的BYKI应用，随时随地用手机监测爱车。',
+      bykyFeatures: [
+        {
+          title: '实时传感器数据',
+          description: '实时查看引擎内部状况。转速、冷却液温度、油门、燃油效率，一切数据在眼前实时跳动。就像额外的仪表盘，但更加详细。',
+        },
+        {
+          title: '健康扫描',
+          description: '对车辆进行全面扫描，获得0到100的健康评分。BYKI按系统分类分析：引擎、变速箱、排放、电气。让您清楚哪些部分需要关注，哪些仍然正常。',
+        },
+        {
+          title: '故障码翻译',
+          description: '警示灯亮了？BYKI读取故障码并用通俗语言解释。不只是"P0301"，而是它的含义、严重程度和预估维修费用。进修车厂之前，先了解状况。',
+        },
       ],
-      modelsTitle: '适用车型',
+      emotionalTitle: '你不需要成为汽修师。',
+      emotionalBody: '你只需要知道你的车发生了什么。',
+      emotionalCta: 'BYKI对所有人免费。兼容的OBD2设备？本套餐免费赠送。',
+      whoTitle: '谁应该入手这个套餐',
+      whoItems: [
+        '行驶超过40,000公里且从未做过变速箱保养的车辆',
+        '开始感觉换挡粗糙或迟缓的汽车',
+        '想要长期维护变速箱的车主',
+        'ATF油液变黑或有烧焦味',
+        '想自己监测车辆健康状态而不依赖修车厂的车主',
+      ],
+      modelsTitle: '适用于您的爱车',
       models: [
         'Perodua Myvi, Axia, Bezza, Aruz, Alza',
         'Proton Saga, X50, X70, Iriz, Persona',
@@ -2061,12 +2132,12 @@ const zh: SiteContent = {
         'Toyota Vios, Camry, Alphard, RAV4',
         'Nissan Almera, X-Trail, Serena',
         'Mazda 2, 3, CX-5, CX-3',
-        '更多车型 — 请联系我们确认您的具体型号',
+        '更多车型，请联系我们确认您的具体型号',
       ],
       warrantyTitle: '3个月保修',
-      warrantyBody: '每个保养套餐均附赠3个月/5,000公里保修。如果保养后有任何不适，请带回来 — 我们会妥善处理。',
-      footerCta: '预约保养套餐',
-      footerBody: '限时优惠价格。到店或WhatsApp我们预约。',
+      warrantyBody: '每个保养套餐均附赠3个月/5,000公里保修。如果保养后有任何不适，请带回来，我们会妥善处理。',
+      footerCta: 'RM439\n变速箱保养 + 免费OBD2设备',
+      footerBody: '今天保养变速箱，之后自己监测爱车。每周名额有限，联系我们预约。',
     },
   },
   shop: {
