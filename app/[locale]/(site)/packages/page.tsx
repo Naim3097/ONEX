@@ -10,14 +10,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: l } = await params
   const locale = l as Locale
   const titles: Record<string, string> = {
-    en: 'Gearbox Service Package RM 439 | ATF + Filter + FREE OBD2 | One X Transmission',
-    ms: 'Pakej Servis Gearbox RM 439 | ATF + Penapis + PERCUMA OBD2 | One X Transmission',
-    zh: '变速箱保养套餐 RM 439 | ATF + 滤清器 + 免费OBD2 | One X Transmission',
+    en: 'Gearbox Service Package RM439 | ATF + Filter + FREE OBD2 + BYKI App | One X Transmission',
+    ms: 'Pakej Servis Gearbox RM439 | ATF + Penapis + PERCUMA OBD2 + Aplikasi BYKI | One X Transmission',
+    zh: '变速箱保养套餐 RM439 | ATF + 滤清器 + 免费OBD2 + BYKI应用 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
-    en: 'Limited time gearbox service package — ATF oil replace, auto filter, and FREE OBD2 device for only RM 439. 3-month warranty included. Walk in or WhatsApp to book.',
-    ms: 'Pakej servis gearbox tawaran terhad — tukar minyak ATF, penapis auto, dan PERCUMA peranti OBD2 hanya RM 439. Waranti 3 bulan disertakan. Walk-in atau WhatsApp untuk tempah.',
-    zh: '限时变速箱保养套餐 — ATF换油、自动滤清器及免费OBD2设备仅需RM 439。含3个月保修。到店或WhatsApp预约。',
+    en: 'Complete gearbox service package for RM439. ATF oil replacement, new gearbox filter, and FREE OBD2 device compatible with BYKI app. Monitor your car from your phone. Shah Alam, Selangor.',
+    ms: 'Pakej servis gearbox lengkap RM439. Tukar minyak ATF, penapis gearbox baru, dan PERCUMA peranti OBD2 serasi aplikasi BYKI. Pantau kereta dari phone anda. Shah Alam, Selangor.',
+    zh: '完整变速箱保养套餐RM439。更换ATF变速箱油、全新滤清器及免费OBD2设备兼容BYKI应用。用手机监测爱车。Shah Alam, Selangor。',
   }
   return generatePageMetadata({
     locale,
@@ -101,13 +101,47 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* What's included */}
+      {/* Problem */}
+      <section className="section-dark section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            <div>
+              <FadeIn>
+                <Text variant="overline" className="text-brand-red mb-5">
+                  {locale === 'zh' ? '问题' : locale === 'ms' ? 'Masalah' : 'Problem'}
+                </Text>
+              </FadeIn>
+              <RevealText
+                text={landing.problemTitle}
+                as="h2"
+                className="text-h2 text-white"
+              />
+            </div>
+
+            <div className="border-l border-brand-red/30 pl-8 md:pl-12">
+              {landing.problemBody.split('\n\n').map((paragraph, i) => (
+                <FadeIn key={i} delay={0.15 * (i + 1)}>
+                  <p className={`text-body-lg leading-relaxed ${
+                    i === landing.problemBody.split('\n\n').length - 1
+                      ? 'text-neutral-200 font-medium'
+                      : 'text-neutral-400'
+                  } ${i > 0 ? 'mt-6' : ''}`}>
+                    {paragraph}
+                  </p>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Get */}
       <section className="section-light section-padding">
         <div className="max-w-wide mx-auto px-5 md:px-10">
           <div className="max-w-2xl mb-14 md:mb-20">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
-                {landing.includedTitle}
+                {locale === 'zh' ? '套餐内容' : locale === 'ms' ? 'Pakej' : 'Package'}
               </Text>
             </FadeIn>
             <RevealText
@@ -135,41 +169,144 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* Who should get this */}
+      {/* BYKI Video Preview */}
       <section className="section-dark section-padding">
         <div className="max-w-wide mx-auto px-5 md:px-10">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center mb-14 md:mb-20">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
-                {landing.whoTitle}
+                BYKI
               </Text>
             </FadeIn>
             <RevealText
-              text={landing.whoTitle}
+              text={landing.bykyTitle}
               as="h2"
-              className="text-h2 text-white mb-8"
+              className="text-h2 text-white mb-6"
             />
             <FadeIn delay={0.2}>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {landing.whoItems.map((item, i) => (
-                  <li key={i} className="text-body text-neutral-300 flex items-baseline gap-3">
-                    <span className="w-1.5 h-1.5 bg-brand-red rounded-full shrink-0 mt-2" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-body-lg text-neutral-400 leading-relaxed">
+                {landing.bykyBody}
+              </p>
             </FadeIn>
+          </div>
+
+          {/* BYKI Feature Cards with Phone Video */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+            {landing.bykyFeatures.map((feature, i) => {
+              const videos = ['/videos/byki/sensor-data.mp4', '/videos/byki/health-scan.mp4', '/videos/byki/fault-codes.mp4']
+              return (
+                <FadeIn key={feature.title} delay={0.15 * i}>
+                  <div className="flex flex-col h-full">
+                    {/* Phone Video */}
+                    <div className="relative mx-auto mb-8 w-[180px] sm:w-[200px] bg-neutral-900 border border-neutral-800 overflow-hidden" style={{ aspectRatio: '1180 / 2556' }}>
+                      <video
+                        src={videos[i]}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+
+                    <Text variant="overline" className="text-brand-red/80 mb-3">
+                      {String(i + 1).padStart(2, '0')}
+                    </Text>
+                    <h3 className="text-h4 text-white mb-3">{feature.title}</h3>
+                    <p className="text-body text-neutral-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </FadeIn>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Compatible models */}
+      {/* Emotional Bridge */}
+      <section className="section-light section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="border-t border-b border-neutral-200 py-16 md:py-24 lg:py-32">
+            <div className="max-w-4xl mx-auto text-center">
+              <FadeIn>
+                <div className="w-12 h-px bg-brand-red mx-auto mb-10" />
+              </FadeIn>
+
+              <RevealText
+                text={landing.emotionalTitle}
+                as="h2"
+                className="text-h1 text-neutral-950 mb-6 md:mb-8"
+              />
+
+              <FadeIn delay={0.2}>
+                <p className="text-h4 text-neutral-500 leading-relaxed font-normal mb-10 md:mb-14">
+                  {landing.emotionalBody}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.4}>
+                <p className="text-body text-neutral-600 leading-relaxed max-w-xl mx-auto mb-10">
+                  {landing.emotionalCta}
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.5}>
+                <AddToCartButton
+                  locale={locale}
+                  slug="atf-gearbox-service-package"
+                  className="cta-primary"
+                >
+                  {promo.ctaPrimary}
+                </AddToCartButton>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who Should Get This */}
+      <section className="section-dark section-padding">
+        <div className="max-w-wide mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
+            <div>
+              <FadeIn>
+                <Text variant="overline" className="text-brand-red mb-5">
+                  {locale === 'zh' ? '适用人群' : locale === 'ms' ? 'Untuk Siapa' : 'For You'}
+                </Text>
+              </FadeIn>
+              <RevealText
+                text={landing.whoTitle}
+                as="h2"
+                className="text-h2 text-white"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5">
+              {landing.whoItems.map((item, i) => (
+                <FadeIn key={i} delay={0.1 * i} className="bg-brand-black p-6 md:p-8">
+                  <div className="flex items-start gap-4">
+                    <Text variant="overline" className="text-brand-red/60 shrink-0 mt-0.5">
+                      {String(i + 1).padStart(2, '0')}
+                    </Text>
+                    <p className="text-body text-neutral-300 leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compatible Models */}
       <section className="section-light section-padding">
         <div className="max-w-wide mx-auto px-5 md:px-10">
           <div className="max-w-2xl mb-14 md:mb-20">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
-                {landing.modelsTitle}
+                {locale === 'zh' ? '车型' : locale === 'ms' ? 'Keserasian' : 'Compatibility'}
               </Text>
             </FadeIn>
             <RevealText
