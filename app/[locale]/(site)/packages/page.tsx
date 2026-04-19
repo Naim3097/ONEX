@@ -198,14 +198,14 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
                 <FadeIn key={feature.title} delay={0.15 * i}>
                   <div className="flex flex-col h-full">
                     {/* Phone Video */}
-                    <div className="relative mx-auto mb-8 w-[180px] sm:w-[200px] bg-neutral-900 border border-neutral-800 overflow-hidden" style={{ aspectRatio: '1180 / 2556' }}>
+                    <div className="relative mx-auto mb-8 w-[180px] sm:w-[200px] bg-neutral-900 border border-neutral-800 overflow-hidden" style={{ aspectRatio: '1180 / 2300' }}>
                       <video
                         src={videos[i]}
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-auto object-cover object-top"
                       />
                     </div>
 
