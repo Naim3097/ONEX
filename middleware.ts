@@ -22,6 +22,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/images') ||
     pathname.startsWith('/fonts') ||
     pathname.startsWith('/0x') ||
+    pathname.startsWith('/promo') ||
     pathname.includes('.')
   ) {
     return NextResponse.next()
