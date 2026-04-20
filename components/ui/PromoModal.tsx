@@ -59,7 +59,7 @@ export default function PromoModal({ locale }: PromoModalProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] flex items-center justify-center p-4 transition-all duration-667 ease-ease-out-custom ${
+      className={`fixed inset-0 z-[99999] flex items-center justify-center p-3 md:p-4 transition-all duration-667 ease-ease-out-custom ${
         open
           ? 'bg-black/85 opacity-100 visible'
           : 'bg-transparent opacity-0 invisible'
@@ -69,7 +69,7 @@ export default function PromoModal({ locale }: PromoModalProps) {
       <div
         role="dialog"
         aria-modal="true"
-        className={`relative w-full max-w-[820px] bg-neutral-950 border border-white/5 overflow-hidden transition-all duration-667 ease-ease-out-custom ${
+        className={`relative w-full max-w-[360px] md:max-w-[820px] max-h-[90vh] overflow-y-auto rounded-xl md:rounded-none bg-neutral-950 border border-white/5 overflow-hidden transition-all duration-667 ease-ease-out-custom ${
           open
             ? 'translate-y-0 opacity-100'
             : 'translate-y-6 opacity-0'
@@ -79,14 +79,14 @@ export default function PromoModal({ locale }: PromoModalProps) {
         <button
           onClick={dismiss}
           aria-label="Tutup"
-          className="absolute top-4 right-4 z-10 w-10 h-10 border border-white/10 bg-black/60 text-neutral-400 text-lg flex items-center justify-center transition-all duration-334 ease-ease-out-custom hover:border-brand-red hover:text-white"
+          className="absolute top-2 right-2 md:top-4 md:right-4 z-10 w-8 h-8 md:w-10 md:h-10 border border-white/10 bg-black/60 text-neutral-400 text-sm md:text-lg flex items-center justify-center transition-all duration-334 ease-ease-out-custom hover:border-brand-red hover:text-white"
         >
           &times;
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr]">
           {/* Left — Image */}
-          <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden bg-black">
+          <div className="relative h-[140px] md:h-auto md:aspect-auto overflow-hidden bg-black">
             <Image
               src="/images/asset promotion/PROMO 1 B.jpg"
               alt="Pakej Servis ATF Gearbox RM439"
@@ -98,29 +98,29 @@ export default function PromoModal({ locale }: PromoModalProps) {
           </div>
 
           {/* Right — Content */}
-          <div className="p-6 md:p-8 flex flex-col justify-center">
+          <div className="px-3 py-3 md:p-8 flex flex-col justify-center">
             {/* Overline */}
-            <span className="overline-label">{promo.overline}</span>
+            <span className="overline-label text-[11px] md:text-[13px]">{promo.overline}</span>
 
             {/* Divider */}
-            <div className="divider mt-3 mb-4" />
+            <div className="divider mt-1.5 mb-2 md:mt-3 md:mb-4" />
 
             {/* Pricing */}
-            <div className="flex items-baseline gap-3 mb-1">
-              <span className="text-h3 text-white tracking-tight">RM 439</span>
-              <span className="text-body-sm text-neutral-600 line-through">RM 580</span>
+            <div className="flex items-baseline gap-2 mb-0.5">
+              <span className="text-[1.25rem] md:text-h3 text-white tracking-tight">RM 439</span>
+              <span className="text-[0.8rem] text-neutral-600 line-through">RM 580</span>
             </div>
 
             {/* Title */}
-            <h2 className="text-body-lg text-neutral-300 mb-5">{promo.headline}</h2>
+            <h2 className="text-[0.875rem] md:text-body-lg text-neutral-300 mb-2 md:mb-5">{promo.headline}</h2>
 
             {/* What's Included — gap-px trick */}
-            <div className="flex flex-col gap-px bg-white/5 mb-6">
+            <div className="flex flex-col gap-px bg-white/5 mb-3 md:mb-6">
               {items.map((item, i) => (
-                <div key={i} className="bg-neutral-950 px-4 py-3 flex items-center justify-between gap-3">
-                  <span className="text-body-sm text-neutral-300">{item.title}</span>
+                <div key={i} className="bg-neutral-950 px-3 py-1.5 md:py-2 flex items-center justify-between gap-2">
+                  <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-300">{item.title}</span>
                   {i === items.length - 1 && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2.5 py-1">
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2 py-0.5">
                       Percuma
                     </span>
                   )}
@@ -132,24 +132,24 @@ export default function PromoModal({ locale }: PromoModalProps) {
             <Link
               href={`/${locale}/packages`}
               onClick={dismiss}
-              className="cta-primary block w-full text-center"
+              className="cta-primary block w-full text-center text-[0.875rem] md:text-[1rem] py-2.5 md:py-4"
             >
               {promo.ctaSecondary}
             </Link>
 
             {/* Footer */}
-            <div className="flex justify-between mt-5 pt-5 border-t border-white/5">
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Deposit</span>
-                <span className="text-body-sm text-neutral-200 font-medium">RM 50</span>
+            <div className="flex justify-between mt-3 pt-3 md:mt-5 md:pt-5 border-t border-white/5 gap-2">
+              <div className="flex flex-col gap-0">
+                <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Deposit</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">RM 50</span>
               </div>
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Jimat</span>
-                <span className="text-body-sm text-neutral-200 font-medium">RM 141</span>
+              <div className="flex flex-col gap-0">
+                <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Jimat</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">RM 141</span>
               </div>
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Terhad</span>
-                <span className="text-body-sm text-brand-red font-medium">100 unit sahaja</span>
+              <div className="flex flex-col gap-0">
+                <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Terhad</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-brand-red font-medium">100 unit sahaja</span>
               </div>
             </div>
           </div>
