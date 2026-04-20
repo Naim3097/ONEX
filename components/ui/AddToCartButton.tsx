@@ -19,6 +19,17 @@ export default function AddToCartButton({ locale, slug, className, children }: A
     const product = products.find((p) => p.slug === slug)
     if (!product) return
     addItem(product)
+
+    // Push AddToCart event to dataLayer for GTM
+    ;(window as any).dataLayer = (window as any).dataLayer || []
+    ;(window as any).dataLayer.push({
+      event: 'add_to_cart',
+      content_name: product.name,
+      content_type: 'product',
+      value: product.depositAmount ?? product.price,
+      currency: 'MYR',
+    })
+
     router.push(`/${locale}/shop/cart`)
   }
 

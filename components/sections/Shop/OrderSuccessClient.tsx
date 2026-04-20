@@ -48,9 +48,11 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
       .then(data => {
         if (data.status === 'confirmed' || data.status === 'completed') {
           setStatus('confirmed')
-          // Fire META Pixel Purchase event
-          if (typeof window !== 'undefined' && (window as any).fbq) {
-            (window as any).fbq('track', 'Purchase', {
+          // Push Purchase event to dataLayer for GTM
+          if (typeof window !== 'undefined') {
+            (window as any).dataLayer = (window as any).dataLayer || [];
+            (window as any).dataLayer.push({
+              event: 'purchase',
               value: data.amount || 50.00,
               currency: 'MYR',
               content_type: 'product',

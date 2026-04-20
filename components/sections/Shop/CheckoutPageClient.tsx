@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { collection, addDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
@@ -50,6 +50,20 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  // Push InitiateCheckout event to dataLayer for GTM
+  useEffect(() => {
+    if (items.length > 0) {
+      ;(window as any).dataLayer = (window as any).dataLayer || []
+      ;(window as any).dataLayer.push({
+        event: 'initiate_checkout',
+        value: totalPrice,
+        currency: 'MYR',
+        content_name: items.map((item) => getProductName(item.product, locale)).join(', '),
+        num_items: items.reduce((sum, item) => sum + item.quantity, 0),
+      })
+    }
+  }, [])
 
   const minDate = useMemo(() => getMinDate(), [])
 
