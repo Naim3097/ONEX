@@ -36,7 +36,7 @@ export const business = {
     sunday: 'Closed',
   },
   emergency: '24/7 Emergency Line',
-  googleRating: 4.8,
+  googleRating: 4.9,
   yearsExperience: 15,
   customersServed: 5000,
   warrantyMonths: 12,
@@ -2318,33 +2318,59 @@ export const mediaSlots = {
   },
 } as const
 
-// ─── Testimonials (not in SiteContent — locale-independent) ───
+// ─── Google Reviews (real reviews from Google Maps) ───
 
-export const testimonials = [
+export const googleReviews = [
   {
     id: 1,
-    quote:
-      'My Perodua Myvi CVT was slipping badly. One X diagnosed the problem in under an hour — free of charge — and gave me a clear written report before touching anything. The repair has been solid for over a year.',
-    author: 'Hafizuddin R.',
-    vehicle: 'Perodua Myvi 2018',
+    author: 'Ain Qaisara',
+    initial: 'A',
     rating: 5,
+    relativeTime: '7 weeks ago',
+    text: 'Untuk yang ada masalah kereta tapii tak sempat nak hantar check kereta dekat bengkel, One X Transmission menawarkan door to door inspection gaiss... anytime at anywhere, korang roger jeee dorang sampai untuk check masalah kereta korang. Memang terbaikkk',
   },
   {
     id: 2,
-    quote:
-      'Brought my Honda City in after two other workshops gave me different stories. These guys pinpointed the issue immediately. Professional, honest, and the 12-month warranty gives real peace of mind.',
-    author: 'Jasmine T.',
-    vehicle: 'Honda City GM6',
+    author: 'Aresss Gaming',
+    initial: 'A',
     rating: 5,
+    relativeTime: '8 weeks ago',
+    text: 'Siapa yang tinggal area Shah Alam atau Klang, kalau ada masalah gearbox, jangan fikir dua kali. Terus ke Jalan Haji Taib, Kampung Jalan Kebun ni. Memang pakar yang boleh dipercayai',
   },
   {
     id: 3,
-    quote:
-      'Toyota Vios gearbox was jerking at low speed. Full overhaul done within the week. The car drives smoother than it did when I first bought it. Highly recommend One X Transmission.',
-    author: 'Mohd Izzat K.',
-    vehicle: 'Toyota Vios 2020',
+    author: 'Nur Syazwina',
+    initial: 'N',
     rating: 5,
+    relativeTime: '20 weeks ago',
+    text: 'alhamdulilah harga mereka bgi sangat berpatutan wlaupun saya ni wanita, dieorang jelaskan masalah kereta saya sangat jelas. Kereta saya dah tkde msalah tiba ii gear hilang wktu drive. servis tiptop, staff semua ramah, sgt smooth lah urusan mudah sgt .. insyallah lps ni kalau keta problem mmg cri onextransmission ni',
+  },
+  {
+    id: 4,
+    author: 'Bojan Gelong',
+    initial: 'B',
+    rating: 5,
+    relativeTime: '23 weeks ago',
+    text: 'Baru je buat overhaul gearbox dekat sini, bagus mereka ni buat keje laju, slalu update, saya pakai Honda Fd 1.8, oil seal dah bocor lpas bukak clutch plate semua dh haus, minyak terbakar, 5 hari juga mereka buat tapi okay lah sbb dia test sampai jadi, lpas siap ni alhamdulillah makin pick up kereta, hantar sampai rumah lpas tu siap basuh pulak tu, #supportlocal',
+  },
+  {
+    id: 5,
+    author: 'Dhasarathan Uthaya Kumar',
+    initial: 'D',
+    rating: 5,
+    relativeTime: '23 weeks ago',
+    text: 'I pakai kereta honda city, just got my first service here, the service was nice, you can pick your own brand of oil, they suggest use original brand from car manufacturers, price are reasonable, provide home pick-up and send back to our houses service, really helpful, thank you for the service, will repeat, hope you guys can go better and better, all the best to our youngsters!!!',
+  },
+  {
+    id: 6,
+    author: 'Nisakua (SleepySoul)',
+    initial: 'N',
+    rating: 5,
+    relativeTime: 'a month ago',
+    text: 'I was referred by my friend about this workshop when my car breakdown. They came to my house and do the inspection. Thank you for such service, really convenient.',
   },
 ]
 
-export type Testimonial = (typeof testimonials)[number]
+export type GoogleReview = (typeof googleReviews)[number]
+
+export const GOOGLE_MAPS_REVIEW_URL = 'https://share.google/cEY5HffqZsFAC1BDk'

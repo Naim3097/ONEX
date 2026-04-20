@@ -1,4 +1,4 @@
-import { business } from '@/content'
+import { business, googleReviews } from '@/content'
 
 export function generateLocalBusinessJsonLd() {
   return {
@@ -49,6 +49,19 @@ export function generateLocalBusinessJsonLd() {
       bestRating: '5',
       ratingCount: '500',
     },
+    review: googleReviews.map((r) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: r.author,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating.toString(),
+        bestRating: '5',
+      },
+      reviewBody: r.text,
+    })),
     priceRange: 'RM 150 – RM 10,000+',
     currenciesAccepted: 'MYR',
     paymentAccepted: 'Cash, Bank Transfer',

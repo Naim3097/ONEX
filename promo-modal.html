@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One X Transmission — Promo Modal</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+  /* ──────────────────────────────────────────────
+     PROMO MODAL — One X Transmission
+     Standalone embed. Drop this <style> + markup
+     + <script> into any page.
+
+     Design system:
+       Font: Satoshi
+       Colors: #AB2020 (brand red), #000 black, neutrals
+       Corners: 0 — sharp everywhere
+       No gradients, no shadows, no glow
+       Easing: cubic-bezier(0, 0.4, 0, 1)
+       Durations: 334ms fast, 667ms standard
+     ────────────────────────────────────────────── */
+
+  /* ── Backdrop ── */
+  .onex-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 667ms cubic-bezier(0, 0.4, 0, 1);
+    padding: 16px;
+    font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .onex-modal-backdrop.active {
+    background: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ── Modal Card ── */
+  .onex-modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transform: translateY(24px);
+    opacity: 0;
+    transition: transform 667ms cubic-bezier(0, 0.4, 0, 1),
+                opacity 667ms cubic-bezier(0, 0.4, 0, 1);
+  }
+
+  .onex-modal-backdrop.active .onex-modal {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* ── Close Button ── */
+  .onex-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.6);
+    color: #999;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 334ms cubic-bezier(0, 0.4, 0, 1);
+  }
+
+  .onex-modal-close:hover {
+    border-color: #AB2020;
+    color: #fff;
+  }
+
+  /* ── Hero Image ── */
+  .onex-modal-hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .onex-modal-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Overline (brand pattern) ── */
+  .onex-modal-overline {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #AB2020;
+    line-height: 1.4;
+  }
+
+  /* ── Content ── */
+  .onex-modal-content {
+    padding: 32px;
+  }
+
+  /* Pricing Row */
+  .onex-modal-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .onex-modal-price {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .onex-modal-original {
+    font-size: 0.875rem;
+    color: #555;
+    text-decoration: line-through;
+  }
+
+  /* Title */
+  .onex-modal-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 500;
+    color: #ddd;
+    margin: 4px 0 24px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Included items — gap-px border trick ── */
+  .onex-modal-items {
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 32px;
+  }
+
+  .onex-modal-item {
+    background: #0A0A0A;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .onex-modal-item-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #bbb;
+    line-height: 1.6;
+  }
+
+  .onex-modal-item-tag {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #AB2020;
+    padding: 3px 8px;
+    background: rgba(171, 32, 32, 0.1);
+    flex-shrink: 0;
+  }
+
+  /* ── CTA — matches .cta-primary ── */
+  .onex-modal-cta {
+    display: block;
+    width: 100%;
+    padding: 16px 32px;
+    background: #AB2020;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    transition: background 334ms cubic-bezier(0, 0.4, 0, 1);
+  }
+
+  .onex-modal-cta:hover {
+    background: #8A1A1A;
+  }
+
+  .onex-modal-cta:active {
+    transform: scale(0.98);
+  }
+
+  /* ── Footer ── */
+  .onex-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .onex-modal-footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .onex-modal-footer-label {
+    font-size: 0.6875rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .onex-modal-footer-value {
+    font-size: 0.875rem;
+    color: #ddd;
+    font-weight: 500;
+  }
+
+  /* ── Divider accent ── */
+  .onex-modal-divider {
+    width: 32px;
+    height: 1px;
+    background: #AB2020;
+    margin-bottom: 20px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .onex-modal-backdrop {
+      padding: 12px;
+      align-items: flex-end;
+    }
+
+    .onex-modal {
+      max-width: 100%;
+    }
+
+    .onex-modal-content {
+      padding: 24px;
+    }
+
+    .onex-modal-footer {
+      gap: 16px;
+    }
+  }
+
+  /* ── Reduced Motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .onex-modal-backdrop,
+    .onex-modal,
+    .onex-modal-close,
+    .onex-modal-cta {
+      transition: none;
+    }
+  }
+</style>
+</head>
+
+<body style="margin:0; min-height:100vh; background:#000;">
+  <!-- ════════════════════════════════════════════
+       PROMO MODAL — Copy everything below into
+       any HTML page (before </body>)
+       ════════════════════════════════════════════ -->
+
+  <div class="onex-modal-backdrop" id="onexPromoModal">
+    <div class="onex-modal" role="dialog" aria-modal="true" aria-labelledby="onex-modal-heading">
+
+      <!-- Close -->
+      <button class="onex-modal-close" id="onexModalClose" aria-label="Tutup">&times;</button>
+
+      <!-- Hero Image -->
+      <div class="onex-modal-hero">
+        <img
+          src="images/asset promotion/PROMO 1 B.jpg"
+          alt="Pakej Servis ATF Gearbox RM439 — One X Transmission"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="onex-modal-content">
+        <!-- Overline -->
+        <span class="onex-modal-overline">Pakej Promosi</span>
+
+        <!-- Divider accent -->
+        <div style="margin-top: 16px;">
+          <div class="onex-modal-divider"></div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="onex-modal-pricing">
+          <span class="onex-modal-price">RM 439</span>
+          <span class="onex-modal-original">RM 580</span>
+        </div>
+
+        <!-- Title -->
+        <h2 class="onex-modal-title" id="onex-modal-heading">
+          Pakej Servis ATF Gearbox
+        </h2>
+
+        <!-- What's Included — gap-px dividers -->
+        <div class="onex-modal-items">
+          <div class="onex-modal-item">
+            <span class="onex-modal-item-label">Minyak ATF Duckhams Dexron VI</span>
+          </div>
+          <div class="onex-modal-item">
+            <span class="onex-modal-item-label">Penapis Gearbox Baru</span>
+          </div>
+          <div class="onex-modal-item">
+            <span class="onex-modal-item-label">OBD2 Diagnostic Device</span>
+            <span class="onex-modal-item-tag">Percuma</span>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="https://onextransmission.com/ms/packages" class="onex-modal-cta" id="onexModalCta">
+          Lihat Pakej Penuh
+        </a>
+
+        <!-- Footer details -->
+        <div class="onex-modal-footer">
+          <div class="onex-modal-footer-item">
+            <span class="onex-modal-footer-label">Deposit</span>
+            <span class="onex-modal-footer-value">RM 50</span>
+          </div>
+          <div class="onex-modal-footer-item">
+            <span class="onex-modal-footer-label">Jimat</span>
+            <span class="onex-modal-footer-value">RM 141</span>
+          </div>
+          <div class="onex-modal-footer-item">
+            <span class="onex-modal-footer-label">Waranti</span>
+            <span class="onex-modal-footer-value">3 Bulan / 5,000 km</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       SCRIPT — handles open/close + localStorage
+       ════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    var STORAGE_KEY = 'onex_promo_dismissed';
+    var SHOW_DELAY  = 3000;   // ms before modal appears
+    var COOLDOWN    = 3;      // days before showing again after dismiss
+
+    var backdrop = document.getElementById('onexPromoModal');
+    var closeBtn = document.getElementById('onexModalClose');
+
+    if (!backdrop || !closeBtn) return;
+
+    // ── Check if previously dismissed ──
+    function isDismissed() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        var ts = parseInt(raw, 10);
+        if (isNaN(ts)) return false;
+        var daysPassed = (Date.now() - ts) / (1000 * 60 * 60 * 24);
+        return daysPassed < COOLDOWN;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function dismiss() {
+      try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (e) {}
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function openModal() {
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    // ── Event Listeners ──
+    closeBtn.addEventListener('click', dismiss);
+
+    backdrop.addEventListener('click', function (e) {
+      if (e.target === backdrop) dismiss();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && backdrop.classList.contains('active')) dismiss();
+    });
+
+    // ── Auto-show after delay (if not dismissed) ──
+    if (!isDismissed()) {
+      setTimeout(openModal, SHOW_DELAY);
+    }
+  })();
+  </script>
+</body>
+</html>
