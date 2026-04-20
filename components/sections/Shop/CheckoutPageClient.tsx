@@ -52,8 +52,9 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
   const [error, setError] = useState<string | null>(null)
 
   // Push InitiateCheckout event to dataLayer for GTM
+  const [checkoutTracked, setCheckoutTracked] = useState(false)
   useEffect(() => {
-    if (items.length > 0) {
+    if (items.length > 0 && !checkoutTracked) {
       ;(window as any).dataLayer = (window as any).dataLayer || []
       ;(window as any).dataLayer.push({
         event: 'initiate_checkout',
@@ -62,8 +63,9 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
         content_name: items.map((item) => getProductName(item.product, locale)).join(', '),
         num_items: items.reduce((sum, item) => sum + item.quantity, 0),
       })
+      setCheckoutTracked(true)
     }
-  }, [])
+  }, [items, checkoutTracked])
 
   const minDate = useMemo(() => getMinDate(), [])
 

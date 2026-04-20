@@ -30,7 +30,17 @@ export default function ProductActions({ product, locale }: ProductActionsProps)
   return (
     <div className="flex gap-4">
       <button
-        onClick={() => addItem(product)}
+        onClick={() => {
+          addItem(product)
+          ;(window as any).dataLayer = (window as any).dataLayer || []
+          ;(window as any).dataLayer.push({
+            event: 'add_to_cart',
+            content_name: product.name,
+            content_type: 'product',
+            value: product.depositAmount ?? product.price,
+            currency: 'MYR',
+          })
+        }}
         className="cta-primary flex-1 text-center"
       >
         {shop.addToCart}
