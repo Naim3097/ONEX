@@ -124,6 +124,8 @@ export async function GET(request: NextRequest) {
       success: true,
       status: bookingStatus,
       paymentStatus: txn.invoice_status,
+      amount: parseFloat(txn.amount) || null,
+      transactionId: txn.fpx_invoice_no || txn.invoice_no || null,
     })
   } catch (error) {
     console.error('Payment check error:', error)

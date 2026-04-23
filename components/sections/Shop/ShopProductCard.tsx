@@ -37,6 +37,11 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
       content_type: 'product',
       value: product.depositAmount ?? product.price,
       currency: 'MYR',
+      items: [{
+        item_name: product.name,
+        price: product.depositAmount ?? product.price,
+        quantity: 1,
+      }],
     })
 
     setAdded(true)

@@ -48,15 +48,21 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
       .then(data => {
         if (data.status === 'confirmed' || data.status === 'completed') {
           setStatus('confirmed')
-          // Push Purchase event to dataLayer for GTM
+          // Push Purchase event to dataLayer for GTM (Google Ads conversion tracking)
           if (typeof window !== 'undefined') {
             (window as any).dataLayer = (window as any).dataLayer || [];
             (window as any).dataLayer.push({
               event: 'purchase',
+              transaction_id: data.transactionId || orderId,
               value: data.amount || 50.00,
               currency: 'MYR',
               content_type: 'product',
               content_name: 'ATF Service Deposit',
+              items: [{
+                item_name: 'ATF Service Deposit',
+                price: data.amount || 50.00,
+                quantity: 1,
+              }],
             })
           }
         } else if (data.status === 'cancelled') {
