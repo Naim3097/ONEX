@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          red: '#AB2020',
-          'red-dark': '#8A1A1A',
-          'red-light': '#C43030',
+          red: '#BC0000',
+          'red-dark': '#950000',
+          'red-light': '#D40000',
           black: '#000000',
           white: '#FFFFFF',
         },
@@ -73,9 +73,23 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
         },
+        'price-pop': {
+          '0%, 100%': { transform: 'scale(1)',    color: '#fde047', filter: 'drop-shadow(0 0 22px rgba(250,204,21,0.65))' },
+          '8%':        { transform: 'scale(1.28)', color: '#fffde7', filter: 'drop-shadow(0 0 65px rgba(255,255,200,1))' },
+          '17%':       { transform: 'scale(1.18)', color: '#fef08a', filter: 'drop-shadow(0 0 38px rgba(250,204,21,0.85))' },
+          '26%':       { transform: 'scale(1.26)', color: '#fffde7', filter: 'drop-shadow(0 0 58px rgba(255,255,200,0.95))' },
+          '38%':       { transform: 'scale(1)',    color: '#fde047', filter: 'drop-shadow(0 0 22px rgba(250,204,21,0.65))' },
+        },
+        'underline-draw': {
+          '0%, 6%':    { transform: 'scaleX(0)', opacity: '0', transformOrigin: 'left center' },
+          '20%, 68%':  { transform: 'scaleX(1)', opacity: '1', transformOrigin: 'left center' },
+          '82%, 100%': { transform: 'scaleX(0)', opacity: '0', transformOrigin: 'right center' },
+        },
       },
       animation: {
         float: 'float 4s ease-in-out infinite',
+        'price-pop': 'price-pop 3.5s ease-in-out infinite',
+        'underline-draw': 'underline-draw 3.5s ease-in-out infinite',
       },
     },
   },
