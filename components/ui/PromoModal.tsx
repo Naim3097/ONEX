@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { type Locale, getContent } from '@/content'
+import { type Locale } from '@/content'
 
 const STORAGE_KEY = 'onex_promo_dismissed'
 const SHOW_DELAY = 3000
@@ -15,7 +15,35 @@ interface PromoModalProps {
 
 export default function PromoModal({ locale }: PromoModalProps) {
   const [open, setOpen] = useState(false)
-  const { promo } = getContent(locale)
+  const content = {
+    en: {
+      overline: 'Aidiladha Promo',
+      headline: 'AT gearbox service from RM74',
+      body: 'Labour, auto filter, inspection and OBD scan included. Lubrimaxx oil is charged separately based on actual usage.',
+      cta: 'Open Promo Page',
+      service: 'RM74 service fee',
+      oil: 'RM65/litre oil',
+      note: 'Pay after service',
+    },
+    ms: {
+      overline: 'Promo Aidiladha',
+      headline: 'Servis gearbox AT dari RM74',
+      body: 'Upah kerja, auto filter, inspection dan OBD scan termasuk. Minyak Lubrimaxx dicaj berasingan ikut penggunaan sebenar.',
+      cta: 'Buka Landing Page',
+      service: 'RM74 harga servis',
+      oil: 'RM65/liter minyak',
+      note: 'Bayar selepas servis',
+    },
+    zh: {
+      overline: 'Aidiladha 优惠',
+      headline: 'AT 变速箱保养 RM74 起',
+      body: '人工、自动滤芯、检查和 OBD 扫描已包含。Lubrimaxx 油按实际使用量另外计算。',
+      cta: '打开活动页',
+      service: 'RM74 服务费',
+      oil: 'RM65/升机油',
+      note: '服务后付款',
+    },
+  }[locale]
 
   useEffect(() => {
     try {
@@ -54,8 +82,6 @@ export default function PromoModal({ locale }: PromoModalProps) {
     setOpen(false)
     try { localStorage.setItem(STORAGE_KEY, String(Date.now())) } catch { /* */ }
   }
-
-  const items = promo.landing.included
 
   return (
     <div
@@ -100,30 +126,25 @@ export default function PromoModal({ locale }: PromoModalProps) {
           {/* Right — Content */}
           <div className="px-3 py-3 md:p-8 flex flex-col justify-center">
             {/* Overline */}
-            <span className="overline-label text-[11px] md:text-[13px]">{promo.overline}</span>
+            <span className="overline-label text-[11px] md:text-[13px]">{content.overline}</span>
 
             {/* Divider */}
             <div className="divider mt-1.5 mb-2 md:mt-3 md:mb-4" />
 
-            {/* Pricing */}
-            <div className="flex items-baseline gap-2 mb-0.5">
-              <span className="text-[1.25rem] md:text-h3 text-white tracking-tight">RM 439</span>
-              <span className="text-[0.8rem] text-neutral-600 line-through">RM 580</span>
-            </div>
-
             {/* Title */}
-            <h2 className="text-[0.875rem] md:text-body-lg text-neutral-300 mb-2 md:mb-5">{promo.headline}</h2>
+            <h2 className="text-[1.25rem] md:text-h3 text-white tracking-tight mb-2">{content.headline}</h2>
+            <p className="text-[0.875rem] md:text-body text-neutral-300 mb-2 md:mb-5">{content.body}</p>
 
             {/* What's Included — gap-px trick */}
             <div className="flex flex-col gap-px bg-white/5 mb-3 md:mb-6">
-              {items.map((item, i) => (
-                <div key={i} className="bg-neutral-950 px-3 py-1.5 md:py-2 flex items-center justify-between gap-2">
-                  <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-300">{item.title}</span>
-                  {i === items.length - 1 && (
+              {[content.service, content.oil, content.note].map((item, index) => (
+                <div key={item} className="bg-neutral-950 px-3 py-1.5 md:py-2 flex items-center justify-between gap-2">
+                  <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-300">{item}</span>
+                  {index === 2 ? (
                     <span className="text-[9px] font-bold uppercase tracking-wider text-brand-red bg-brand-red/10 px-2 py-0.5">
-                      Percuma
+                      Trust
                     </span>
-                  )}
+                  ) : null}
                 </div>
               ))}
             </div>
@@ -134,22 +155,22 @@ export default function PromoModal({ locale }: PromoModalProps) {
               onClick={dismiss}
               className="cta-primary block w-full text-center text-[0.875rem] md:text-[1rem] py-2.5 md:py-4"
             >
-              {promo.ctaSecondary}
+              {content.cta}
             </Link>
 
             {/* Footer */}
             <div className="flex justify-between mt-3 pt-3 md:mt-5 md:pt-5 border-t border-white/5 gap-2">
               <div className="flex flex-col gap-0">
                 <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Deposit</span>
-                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">RM 50</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">None</span>
               </div>
               <div className="flex flex-col gap-0">
-                <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Jimat</span>
-                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">RM 141</span>
+                <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Pricing</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-neutral-200 font-medium">Transparent</span>
               </div>
               <div className="flex flex-col gap-0">
                 <span className="text-[9px] md:text-[11px] text-neutral-600 uppercase tracking-wider font-medium">Terhad</span>
-                <span className="text-[0.8rem] md:text-[0.92rem] text-brand-red font-medium">100 unit sahaja</span>
+                <span className="text-[0.8rem] md:text-[0.92rem] text-brand-red font-medium">Aidiladha slots</span>
               </div>
             </div>
           </div>

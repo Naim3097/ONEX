@@ -13,6 +13,11 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   const content = getContent(locale)
+  const packagesLabel = {
+    en: 'Aidiladha Promo',
+    ms: 'Promo Aidiladha',
+    zh: 'Aidiladha 优惠',
+  }[locale]
   const { totalItems } = useCart()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -63,7 +68,7 @@ export default function Header({ locale }: HeaderProps) {
       title: 'Services',
       links: [
         { href: `/${locale}/capabilities`, label: content.nav.capabilities },
-        { href: `/${locale}/packages`, label: content.promo.overline, badge: content.promo.badge },
+        { href: `/${locale}/packages`, label: packagesLabel, badge: content.promo.badge },
         { href: `/${locale}/shop`, label: content.shop.nav },
         { href: `/${locale}/booking`, label: 'Door-to-Door' },
       ],
