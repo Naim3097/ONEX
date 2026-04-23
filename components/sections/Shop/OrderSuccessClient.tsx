@@ -86,7 +86,7 @@ export default function OrderSuccessClient({ locale }: OrderSuccessClientProps) 
       ? shop.cancelled.waFail
       : shop.success.waSuccess
   const waLabel = status === 'cancelled' ? shop.cancelled.whatsapp : shop.success.whatsapp
-  const waLink = `https://wa.me/+601131051677?text=${encodeURIComponent(waText)}`
+  const waLink = 'https://wa.link/q0ht8q'
 
   const titleText = status === 'confirmed'
     ? shop.success.title
