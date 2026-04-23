@@ -56,8 +56,7 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
   useEffect(() => {
     if (items.length > 0 && !checkoutTracked) {
       ;(window as any).dataLayer = (window as any).dataLayer || []
-      ;(window as any).dataLayer.push({
-        event: 'begin_checkout',
+      const checkoutData = {
         value: totalPrice,
         currency: 'MYR',
         content_name: items.map((item) => getProductName(item.product, locale)).join(', '),
@@ -67,7 +66,9 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
           price: item.product.depositAmount ?? item.product.price,
           quantity: item.quantity,
         })),
-      })
+      }
+      ;(window as any).dataLayer.push({ event: 'begin_checkout', ...checkoutData })
+      ;(window as any).dataLayer.push({ event: 'initiate_checkout', ...checkoutData })
       setCheckoutTracked(true)
     }
   }, [items, checkoutTracked])
