@@ -91,7 +91,13 @@ export default function SchedulePage() {
       const res = await fetch('/api/admin/orders')
       if (res.status === 401) return
       const data = await res.json()
-      if (data.orders) setOrders(data.orders.filter((o: Order) => o.orderType === 'service_promo'))
+      if (data.orders) {
+        setOrders(
+          data.orders.filter((o: Order) =>
+            o.orderType === 'service_promo' || o.orderType === 'aidiladha_promo'
+          )
+        )
+      }
     } catch { /* */ }
   }, [])
 
@@ -189,6 +195,9 @@ export default function SchedulePage() {
       const timeB = b.timeSlot || ''
       return timeA.localeCompare(timeB)
     })
+
+  const dayServicePromoOrders = dayOrders.filter(o => o.orderType === 'service_promo')
+  const dayAidiladhaOrders = dayOrders.filter(o => o.orderType === 'aidiladha_promo')
 
   // Get all unique dates that have paid bookings or orders (for quick nav)
   const upcomingDates = [...new Set([
@@ -321,11 +330,11 @@ export default function SchedulePage() {
       )}
 
       {/* Service Promo Orders */}
-      {dayOrders.length > 0 && (
+      {dayServicePromoOrders.length > 0 && (
         <>
           <h3 className="text-[0.65rem] uppercase tracking-widest text-amber-500/70 font-bold mb-3">Service Promo Bookings</h3>
           <div className="space-y-3 mb-8">
-          {dayOrders.map(o => (
+          {dayServicePromoOrders.map(o => (
             <div key={o.id} className="bg-neutral-900 border border-amber-900/30 p-5">
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
@@ -365,6 +374,74 @@ export default function SchedulePage() {
                 <div className="flex gap-2">
                   <a
                     href={`https://wa.me/${o.customerPhone.replace(/[^0-9+]/g, '')}?text=${encodeURIComponent(`Hi ${o.customerName}, this is One X Transmission. We're confirming your service appointment today at ${o.timeSlot || 'your scheduled time'}. See you at the workshop!`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 text-[0.65rem] border border-emerald-800/50 text-emerald-400 hover:bg-emerald-950/30 transition-colors"
+                  >
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${o.customerPhone}`}
+                    className="px-3 py-1.5 text-[0.65rem] border border-neutral-800 text-neutral-400 hover:text-neutral-200 hover:border-neutral-600 transition-colors"
+                  >
+                    Call
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+          </div>
+        </>
+      )}
+
+      {/* Aidiladha Promo Orders (RM50 deposit) */}
+      {dayAidiladhaOrders.length > 0 && (
+        <>
+          <h3 className="text-[0.65rem] uppercase tracking-widest text-red-500/80 font-bold mb-3">
+            Aidiladha Promo Bookings
+            <span className="ml-2 text-red-600/60 normal-case tracking-normal font-normal">(RM50 deposit)</span>
+          </h3>
+          <div className="space-y-3 mb-8">
+          {dayAidiladhaOrders.map(o => (
+            <div key={o.id} className="bg-neutral-900 border border-red-900/40 p-5">
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <p className="font-bold text-white text-sm">{o.customerName}</p>
+                  <a href={`tel:${o.customerPhone}`} className="text-xs text-neutral-400 hover:text-white transition-colors">{o.customerPhone}</a>
+                </div>
+                <div className="text-right shrink-0">
+                  {o.timeSlot && (
+                    <p className="text-sm font-bold text-red-400 bg-red-950/40 border border-red-800/50 px-3 py-1 inline-block">
+                      {o.timeSlot}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                <div>
+                  <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Vehicle</span>
+                  <span className="text-neutral-200">{o.vehicleModel || '-'}</span>
+                </div>
+                <div>
+                  <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Deposit</span>
+                  <span className="text-neutral-200">RM {o.paymentAmount?.toFixed(2) || '0.00'}</span>
+                </div>
+                {o.notes && (
+                  <div className="sm:col-span-2">
+                    <span className="text-neutral-600 uppercase tracking-wider block mb-0.5">Notes</span>
+                    <span className="text-neutral-300 italic">{o.notes}</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-red-950/40">
+                <span className={`inline-block px-2 py-0.5 text-[0.6rem] uppercase tracking-wider border ${statusColors[o.status] || statusColors.unknown}`}>
+                  {o.status}
+                </span>
+                <div className="flex gap-2">
+                  <a
+                    href={`https://wa.me/${o.customerPhone.replace(/[^0-9+]/g, '')}?text=${encodeURIComponent(`Hi ${o.customerName}, ini One X Transmission. Kami nak confirm appointment promo Aidiladha anda hari ini pada ${o.timeSlot || 'slot yang ditempah'}. Sila standby kereta anda. Terima kasih!`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-1.5 text-[0.65rem] border border-emerald-800/50 text-emerald-400 hover:bg-emerald-950/30 transition-colors"

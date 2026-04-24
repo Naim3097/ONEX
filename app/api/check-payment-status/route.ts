@@ -58,6 +58,13 @@ export async function GET(request: NextRequest) {
         status: booking.status,
         paymentStatus: booking.paymentStatus || 'SUCCESS',
         amount: booking.totalAmount || booking.amount || null,
+        customerName: booking.customerName || booking.name || null,
+        vehicleModel: booking.vehicleModel || null,
+        preferredDate: booking.preferredDate || null,
+        timeSlot: booking.timeSlot || null,
+        paymentAmount: booking.paymentAmount || booking.totalAmount || null,
+        paymentInvoiceNo: booking.paymentInvoiceNo || null,
+        orderType: booking.orderType || null,
       })
     }
 
@@ -124,6 +131,13 @@ export async function GET(request: NextRequest) {
       success: true,
       status: bookingStatus,
       paymentStatus: txn.invoice_status,
+      customerName: booking.customerName || booking.name || null,
+      vehicleModel: booking.vehicleModel || null,
+      preferredDate: booking.preferredDate || null,
+      timeSlot: booking.timeSlot || null,
+      paymentAmount: parseFloat(txn.amount),
+      paymentInvoiceNo: txn.invoice_no,
+      orderType: booking.orderType || null,
     })
   } catch (error) {
     console.error('Payment check error:', error)

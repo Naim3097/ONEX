@@ -48,7 +48,7 @@ interface Order {
   createdAt: string
 }
 
-type AdminTab = 'bookings' | 'orders'
+type AdminTab = 'bookings' | 'orders' | 'aidiladha'
 
 const statusColors: Record<string, string> = {
   confirmed: 'bg-emerald-900/50 text-emerald-400 border-emerald-800',
@@ -268,7 +268,21 @@ export default function AdminPage() {
     revenue: serviceOrders.filter(o => o.status === 'confirmed').reduce((sum, o) => sum + (o.paymentAmount || 0), 0),
   }
 
-  const currentStats = activeTab === 'bookings' ? bookingStats : orderStats
+  const aidiladhaOrders = orders.filter(o => o.orderType === 'aidiladha_promo')
+  const aidiladhaStats = {
+    total: aidiladhaOrders.length,
+    confirmed: aidiladhaOrders.filter(o => o.status === 'confirmed').length,
+    pending: aidiladhaOrders.filter(o => o.status === 'pending_payment' || o.status === 'pending').length,
+    cancelled: aidiladhaOrders.filter(o => o.status === 'cancelled').length,
+    revenue: aidiladhaOrders.filter(o => o.status === 'confirmed').reduce((sum, o) => sum + (o.paymentAmount || 0), 0),
+  }
+
+  const currentStats =
+    activeTab === 'bookings'
+      ? bookingStats
+      : activeTab === 'orders'
+        ? orderStats
+        : aidiladhaStats
 
   return (
     <div className="max-w-6xl mx-auto px-5 py-10">
@@ -301,10 +315,11 @@ export default function AdminPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-px mb-8">
+      <div className="flex gap-px mb-8 flex-wrap">
         {[
-          { key: 'bookings' as AdminTab, label: 'Door-to-Door', count: bookings.length },
-          { key: 'orders' as AdminTab, label: 'Service Promo', count: serviceOrders.length },
+          { key: 'bookings' as AdminTab, label: 'Door-to-Door', count: bookings.length, accent: 'cyan' },
+          { key: 'orders' as AdminTab, label: 'Service Promo', count: serviceOrders.length, accent: 'amber' },
+          { key: 'aidiladha' as AdminTab, label: 'Aidiladha Promo', count: aidiladhaOrders.length, accent: 'red' },
         ].map(tab => (
           <button
             key={tab.key}
@@ -446,6 +461,59 @@ export default function AdminPage() {
 
       {activeTab === 'orders' && !loading && serviceOrders.length === 0 && (
         <div className="text-center py-20 text-neutral-600 text-sm">No service promo orders yet</div>
+      )}
+
+      {/* Aidiladha Promo Orders Table */}
+      {activeTab === 'aidiladha' && aidiladhaOrders.length > 0 && (
+        <div className="border border-red-900/30 overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-red-900/30 text-left bg-red-950/20">
+                {['Date', 'Customer', 'Vehicle', 'Service Date', 'Time Slot', 'Status', 'Deposit'].map(h => (
+                  <th key={h} className="px-4 py-3 text-[0.65rem] uppercase tracking-widest text-red-300/70 font-medium">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {aidiladhaOrders.map(o => (
+                <tr
+                  key={o.id}
+                  onClick={() => setSelectedOrder(o)}
+                  className="border-b border-neutral-900 hover:bg-red-950/10 cursor-pointer transition-colors"
+                >
+                  <td className="px-4 py-3 text-neutral-400 whitespace-nowrap">
+                    {o.createdAt ? new Date(o.createdAt).toLocaleDateString('en-MY', { day: '2-digit', month: 'short', year: 'numeric' }) : '-'}
+                  </td>
+                  <td className="px-4 py-3">
+                    <p className="font-medium text-white">{o.customerName}</p>
+                    <p className="text-xs text-neutral-600">{o.customerPhone}</p>
+                  </td>
+                  <td className="px-4 py-3 text-neutral-300">{o.vehicleModel || '-'}</td>
+                  <td className="px-4 py-3 text-neutral-400 whitespace-nowrap">
+                    {o.preferredDate || '-'}
+                  </td>
+                  <td className="px-4 py-3 text-red-400 whitespace-nowrap font-medium">
+                    {o.timeSlot || '-'}
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-block px-2 py-0.5 text-[0.65rem] uppercase tracking-wider border ${statusColors[o.status] || statusColors.unknown}`}>
+                      {o.status.replace('_', ' ')}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-neutral-400">
+                    {o.paymentAmount ? `RM ${o.paymentAmount.toFixed(2)}` : '-'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {activeTab === 'aidiladha' && !loading && aidiladhaOrders.length === 0 && (
+        <div className="text-center py-20 text-neutral-600 text-sm">No Aidiladha promo orders yet</div>
       )}
 
       {/* Booking Detail Modal */}
