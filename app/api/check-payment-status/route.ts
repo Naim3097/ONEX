@@ -138,6 +138,8 @@ export async function GET(request: NextRequest) {
       paymentAmount: parseFloat(txn.amount),
       paymentInvoiceNo: txn.invoice_no,
       orderType: booking.orderType || null,
+      amount: parseFloat(txn.amount) || null,
+      transactionId: txn.fpx_invoice_no || txn.invoice_no || null,
     })
   } catch (error) {
     console.error('Payment check error:', error)

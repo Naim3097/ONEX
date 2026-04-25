@@ -60,6 +60,19 @@ export default function BookingForm({ locale }: BookingFormProps) {
     setError(null)
 
     try {
+      // Push checkout events to dataLayer for GTM (Google Ads + Meta)
+      ;(window as any).dataLayer = (window as any).dataLayer || []
+      const checkoutData = {
+        value: 10,
+        currency: 'MYR',
+        content_name: 'Door-to-Door Inspection Booking',
+        content_type: 'service',
+        num_items: 1,
+        items: [{ item_name: 'Door-to-Door Inspection Deposit', price: 10, quantity: 1 }],
+      }
+      ;(window as any).dataLayer.push({ event: 'begin_checkout', ...checkoutData })
+      ;(window as any).dataLayer.push({ event: 'initiate_checkout', ...checkoutData })
+
       const docRef = await addDoc(collection(db, 'bookings'), {
         ...data,
         status: 'pending_payment',

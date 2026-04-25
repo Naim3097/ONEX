@@ -39,6 +39,11 @@ export default function ProductActions({ product, locale }: ProductActionsProps)
             content_type: 'product',
             value: product.depositAmount ?? product.price,
             currency: 'MYR',
+            items: [{
+              item_name: product.name,
+              price: product.depositAmount ?? product.price,
+              quantity: 1,
+            }],
           })
         }}
         className="cta-primary flex-1 text-center"

@@ -77,6 +77,21 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
       .then(data => {
         if (data.status === 'confirmed' || data.status === 'completed') {
           setStatus('confirmed')
+          // Push Purchase event to dataLayer for GTM (Google Ads + Meta)
+          ;(window as any).dataLayer = (window as any).dataLayer || []
+          ;(window as any).dataLayer.push({
+            event: 'purchase',
+            transaction_id: data.transactionId || bookingId,
+            value: data.amount || 10,
+            currency: 'MYR',
+            content_type: 'service',
+            content_name: 'Door-to-Door Inspection Deposit',
+            items: [{
+              item_name: 'Door-to-Door Inspection Deposit',
+              price: data.amount || 10,
+              quantity: 1,
+            }],
+          })
         } else if (data.status === 'cancelled') {
           setStatus('cancelled')
         } else {
@@ -94,7 +109,7 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
   const style = statusStyles[status]
   const icon = statusIcons[status]
   const waText = status === 'confirmed' ? t.waSuccess : status === 'cancelled' ? t.waFail : t.waPending
-  const waLink = `https://wa.me/+601131051677?text=${encodeURIComponent(waText)}`
+  const waLink = 'https://wa.link/q0ht8q'
 
   return (
     <section className="section-dark min-h-[80vh] flex items-center justify-center">
