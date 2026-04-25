@@ -12,12 +12,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const titles: Record<string, string> = {
     en: 'Gearbox Service Package RM439 | ATF + Filter + FREE OBD2 + BYKI App | One X Transmission',
     ms: 'Pakej Servis Gearbox RM439 | ATF + Penapis + PERCUMA OBD2 + Aplikasi BYKI | One X Transmission',
-    zh: 'σÅÿΘÇƒτ«▒Σ┐¥σà╗σÑùΘñÉ RM439 | ATF + µ╗ñµ╕àσÖ¿ + σàìΦ┤╣OBD2 + BYKIσ║öτö¿ | One X Transmission',
+    zh: '变速箱保养套餐 RM439 | ATF + 滤清器 + 免费OBD2 + BYKI应用 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
     en: 'Complete gearbox service package for RM439. ATF oil replacement, new gearbox filter, and FREE OBD2 device compatible with BYKI app. Monitor your car from your phone. Shah Alam, Selangor.',
     ms: 'Pakej servis gearbox lengkap RM439. Tukar minyak ATF, penapis gearbox baru, dan PERCUMA peranti OBD2 serasi aplikasi BYKI. Pantau kereta dari phone anda. Shah Alam, Selangor.',
-    zh: 'σ«îµò┤σÅÿΘÇƒτ«▒Σ┐¥σà╗σÑùΘñÉRM439πÇéµ¢┤µìóATFσÅÿΘÇƒτ«▒µ▓╣πÇüσà¿µû░µ╗ñµ╕àσÖ¿σÅèσàìΦ┤╣OBD2Φ«╛σñçσà╝σ«╣BYKIσ║öτö¿πÇéτö¿µëïµ£║τ¢æµ╡ïτê▒Φ╜ªπÇéShah Alam, SelangorπÇé',
+    zh: '完整变速箱保养套餐RM439。更换ATF变速箱油、全新滤清器及免费OBD2设备兼容BYKI应用。用手机监测爱车。Shah Alam, Selangor。',
   }
   return generatePageMetadata({
     locale,
@@ -108,7 +108,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
             <div>
               <FadeIn>
                 <Text variant="overline" className="text-brand-red mb-5">
-                  {locale === 'zh' ? 'Θù«Θóÿ' : locale === 'ms' ? 'Masalah' : 'Problem'}
+                  {locale === 'zh' ? '问题' : locale === 'ms' ? 'Masalah' : 'Problem'}
                 </Text>
               </FadeIn>
               <RevealText
@@ -141,7 +141,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
           <div className="max-w-2xl mb-14 md:mb-20">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
-                {locale === 'zh' ? 'σÑùΘñÉσåàσ«╣' : locale === 'ms' ? 'Pakej' : 'Package'}
+                {locale === 'zh' ? '套餐内容' : locale === 'ms' ? 'Pakej' : 'Package'}
               </Text>
             </FadeIn>
             <RevealText
@@ -272,7 +272,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
             <div>
               <FadeIn>
                 <Text variant="overline" className="text-brand-red mb-5">
-                  {locale === 'zh' ? 'ΘÇéτö¿Σ║║τ╛ñ' : locale === 'ms' ? 'Untuk Siapa' : 'For You'}
+                  {locale === 'zh' ? '适用人群' : locale === 'ms' ? 'Untuk Siapa' : 'For You'}
                 </Text>
               </FadeIn>
               <RevealText
@@ -306,7 +306,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
           <div className="max-w-2xl mb-14 md:mb-20">
             <FadeIn>
               <Text variant="overline" className="text-brand-red mb-5">
-                {locale === 'zh' ? 'Φ╜ªσ₧ï' : locale === 'ms' ? 'Keserasian' : 'Compatibility'}
+                {locale === 'zh' ? '车型' : locale === 'ms' ? 'Keserasian' : 'Compatibility'}
               </Text>
             </FadeIn>
             <RevealText
@@ -367,7 +367,7 @@ export default async function PackagesPage({ params }: { params: Promise<{ local
 
           <FadeIn delay={0.7}>
             <div className="mt-14 md:mt-18 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-center gap-6 text-body-sm text-neutral-500">
-              <span>MonΓÇôFri: {business.hours.weekdays}</span>
+              <span>Mon–Fri: {business.hours.weekdays}</span>
               <span className="hidden md:inline text-neutral-700">|</span>
               <span>Sat: {business.hours.saturday}</span>
               <span className="hidden md:inline text-neutral-700">|</span>
