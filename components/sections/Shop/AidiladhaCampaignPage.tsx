@@ -19,8 +19,7 @@ const TIME_SLOTS = [
 
 const TIMER_MINUTES = 15
 const TIMER_STORAGE_KEY = 'onex_aidiladha_countdown'
-// NOTE: Staging UAT — deposit temporarily set to RM1 for payment testing. Restore to 50 before going live.
-const DEPOSIT_AMOUNT = 1
+const DEPOSIT_AMOUNT = 50
 const FULL_SERVICE_PRICE = 74
 const SERVICE_LABEL = 'Aidiladha AT Service Promo'
 
@@ -41,7 +40,7 @@ const copy = {
     'Harga minyak gearbox dikira berasingan mengikut penggunaan kereta anda.',
   ctaPrimary: 'Book Slot Sekarang',
   ctaSecondary: 'WhatsApp Kami',
-  ctaSubmit: 'Bayar Deposit RM1 & Confirm Slot',
+  ctaSubmit: 'Bayar Deposit RM50 & Confirm Slot',
   ctaSubmitLoading: 'Memproses pembayaran...',
   stickyCta: 'Book Slot',
   valueBullets: [
@@ -113,7 +112,7 @@ const copy = {
     'Harga promo RM74 terhad',
     'Slot booking terhad setiap hari',
     'Servis on site, kami datang ke anda',
-    'Deposit RM1 untuk lock slot, baki selepas servis',
+    'Deposit RM50 untuk lock slot, baki selepas servis',
   ],
   socialLabel: 'Ulasan pelanggan',
   socialTitle: 'Apa kata pelanggan kami',
@@ -148,7 +147,7 @@ const copy = {
   bookingLabel: 'Booking',
   bookingTitle: 'Book slot anda sekarang',
   bookingSubtitle:
-    'Isi maklumat di bawah, pilih tarikh dan slot masa.\nUntuk lock slot, bayar deposit RM1 secara online.\nBaki kos servis dan minyak bayar selepas siap.',
+    'Isi maklumat di bawah, pilih tarikh dan slot masa.\nUntuk lock slot, bayar deposit RM50 secara online.\nBaki kos servis dan minyak bayar selepas siap.',
   labels: {
     name: 'Nama penuh',
     phone: 'Nombor telefon',
@@ -164,11 +163,11 @@ const copy = {
     closedSunday: 'Tutup pada hari Ahad',
     confirmOil: 'Jumlah liter minyak akan disahkan dengan anda sebelum kerja bermula.',
     atOnly: 'Untuk automatic transmission sahaja',
-    depositRefund: 'Deposit RM1 ditolak dari jumlah keseluruhan kos.',
+    depositRefund: 'Deposit RM50 ditolak dari jumlah keseluruhan kos.',
   },
   formError: 'Sila lengkapkan nama, telefon, emel, model kereta, tarikh dan slot masa dahulu.',
   paymentError: 'Maaf, gagal memulakan pembayaran. Sila cuba lagi atau hubungi kami melalui WhatsApp.',
-  submitBtn: 'Bayar Deposit RM1 & Confirm Slot',
+  submitBtn: 'Bayar Deposit RM50 & Confirm Slot',
   formNote: 'Anda akan diarahkan ke laman pembayaran selamat Lean.x. Slot akan disahkan selepas pembayaran berjaya.',
   depositSummaryLabel: 'Deposit hari ini',
   remainingLabel: 'Baki dibayar selepas servis',
@@ -313,7 +312,7 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
         vehicleModel: form.carModel.trim(),
         preferredDate: form.date,
         timeSlot: form.timeSlot,
-        notes: 'Aidiladha promo: RM74 servis + Lubrimaxx RM65/liter (mengikut penggunaan). Deposit RM1 (UAT testing).',
+        notes: 'Aidiladha promo: RM74 servis + Lubrimaxx RM65/liter (mengikut penggunaan). Deposit RM50.',
         status: 'pending_payment',
         paymentStatus: 'pending',
         locale: 'ms',
