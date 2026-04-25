@@ -151,7 +151,7 @@ export default function PromoModal({ locale }: PromoModalProps) {
 
             {/* CTA */}
             <Link
-              href={`/${locale}/packages`}
+              href={`/promo`}
               onClick={dismiss}
               className="cta-primary block w-full text-center text-[0.875rem] md:text-[1rem] py-2.5 md:py-4"
             >

@@ -68,7 +68,7 @@ export default function Header({ locale }: HeaderProps) {
       title: 'Services',
       links: [
         { href: `/${locale}/capabilities`, label: content.nav.capabilities },
-        { href: `/${locale}/packages`, label: packagesLabel, badge: content.promo.badge },
+        { href: `/promo`, label: packagesLabel, badge: content.promo.badge },
         { href: `/${locale}/shop`, label: content.shop.nav },
         { href: `/${locale}/booking`, label: 'Door-to-Door' },
       ],

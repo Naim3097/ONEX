@@ -95,7 +95,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
 
                 <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center gap-5">
                   <Link
-                    href={`/${locale}/packages`}
+                    href={`/promo`}
                     className="cta-primary"
                   >
                     {content.primary}
