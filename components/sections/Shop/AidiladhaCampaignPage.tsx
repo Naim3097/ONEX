@@ -619,10 +619,10 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div className="w-full bg-neutral-50">
               <Image
-                src="/images/asset promotion/poster-rm114.jpg"
+                src="/images/asset promotion/lubrimaxx.png"
                 alt="Lubrimaxx Autosyn Lo vis Multi Vehicle ATF gearbox oil"
-                width={1080}
-                height={1350}
+                width={1024}
+                height={1536}
                 className="h-auto w-full"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
