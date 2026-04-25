@@ -394,12 +394,12 @@ export default function SchedulePage() {
         </>
       )}
 
-      {/* Aidiladha Promo Orders (RM50 deposit) */}
+      {/* Aidiladha Promo Orders (RM1 UAT deposit) */}
       {dayAidiladhaOrders.length > 0 && (
         <>
           <h3 className="text-[0.65rem] uppercase tracking-widest text-red-500/80 font-bold mb-3">
             Aidiladha Promo Bookings
-            <span className="ml-2 text-red-600/60 normal-case tracking-normal font-normal">(RM50 deposit)</span>
+            <span className="ml-2 text-red-600/60 normal-case tracking-normal font-normal">(RM1 UAT deposit)</span>
           </h3>
           <div className="space-y-3 mb-8">
           {dayAidiladhaOrders.map(o => (
