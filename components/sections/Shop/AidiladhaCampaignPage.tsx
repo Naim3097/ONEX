@@ -379,7 +379,7 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
   }
 
   const inputClasses =
-    'w-full border border-neutral-300 bg-white px-5 py-4 text-body-sm text-neutral-900 outline-none transition-colors duration-200 placeholder:text-neutral-400 focus:border-brand-red'
+    'block w-full max-w-full min-w-0 box-border border border-neutral-300 bg-white px-5 py-4 text-body-sm text-neutral-900 outline-none transition-colors duration-200 placeholder:text-neutral-400 focus:border-brand-red appearance-none'
 
   return (
     <div className="bg-white pb-24 text-neutral-900">
