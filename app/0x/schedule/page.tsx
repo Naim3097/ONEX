@@ -394,7 +394,7 @@ export default function SchedulePage() {
         </>
       )}
 
-      {/* Aidiladha Promo Orders (RM50 deposit) */
+      {/* Aidiladha Promo Orders (RM50 deposit) */}
       {dayAidiladhaOrders.length > 0 && (
         <>
           <h3 className="text-[0.65rem] uppercase tracking-widest text-red-500/80 font-bold mb-3">
