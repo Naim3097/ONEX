@@ -18,6 +18,11 @@ export default function Header({ locale }: HeaderProps) {
     ms: 'Promo Aidiladha',
     zh: 'Aidiladha 优惠',
   }[locale]
+  const bykiPackageLabel = {
+    en: 'BYKI Package',
+    ms: 'Pakej BYKI',
+    zh: 'BYKI 套餐',
+  }[locale]
   const { totalItems } = useCart()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -69,6 +74,7 @@ export default function Header({ locale }: HeaderProps) {
       links: [
         { href: `/${locale}/capabilities`, label: content.nav.capabilities },
         { href: `/promo`, label: packagesLabel, badge: content.promo.badge },
+        { href: `/${locale}/packages`, label: bykiPackageLabel },
         { href: `/${locale}/shop`, label: content.shop.nav },
         { href: `/${locale}/booking`, label: 'Door-to-Door' },
       ],
