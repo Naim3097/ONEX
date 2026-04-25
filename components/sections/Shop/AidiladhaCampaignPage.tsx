@@ -904,7 +904,7 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
                     min={minDate}
                     value={form.date}
                     onChange={(e) => handleDateChange(e.target.value)}
-                    className={`${inputClasses} [color-scheme:light]`}
+                    className={`${inputClasses} text-left [color-scheme:light] [&::-webkit-date-and-time-value]:text-left [&::-webkit-date-and-time-value]:m-0 [&::-webkit-calendar-picker-indicator]:opacity-100 [&::-webkit-calendar-picker-indicator]:cursor-pointer`}
                   />
                   <p className="mt-2 text-caption text-neutral-500">{copy.helper.closedSunday}</p>
                 </div>
