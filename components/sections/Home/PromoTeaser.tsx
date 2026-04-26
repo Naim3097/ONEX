@@ -256,23 +256,23 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
             onTouchEnd={onTouchEndCapture}
             onTouchCancel={onTouchEndCapture}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] items-stretch">
               {/* Promo image — fixed slot for consistent layout across slides; object-contain so nothing is cropped */}
-              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[520px] bg-neutral-100 overflow-hidden">
+              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-auto lg:h-full lg:min-h-[360px] bg-neutral-100 overflow-hidden">
                 <Image
                   key={`img-${slide.key}`}
                   src={slide.image.src}
                   alt={slide.image.alt}
                   fill
-                  className="object-contain p-4 md:p-6 transition-opacity duration-500"
-                  sizes="(max-width: 1024px) 100vw, 440px"
+                  className="object-contain p-4 md:p-5 transition-opacity duration-500"
+                  sizes="(max-width: 1024px) 100vw, 360px"
                   priority={activeIndex === 0}
                 />
               </div>
 
               {/* Body */}
-              <div className="order-last lg:order-first p-8 md:p-10 lg:p-12">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="order-last lg:order-first p-7 md:p-8 lg:p-10">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {slide.features.map((item, i) => (
                     <div key={item.title}>
                       <Text variant="overline" className="text-brand-red/80 mb-3">
@@ -286,7 +286,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
                   ))}
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center gap-5">
                   {slide.ctaPrimary.external ? (
                     <a
                       href={slide.ctaPrimary.href}
