@@ -4,8 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { type Locale, getContent, business } from '@/content'
-import FadeIn from '@/components/motion/FadeIn'
-import RevealText from '@/components/motion/RevealText'
 import Text from '@/components/typography/Text'
 
 interface PromoTeaserProps {
@@ -159,7 +157,27 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
   ]
 
   const [activeIndex, setActiveIndex] = useState(0)
+  const [displayedIndex, setDisplayedIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const fadeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const FADE_MS = 400
+
+  // Crossfade: when activeIndex changes, fade out, swap displayed slide, fade in
+  useEffect(() => {
+    if (activeIndex === displayedIndex) return
+    setIsVisible(false)
+    if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current)
+    fadeTimeoutRef.current = setTimeout(() => {
+      setDisplayedIndex(activeIndex)
+      // small RAF to ensure DOM swap before opacity returns to 1
+      requestAnimationFrame(() => setIsVisible(true))
+    }, FADE_MS)
+    return () => {
+      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current)
+    }
+  }, [activeIndex, displayedIndex])
 
   const clearTimer = useCallback(() => {
     if (intervalRef.current) {
@@ -176,7 +194,7 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
     return clearTimer
   }, [slides.length, clearTimer])
 
-  const slide = slides[activeIndex]
+  const slide = slides[displayedIndex]
 
   // Reset auto-rotate timer whenever user manually navigates so they get a full interval
   const resetTimer = useCallback(() => {
@@ -226,47 +244,42 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
     >
       <div className="max-w-wide mx-auto px-5 md:px-10">
         {/* Header */}
-        <div className="max-w-2xl mb-14 md:mb-20" key={`head-${slide.key}`}>
-          <FadeIn>
-            <Text variant="overline" className="text-brand-red mb-5">
-              {slide.overline}
-            </Text>
-          </FadeIn>
-          <RevealText
-            text={slide.headline}
-            as="h2"
-            className="text-h2 text-neutral-950 mb-5"
-          />
-          <FadeIn delay={0.2}>
-            <p className="text-body-lg text-neutral-500 leading-relaxed max-w-lg">
-              {slide.subheadline}
-            </p>
-          </FadeIn>
+        <div
+          className="max-w-2xl mb-14 md:mb-20 transition-opacity ease-out"
+          style={{ transitionDuration: `${FADE_MS}ms`, opacity: isVisible ? 1 : 0 }}
+        >
+          <Text variant="overline" className="text-brand-red mb-5">
+            {slide.overline}
+          </Text>
+          <h2 className="text-h2 text-neutral-950 mb-5">{slide.headline}</h2>
+          <p className="text-body-lg text-neutral-500 leading-relaxed max-w-lg">
+            {slide.subheadline}
+          </p>
         </div>
 
         {/* Slide card */}
-        <FadeIn delay={0.3}>
+        <div
+          className="relative border border-neutral-200 bg-neutral-50 select-none"
+          aria-roledescription="slide"
+          aria-label={`${displayedIndex + 1} / ${slides.length}: ${slide.overline}`}
+          onTouchStart={onTouchStartCapture}
+          onTouchMove={onTouchMoveCapture}
+          onTouchEnd={onTouchEndCapture}
+          onTouchCancel={onTouchEndCapture}
+        >
           <div
-            className="relative border border-neutral-200 bg-neutral-50 transition-opacity duration-500 select-none"
-            aria-roledescription="slide"
-            aria-label={`${activeIndex + 1} / ${slides.length}: ${slide.overline}`}
-            key={`card-${slide.key}`}
-            onTouchStart={onTouchStartCapture}
-            onTouchMove={onTouchMoveCapture}
-            onTouchEnd={onTouchEndCapture}
-            onTouchCancel={onTouchEndCapture}
+            className="grid grid-cols-1 lg:grid-cols-[1fr_360px] items-stretch transition-opacity ease-out"
+            style={{ transitionDuration: `${FADE_MS}ms`, opacity: isVisible ? 1 : 0 }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] items-stretch">
               {/* Promo image — fixed slot for consistent layout across slides; object-contain so nothing is cropped */}
               <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-auto lg:h-full lg:min-h-[360px] bg-neutral-100 overflow-hidden">
                 <Image
-                  key={`img-${slide.key}`}
                   src={slide.image.src}
                   alt={slide.image.alt}
                   fill
-                  className="object-contain p-4 md:p-5 transition-opacity duration-500"
+                  className="object-contain p-4 md:p-5"
                   sizes="(max-width: 1024px) 100vw, 360px"
-                  priority={activeIndex === 0}
+                  priority={displayedIndex === 0}
                 />
               </div>
 
@@ -319,7 +332,6 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
               </div>
             </div>
           </div>
-        </FadeIn>
 
         {/* Carousel controls */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
