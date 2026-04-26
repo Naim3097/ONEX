@@ -150,16 +150,15 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
       key: 'byki-app',
       ...bykiAppCopy(locale),
       image: {
-        src: '/images/asset promotion/obd2.png',
+        src: '/images/asset promotion/BYKI OBD2 Banner.png',
         alt: 'BYKI App with OBD2 device',
-        width: 800,
-        height: 1000,
+        width: 1254,
+        height: 1254,
       },
     },
   ]
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const [paused, setPaused] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const clearTimer = useCallback(() => {
@@ -170,30 +169,34 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
   }, [])
 
   useEffect(() => {
-    if (paused) {
-      clearTimer()
-      return
-    }
     clearTimer()
     intervalRef.current = setInterval(() => {
       setActiveIndex((i) => (i + 1) % slides.length)
     }, ROTATE_MS)
     return clearTimer
-  }, [paused, slides.length, clearTimer])
+  }, [slides.length, clearTimer])
 
   const slide = slides[activeIndex]
 
+  // Reset auto-rotate timer whenever user manually navigates so they get a full interval
+  const resetTimer = useCallback(() => {
+    clearTimer()
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % slides.length)
+    }, ROTATE_MS)
+  }, [clearTimer, slides.length])
+
   const goTo = useCallback((i: number) => {
     setActiveIndex(((i % slides.length) + slides.length) % slides.length)
-  }, [slides.length])
+    resetTimer()
+  }, [slides.length, resetTimer])
   const goPrev = useCallback(() => goTo(activeIndex - 1), [goTo, activeIndex])
   const goNext = useCallback(() => goTo(activeIndex + 1), [goTo, activeIndex])
 
-  // Touch swipe support
+  // Touch swipe support (no auto-pause; just gesture detection)
   const touchStartX = useRef<number | null>(null)
   const touchDeltaX = useRef(0)
   const onTouchStartCapture = (e: React.TouchEvent) => {
-    setPaused(true)
     touchStartX.current = e.touches[0].clientX
     touchDeltaX.current = 0
   }
@@ -207,15 +210,6 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
     else if (touchDeltaX.current < -threshold) goNext()
     touchStartX.current = null
     touchDeltaX.current = 0
-    // resume on next tick
-    setTimeout(() => setPaused(false), 100)
-  }
-
-  const pauseHandlers = {
-    onMouseEnter: () => setPaused(true),
-    onMouseLeave: () => setPaused(false),
-    onFocus: () => setPaused(true),
-    onBlur: () => setPaused(false),
   }
 
   const labels = {
@@ -229,7 +223,6 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
       className="bg-white section-padding"
       aria-roledescription="carousel"
       aria-label="Promo banner"
-      {...pauseHandlers}
     >
       <div className="max-w-wide mx-auto px-5 md:px-10">
         {/* Header */}
@@ -263,16 +256,16 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
             onTouchEnd={onTouchEndCapture}
             onTouchCancel={onTouchEndCapture}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-stretch">
-              {/* Promo image — top on mobile, right on desktop */}
-              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 flex items-center justify-center min-h-[200px] lg:min-w-[280px] overflow-hidden bg-neutral-100">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] items-stretch">
+              {/* Promo image — fixed slot for consistent layout across slides; object-contain so nothing is cropped */}
+              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[520px] bg-neutral-100 overflow-hidden">
                 <Image
+                  key={`img-${slide.key}`}
                   src={slide.image.src}
                   alt={slide.image.alt}
-                  width={slide.image.width}
-                  height={slide.image.height}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 1024px) 100vw, 320px"
+                  fill
+                  className="object-contain p-4 md:p-6 transition-opacity duration-500"
+                  sizes="(max-width: 1024px) 100vw, 440px"
                   priority={activeIndex === 0}
                 />
               </div>
