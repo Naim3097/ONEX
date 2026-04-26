@@ -438,35 +438,6 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
         </div>
       </section>
 
-      {/* Brand logo strip — compatible AT brands */}
-      <section className="py-10 lg:py-12 bg-neutral-50 border-y border-neutral-200">
-        <div className="container-wide">
-          <p className="text-center overline-label text-neutral-500">
-            Sesuai untuk semua jenama gearbox automatik
-          </p>
-          <div className="mt-6 grid grid-cols-3 sm:grid-cols-6 items-center gap-x-6 gap-y-6 sm:gap-x-10">
-            {[
-              { src: '/images/brand-logos/proton.jpg', alt: 'Proton' },
-              { src: '/images/brand-logos/perodua.svg', alt: 'Perodua' },
-              { src: '/images/brand-logos/honda.svg', alt: 'Honda' },
-              { src: '/images/brand-logos/toyota.svg', alt: 'Toyota' },
-              { src: '/images/brand-logos/nissan.svg', alt: 'Nissan' },
-              { src: '/images/brand-logos/mitsubishi.svg', alt: 'Mitsubishi' },
-            ].map((b) => (
-              <div key={b.alt} className="relative h-10 sm:h-12 flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={b.src}
-                  alt={b.alt}
-                  loading="lazy"
-                  className="max-h-10 sm:max-h-12 w-auto object-contain opacity-60 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Section after hero. Home to home service */}
       <section className="section-padding bg-brand-white">
         <div className="container-wide">
@@ -483,6 +454,29 @@ export default function AidiladhaCampaignPage({ locale: _locale }: AidiladhaCamp
               <p className="mt-4 text-body-sm text-neutral-500 max-w-xl">
                 {copy.subheadlineNote}
               </p>
+
+              <div className="mt-10 max-w-xl">
+                <div className="grid grid-cols-3 sm:grid-cols-6 items-center gap-x-5 gap-y-5">
+                  {[
+                    { src: '/images/Brands/proton.png', alt: 'Proton' },
+                    { src: '/images/brand-logos/perodua.svg', alt: 'Perodua' },
+                    { src: '/images/brand-logos/honda.svg', alt: 'Honda' },
+                    { src: '/images/brand-logos/toyota.svg', alt: 'Toyota' },
+                    { src: '/images/brand-logos/nissan.svg', alt: 'Nissan' },
+                    { src: '/images/brand-logos/mitsubishi.svg', alt: 'Mitsubishi' },
+                  ].map((b) => (
+                    <div key={b.alt} className="relative h-9 sm:h-10 flex items-center justify-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={b.src}
+                        alt={b.alt}
+                        loading="lazy"
+                        className="max-h-9 sm:max-h-10 w-auto object-contain opacity-60 grayscale hover:opacity-90 hover:grayscale-0 transition duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <ul className="mt-10 grid gap-4 max-w-xl">
                 {copy.valueBullets.map((item, i) => (
