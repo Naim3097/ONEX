@@ -19,7 +19,8 @@ const TIME_SLOTS = [
 
 const TIMER_MINUTES = 15
 const TIMER_STORAGE_KEY = 'onex_aidiladha_countdown'
-const DEPOSIT_AMOUNT = 50
+// TEMP: lowered from 50 -> 1 for Meta Pixel Purchase event live test. Revert to 50 after verification.
+const DEPOSIT_AMOUNT = 1
 const FULL_SERVICE_PRICE = 74
 const SERVICE_LABEL = 'Aidiladha AT Service Promo'
 
