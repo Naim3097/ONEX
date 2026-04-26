@@ -272,12 +272,12 @@ export default function PromoTeaser({ locale }: PromoTeaserProps) {
             style={{ transitionDuration: `${FADE_MS}ms`, opacity: isVisible ? 1 : 0 }}
           >
               {/* Promo image — fixed slot for consistent layout across slides; object-contain so nothing is cropped */}
-              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-auto lg:h-full lg:min-h-[360px] bg-neutral-100 overflow-hidden">
+              <div className="order-first lg:order-last border-b lg:border-b-0 lg:border-l border-neutral-200 relative w-full aspect-[4/5] sm:aspect-[3/2] lg:aspect-auto lg:h-full lg:min-h-[360px] bg-neutral-100 overflow-hidden">
                 <Image
                   src={slide.image.src}
                   alt={slide.image.alt}
                   fill
-                  className="object-contain p-4 md:p-5"
+                  className="object-contain p-2 sm:p-4 md:p-5"
                   sizes="(max-width: 1024px) 100vw, 360px"
                   priority={displayedIndex === 0}
                 />
