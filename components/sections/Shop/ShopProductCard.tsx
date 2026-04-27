@@ -29,19 +29,21 @@ export default function ShopProductCard({ product, locale }: ShopProductCardProp
     if (isComingSoon) return
     addItem(product)
 
-    // Push AddToCart event to dataLayer for GTM
+    // Push AddToCart event to dataLayer for GTM (Google Ads + Meta)
     ;(window as any).dataLayer = (window as any).dataLayer || []
+    ;(window as any).dataLayer.push({ ecommerce: null })
     ;(window as any).dataLayer.push({
       event: 'add_to_cart',
       content_name: product.name,
       content_type: 'product',
       value: product.depositAmount ?? product.price,
       currency: 'MYR',
-      items: [{
-        item_name: product.name,
-        price: product.depositAmount ?? product.price,
-        quantity: 1,
-      }],
+      items: [{ item_name: product.name, price: product.depositAmount ?? product.price, quantity: 1 }],
+      ecommerce: {
+        value: product.depositAmount ?? product.price,
+        currency: 'MYR',
+        items: [{ item_name: product.name, price: product.depositAmount ?? product.price, quantity: 1 }],
+      },
     })
 
     setAdded(true)

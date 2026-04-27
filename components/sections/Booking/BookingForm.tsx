@@ -70,8 +70,16 @@ export default function BookingForm({ locale }: BookingFormProps) {
         num_items: 1,
         items: [{ item_name: 'Door-to-Door Inspection Deposit', price: 10, quantity: 1 }],
       }
-      ;(window as any).dataLayer.push({ event: 'begin_checkout', ...checkoutData })
-      ;(window as any).dataLayer.push({ event: 'initiate_checkout', ...checkoutData })
+      ;(window as any).dataLayer.push({ ecommerce: null })
+      ;(window as any).dataLayer.push({
+        event: 'begin_checkout',
+        ...checkoutData,
+        ecommerce: { value: 10, currency: 'MYR', items: checkoutData.items },
+      })
+      ;(window as any).dataLayer.push({
+        event: 'initiate_checkout',
+        ...checkoutData,
+      })
 
       const docRef = await addDoc(collection(db, 'bookings'), {
         ...data,

@@ -79,18 +79,24 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
           setStatus('confirmed')
           // Push Purchase event to dataLayer for GTM (Google Ads + Meta)
           ;(window as any).dataLayer = (window as any).dataLayer || []
-          ;(window as any).dataLayer.push({
-            event: 'purchase',
+          const purchaseData = {
             transaction_id: data.transactionId || bookingId,
             value: data.amount || 10,
             currency: 'MYR',
             content_type: 'service',
             content_name: 'Door-to-Door Inspection Deposit',
-            items: [{
-              item_name: 'Door-to-Door Inspection Deposit',
-              price: data.amount || 10,
-              quantity: 1,
-            }],
+            items: [{ item_name: 'Door-to-Door Inspection Deposit', price: data.amount || 10, quantity: 1 }],
+          }
+          ;(window as any).dataLayer.push({ ecommerce: null })
+          ;(window as any).dataLayer.push({
+            event: 'purchase',
+            ...purchaseData,
+            ecommerce: {
+              transaction_id: purchaseData.transaction_id,
+              value: purchaseData.value,
+              currency: 'MYR',
+              items: purchaseData.items,
+            },
           })
         } else if (data.status === 'cancelled') {
           setStatus('cancelled')

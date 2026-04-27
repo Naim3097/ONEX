@@ -1,5 +1,6 @@
 import '@/app/globals.css'
 import type { Metadata } from 'next'
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp'
 
 export const metadata: Metadata = {
   title: 'Servis Gearbox AT RM74 — Promo Aidiladha | One X Transmission',
@@ -12,6 +13,7 @@ export default function PromoLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen bg-white font-satoshi text-neutral-900">
       {children}
+      <FloatingWhatsApp />
     </div>
   )
 }

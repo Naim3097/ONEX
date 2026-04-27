@@ -67,8 +67,16 @@ export default function CheckoutPageClient({ locale }: CheckoutPageClientProps) 
           quantity: item.quantity,
         })),
       }
-      ;(window as any).dataLayer.push({ event: 'begin_checkout', ...checkoutData })
-      ;(window as any).dataLayer.push({ event: 'initiate_checkout', ...checkoutData })
+      ;(window as any).dataLayer.push({ ecommerce: null })
+      ;(window as any).dataLayer.push({
+        event: 'begin_checkout',
+        ...checkoutData,
+        ecommerce: { value: totalPrice, currency: 'MYR', items: checkoutData.items },
+      })
+      ;(window as any).dataLayer.push({
+        event: 'initiate_checkout',
+        ...checkoutData,
+      })
       setCheckoutTracked(true)
     }
   }, [items, checkoutTracked])
