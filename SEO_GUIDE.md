@@ -68,7 +68,7 @@ Description: Common questions about gearbox diagnosis costs, AT/CVT overhaul pri
 ### Contact Page
 ```
 Title: Contact Gearbox Specialist Shah Alam | WhatsApp or Call | One X Transmission
-Description: Reach One X Transmission for a free gearbox consultation. Workshop at Batu 7½ Shah Alam, Selangor. WhatsApp +60 11-3105 1677. Mon–Fri 9am–6pm, Sat 9am–5pm.
+Description: Reach One X Transmission for a free gearbox consultation. Workshop at Batu 7½ Shah Alam, Selangor. WhatsApp +60 10-202 0723. Mon–Fri 9am–6pm, Sat 9am–5pm.
 ```
 
 **Implementation:** Update each page's `generateMetadata` call in `/app/[locale]/(site)/*/page.tsx`.
@@ -253,7 +253,7 @@ Local SEO is the #1 driver for "near me" and city-based searches. These steps ar
 2. Business name: **One X Transmission**
 3. Category: **Transmission Shop** (primary) + **Auto Repair Shop** (secondary)
 4. Address: GF LOT 184107, Jalan Haji Taib, Batu 7½, Shah Alam, 40460, Selangor
-5. Phone: +60 11-3105 1677
+5. Phone: +60 10-202 0723
 6. Website: https://onextransmission.com
 7. Hours: Mon–Fri 9am–6pm, Sat 9am–5pm
 8. Add **all 7 gallery photos** from the website
@@ -275,7 +275,7 @@ Local SEO is the #1 driver for "near me" and city-based searches. These steps ar
 Your **Name, Address, Phone** must be identical everywhere:
 - **Name:** One X Transmission
 - **Address:** GF LOT 184107, Jalan Haji Taib, Batu 7½, Shah Alam, 40460, Selangor
-- **Phone:** +60 11-3105 1677
+- **Phone:** +60 10-202 0723
 
 Submit to these directories:
 | Directory | URL |

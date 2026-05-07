@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-const kulimWhatsApp = 'https://wa.link/q0ht8q'
+const kulimWhatsApp = 'https://wa.me/60102020723'
 
 const symptomsMap: Record<Locale, string[]> = {
   en: [

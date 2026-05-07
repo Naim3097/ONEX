@@ -13,14 +13,14 @@ export const defaultLocale: Locale = 'en'
 
 export const business = {
   name: 'One X Transmission',
-  phone: '+60 11-3105 1677',
-  phoneTel: 'tel:+601131051677',
+  phone: '+60 10-202 0723',
+  phoneTel: 'tel:+60102020723',
   landline: '03-5191 8330',
   landlineTel: 'tel:+60351918330',
-  whatsapp: '+60 11-3105 1677',
-  whatsappLink: 'https://wa.link/q0ht8q',
-  whatsappInquiry: 'https://wa.link/q0ht8q',
-  whatsappDoorToDoor: 'https://wa.link/q0ht8q',
+  whatsapp: '+60 10-202 0723',
+  whatsappLink: 'https://wa.me/60102020723',
+  whatsappInquiry: 'https://wa.me/60102020723',
+  whatsappDoorToDoor: 'https://wa.me/60102020723',
   bookingUrl: '/booking',
   address:
     'GF LOT 184107 (LOT LAMA 3579), Jalan Haji Taib, Batu 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia',

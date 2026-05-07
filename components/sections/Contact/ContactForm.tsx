@@ -31,7 +31,7 @@ export default function ContactForm({ locale }: ContactFormProps) {
       `ONEX - Name: ${formData.name}\nPhone: ${formData.phone}\nCar: ${formData.carModel}\nIssue: ${formData.problem}\n\n${formData.message}`
     )
     window.open(
-      `https://wa.link/q0ht8q`,
+      `https://wa.me/60102020723?text=${text}`,
       '_blank',
       'noopener,noreferrer'
     )

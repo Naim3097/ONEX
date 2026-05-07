@@ -115,7 +115,7 @@ export default function PaymentResultContent({ locale }: { locale: Locale }) {
   const style = statusStyles[status]
   const icon = statusIcons[status]
   const waText = status === 'confirmed' ? t.waSuccess : status === 'cancelled' ? t.waFail : t.waPending
-  const waLink = 'https://wa.link/q0ht8q'
+  const waLink = 'https://wa.me/60102020723'
 
   return (
     <section className="section-dark min-h-[80vh] flex items-center justify-center">

@@ -79,7 +79,7 @@ These are ballpark figures. Your actual cost depends on the vehicle make, model,
 
 If you're in Penang, Butterworth, Bukit Mertajam, or Nibong Tebal and dealing with a gearbox issue — reach out directly. We'll assess your situation, give an honest recommendation, and let you know whether the drive is warranted before you commit.
 
-**WhatsApp:** +60 11-3105 1677  
+**WhatsApp:** +60 10-202 0723  
 **Workshop Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
 Our Kulim branch announcement is coming soon. Follow along or enquire now to be notified.

@@ -91,7 +91,7 @@ Sehingga cawangan Kulim kami dibuka, bengkel Shah Alam kami tersedia dan terus m
 - Warranty 12 bulan / 20,000 km untuk semua kerja overhaul
 - Harga transparent — quotation bertulis sebelum kerja bermula
 
-**WhatsApp:** +60 11-3105 1677
+**WhatsApp:** +60 10-202 0723
 **Waktu Operasi:** Isnin–Jumaat 9am–6pm | Sabtu 9am–5pm
 
 WhatsApp kami kalau anda tak pasti sama ada drive tu perlu. Kami akan assess symptom anda dengan jujur dan beritahu apa yang kami fikir sebelum anda commit kepada apa-apa.

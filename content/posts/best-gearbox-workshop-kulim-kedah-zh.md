@@ -84,6 +84,6 @@ One X Transmission 是一家专门做变速箱的workshop，总部在雪兰莪 S
 直接 WhatsApp 我们讨论你车子的症状、获取大概估价，或者需要的话安排运输。我们也为吉打客户提供 door-to-door 上门取车服务。
 
 **营业时间：** 周一至周五 9am–6pm | 周六 9am–5pm
-**电话/WhatsApp：** +60 11-3105 1677
+**电话/WhatsApp：** +60 10-202 0723
 
 我们的 Kulim 分店即将开业。现在就给我们发消息，第一时间知道开业消息，或者安排到我们 Shah Alam workshop 看看。

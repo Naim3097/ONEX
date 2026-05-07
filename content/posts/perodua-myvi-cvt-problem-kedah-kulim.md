@@ -94,7 +94,7 @@ We are opening a new branch in **Kulim, Kedah** to serve the northern region dir
 - All Perodua models serviced: Myvi, Axia, Bezza, Ativa, Aruz
 - 12-month / 20,000 km warranty on all overhaul work
 
-**WhatsApp:** +60 11-3105 1677  
+**WhatsApp:** +60 10-202 0723  
 **Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
 If your Myvi is showing any of the symptoms above, send us a message — we'll tell you honestly what it means before you spend anything.

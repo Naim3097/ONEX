@@ -41,9 +41,9 @@
 | **Warranty** | 6–12 bulan warranty on all work |
 | **Free Diagnosis** | Yes — Diagnosis percuma (free professional diagnostic) |
 | **Address** | GF LOT 184107 (LOT LAMA 3579), Jalan Haji Taib, Batu 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia |
-| **Phone** | +60 11-3105 1677 |
+| **Phone** | +60 10-202 0723 |
 | **Landline** | 03-5191 8330 |
-| **WhatsApp** | +60 11-3105 1677 / [wa.link/0hmj0n](https://wa.link/0hmj0n) |
+| **WhatsApp** | +60 10-202 0723 / [wa.me/60102020723](https://wa.me/60102020723) |
 | **Google Maps** | [2.9790295931497934, 101.51856181116906](https://maps.google.com/?q=2.9790295931497934,101.51856181116906) |
 | **Operating Hours** | Mon–Fri: 9:00 AM – 6:00 PM · Sat: 9:00 AM – 5:00 PM · Sun: Tutup (Closed) |
 | **Emergency** | Kecemasan 24/7 — call anytime for emergency/towing service |
@@ -61,8 +61,8 @@
 > Specialist pembaikan dan servis gearbox CVT & automatik dengan lebih 15 tahun pengalaman. Diagnosis PERCUMA untuk semua pelanggan.
 
 **CTA Buttons:**
-- 💬 WhatsApp Kami → `https://wa.link/0hmj0n`
-- 📞 Call Terus: 03-5191 8330 → `tel:+601131051677`
+- 💬 WhatsApp Kami → `https://wa.me/60102020723`
+- 📞 Call Terus: 03-5191 8330 → `tel:+60102020723`
 
 **Trust Badges (Hero):**
 - ✅ 15+ Tahun Pengalaman
@@ -335,8 +335,8 @@
 
 > **Dah Semak Harga? Hubungi Kami Sekarang!**
 > Dapatkan quotation tepat dan diagnosis percuma dari pakar kami
-> - WhatsApp Kami → `https://wa.me/+601131051677?text=Hai%2C%20saya%20nak%20tanya%20tentang%20servis%20gearbox`
-> - Call Sekarang → `tel:+601131051677`
+> - WhatsApp Kami → `https://wa.me/+60102020723?text=Hai%2C%20saya%20nak%20tanya%20tentang%20servis%20gearbox`
+> - Call Sekarang → `tel:+60102020723`
 
 ---
 
@@ -457,7 +457,7 @@
 
 > **Ada Soalan Tentang Gearbox?**
 > Jika anda ada soalan tentang gearbox atau memerlukan nasihat professional, jangan segan untuk hubungi kami. Kami sedia membantu dengan diagnosis percuma!
-> - Tanya Pakar via WhatsApp → `https://wa.me/601131051677?text=Saya%20ada%20soalan%20tentang%20gearbox.%20Boleh%20tolong?`
+> - Tanya Pakar via WhatsApp → `https://wa.me/60102020723?text=Saya%20ada%20soalan%20tentang%20gearbox.%20Boleh%20tolong?`
 > - Lihat Semua Servis Kami → `/khidmat`
 
 ---
@@ -472,10 +472,10 @@
 
 | Method | Detail | CTA |
 |--------|--------|-----|
-| **Telefon** | +60 11-3105 1677 | Call Sekarang → `tel:+601131051677` |
-| **WhatsApp** | +60 11-3105 1677 (WhatsApp) | WhatsApp Kami → `https://wa.link/0hmj0n` |
+| **Telefon** | +60 10-202 0723 | Call Sekarang → `tel:+60102020723` |
+| **WhatsApp** | +60 10-202 0723 (WhatsApp) | WhatsApp Kami → `https://wa.me/60102020723` |
 | **Alamat** | GF LOT 184107 (LOT LAMA 3579), JALAN HAJI TAIB, BATU 7 1/2, Jln Kebun Tambahan, Kampung Jln Kebun, 40460 Shah Alam, Selangor, Malaysia | Buka Maps → Google Maps link |
-| **Waktu Operasi** | Isnin–Jumaat: 9:00 AM – 6:00 PM · Sabtu: 9:00 AM – 5:00 PM · Ahad: Tutup | Call Kecemasan → `tel:+601131051677` |
+| **Waktu Operasi** | Isnin–Jumaat: 9:00 AM – 6:00 PM · Sabtu: 9:00 AM – 5:00 PM · Ahad: Tutup | Call Kecemasan → `tel:+60102020723` |
 
 ### Quick Booking Form
 
@@ -504,7 +504,7 @@
 
 **Kecemasan 24/7:**
 > Untuk kecemasan atau towing service, call kami 24/7
-> +60 11-3105 1677
+> +60 10-202 0723
 
 ### Google Maps Embed
 - Location coordinates: `2.9790295931497934, 101.51856181116906`
@@ -563,7 +563,7 @@
 - Pembaikan Komponen
 
 #### Column 4: Hubungi Kami
-- Phone: +60 11-3105 1677
+- Phone: +60 10-202 0723
 - WhatsApp 24/7
 - Address: GF LOT 184107, JALAN HAJI TAIB, BATU 7 1/2, 40460 Shah Alam, Selangor
 
@@ -571,7 +571,7 @@
 > © 2024 One X Transmission. Semua hak terpelihara.
 
 #### Floating Elements
-- WhatsApp FAB button → `https://wa.link/0hmj0n`
+- WhatsApp FAB button → `https://wa.me/60102020723`
 - Sticky header with Call + WhatsApp icons
 
 ---
@@ -649,9 +649,9 @@
 ### WhatsApp Pre-filled Messages
 | Context | URL |
 |---------|-----|
-| General | `https://wa.link/0hmj0n` |
-| Price inquiry | `https://wa.me/+601131051677?text=Hai%2C%20saya%20nak%20tanya%20tentang%20servis%20gearbox` |
-| Blog question | `https://wa.me/601131051677?text=Saya%20ada%20soalan%20tentang%20gearbox.%20Boleh%20tolong?` |
+| General | `https://wa.me/60102020723` |
+| Price inquiry | `https://wa.me/+60102020723?text=Hai%2C%20saya%20nak%20tanya%20tentang%20servis%20gearbox` |
+| Blog question | `https://wa.me/60102020723?text=Saya%20ada%20soalan%20tentang%20gearbox.%20Boleh%20tolong?` |
 
 ---
 

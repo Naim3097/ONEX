@@ -80,7 +80,7 @@ Ini adalah angka anggaran. Kos sebenar anda bergantung kepada jenama, model kend
 
 Kalau anda di Pulau Pinang, Butterworth, Bukit Mertajam, atau Nibong Tebal dan menghadapi masalah gearbox — hubungi kami terus. Kami akan nilai keadaan anda, berikan cadangan yang jujur, dan maklumkan sama ada perjalanan itu berbaloi sebelum anda komit.
 
-**WhatsApp:** +60 11-3105 1677  
+**WhatsApp:** +60 10-202 0723  
 **Waktu Bengkel:** Isnin–Jumaat 9pg–6ptg | Sabtu 9pg–5ptg
 
 Pengumuman cawangan Kulim kami akan datang tidak lama lagi. Ikuti perkembangan atau hubungi sekarang untuk dimaklumkan.

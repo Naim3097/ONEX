@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     zh: '联系沙阿南变速箱专家 | WhatsApp或致电 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
-    en: 'Reach One X Transmission for a free gearbox consultation. Workshop at Batu 7½ Shah Alam, Selangor. WhatsApp +60 11-3105 1677. Mon–Fri 9am–6pm, Sat 9am–5pm.',
-    ms: 'Hubungi One X Transmission untuk perundingan gearbox percuma. Bengkel di Batu 7½ Shah Alam, Selangor. WhatsApp +60 11-3105 1677. Isnin–Jumaat 9pg–6ptg, Sabtu 9pg–5ptg.',
-    zh: '联系 One X Transmission 获取免费变速箱咨询。维修店位于莎阿南Batu 7½，雪兰莪。WhatsApp +60 11-3105 1677。周一至周五上午9时至下午6时，周六上午9时至下午5时。',
+    en: 'Reach One X Transmission for a free gearbox consultation. Workshop at Batu 7½ Shah Alam, Selangor. WhatsApp +60 10-202 0723. Mon–Fri 9am–6pm, Sat 9am–5pm.',
+    ms: 'Hubungi One X Transmission untuk perundingan gearbox percuma. Bengkel di Batu 7½ Shah Alam, Selangor. WhatsApp +60 10-202 0723. Isnin–Jumaat 9pg–6ptg, Sabtu 9pg–5ptg.',
+    zh: '联系 One X Transmission 获取免费变速箱咨询。维修店位于莎阿南Batu 7½，雪兰莪。WhatsApp +60 10-202 0723。周一至周五上午9时至下午6时，周六上午9时至下午5时。',
   }
   return generatePageMetadata({
     locale,

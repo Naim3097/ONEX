@@ -95,7 +95,7 @@ Kami sedang buka cawangan baru di **Kulim, Kedah** untuk melayani wilayah utara 
 - Semua model Perodua diservis: Myvi, Axia, Bezza, Ativa, Aruz
 - Warranty 12 bulan / 20,000 km untuk semua kerja overhaul
 
-**WhatsApp:** +60 11-3105 1677  
+**WhatsApp:** +60 10-202 0723  
 **Waktu operasi:** Isnin–Jumaat 9am–6pm | Sabtu 9am–5pm
 
 Kalau Myvi korang tunjukkan mana-mana simptom di atas, hantar mesej kepada kami — kami akan beritahu dengan jujur apa maksudnya sebelum korang belanja apa-apa.

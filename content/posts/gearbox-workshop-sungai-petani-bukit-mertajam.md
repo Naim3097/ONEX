@@ -90,7 +90,7 @@ Until our Kulim branch opens, our Shah Alam workshop is available and continues 
 - 12-month / 20,000 km warranty on all overhaul work
 - Transparent pricing — written quote before work begins
 
-**WhatsApp:** +60 11-3105 1677  
+**WhatsApp:** +60 10-202 0723  
 **Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
 WhatsApp us if you're unsure whether the drive is necessary. We'll assess your symptoms honestly and tell you what we think before you commit to anything.

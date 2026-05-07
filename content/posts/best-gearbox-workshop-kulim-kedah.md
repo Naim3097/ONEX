@@ -83,6 +83,6 @@ This is the core reason why Kulim and Kedah drivers increasingly choose a specia
 WhatsApp us directly to discuss your car's symptoms, get a rough estimate, or arrange transport if needed. We also offer door-to-door vehicle collection for customers in Kedah upon request.
 
 **Workshop Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm  
-**Phone/WhatsApp:** +60 11-3105 1677
+**Phone/WhatsApp:** +60 10-202 0723
 
 Our Kulim branch is coming soon. Send us a message now and be the first to know when we open, or arrange a visit to our Shah Alam workshop in the meantime.

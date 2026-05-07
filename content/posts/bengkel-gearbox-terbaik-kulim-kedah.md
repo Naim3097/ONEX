@@ -84,6 +84,6 @@ Ini sebab utama kenapa pemandu Kulim dan Kedah semakin memilih bengkel pakar ber
 WhatsApp kami terus untuk bincang simptom kereta anda, dapatkan anggaran kasar, atau aturkan pengangkutan jika diperlukan. Kami juga tawarkan servis ambil dan hantar kereta untuk pelanggan di Kedah atas permintaan.
 
 **Waktu Bengkel:** Isnin–Jumaat 9pg–6ptg | Sabtu 9pg–5ptg  
-**Telefon/WhatsApp:** +60 11-3105 1677
+**Telefon/WhatsApp:** +60 10-202 0723
 
 Cawangan Kulim kami akan dibuka tidak lama lagi. Hubungi kami sekarang untuk jadi yang pertama tahu bila kami buka, atau aturkan lawatan ke bengkel Shah Alam kami sementara itu.
