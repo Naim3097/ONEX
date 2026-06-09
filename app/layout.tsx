@@ -21,7 +21,7 @@ const satoshi = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://onextransmission.com'),
+  metadataBase: new URL('https://www.onextransmission.com'),
   title: {
     default: 'Gearbox Specialist Shah Alam | Free Diagnosis | One X Transmission',
     template: '%s | One X Transmission',
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     'best gearbox workshop Malaysia',
     'CVT gearbox overhaul',
     'gearbox diagnosis free',
-    'gearbox specialist Kulim',
-    'transmission workshop Kedah',
+    'gearbox specialist Penang',
+    'gearbox workshop Simpang Ampat',
     'CVT repair Penang',
     'gearbox workshop Bukit Mertajam',
-    'transmission repair Sungai Petani',
-    'gearbox specialist Nibong Tebal',
-    'transmission workshop Parit Buntar',
-    'bengkel gearbox Kulim',
-    'bengkel gearbox Kedah',
+    'transmission repair Butterworth',
+    'gearbox specialist Bukit Tambun',
+    'transmission workshop Seberang Perai',
+    'bengkel gearbox Pulau Pinang',
+    'bengkel gearbox Simpang Ampat',
     'gearbox repair near Penang',
   ],
   openGraph: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'One X Transmission',
     images: [
       {
-        url: 'https://onextransmission.com/images/og-image.jpg',
+        url: 'https://www.onextransmission.com/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'One X Transmission — Gearbox Specialist Shah Alam',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://onextransmission.com/images/og-image.jpg'],
+    images: ['https://www.onextransmission.com/images/og-image.jpg'],
   },
   robots: {
     index: true,

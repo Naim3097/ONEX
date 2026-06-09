@@ -87,7 +87,7 @@ CVT fluid pada Myvi biasanya berwarna merah pucat ke amber bila baru. Coklat gel
 
 Kami adalah pakar gearbox yang khusus — kerja CVT adalah fokus utama kami, bukan servis sampingan.
 
-Kami sedang buka cawangan baru di **Kulim, Kedah** untuk melayani wilayah utara secara terus. Sementara itu, bengkel Shah Alam kami melayani pelanggan Kedah. Kami juga tawarkan pengambilan kenderaan door-to-door untuk pelanggan jauh atas permintaan.
+Cawangan baru kami di **Simpang Ampat, Pulau Pinang** (di Star Avenue, betul-betul tepi Lebuhraya Utara-Selatan) kini sudah dibuka untuk melayani wilayah utara secara terus. Ia cuma kira-kira 15 minit dari Kulim, jadi kami melayani pelanggan Kedah, Kulim dan kawasan Pulau Pinang — dan bengkel Shah Alam kami juga masih beroperasi. Kami juga tawarkan pengambilan kenderaan door-to-door untuk pelanggan jauh atas permintaan.
 
 **Apa yang kami tawarkan:**
 - Diagnosis CVT profesional percuma (scanner + pemeriksaan fizikal)
@@ -96,6 +96,7 @@ Kami sedang buka cawangan baru di **Kulim, Kedah** untuk melayani wilayah utara 
 - Warranty 12 bulan / 20,000 km untuk semua kerja overhaul
 
 **WhatsApp:** +60 10-202 0723  
+**Cawangan Pulau Pinang:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Waktu operasi:** Isnin–Jumaat 9am–6pm | Sabtu 9am–5pm
 
 Kalau Myvi korang tunjukkan mana-mana simptom di atas, hantar mesej kepada kami — kami akan beritahu dengan jujur apa maksudnya sebelum korang belanja apa-apa.

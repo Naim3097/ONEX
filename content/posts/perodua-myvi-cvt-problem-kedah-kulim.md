@@ -86,7 +86,7 @@ The CVT fluid on a Myvi is typically a pale red to amber colour when fresh. Dark
 
 We are a dedicated gearbox specialist — CVT work is what we do, not a side service.
 
-We are opening a new branch in **Kulim, Kedah** to serve the northern region directly. Until then, our Shah Alam workshop serves Kedah customers. We also offer door-to-door vehicle collection for distant customers on request.
+Our new branch in **Simpang Ampat, Pulau Pinang** (at Star Avenue, just off the North-South Expressway) is now open to serve the northern region directly. It's only about 15 minutes from Kulim, so we serve Kedah, Kulim and Penang-area customers — and our Shah Alam workshop remains open too. We also offer door-to-door vehicle collection for distant customers on request.
 
 **What we offer:**
 - Free professional CVT diagnosis (scanner + physical inspection)
@@ -95,6 +95,7 @@ We are opening a new branch in **Kulim, Kedah** to serve the northern region dir
 - 12-month / 20,000 km warranty on all overhaul work
 
 **WhatsApp:** +60 10-202 0723  
+**Penang Branch:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
 If your Myvi is showing any of the symptoms above, send us a message — we'll tell you honestly what it means before you spend anything.

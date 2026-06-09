@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://onextransmission.com/sitemap.xml',
+    sitemap: 'https://www.onextransmission.com/sitemap.xml',
   }
 }

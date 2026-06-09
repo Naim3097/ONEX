@@ -49,7 +49,7 @@ Di One X Transmission, kami bukan bengkel am yang "juga buat gearbox." Kami beng
 
 Bengkel utama kami terletak di **Shah Alam, Selangor** — mudah diakses dari Klang, Subang, Petaling Jaya, dan seluruh Lembah Klang.
 
-Kami juga ada cawangan di **Kulim, Kedah** untuk pelanggan di utara.
+Kami juga ada cawangan di **Simpang Ampat, Pulau Pinang** (di Star Avenue, tepi Lebuhraya Utara-Selatan) untuk pelanggan di utara.
 
 ## Pakej Servis Gearbox ATF — RM 439
 

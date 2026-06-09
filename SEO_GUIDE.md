@@ -89,8 +89,8 @@ Add these missing fields to `generateLocalBusinessJsonLd()`:
 slogan: 'Diagnosis Above All Else',
 
 image: [
-  'https://onextransmission.com/images/hero/Hero 1.jpeg',
-  'https://onextransmission.com/images/Premise/Premise 1.jpeg',
+  'https://www.onextransmission.com/images/hero/Hero 1.jpeg',
+  'https://www.onextransmission.com/images/Premise/Premise 1.jpeg',
 ],
 
 sameAs: [
@@ -228,13 +228,13 @@ export function generateBreadcrumbJsonLd(locale: string, page: string, pageLabel
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: `https://onextransmission.com/${locale}`,
+        item: `https://www.onextransmission.com/${locale}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: pageLabel,
-        item: `https://onextransmission.com/${locale}/${page}`,
+        item: `https://www.onextransmission.com/${locale}/${page}`,
       },
     ],
   }
@@ -254,7 +254,7 @@ Local SEO is the #1 driver for "near me" and city-based searches. These steps ar
 3. Category: **Transmission Shop** (primary) + **Auto Repair Shop** (secondary)
 4. Address: GF LOT 184107, Jalan Haji Taib, Batu 7½, Shah Alam, 40460, Selangor
 5. Phone: +60 10-202 0723
-6. Website: https://onextransmission.com
+6. Website: https://www.onextransmission.com
 7. Hours: Mon–Fri 9am–6pm, Sat 9am–5pm
 8. Add **all 7 gallery photos** from the website
 9. Write a business description using these exact phrases:
@@ -444,12 +444,12 @@ The site redirects `/` to `/en/` via middleware. Make sure the root `app/layout.
 
 ```typescript
 alternates: {
-  canonical: 'https://onextransmission.com/en',
+  canonical: 'https://www.onextransmission.com/en',
   languages: {
-    'x-default': 'https://onextransmission.com/en',
-    'en': 'https://onextransmission.com/en',
-    'ms': 'https://onextransmission.com/ms',
-    'zh': 'https://onextransmission.com/zh',
+    'x-default': 'https://www.onextransmission.com/en',
+    'en': 'https://www.onextransmission.com/en',
+    'ms': 'https://www.onextransmission.com/ms',
+    'zh': 'https://www.onextransmission.com/zh',
   },
 },
 ```
@@ -493,7 +493,7 @@ Do these in order — highest ROI first:
 
 Set up these before launching:
 
-1. **Google Search Console** — verify `onextransmission.com`, submit sitemap URL: `https://onextransmission.com/sitemap.xml`
+1. **Google Search Console** — verify `onextransmission.com`, submit sitemap URL: `https://www.onextransmission.com/sitemap.xml`
 2. **Google Analytics 4** — add GA4 measurement ID to `app/layout.tsx`
 3. **Monitor these queries monthly in Search Console:**
    - `gearbox specialist shah alam`

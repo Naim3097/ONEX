@@ -48,13 +48,13 @@ Titik lemah yang diketahui. Generasi CVT Nissan sebelum 2018 ada sejarah kerosak
 **Toyota Vios (Super ECT Automatik)**  
 Kurang terdedah kepada kerosakan besar, tapi pemilik Vios di Pulau Pinang kerap melaporkan downshift kasar dan keragu-raguan — sering disebabkan oleh minyak ATF yang sudah rosak atau valve body yang haus.
 
-## Melayan Pulau Pinang dari Pangkalan Utara Kami
+## Melayan Pulau Pinang dari Cawangan Utara Kami
 
-One X Transmission sedang membuka cawangan di **Kulim, Kedah** — terletak strategik berhampiran sempadan Pulau Pinang untuk melayan seluruh kawasan utara.
+One X Transmission kini sudah dibuka di **Simpang Ampat, Pulau Pinang** — di Star Avenue, betul-betul tepi Lebuhraya Utara-Selatan dan terletak strategik untuk melayan seluruh kawasan utara.
 
-Kulim terletak lebih kurang 35–40 minit dari Georgetown melalui Jambatan Pulau Pinang dan Lebuhraya Utara-Selatan. Ia jauh lebih dekat berbanding bergerak ke Lembah Klang.
+Cawangan Pulau Pinang kami terletak lebih kurang 35–40 minit dari Georgetown dan cuma kira-kira 15 minit dari Kulim — jauh lebih dekat berbanding bergerak ke Lembah Klang. Kami terus melayan Kulim, Sungai Petani, Bukit Mertajam dan kawasan sekitarnya.
 
-Sementara cawangan Kulim dibuka, bengkel Shah Alam kami terus melayan pelanggan Pulau Pinang. Ramai sanggup buat perjalanan kerana mereka dapati ia lebih berbaloi daripada pembaikan gagal berulang kali di tempat lain.
+Bengkel Shah Alam kami juga masih beroperasi, tapi pelanggan kawasan Pulau Pinang tak perlu lagi buat perjalanan jauh itu — datang ke cawangan Simpang Ampat kami hari ini.
 
 Apa yang anda dapat:
 - **Diagnosis gearbox percuma** — penilaian profesional sebelum sebarang sebut harga diberikan
@@ -81,6 +81,7 @@ Ini adalah angka anggaran. Kos sebenar anda bergantung kepada jenama, model kend
 Kalau anda di Pulau Pinang, Butterworth, Bukit Mertajam, atau Nibong Tebal dan menghadapi masalah gearbox — hubungi kami terus. Kami akan nilai keadaan anda, berikan cadangan yang jujur, dan maklumkan sama ada perjalanan itu berbaloi sebelum anda komit.
 
 **WhatsApp:** +60 10-202 0723  
+**Cawangan Pulau Pinang:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Waktu Bengkel:** Isnin–Jumaat 9pg–6ptg | Sabtu 9pg–5ptg
 
-Pengumuman cawangan Kulim kami akan datang tidak lama lagi. Ikuti perkembangan atau hubungi sekarang untuk dimaklumkan.
+Cawangan Pulau Pinang kami di Simpang Ampat kini sudah dibuka. Datang ke kedai atau hubungi sekarang untuk tempah slot anda.

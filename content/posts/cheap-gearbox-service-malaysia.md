@@ -85,4 +85,4 @@ The bottom line: **cheap gearbox service isn't always a saving**. A proper servi
 
 Visit our [shop page](/en/shop) to book the RM 439 ATF Gearbox Service Package, or WhatsApp us at **011-1060 7439**.
 
-Workshops in Shah Alam and Kulim. Door-to-Door service available.
+Workshops in Shah Alam and Simpang Ampat, Penang. Door-to-Door service available.

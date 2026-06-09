@@ -60,9 +60,9 @@ Pakar yang betul akan alu-alukan soalan-soalan ini. Bengkel yang cuba elak soala
 
 ## One X Transmission: Melayan Pelanggan Kedah dan Pulau Pinang
 
-One X Transmission adalah bengkel pakar transmisi berdedikasi yang berpusat di Shah Alam, Selangor — dan kami sedang membuka cawangan di Kulim, Kedah untuk melayan pelanggan kawasan utara secara terus.
+One X Transmission adalah bengkel pakar transmisi berdedikasi yang berpusat di Shah Alam, Selangor — dan cawangan baru kami di **Simpang Ampat, Pulau Pinang** (di Star Avenue, betul-betul tepi Lebuhraya Utara-Selatan) kini sudah dibuka untuk melayan pelanggan kawasan utara secara terus.
 
-Sementara cawangan Kulim dibuka, kami sudah pun menerima pelanggan dari Kedah, Pulau Pinang, Kulim, Sungai Petani, Bukit Mertajam, dan kawasan sekitarnya di bengkel utama kami.
+Cawangan Pulau Pinang kami cuma kira-kira 15 minit dari Kulim, jadi kami melayan pelanggan dari Kedah, Pulau Pinang, Kulim, Sungai Petani, Bukit Mertajam, dan kawasan sekitarnya — di cawangan baru mahupun di bengkel utama Shah Alam kami.
 
 Kelayakan kami:
 - 15 tahun pengkhususan dalam CVT dan transmisi automatik
@@ -83,7 +83,8 @@ Ini sebab utama kenapa pemandu Kulim dan Kedah semakin memilih bengkel pakar ber
 
 WhatsApp kami terus untuk bincang simptom kereta anda, dapatkan anggaran kasar, atau aturkan pengangkutan jika diperlukan. Kami juga tawarkan servis ambil dan hantar kereta untuk pelanggan di Kedah atas permintaan.
 
+**Cawangan Pulau Pinang:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Waktu Bengkel:** Isnin–Jumaat 9pg–6ptg | Sabtu 9pg–5ptg  
 **Telefon/WhatsApp:** +60 10-202 0723
 
-Cawangan Kulim kami akan dibuka tidak lama lagi. Hubungi kami sekarang untuk jadi yang pertama tahu bila kami buka, atau aturkan lawatan ke bengkel Shah Alam kami sementara itu.
+Cawangan Pulau Pinang kami di Simpang Ampat kini sudah dibuka — cuma kira-kira 15 minit dari Kulim. Hubungi kami sekarang untuk tempah slot, atau buat lawatan ke cawangan Pulau Pinang mahupun bengkel Shah Alam kami.

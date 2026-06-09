@@ -47,13 +47,13 @@ A known weak point. Nissan's CVT generations prior to 2018 have a documented his
 **Toyota Vios (Super ECT Automatic)**  
 Less prone to catastrophic failure, but Penang Vios owners frequently report harsh downshifts and hesitation — often caused by degraded ATF oil or a worn valve body.
 
-## Serving Penang from Our Northern Base
+## Serving Penang from Our Northern Branch
 
-One X Transmission is opening a branch in **Kulim, Kedah** — strategically located near the Penang border to serve the entire northern region.
+One X Transmission is now open in **Simpang Ampat, Pulau Pinang** — at Star Avenue, just off the North-South Expressway and strategically located to serve the entire northern region.
 
-Kulim sits approximately 35–40 minutes from Georgetown via the Penang Bridge and the North-South Expressway. It is significantly closer than travelling to Klang Valley.
+Our Penang branch sits approximately 35–40 minutes from Georgetown and is just ~15 minutes from Kulim, making it far closer than travelling to Klang Valley. We continue to serve Kulim, Sungai Petani, Bukit Mertajam and the surrounding areas.
 
-Until the Kulim branch opens, our Shah Alam workshop continues to serve Penang customers. Many travel the distance because they've found it outweighs repeated failed repairs elsewhere.
+Our Shah Alam HQ remains open too, but Penang-area customers no longer need to make that drive — visit us at Simpang Ampat today.
 
 What you get:
 - **Free gearbox diagnosis** — professional assessment before any quote is given
@@ -80,6 +80,7 @@ These are ballpark figures. Your actual cost depends on the vehicle make, model,
 If you're in Penang, Butterworth, Bukit Mertajam, or Nibong Tebal and dealing with a gearbox issue — reach out directly. We'll assess your situation, give an honest recommendation, and let you know whether the drive is warranted before you commit.
 
 **WhatsApp:** +60 10-202 0723  
+**Penang Branch:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Workshop Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
-Our Kulim branch announcement is coming soon. Follow along or enquire now to be notified.
+Our Penang branch in Simpang Ampat is now open. Drop by or enquire now to book your slot.

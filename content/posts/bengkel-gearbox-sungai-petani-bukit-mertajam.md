@@ -76,13 +76,13 @@ Ini framework mudah:
 
 Bila gearbox sedang actively failing, setiap kilometer yang dipandu dalam keadaan tu tambah kepada bil repair.
 
-## One X Transmission — Membuka di Kulim, Kedah
+## One X Transmission — Kini Dibuka di Simpang Ampat, Pulau Pinang
 
-Kami ialah bengkel CVT dan automatic transmission specialist yang dedicated, berpusat di Shah Alam, dan kini sedang berkembang dengan cawangan baru di **Kulim, Kedah**.
+Kami ialah bengkel CVT dan automatic transmission specialist yang dedicated, berpusat di Shah Alam, dan cawangan baru kami di **Simpang Ampat, Pulau Pinang** kini sudah dibuka — di Star Avenue, betul-betul tepi Lebuhraya Utara-Selatan.
 
-Lokasi Kulim kami sedang disediakan khusus untuk melayan koridor utara — Sungai Petani, Bukit Mertajam, Nibong Tebal, Parit Buntar, dan kawasan Kedah serta tanah besar Pulau Pinang yang lebih luas.
+Cawangan Pulau Pinang kami disediakan khusus untuk melayan koridor utara — Sungai Petani, Bukit Mertajam, Nibong Tebal, Parit Buntar, Kulim, dan kawasan Kedah serta tanah besar Pulau Pinang yang lebih luas. Ia cuma kira-kira 15 minit dari Kulim.
 
-Sehingga cawangan Kulim kami dibuka, bengkel Shah Alam kami tersedia dan terus menerima pelanggan dari utara. Kami juga menawarkan perkhidmatan pengambilan kenderaan door-to-door untuk pelanggan yang tak boleh drive dengan selamat.
+Bengkel Shah Alam kami juga terus beroperasi dan menerima pelanggan dari utara. Kami turut menawarkan perkhidmatan pengambilan kenderaan door-to-door untuk pelanggan yang tak boleh drive dengan selamat.
 
 **Apa yang kami sediakan:**
 - Free diagnosis gearbox profesional — sentiasa sebelum commit kepada sebarang repair
@@ -92,6 +92,7 @@ Sehingga cawangan Kulim kami dibuka, bengkel Shah Alam kami tersedia dan terus m
 - Harga transparent — quotation bertulis sebelum kerja bermula
 
 **WhatsApp:** +60 10-202 0723
+**Cawangan Pulau Pinang:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang
 **Waktu Operasi:** Isnin–Jumaat 9am–6pm | Sabtu 9am–5pm
 
 WhatsApp kami kalau anda tak pasti sama ada drive tu perlu. Kami akan assess symptom anda dengan jujur dan beritahu apa yang kami fikir sebelum anda commit kepada apa-apa.

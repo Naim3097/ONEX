@@ -59,9 +59,9 @@ A legitimate specialist will welcome these questions. A workshop that rushes you
 
 ## One X Transmission: Serving Kedah and Penang Customers
 
-One X Transmission is a dedicated transmission specialist based in Shah Alam, Selangor — and we are expanding to Kulim, Kedah to serve the northern region directly.
+One X Transmission is a dedicated transmission specialist based in Shah Alam, Selangor — and our new branch in **Simpang Ampat, Pulau Pinang** (at Star Avenue, just off the North-South Expressway) is now open to serve the northern region directly.
 
-Until our Kulim branch opens, we are already accepting customers from Kedah, Penang, Kulim, Sungai Petani, Bukit Mertajam, and the surrounding areas at our main workshop.
+Our Penang branch is only about 15 minutes from Kulim, so we serve customers from Kedah, Penang, Kulim, Sungai Petani, Bukit Mertajam, and the surrounding areas — both at the new branch and at our Shah Alam main workshop.
 
 Our credentials:
 - 15 years specialising exclusively in CVT and automatic transmissions
@@ -82,7 +82,8 @@ This is the core reason why Kulim and Kedah drivers increasingly choose a specia
 
 WhatsApp us directly to discuss your car's symptoms, get a rough estimate, or arrange transport if needed. We also offer door-to-door vehicle collection for customers in Kedah upon request.
 
+**Penang Branch:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Workshop Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm  
 **Phone/WhatsApp:** +60 10-202 0723
 
-Our Kulim branch is coming soon. Send us a message now and be the first to know when we open, or arrange a visit to our Shah Alam workshop in the meantime.
+Our Penang branch in Simpang Ampat is now open — just ~15 minutes from Kulim. Send us a message to book a slot, or visit either our Penang branch or our Shah Alam workshop.

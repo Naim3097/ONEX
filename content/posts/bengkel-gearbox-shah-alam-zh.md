@@ -49,7 +49,7 @@ Shah Alam 大多数维修店专注于一般维修——换引擎油、刹车、�
 
 我们的主店位于**雪兰莪 Shah Alam** —— 从 Klang、Subang、Petaling Jaya 及整个巴生谷都方便到达。
 
-我们在**吉打 Kulim** 也设有分店，方便北部客户。
+我们在**槟城Simpang Ampat（Pulau Pinang）**也设有分店，方便北部客户。
 
 ## ATF 变速箱油保养套餐 — RM 439
 

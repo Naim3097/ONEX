@@ -86,4 +86,4 @@ Kesimpulannya: **servis gearbox murah bukan sentiasa jimat**. Servis yang betul 
 
 Layari [halaman shop](/ms/shop) untuk tempah pakej servis gearbox ATF RM 439, atau WhatsApp kami di **011-1060 7439**.
 
-Bengkel di Shah Alam dan Kulim. Perkhidmatan Door-to-Door tersedia.
+Bengkel di Shah Alam dan Simpang Ampat, Pulau Pinang. Perkhidmatan Door-to-Door tersedia.

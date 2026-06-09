@@ -2,15 +2,15 @@ import { MetadataRoute } from 'next'
 import { getAllPosts } from '@/lib/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://onextransmission.com'
+  const baseUrl = 'https://www.onextransmission.com'
   const locales = ['en', 'ms', 'zh']
-  const pages = ['', '/about', '/capabilities', '/process', '/faq', '/contact', '/blog', '/locations/kulim']
+  const pages = ['', '/about', '/capabilities', '/process', '/faq', '/contact', '/blog', '/locations/penang']
 
   const priorities: Record<string, number> = {
     '':                   1.0,
     '/capabilities':      0.9,
     '/contact':           0.9,
-    '/locations/kulim':   0.9,
+    '/locations/penang':  0.9,
     '/about':             0.8,
     '/faq':               0.8,
     '/blog':              0.8,
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '':                   'weekly',
     '/capabilities':      'monthly',
     '/contact':           'monthly',
-    '/locations/kulim':   'weekly',
+    '/locations/penang':  'weekly',
     '/about':             'monthly',
     '/faq':               'monthly',
     '/blog':              'weekly',
@@ -42,17 +42,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Blog post pages
+  // Blog post pages — emit each post only under its own language locale
+  // (avoids 3x near-duplicate URLs across en/ms/zh for single-language posts)
   const posts = getAllPosts()
-  for (const locale of locales) {
-    for (const post of posts) {
-      entries.push({
-        url: `${baseUrl}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      })
-    }
+  for (const post of posts) {
+    entries.push({
+      url: `${baseUrl}/${post.locale}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    })
   }
 
   return entries

@@ -75,13 +75,13 @@ Here's a simple framework:
 
 When a gearbox is in active failure, every kilometre driven in that state adds to the repair bill.
 
-## One X Transmission — Opening in Kulim, Kedah
+## One X Transmission — Now Open in Simpang Ampat, Penang
 
-We are a dedicated CVT and automatic transmission specialist based in Shah Alam, currently expanding with a new branch in **Kulim, Kedah**.
+We are a dedicated CVT and automatic transmission specialist based in Shah Alam, and our new branch in **Simpang Ampat, Pulau Pinang** is now open — at Star Avenue, just off the North-South Expressway.
 
-Our Kulim location is being set up specifically to serve the northern corridor — Sungai Petani, Bukit Mertajam, Nibong Tebal, Parit Buntar, and the broader Kedah and Penang mainland area.
+Our Penang branch is set up specifically to serve the northern corridor — Sungai Petani, Bukit Mertajam, Nibong Tebal, Parit Buntar, Kulim, and the broader Kedah and Penang mainland area. It's only about 15 minutes from Kulim.
 
-Until our Kulim branch opens, our Shah Alam workshop is available and continues to accept customers from the north. We also offer door-to-door vehicle collection for customers who cannot drive safely.
+Our Shah Alam HQ also remains open and continues to accept customers from the north, and we offer door-to-door vehicle collection for customers who cannot drive safely.
 
 **What we provide:**
 - Free professional gearbox diagnosis — always before committing to any repair
@@ -91,6 +91,7 @@ Until our Kulim branch opens, our Shah Alam workshop is available and continues 
 - Transparent pricing — written quote before work begins
 
 **WhatsApp:** +60 10-202 0723  
+**Penang Branch:** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang  
 **Hours:** Mon–Fri 9am–6pm | Sat 9am–5pm
 
 WhatsApp us if you're unsure whether the drive is necessary. We'll assess your symptoms honestly and tell you what we think before you commit to anything.

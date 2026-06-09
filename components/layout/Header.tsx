@@ -82,7 +82,8 @@ export default function Header({ locale }: HeaderProps) {
     {
       title: 'Branches',
       links: [
-        { href: `/${locale}/locations/kulim`, label: 'Kulim, Kedah', badge: 'New' },
+        { href: `/${locale}`, label: 'Shah Alam, Selangor' },
+        { href: `/${locale}/locations/penang`, label: 'Penang (Simpang Ampat)', badge: 'New' },
         { href: null, label: 'Pahang', comingSoon: true },
         { href: null, label: 'Johor', comingSoon: true },
       ],

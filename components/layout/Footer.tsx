@@ -92,12 +92,20 @@ export default function Footer({ locale }: FooterProps) {
               <p>Sat: {business.hours.saturday}</p>
               <p>Sun: {business.hours.sunday}</p>
             </div>
-            <p className="text-body-sm text-neutral-500 uppercase tracking-wider mb-2">Kulim, Kedah</p>
-            <Link
-              href={`/${locale}/locations/kulim`}
-              className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 block"
+            <p className="text-body-sm text-neutral-500 uppercase tracking-wider mb-2">Penang</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=5.2620066,100.4805221"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-body-sm text-neutral-400 hover:text-white transition-colors duration-200 block leading-relaxed mb-2"
             >
-              New Branch — Opening Soon
+              Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang
+            </a>
+            <Link
+              href={`/${locale}/locations/penang`}
+              className="text-body-sm text-brand-red hover:text-white transition-colors duration-200 block"
+            >
+              View Penang branch →
             </Link>
           </div>
         </div>

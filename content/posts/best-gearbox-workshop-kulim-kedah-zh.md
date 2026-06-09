@@ -60,9 +60,9 @@ coverImage: "https://images.unsplash.com/photo-1727893359929-9980a2171105?q=80&w
 
 ## One X Transmission：服务吉打和槟城客户
 
-One X Transmission 是一家专门做变速箱的workshop，总部在雪兰莪 Shah Alam — 我们正在扩展到吉打 Kulim，直接服务北马区域。
+One X Transmission 是一家专门做变速箱的workshop，总部在雪兰莪 Shah Alam — 我们位于**槟城Simpang Ampat（Pulau Pinang）**的新分店现已开业（在 Star Avenue，紧邻南北大道），直接服务北马区域。
 
-在 Kulim 分店开业之前，我们的主workshop已经在接待来自吉打、槟城、Kulim、双溪大年、大山脚及周边地区的客户。
+我们的槟城分店距离 Kulim 仅约15分钟车程，因此我们服务来自吉打、槟城、Kulim、双溪大年、大山脚及周边地区的客户 — 在新分店和我们的 Shah Alam 主workshop 都可以。
 
 我们的资质：
 - 15年专注 CVT 和自动变速箱
@@ -83,7 +83,8 @@ One X Transmission 是一家专门做变速箱的workshop，总部在雪兰莪 S
 
 直接 WhatsApp 我们讨论你车子的症状、获取大概估价，或者需要的话安排运输。我们也为吉打客户提供 door-to-door 上门取车服务。
 
+**槟城分店：** Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang
 **营业时间：** 周一至周五 9am–6pm | 周六 9am–5pm
 **电话/WhatsApp：** +60 10-202 0723
 
-我们的 Kulim 分店即将开业。现在就给我们发消息，第一时间知道开业消息，或者安排到我们 Shah Alam workshop 看看。
+我们位于Simpang Ampat的槟城分店现已开业 — 距离 Kulim 仅约15分钟车程。现在就给我们发消息预约时段，或到我们的槟城分店或 Shah Alam workshop 看看。

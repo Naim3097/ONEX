@@ -78,7 +78,7 @@ One X Transmission 位于莎阿南，是一家专业变速箱维修工作坊，�
 - 蒲种与赛城（Puchong & Cyberjaya）
 - Seri Kembangan与加影（Kajang）
 
-我们在**吉打州居林（Kulim, Kedah）**也设有分店，方便北部地区的客户。
+我们在**槟城Simpang Ampat（Pulau Pinang）**也设有分店，方便北部地区的客户。
 
 ## 预约服务
 

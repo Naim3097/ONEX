@@ -1,7 +1,7 @@
 import { type Locale } from '@/content'
 import Link from 'next/link'
 import { generatePageMetadata } from '@/lib/metadata'
-import { generateBreadcrumbJsonLd } from '@/lib/structured-data'
+import { generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/structured-data'
 import { business } from '@/content'
 import FadeIn from '@/components/motion/FadeIn'
 import RevealText from '@/components/motion/RevealText'
@@ -11,31 +11,42 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const locale = l as Locale
 
   const titles: Record<string, string> = {
-    en: 'Gearbox Problem in Kulim or Kedah? Free Diagnosis | One X Transmission',
-    ms: 'Masalah Gearbox di Kulim atau Kedah? Diagnosis Percuma | One X Transmission',
-    zh: 'Kulim或吉打变速箱问题？免费诊断 | One X Transmission',
+    en: 'Gearbox Repair in Penang — Now Open in Simpang Ampat | One X Transmission',
+    ms: 'Baiki Gearbox di Pulau Pinang — Kini Dibuka di Simpang Ampat | One X Transmission',
+    zh: '槟城变速箱维修——Simpang Ampat分店现已开业 | One X Transmission',
   }
   const descriptions: Record<string, string> = {
-    en: "CVT shuddering? Gearbox slipping? One X Transmission is Malaysia's trusted gearbox specialist — now serving Kulim, Kedah and Penang. Free professional diagnosis. 15 years experience. 12-month warranty. WhatsApp now.",
-    ms: 'CVT bergetar? Gearbox slip? One X Transmission adalah pakar gearbox terpercaya Malaysia — kini melayani Kulim, Kedah dan Pulau Pinang. Diagnosis profesional percuma. 15 tahun pengalaman. Waranti 12 bulan. WhatsApp sekarang.',
-    zh: 'CVT震动？变速箱打滑？One X Transmission是马来西亚值得信赖的变速箱专家——现在为Kulim、吉打和槟城提供服务。免费专业诊断。15年经验。12个月保修。立即WhatsApp。',
+    en: "CVT shuddering? Gearbox slipping? One X Transmission is now open in Simpang Ampat, Penang (Star Avenue). Free professional gearbox diagnosis, full overhaul, 12-month warranty. Serving Bukit Mertajam, Butterworth, Bukit Tambun, Juru & all of Penang. WhatsApp now.",
+    ms: 'CVT bergetar? Gearbox slip? One X Transmission kini dibuka di Simpang Ampat, Pulau Pinang (Star Avenue). Diagnosis gearbox profesional percuma, overhaul penuh, waranti 12 bulan. Melayani Bukit Mertajam, Butterworth, Bukit Tambun, Juru & seluruh Pulau Pinang. WhatsApp sekarang.',
+    zh: 'CVT震动？变速箱打滑？One X Transmission现已在槟城Simpang Ampat（Star Avenue）开业。免费专业变速箱诊断、全面大修、12个月保修。服务Bukit Mertajam、Butterworth、Bukit Tambun、Juru及整个槟城。立即WhatsApp。',
   }
 
   return {
     ...generatePageMetadata({
       locale,
-      path: '/locations/kulim',
+      path: '/locations/penang',
       title: titles[locale] ?? titles.en,
       description: descriptions[locale] ?? descriptions.en,
     }),
     other: {
-      'geo.region': 'MY-02',
-      'geo.placename': 'Kulim, Kedah',
+      'geo.region': 'MY-07',
+      'geo.placename': 'Simpang Ampat, Pulau Pinang',
+      'geo.position': '5.2620066;100.4805221',
+      'ICBM': '5.2620066, 100.4805221',
     },
   }
 }
 
-const kulimWhatsApp = 'https://wa.me/60102020723'
+const penangWhatsApp = 'https://wa.me/60102020723'
+
+// ── Penang branch facts ──
+const penangBranch = {
+  addressFull:
+    'Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, Star Avenue, 14100 Simpang Ampat, Pulau Pinang',
+  addressShort: 'Star Avenue, Simpang Ampat',
+  coords: { lat: 5.2620066, lng: 100.4805221 },
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=5.2620066,100.4805221',
+}
 
 const symptomsMap: Record<Locale, string[]> = {
   en: [
@@ -152,13 +163,13 @@ const stepsMap: Record<Locale, { num: string; title: string; desc: string }[]> =
   en: [
     {
       num: '01',
-      title: 'WhatsApp Us',
-      desc: "Describe your car's symptoms — model, year, what you're experiencing. Takes 2 minutes. We respond fast.",
+      title: 'WhatsApp or Walk In',
+      desc: "Describe your car's symptoms — model, year, what you're experiencing. Or just drive into our Simpang Ampat workshop. We respond fast.",
     },
     {
       num: '02',
       title: 'Free Diagnosis',
-      desc: 'Bring your car in. We run a full scanner diagnostic and physical check at zero cost. You get an honest written assessment.',
+      desc: 'We run a full scanner diagnostic and physical check at zero cost. You get an honest written assessment before you decide anything.',
     },
     {
       num: '03',
@@ -169,13 +180,13 @@ const stepsMap: Record<Locale, { num: string; title: string; desc: string }[]> =
   ms: [
     {
       num: '01',
-      title: 'WhatsApp Kami',
-      desc: 'Terangkan simptom kereta anda — model, tahun, apa yang anda alami. Ambil masa 2 minit. Kami balas dengan cepat.',
+      title: 'WhatsApp atau Datang Terus',
+      desc: 'Terangkan simptom kereta anda — model, tahun, apa yang anda alami. Atau pandu terus ke bengkel kami di Simpang Ampat. Kami balas dengan cepat.',
     },
     {
       num: '02',
       title: 'Diagnosis Percuma',
-      desc: 'Bawa kereta anda masuk. Kami jalankan diagnostik scanner penuh dan pemeriksaan fizikal tanpa sebarang kos. Anda dapat penilaian bertulis yang jujur.',
+      desc: 'Kami jalankan diagnostik scanner penuh dan pemeriksaan fizikal tanpa sebarang kos. Anda dapat penilaian bertulis yang jujur sebelum membuat keputusan.',
     },
     {
       num: '03',
@@ -186,13 +197,13 @@ const stepsMap: Record<Locale, { num: string; title: string; desc: string }[]> =
   zh: [
     {
       num: '01',
-      title: '发送WhatsApp',
-      desc: '描述您爱车的症状——车型、年份、您所遇到的问题。仅需2分钟。我们快速回复。',
+      title: 'WhatsApp 或直接到店',
+      desc: '描述您爱车的症状——车型、年份、所遇到的问题。或直接把车开到我们Simpang Ampat的工作室。我们快速回复。',
     },
     {
       num: '02',
       title: '免费诊断',
-      desc: '把您的车开来。我们免费进行完整的扫描仪诊断和实体检查，并提供诚实的书面评估报告。',
+      desc: '我们免费进行完整的扫描仪诊断和实体检查，并在您做决定前提供诚实的书面评估报告。',
     },
     {
       num: '03',
@@ -205,16 +216,16 @@ const stepsMap: Record<Locale, { num: string; title: string; desc: string }[]> =
 const faqsMap: Record<Locale, { q: string; a: string }[]> = {
   en: [
     {
-      q: 'Is it worth driving from Kulim or Penang to your workshop?',
-      a: "Most customers from the north tell us: yes — especially after a previous failed repair elsewhere. A misdiagnosed gearbox costs more every time it goes back. We give you a proper written diagnosis first, so you're not guessing. Many repairs that local workshops price as RM 5,000–7,000 (replacement unit) we resolve as a RM 2,500–4,000 overhaul of the existing unit.",
+      q: 'Where exactly is your Penang workshop?',
+      a: "We're at Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang — in the Star Avenue commercial hub, just off the North–South Expressway. It's an easy drive from Bukit Mertajam, Butterworth, Bukit Tambun, Juru, Perai and Nibong Tebal. Tap Get Directions below, or WhatsApp us for the live map pin.",
     },
     {
-      q: 'When is the Kulim branch opening?',
-      a: "We are in the process of setting up our Kulim branch. WhatsApp us now and we'll notify you the moment it opens. In the meantime, our Shah Alam workshop is serving northern customers — and we offer door-to-door vehicle collection on request.",
+      q: 'Do I need an appointment, or can I walk in?',
+      a: 'Both work. You\'re welcome to walk in during opening hours for a free diagnosis. If you\'d like a guaranteed slot — or want us to collect your car — WhatsApp us first and we\'ll arrange a time.',
     },
     {
       q: 'My car is difficult to drive — can you collect it?',
-      a: "Yes. We offer door-to-door vehicle collection for customers whose car is unsafe or difficult to drive. WhatsApp us and we'll arrange pickup from your location in Kedah or Penang.",
+      a: 'Yes. We offer door-to-door vehicle collection across Penang and Seberang Perai for customers whose car is unsafe or difficult to drive. WhatsApp us and we\'ll arrange pickup from your location.',
     },
     {
       q: 'How long does a gearbox overhaul take?',
@@ -227,16 +238,16 @@ const faqsMap: Record<Locale, { q: string; a: string }[]> = {
   ],
   ms: [
     {
-      q: 'Adakah berbaloi untuk memandu dari Kulim atau Penang ke bengkel anda?',
-      a: 'Kebanyakan pelanggan dari utara memberitahu kami: ya — terutama selepas pembaikan gagal di tempat lain. Gearbox yang salah diagnosis akan memakan lebih banyak kos setiap kali ia dikembalikan. Kami berikan diagnosis bertulis yang betul dahulu, supaya anda tidak perlu meneka. Banyak pembaikan yang bengkel tempatan hargakan sebagai RM 5,000–7,000 (unit ganti) kami selesaikan sebagai overhaul unit sedia ada pada kos RM 2,500–4,000.',
+      q: 'Di manakah lokasi bengkel Pulau Pinang anda?',
+      a: 'Kami berada di Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang — di pusat perniagaan Star Avenue, betul-betul di sebelah Lebuhraya Utara–Selatan. Mudah dipandu dari Bukit Mertajam, Butterworth, Bukit Tambun, Juru, Perai dan Nibong Tebal. Tekan Dapatkan Arah di bawah, atau WhatsApp kami untuk pin peta secara langsung.',
     },
     {
-      q: 'Bilakah cawangan Kulim akan dibuka?',
-      a: 'Kami sedang dalam proses menubuhkan cawangan Kulim kami. WhatsApp kami sekarang dan kami akan memberitahu anda sebaik sahaja ia dibuka. Sementara itu, bengkel Shah Alam kami sedang melayani pelanggan dari utara — dan kami menawarkan perkhidmatan pengambilan kenderaan dari pintu ke pintu atas permintaan.',
+      q: 'Perlukah saya buat temujanji, atau boleh terus datang?',
+      a: 'Kedua-duanya boleh. Anda dialu-alukan untuk datang terus pada waktu operasi untuk diagnosis percuma. Jika anda mahukan slot yang dijamin — atau mahu kami mengambil kereta anda — WhatsApp kami dahulu dan kami akan aturkan masa.',
     },
     {
       q: 'Kereta saya susah dipandu — bolehkah anda mengambilnya?',
-      a: 'Ya. Kami menawarkan perkhidmatan pengambilan kenderaan dari pintu ke pintu untuk pelanggan yang keretanya tidak selamat atau sukar dipandu. WhatsApp kami dan kami akan mengatur pengambilan dari lokasi anda di Kedah atau Pulau Pinang.',
+      a: 'Ya. Kami menawarkan perkhidmatan pengambilan kenderaan dari pintu ke pintu di seluruh Pulau Pinang dan Seberang Perai untuk pelanggan yang keretanya tidak selamat atau sukar dipandu. WhatsApp kami dan kami akan atur pengambilan dari lokasi anda.',
     },
     {
       q: 'Berapa lama overhaul gearbox mengambil masa?',
@@ -249,16 +260,16 @@ const faqsMap: Record<Locale, { q: string; a: string }[]> = {
   ],
   zh: [
     {
-      q: '从Kulim或槟城开车到您的工作室值得吗？',
-      a: '北部大多数顾客告诉我们：值得——尤其是在其他地方修过但失败之后。被误诊的变速箱每次回去都会花更多钱。我们先提供正确的书面诊断，让您不再猜测。许多当地车行报价RM 5,000–7,000（换整个单元）的维修，我们只需RM 2,500–4,000的大修即可解决。',
+      q: '你们的槟城工作室具体在哪里？',
+      a: '我们位于Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, 14100 Simpang Ampat, Pulau Pinang——在Star Avenue商业中心，紧邻南北大道。从Bukit Mertajam、Butterworth、Bukit Tambun、Juru、Perai和Nibong Tebal都很方便。点击下方的"获取路线"，或发WhatsApp给我们获取实时地图位置。',
     },
     {
-      q: 'Kulim分店什么时候开业？',
-      a: '我们正在筹备Kulim分店的开设。现在发WhatsApp给我们，一旦开业我们会立即通知您。与此同时，我们的Shah Alam工作室正在为北部客户提供服务——我们也提供上门取车服务，欢迎提出要求。',
+      q: '需要预约吗，还是可以直接到店？',
+      a: '两者都可以。欢迎您在营业时间内直接到店进行免费诊断。如果您想要确定的时段——或希望我们上门取车——请先发WhatsApp给我们，我们会为您安排时间。',
     },
     {
       q: '我的车难以驾驶——你们可以来取车吗？',
-      a: '可以。我们为汽车不安全或难以驾驶的客户提供上门取车服务。发WhatsApp给我们，我们将安排从您在吉打或槟城的位置取车。',
+      a: '可以。我们为汽车不安全或难以驾驶的客户提供遍及槟城和威省的上门取车服务。发WhatsApp给我们，我们将安排从您的位置取车。',
     },
     {
       q: '变速箱大修需要多长时间？',
@@ -300,10 +311,10 @@ const tableRowsMap: Record<
 
 const tMap: Record<Locale, {
   bookingBadge: string
-  branchBadge: string
   heroH1: string
   heroBody: string
   heroWACta: string
+  directionsCta: string
   trustRating: string
   trustYears: string
   trustCars: string
@@ -334,25 +345,24 @@ const tMap: Record<Locale, {
   footerWorkshop: string
   footerHours: string
   footerBranch: string
-  footerBranchValue: string
   microRating: string
   microYears: string
   microCars: string
   microFree: string
 }> = {
   en: {
-    bookingBadge: 'Accepting Kedah & Penang Bookings Now',
-    branchBadge: 'Kulim Branch Opening Soon',
-    heroH1: 'Gearbox Problem in Kulim or Kedah? Get It Diagnosed Free.',
-    heroBody: "Malaysia's trusted CVT and automatic gearbox specialist is now serving the north. Free professional diagnosis. Honest written quote. 12‑month warranty on all overhaul work. No fix, no charge.",
+    bookingBadge: 'Now Open · Simpang Ampat, Penang',
+    heroH1: 'Gearbox Problem in Penang? Get It Diagnosed Free in Simpang Ampat.',
+    heroBody: "Penang's trusted CVT and automatic gearbox specialist is now open in Simpang Ampat, Star Avenue. Free professional diagnosis. Honest written quote. 12‑month warranty on all overhaul work. No fix, no charge.",
     heroWACta: 'WhatsApp for Free Diagnosis',
+    directionsCta: 'Get Directions',
     trustRating: 'Google Rating',
     trustYears: 'Transmission Only',
     trustCars: 'Cars Fixed',
     trustWarranty: 'Overhaul Warranty',
     symptomOverline: 'Sound Familiar?',
     symptomH2: 'Is Your Car Doing Any of These?',
-    symptomBody: "These are the most common gearbox symptoms reported by Kedah and Penang drivers. If your car shows any of them, don't delay — gearbox problems compound fast.",
+    symptomBody: "These are the most common gearbox symptoms reported by Penang drivers. If your car shows any of them, don't delay — gearbox problems compound fast.",
     symptomCta: 'WhatsApp — Get Free Diagnosis',
     whyOverline: 'Why It Matters',
     whyH2: 'General Workshop vs. Transmission Specialist',
@@ -363,38 +373,37 @@ const tMap: Record<Locale, {
     processBody: 'Three steps. No guesswork. No pressure to commit until you see the diagnosis.',
     processStep1Cta: 'Start with Step 1 — WhatsApp Now',
     servicesOverline: 'What We Fix',
-    servicesH2: 'Services for Kedah & Penang Drivers',
-    servicesBody: 'Every service available at our Shah Alam workshop — and coming to Kulim soon. All major Malaysian and Japanese car brands covered.',
-    areasLabel: 'Serving drivers from',
+    servicesH2: 'Services for Penang Drivers',
+    servicesBody: 'Every transmission service, now available at our Simpang Ampat workshop. All major Malaysian, Japanese and Continental car brands covered.',
+    areasLabel: 'Serving drivers across',
     faqOverline: 'Common Questions',
-    faqH2: 'Questions from Kedah & Penang Drivers',
+    faqH2: 'Questions from Penang Drivers',
     ctaOverline: 'Ready to Get It Fixed?',
     ctaH2: "Don't Drive a Failing Gearbox Any Longer.",
     ctaBody: "Every kilometre on a slipping or shuddering gearbox adds to the repair cost. WhatsApp us now — describe your symptoms, get an honest response within the hour, and schedule your free diagnosis.",
-    ctaNote: 'Northern customers: we are now taking bookings for Kedah and Penang. Kulim branch opening soon.',
+    ctaNote: 'Now open in Simpang Ampat, Star Avenue — walk in for a free diagnosis, or book a door-to-door collection anywhere in Penang and Seberang Perai.',
     ctaWACta: 'WhatsApp — Free Diagnosis',
-    footerWorkshop: 'Workshop (Open Now)',
+    footerWorkshop: 'Penang Workshop (Open Now)',
     footerHours: 'Hours',
-    footerBranch: 'Kulim Branch',
-    footerBranchValue: 'Kulim, Kedah — Opening Soon',
+    footerBranch: 'Also in',
     microRating: '★ 4.8 Google Rating',
     microYears: '15 Years Specialising in Transmissions',
     microCars: '5,000+ Vehicles Serviced',
     microFree: 'Free Diagnosis — No Commitment',
   },
   ms: {
-    bookingBadge: 'Kini Menerima Tempahan Kedah & Pulau Pinang',
-    branchBadge: 'Cawangan Kulim Akan Dibuka Tidak Lama Lagi',
-    heroH1: 'Masalah Gearbox di Kulim atau Kedah? Dapatkan Diagnosis Percuma.',
-    heroBody: 'Pakar CVT dan gearbox automatik terpercaya Malaysia kini melayani utara. Diagnosis profesional percuma. Sebut harga bertulis yang jujur. Waranti 12 bulan untuk semua kerja overhaul. Tiada pembaikan, tiada caj.',
+    bookingBadge: 'Kini Dibuka · Simpang Ampat, Pulau Pinang',
+    heroH1: 'Masalah Gearbox di Pulau Pinang? Dapatkan Diagnosis Percuma di Simpang Ampat.',
+    heroBody: 'Pakar CVT dan gearbox automatik terpercaya Pulau Pinang kini dibuka di Simpang Ampat, Star Avenue. Diagnosis profesional percuma. Sebut harga bertulis yang jujur. Waranti 12 bulan untuk semua kerja overhaul. Tiada pembaikan, tiada caj.',
     heroWACta: 'WhatsApp untuk Diagnosis Percuma',
+    directionsCta: 'Dapatkan Arah',
     trustRating: 'Penilaian Google',
     trustYears: 'Khusus Transmisi',
     trustCars: 'Kereta Dibaiki',
     trustWarranty: 'Waranti Overhaul',
     symptomOverline: 'Kedengaran Biasa?',
     symptomH2: 'Adakah Kereta Anda Menunjukkan Ini?',
-    symptomBody: 'Ini adalah simptom gearbox paling biasa yang dilaporkan oleh pemandu Kedah dan Pulau Pinang. Jika kereta anda menunjukkan sebarang tanda ini, jangan tangguh — masalah gearbox berkembang dengan cepat.',
+    symptomBody: 'Ini adalah simptom gearbox paling biasa yang dilaporkan oleh pemandu Pulau Pinang. Jika kereta anda menunjukkan sebarang tanda ini, jangan tangguh — masalah gearbox berkembang dengan cepat.',
     symptomCta: 'WhatsApp — Dapatkan Diagnosis Percuma',
     whyOverline: 'Mengapa Ia Penting',
     whyH2: 'Bengkel Biasa vs. Pakar Transmisi',
@@ -405,38 +414,37 @@ const tMap: Record<Locale, {
     processBody: 'Tiga langkah. Tiada reka-reka. Tiada tekanan untuk berkomitmen sehingga anda lihat diagnosis.',
     processStep1Cta: 'Mulakan Langkah 1 — WhatsApp Sekarang',
     servicesOverline: 'Apa Yang Kami Baiki',
-    servicesH2: 'Servis untuk Pemandu Kedah & Pulau Pinang',
-    servicesBody: 'Setiap servis yang tersedia di bengkel Shah Alam kami — dan akan hadir di Kulim tidak lama lagi. Semua jenama kereta Malaysia dan Jepun utama diliputi.',
-    areasLabel: 'Melayani pemandu dari',
+    servicesH2: 'Servis untuk Pemandu Pulau Pinang',
+    servicesBody: 'Setiap servis transmisi kini tersedia di bengkel Simpang Ampat kami. Semua jenama kereta Malaysia, Jepun dan Kontinental utama diliputi.',
+    areasLabel: 'Melayani pemandu di seluruh',
     faqOverline: 'Soalan Lazim',
-    faqH2: 'Soalan daripada Pemandu Kedah & Pulau Pinang',
+    faqH2: 'Soalan daripada Pemandu Pulau Pinang',
     ctaOverline: 'Bersedia untuk Dibaiki?',
     ctaH2: 'Jangan Pandu Gearbox yang Rosak Lebih Lama.',
     ctaBody: 'Setiap kilometer dengan gearbox yang slip atau bergetar menambah kos pembaikan. WhatsApp kami sekarang — huraikan simptom anda, dapatkan jawapan jujur dalam masa sejam, dan jadualkan diagnosis percuma anda.',
-    ctaNote: 'Pelanggan utara: kami kini menerima tempahan untuk Kedah dan Pulau Pinang. Cawangan Kulim akan dibuka tidak lama lagi.',
+    ctaNote: 'Kini dibuka di Simpang Ampat, Star Avenue — datang terus untuk diagnosis percuma, atau tempah pengambilan dari pintu ke pintu di mana-mana sahaja di Pulau Pinang dan Seberang Perai.',
     ctaWACta: 'WhatsApp — Diagnosis Percuma',
-    footerWorkshop: 'Bengkel (Buka Sekarang)',
+    footerWorkshop: 'Bengkel Pulau Pinang (Buka Sekarang)',
     footerHours: 'Waktu Operasi',
-    footerBranch: 'Cawangan Kulim',
-    footerBranchValue: 'Kulim, Kedah — Akan Dibuka',
+    footerBranch: 'Juga di',
     microRating: '★ 4.8 Penilaian Google',
     microYears: '15 Tahun Pakar Transmisi',
     microCars: '5,000+ Kenderaan Dibaiki',
     microFree: 'Diagnosis Percuma — Tanpa Komitmen',
   },
   zh: {
-    bookingBadge: '现已接受吉打及槟城预约',
-    branchBadge: 'Kulim分店即将开业',
-    heroH1: 'Kulim或吉打有变速箱问题？免费诊断。',
-    heroBody: '马来西亚值得信赖的CVT和自动变速箱专家现已为北部地区提供服务。免费专业诊断。诚实书面报价。所有大修工程附12个月保修。不修好不收费。',
+    bookingBadge: '现已开业 · Simpang Ampat 槟城',
+    heroH1: '槟城有变速箱问题？在Simpang Ampat获取免费诊断。',
+    heroBody: '槟城值得信赖的CVT和自动变速箱专家现已在Simpang Ampat（Star Avenue）开业。免费专业诊断。诚实书面报价。所有大修工程附12个月保修。不修好不收费。',
     heroWACta: 'WhatsApp获取免费诊断',
+    directionsCta: '获取路线',
     trustRating: 'Google评分',
     trustYears: '专注变速箱',
     trustCars: '已修车辆',
     trustWarranty: '大修保修',
     symptomOverline: '听起来熟悉吗？',
     symptomH2: '您的爱车有以下情况吗？',
-    symptomBody: '这些是吉打和槟城车主最常报告的变速箱症状。如果您的车出现其中任何一种，请勿拖延——变速箱问题会迅速恶化。',
+    symptomBody: '这些是槟城车主最常报告的变速箱症状。如果您的车出现其中任何一种，请勿拖延——变速箱问题会迅速恶化。',
     symptomCta: 'WhatsApp——获取免费诊断',
     whyOverline: '为何重要',
     whyH2: '普通车行 vs. 变速箱专家',
@@ -447,20 +455,19 @@ const tMap: Record<Locale, {
     processBody: '三个步骤。无需猜测。在看到诊断结果之前无需承诺。',
     processStep1Cta: '从第1步开始——立即WhatsApp',
     servicesOverline: '我们的维修项目',
-    servicesH2: '为吉打及槟城车主提供的服务',
-    servicesBody: '我们Shah Alam工作室提供的所有服务——即将在Kulim推出。涵盖所有主要马来西亚及日本汽车品牌。',
+    servicesH2: '为槟城车主提供的服务',
+    servicesBody: '所有变速箱服务，现已在我们Simpang Ampat的工作室提供。涵盖所有主要马来西亚、日本及欧陆汽车品牌。',
     areasLabel: '服务范围覆盖',
     faqOverline: '常见问题',
-    faqH2: '来自吉打及槟城车主的问题',
+    faqH2: '来自槟城车主的问题',
     ctaOverline: '准备好修车了吗？',
     ctaH2: '不要再驾驶一辆变速箱故障的汽车。',
     ctaBody: '每一公里的打滑或抖动都在增加维修成本。立即WhatsApp我们——描述您的症状，在一小时内获得诚实的回复，并预约您的免费诊断。',
-    ctaNote: '北部客户：我们现已接受吉打和槟城的预约。Kulim分店即将开业。',
+    ctaNote: '现已在Simpang Ampat（Star Avenue）开业——欢迎到店进行免费诊断，或预约槟城及威省任何地点的上门取车服务。',
     ctaWACta: 'WhatsApp——免费诊断',
-    footerWorkshop: '工作室（现已开放）',
+    footerWorkshop: '槟城工作室（现已开放）',
     footerHours: '营业时间',
-    footerBranch: 'Kulim分店',
-    footerBranchValue: 'Kulim, Kedah——即将开业',
+    footerBranch: '另一分店',
     microRating: '★ 4.8 Google评分',
     microYears: '专注变速箱15年',
     microCars: '5,000+辆车已修',
@@ -469,11 +476,12 @@ const tMap: Record<Locale, {
 }
 
 const areas = [
-  'Kulim', 'Sungai Petani', 'Bukit Mertajam', 'Nibong Tebal',
-  'Parit Buntar', 'Penang', 'Butterworth', 'Alor Setar', 'Baling', 'Gurun',
+  'Simpang Ampat', 'Bukit Mertajam', 'Butterworth', 'Bukit Tambun', 'Juru',
+  'Perai', 'Nibong Tebal', 'Batu Kawan', 'Penang Island', 'Sungai Bakap',
+  'Kulim', 'Sungai Petani',
 ]
 
-export default async function KulimLocationPage({
+export default async function PenangLocationPage({
   params,
 }: {
   params: Promise<{ locale: string }>
@@ -488,36 +496,58 @@ export default async function KulimLocationPage({
   const tableRows = tableRowsMap[locale] ?? tableRowsMap.en
   const copy = tMap[locale] ?? tMap.en
 
-  const breadcrumbSchema = generateBreadcrumbJsonLd(locale, 'locations/kulim', 'Kulim Branch')
+  const breadcrumbSchema = generateBreadcrumbJsonLd(locale, 'locations/penang', 'Penang Branch')
+  const faqSchema = generateFAQJsonLd(faqs.map((f) => ({ question: f.q, answer: f.a })))
 
-  const kulimBranchSchema = {
+  const penangBranchSchema = {
     '@context': 'https://schema.org',
     '@type': ['AutomotiveBusiness', 'LocalBusiness'],
-    name: 'One X Transmission — Kulim Branch',
+    name: 'One X Transmission — Penang (Simpang Ampat)',
     description:
-      'CVT and automatic gearbox specialist opening in Kulim, Kedah. Free diagnosis, full overhaul, 12-month warranty. Serving Kedah and Penang drivers.',
+      'CVT and automatic gearbox specialist in Simpang Ampat, Penang. Free diagnosis, full overhaul, 12-month warranty. Serving Bukit Mertajam, Butterworth, Bukit Tambun, Juru and all of Penang & Seberang Perai.',
     branchOf: {
       '@type': 'Organization',
       name: 'One X Transmission',
-      url: 'https://onextransmission.com',
+      url: 'https://www.onextransmission.com',
     },
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Kulim',
-      addressRegion: 'Kedah',
+      streetAddress: 'Pusat Perniagaan, 72 Jalan Perniagaan Star Avenue, Star Avenue',
+      addressLocality: 'Simpang Ampat',
+      addressRegion: 'Pulau Pinang',
+      postalCode: '14100',
       addressCountry: 'MY',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: penangBranch.coords.lat,
+      longitude: penangBranch.coords.lng,
+    },
+    hasMap: penangBranch.mapsUrl,
     telephone: business.phone,
-    url: `https://onextransmission.com/${locale}/locations/kulim`,
+    url: `https://www.onextransmission.com/${locale}/locations/penang`,
+    image: [
+      'https://www.onextransmission.com/images/hero/Hero%201.jpeg',
+      'https://www.onextransmission.com/images/Premise/Premise%201.jpeg',
+    ],
+    priceRange: 'RM 150 – RM 10,000+',
+    currenciesAccepted: 'MYR',
+    paymentAccepted: 'Cash, Bank Transfer',
     areaServed: [
+      { '@type': 'City', name: 'Simpang Ampat' },
+      { '@type': 'City', name: 'Bukit Mertajam' },
+      { '@type': 'City', name: 'Butterworth' },
+      { '@type': 'City', name: 'Bukit Tambun' },
+      { '@type': 'City', name: 'Juru' },
+      { '@type': 'City', name: 'Perai' },
+      { '@type': 'City', name: 'Nibong Tebal' },
+      { '@type': 'City', name: 'Batu Kawan' },
+      { '@type': 'City', name: 'George Town' },
       { '@type': 'City', name: 'Kulim' },
       { '@type': 'City', name: 'Sungai Petani' },
-      { '@type': 'City', name: 'Bukit Mertajam' },
-      { '@type': 'City', name: 'Nibong Tebal' },
-      { '@type': 'City', name: 'Parit Buntar' },
-      { '@type': 'City', name: 'Butterworth' },
+      { '@type': 'AdministrativeArea', name: 'Pulau Pinang' },
+      { '@type': 'AdministrativeArea', name: 'Seberang Perai' },
       { '@type': 'AdministrativeArea', name: 'Kedah' },
-      { '@type': 'AdministrativeArea', name: 'Penang' },
     ],
     openingHoursSpecification: [
       {
@@ -543,7 +573,11 @@ export default async function KulimLocationPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(kulimBranchSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(penangBranchSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ── HERO ── */}
@@ -559,12 +593,14 @@ export default async function KulimLocationPage({
         <div className="relative z-10 max-w-wide mx-auto px-5 md:px-10 w-full">
           <div className="max-w-3xl">
             <FadeIn delay={0.1} immediate>
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-medium px-3 py-1.5 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <div className="mb-6">
+                <span className="inline-flex items-center gap-2.5 bg-white/[0.06] border border-white/15 backdrop-blur-sm text-white/90 text-[11px] font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+                  </span>
                   {copy.bookingBadge}
                 </span>
-                <span className="text-neutral-400 text-xs">{copy.branchBadge}</span>
               </div>
             </FadeIn>
             <RevealText
@@ -584,7 +620,7 @@ export default async function KulimLocationPage({
             <FadeIn delay={0.8} immediate>
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <a
-                  href={kulimWhatsApp}
+                  href={penangWhatsApp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-red-700 transition-colors"
@@ -596,10 +632,12 @@ export default async function KulimLocationPage({
                   {copy.heroWACta}
                 </a>
                 <a
-                  href={business.phoneTel}
+                  href={penangBranch.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-4 text-sm font-medium tracking-widest uppercase hover:border-white/70 transition-colors"
                 >
-                  Call {business.phone}
+                  {copy.directionsCta}
                 </a>
               </div>
               <Link
@@ -679,7 +717,7 @@ export default async function KulimLocationPage({
               </FadeIn>
               <FadeIn delay={0.3}>
                 <a
-                  href={kulimWhatsApp}
+                  href={penangWhatsApp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-red-700 transition-colors"
@@ -772,7 +810,7 @@ export default async function KulimLocationPage({
           <FadeIn delay={0.4}>
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <a
-                href={kulimWhatsApp}
+                href={penangWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-4 text-sm font-semibold tracking-widest uppercase hover:bg-red-700 transition-colors"
@@ -897,7 +935,7 @@ export default async function KulimLocationPage({
             <FadeIn delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <a
-                  href={kulimWhatsApp}
+                  href={penangWhatsApp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-brand-red text-white px-8 py-5 text-sm font-semibold tracking-widest uppercase hover:bg-red-700 transition-colors"
@@ -909,10 +947,12 @@ export default async function KulimLocationPage({
                   {copy.ctaWACta}
                 </a>
                 <a
-                  href={business.phoneTel}
+                  href={penangBranch.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 border border-neutral-700 text-neutral-300 px-8 py-5 text-sm font-medium tracking-widest uppercase hover:border-neutral-500 transition-colors"
                 >
-                  Call {business.phone}
+                  {copy.directionsCta}
                 </a>
               </div>
               <Link
@@ -926,7 +966,14 @@ export default async function KulimLocationPage({
               <div className="border-t border-neutral-800 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
                 <div>
                   <span className="block text-neutral-300 font-medium mb-1">{copy.footerWorkshop}</span>
-                  <span className="text-neutral-500">{business.addressShort}</span>
+                  <a
+                    href={penangBranch.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-500 hover:text-brand-red transition-colors leading-relaxed"
+                  >
+                    {penangBranch.addressFull}
+                  </a>
                 </div>
                 <div>
                   <span className="block text-neutral-300 font-medium mb-1">{copy.footerHours}</span>
@@ -937,7 +984,7 @@ export default async function KulimLocationPage({
                 </div>
                 <div>
                   <span className="block text-neutral-300 font-medium mb-1">{copy.footerBranch}</span>
-                  <span className="text-neutral-500">{copy.footerBranchValue}</span>
+                  <span className="text-neutral-500">{business.addressShort}</span>
                 </div>
               </div>
             </FadeIn>

@@ -15,6 +15,21 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: false,
   },
+  async redirects() {
+    return [
+      // Branch repositioned: Kulim, Kedah → Penang (Simpang Ampat)
+      {
+        source: '/:locale/locations/kulim',
+        destination: '/:locale/locations/penang',
+        permanent: true,
+      },
+      {
+        source: '/locations/kulim',
+        destination: '/en/locations/penang',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

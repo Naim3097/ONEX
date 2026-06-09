@@ -10,7 +10,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description:
       'Expert articles on CVT and automatic gearbox repair, maintenance costs, and warning signs — written by One X Transmission specialists in Shah Alam.',
     alternates: {
-      canonical: `https://onextransmission.com/${l}/blog`,
+      canonical: `https://www.onextransmission.com/${l}/blog`,
+      languages: {
+        'x-default': 'https://www.onextransmission.com/en/blog',
+        ms: 'https://www.onextransmission.com/ms/blog',
+        zh: 'https://www.onextransmission.com/zh/blog',
+      },
     },
   }
 }

@@ -77,7 +77,7 @@ Located in Shah Alam, One X Transmission is a dedicated gearbox specialist works
 - Puchong & Cyberjaya
 - Seri Kembangan & Kajang
 
-We also have a branch in **Kulim, Kedah** for customers in the northern region.
+We also have a branch in **Simpang Ampat, Pulau Pinang** (at Star Avenue, just off the North-South Expressway) for customers in the northern region.
 
 ## Book Your Service
 

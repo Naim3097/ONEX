@@ -78,7 +78,7 @@ Terletak di Shah Alam, One X Transmission adalah bengkel pakar gearbox berdedika
 - Puchong & Cyberjaya
 - Seri Kembangan & Kajang
 
-Kami juga ada cawangan di **Kulim, Kedah** untuk pelanggan di kawasan utara.
+Kami juga ada cawangan di **Simpang Ampat, Pulau Pinang** (di Star Avenue, tepi Lebuhraya Utara-Selatan) untuk pelanggan di kawasan utara.
 
 ## Tempah Servis Anda
 

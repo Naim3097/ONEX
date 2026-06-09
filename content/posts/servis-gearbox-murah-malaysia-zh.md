@@ -86,4 +86,4 @@ coverImage: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w
 
 访问 [shop 页面](/zh/shop) 预约 ATF 变速箱保养套餐 RM 439，或 WhatsApp 我们 **011-1060 7439**。
 
-维修店位于 Shah Alam 和 Kulim。提供上门取车服务（Door-to-Door）。
+维修店位于 Shah Alam 和槟城Simpang Ampat。提供上门取车服务（Door-to-Door）。

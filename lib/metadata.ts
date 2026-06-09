@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Locale } from '@/content'
 
-const baseUrl = 'https://onextransmission.com'
+const baseUrl = 'https://www.onextransmission.com'
 const ogImage = `${baseUrl}/images/og-image.jpg`
 
 interface PageMeta {
